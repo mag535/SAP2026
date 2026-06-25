@@ -9,6 +9,7 @@ public class TestingInputActions : MonoBehaviour
     public ContactFilter2D movementFilters;
 
     private Vector2 inputVector;
+    private Vector2 movementDirection;
     private Rigidbody2D rb;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
@@ -16,6 +17,7 @@ public class TestingInputActions : MonoBehaviour
 
     void Awake() {
         inputVector = Vector2.zero;
+        movementDirection = Vector2.zero;
     }
 
     void Start() {
@@ -28,15 +30,17 @@ public class TestingInputActions : MonoBehaviour
     {
         switch (playerStateManager.GetCurrentState()) {
             case PlayerState.PlayerStates.GAME:
-                bool success = MovePlayer(inputVector);
+                bool success = MovePlayer(movementDirection);
 
                 if (!success) {
                     // try left/right
-                    success = MovePlayer(new Vector2(inputVector.x, 0));
+                    success = MovePlayer(new Vector2(movementDirection.x, 0));
 
                     // try up/down
                     if (!success) {
-                        MovePlayer(new Vector2(0, inputVector.y));
+                        success = MovePlayer(new Vector2(0, movementDirection.y));
+
+                        if (!success) { Debug.Log("CANT MOVE"); }
                     }
                 }
                 break;
@@ -53,6 +57,8 @@ public class TestingInputActions : MonoBehaviour
         } else if (context.canceled) {
             inputVector = Vector2.zero;
         }
+        //movementDirection = inputVector;
+        movementDirection = RotateDirection(inputVector);
         //Debug.Log(context);
     }
 
@@ -69,14 +75,35 @@ public class TestingInputActions : MonoBehaviour
             //rb.MovePosition(rb.position + moveVector);
             rb.position += moveVector;
             return true;
-        } else {
-            // print collisions
-            /*
-            foreach (RaycastHit2D hit in castCollisions) {
-                print(hit.ToString());
-            }
-            */
-            return false;
         }
+
+        // Hits present
+        // print collisions
+        foreach (RaycastHit2D hit in castCollisions) {
+            print(hit.ToString());
+        }
+        return false;
+    }
+
+    // rotate 45 degrees clockwise
+    private Vector2 RotateDirection(Vector2 direction) {
+        // up
+        if (direction.x == 0 && direction.y == 1) {
+            return new Vector2(Mathf.Sqrt(2), Mathf.Sqrt(2)); // upper right
+        } else
+        // right
+        if (direction.x == 1 && direction.y == 0) {
+            return new Vector2(Mathf.Sqrt(2), -Mathf.Sqrt(2)); // lower right
+        } else
+        // down
+        if (direction.x == 0 && direction.y == -1) {
+            return new Vector2(-Mathf.Sqrt(2), -Mathf.Sqrt(2)); // lower left
+        } else
+        // left
+        if (direction.x == -1 && direction.y == 0) {
+            return new Vector2(-Mathf.Sqrt(2), Mathf.Sqrt(2)); // upper left
+        }
+
+        return Vector2.zero;
     }
 }

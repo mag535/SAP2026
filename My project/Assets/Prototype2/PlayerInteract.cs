@@ -8,6 +8,7 @@ public class PlayerInteract : MonoBehaviour
     public ContactFilter2D interactionFilters;
 
     public ConvoManager convoManager;
+    public ClueManager clueManager;
 
     private Rigidbody2D rb;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
@@ -33,11 +34,13 @@ public class PlayerInteract : MonoBehaviour
                 convoManager.HideConversation();
                 playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
                 Debug.Log("State: " + playerStateManager.GetCurrentState());
+                clueManager.PopulateNotebook();
             }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
                 // close description
                 convoManager.HideConversation();
                 playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
                 Debug.Log("State: " + playerStateManager.GetCurrentState());
+                clueManager.PopulateNotebook();
             }
         }
     }
@@ -63,6 +66,10 @@ public class PlayerInteract : MonoBehaviour
 
             if (count != 0) {
                 foreach (RaycastHit2D hit in castCollisions) {
+                    if (hit.transform.gameObject.GetComponent<Clue>() != null) {
+                        string tmp = hit.transform.gameObject.GetComponent<Clue>().text;
+                        clueManager.SetPendingClue(tmp);
+                    }
                     if (hit.transform.gameObject.GetComponent<Interactable>() != null) {
                         // start conversation
                         convoManager.ShowConversation(hit.transform.gameObject.GetComponent<Interactable>().text);

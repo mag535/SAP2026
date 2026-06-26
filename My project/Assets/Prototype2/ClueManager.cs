@@ -1,25 +1,44 @@
 using UnityEngine;
 using TMPro;
 
-public class ClueManager : MonoBehaviour
+public class ClueManager : Singleton<ClueManager>
 {
     public GameObject notebook;
     public GameObject clueTextPrefab;
 
-    private string pendingClue;
+    private string currentNPC;
 
-    public void SetPendingClue(string text) {
-        pendingClue = text;
-        Debug.Log("pending clue: \"" + pendingClue + "\"");
+    void Awake() {
+        EvtSystem.EventDispatcher.AddListener<NewCurrentNPC>(UpdateCurrentNPC);
+        EvtSystem.EventDispatcher.AddListener<SendItemName>(CheckValidItemUse);
     }
 
-    public void PopulateNotebook() {
-        if (string.IsNullOrEmpty(pendingClue)) {
-            return;
+    void UpdateCurrentNPC(NewCurrentNPC evt) {
+        if (evt.set) {
+            SetCurrentNPC(evt.npcName);
+        } else {
+            ClearCurrentNPC();
         }
-        GameObject newClue = Instantiate(clueTextPrefab, notebook.transform);
-        newClue.GetComponent<TextMeshProUGUI>().text = pendingClue;
-        Debug.Log("populated *notebook* with clue \"" + pendingClue + "\"");
-        pendingClue = "";
+    }
+
+    private void SetCurrentNPC(string text) {
+        currentNPC = text;
+    }
+
+    private void ClearCurrentNPC() {
+        currentNPC = "";
+    }
+
+    public void CheckValidItemUse(SendItemName evt) {
+        if (currentNPC == "NPC1" && evt.itemName == "$10") {
+            EvtSystem.EventDispatcher.Raise<RequestRemoveItem>(
+                    new RequestRemoveItem { itemName = evt.itemName });
+        }
+        return;
+    }
+
+    void OnDestroy() {
+        EvtSystem.EventDispatcher.RemoveListener<NewCurrentNPC>(UpdateCurrentNPC);
+        EvtSystem.EventDispatcher.RemoveListener<SendItemName>(CheckValidItemUse);
     }
 }

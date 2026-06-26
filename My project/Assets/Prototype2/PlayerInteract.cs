@@ -7,16 +7,15 @@ public class PlayerInteract : MonoBehaviour
     public float collisionOffset = 0.7f;
     public ContactFilter2D interactionFilters;
 
-    public ConvoManager convoManager;
-    public ClueManager clueManager;
-
     private Rigidbody2D rb;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
     private PlayerState playerStateManager;
+    private PlayerInventory playerInventory;
 
     void Awake() {
         playerStateManager = GetComponent<PlayerState>();
+        playerInventory = GetComponent<PlayerInventory>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,16 +30,21 @@ public class PlayerInteract : MonoBehaviour
                 CallInteraction();
             }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DIALOGUE) {
                 // close dialogue
-                convoManager.HideConversation();
+                EvtSystem.EventDispatcher.Raise<ToggleDialogueWindow>(
+                        new ToggleDialogueWindow {text=""});
                 playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
                 Debug.Log("State: " + playerStateManager.GetCurrentState());
-                clueManager.PopulateNotebook();
+                playerInventory.PopulateNotebook();
+                //clueManager.ClearCurrentNPC();
+                EvtSystem.EventDispatcher.Raise<NewCurrentNPC>(
+                        new NewCurrentNPC { set = false, npcName = "" });
             }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
                 // close description
-                convoManager.HideConversation();
+                EvtSystem.EventDispatcher.Raise<ToggleDialogueWindow>(
+                        new ToggleDialogueWindow {text=""});
                 playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
                 Debug.Log("State: " + playerStateManager.GetCurrentState());
-                clueManager.PopulateNotebook();
+                playerInventory.PopulateNotebook();
             }
         }
     }
@@ -64,27 +68,44 @@ public class PlayerInteract : MonoBehaviour
                     castCollisions,
                     collisionOffset);
 
-            if (count != 0) {
-                foreach (RaycastHit2D hit in castCollisions) {
-                    if (hit.transform.gameObject.GetComponent<Clue>() != null) {
-                        string tmp = hit.transform.gameObject.GetComponent<Clue>().text;
-                        clueManager.SetPendingClue(tmp);
+            // no collisions, skip to checking next ray
+            if (count == 0) { continue; }
+
+            foreach (RaycastHit2D hit in castCollisions) {
+                if (hit.transform.gameObject.GetComponent<Clue>() != null) {
+                    Clue hitClue = hit.transform.gameObject.GetComponent<Clue>();
+                    if (!hitClue.wasFound) {
+                        string tmp = hitClue.text;
+                        hitClue.wasFound = true;
+                        playerInventory.SetPendingClue(tmp);
                     }
-                    if (hit.transform.gameObject.GetComponent<Interactable>() != null) {
-                        // start conversation
-                        convoManager.ShowConversation(hit.transform.gameObject.GetComponent<Interactable>().text);
-                        playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
-                        Debug.Log("State: " + playerStateManager.GetCurrentState());
-                        return;
-                    } else if (hit.transform.gameObject.GetComponent<Examinable>() != null) {
-                        // show description
-                        convoManager.ShowConversation(hit.transform.gameObject.GetComponent<Examinable>().description);
-                        playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DESCRIPTION);
-                        Debug.Log("State: " + playerStateManager.GetCurrentState());
-                        return;
-                    }
+                }
+                if (hit.transform.gameObject.GetComponent<Interactable>() != null) {
+                    Interactable hitInteractable = hit.transform.gameObject.GetComponent<Interactable>();
+                    // start conversation
+                    EvtSystem.EventDispatcher.Raise<ToggleDialogueWindow>(
+                            new ToggleDialogueWindow {text = hitInteractable.text});
+                    //clueManager.SetCurrentNPC(hitInteractable.speaker);
+                    EvtSystem.EventDispatcher.Raise<NewCurrentNPC>(
+                            new NewCurrentNPC { set = true, npcName = hitInteractable.speaker });
+                    playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
+                    Debug.Log("State: " + playerStateManager.GetCurrentState());
+                    return;
+                } else if (hit.transform.gameObject.GetComponent<Examinable>() != null) {
+                    Examinable hitExaminable = hit.transform.gameObject.GetComponent<Examinable>();
+                    // show description
+                    EvtSystem.EventDispatcher.Raise<ToggleDialogueWindow>(
+                            new ToggleDialogueWindow {text = hitExaminable.description});
+                    playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DESCRIPTION);
+                    Debug.Log("State: " + playerStateManager.GetCurrentState());
+                    return;
                 }
             }
         }
+    }
+
+    public void UseItem(string itemName) {
+        EvtSystem.EventDispatcher.Raise<SendItemName>(
+                new SendItemName { itemName = itemName });
     }
 }

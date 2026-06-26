@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 
-public class TestingInputActions : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
     public float collisionOffset = 0.1f;
@@ -57,9 +57,10 @@ public class TestingInputActions : MonoBehaviour
         } else if (context.canceled) {
             inputVector = Vector2.zero;
         }
+        // NSEW
         //movementDirection = inputVector;
+        // isometric
         movementDirection = RotateDirection(inputVector);
-        //Debug.Log(context);
     }
 
     private bool MovePlayer(Vector2 direction) {
@@ -69,19 +70,20 @@ public class TestingInputActions : MonoBehaviour
                 castCollisions,
                 speed * Time.fixedDeltaTime + collisionOffset);
 
+        // no collisions
         if (count == 0) {
             Vector2 moveVector = direction * speed * Time.fixedDeltaTime;
-            // no collisions
-            //rb.MovePosition(rb.position + moveVector);
-            rb.position += moveVector;
+            rb.MovePosition(rb.position + moveVector);
             return true;
         }
 
         // Hits present
         // print collisions
+        /*
         foreach (RaycastHit2D hit in castCollisions) {
             print(hit.ToString());
         }
+        */
         return false;
     }
 

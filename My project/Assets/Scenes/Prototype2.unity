@@ -249,8 +249,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 24
+  m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 1186237209}
   - component: {fileID: 1186237205}
   - component: {fileID: 1186237208}
+  - component: {fileID: 1186237210}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -845,7 +846,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  convoManager: {fileID: 1425786983}
   clueManager: {fileID: 32980103}
 --- !u!114 &1186237209
 MonoBehaviour:
@@ -861,6 +861,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialPlayerState: 0
   playerState: 0
+--- !u!114 &1186237210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186237201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fe65c212f3bdf73b97d4f85f51f495b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryDisplay: {fileID: 1959493013}
+  clueTextPrefab: {fileID: 2047336519405768073, guid: fdada74e31b8b4afd96bd4158eba3db1, type: 3}
+  inventory: []
 --- !u!1 &1425786982
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +887,7 @@ GameObject:
   - component: {fileID: 1425786984}
   - component: {fileID: 1425786983}
   m_Layer: 0
-  m_Name: CoM
+  m_Name: ConvoManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1079,7 +1094,7 @@ MonoBehaviour:
     m_Top: 5
     m_Bottom: 5
   m_ChildAlignment: 1
-  m_Spacing: 5
+  m_Spacing: 15
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -1301,8 +1316,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1d6ba9c8b87156788ca2073ed4bd18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speaker: NAME
-  text: Say something...
+  speaker: NPC1
+  text: I have a key, but it'll cost ya.
 --- !u!114 &2039426151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1315,7 +1330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25b0e4dfedcf4db17b7931d52402fa1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: magenta square
+  text: magenta square wants money for a key
 --- !u!1 &2052557848
 GameObject:
   m_ObjectHideFlags: 0

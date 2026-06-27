@@ -13,9 +13,12 @@ public class PlayerInteract : MonoBehaviour
     private PlayerState playerStateManager;
     private PlayerInventory playerInventory;
 
+    private GameObject engagedGO;
+
     void Awake() {
         playerStateManager = GetComponent<PlayerState>();
         playerInventory = GetComponent<PlayerInventory>();
+        EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,22 +32,20 @@ public class PlayerInteract : MonoBehaviour
             if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.GAME) {
                 CallInteraction();
             }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DIALOGUE) {
-                // close dialogue
-                EvtSystem.EventDispatcher.Raise<ToggleDialogueWindow>(
-                        new ToggleDialogueWindow {text=""});
-                playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
-                Debug.Log("State: " + playerStateManager.GetCurrentState());
-                playerInventory.PopulateNotebook();
-                //clueManager.ClearCurrentNPC();
-                EvtSystem.EventDispatcher.Raise<NewCurrentNPC>(
-                        new NewCurrentNPC { set = false, npcName = "" });
+                bool success = DialogueManager2.Instance.ContinueDialogueThread();
+                if (!success) {
+                    ClueManager.Instance.ClearCurrentNPC();
+                    playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+                    Debug.Log("State: " + playerStateManager.GetCurrentState());
+                    engagedGO = null;
+                }
             }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
-                // close description
-                EvtSystem.EventDispatcher.Raise<ToggleDialogueWindow>(
-                        new ToggleDialogueWindow {text=""});
+                // TODO: close description window
+                EvtSystem.EventDispatcher.Raise<ToggleDescriptionBox>(new ToggleDescriptionBox {
+                        text = "" });
                 playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
                 Debug.Log("State: " + playerStateManager.GetCurrentState());
-                playerInventory.PopulateNotebook();
+                engagedGO = null;
             }
         }
     }
@@ -72,40 +73,32 @@ public class PlayerInteract : MonoBehaviour
             if (count == 0) { continue; }
 
             foreach (RaycastHit2D hit in castCollisions) {
-                if (hit.transform.gameObject.GetComponent<Clue>() != null) {
-                    Clue hitClue = hit.transform.gameObject.GetComponent<Clue>();
-                    if (!hitClue.wasFound) {
-                        string tmp = hitClue.text;
-                        hitClue.wasFound = true;
-                        playerInventory.SetPendingClue(tmp);
-                    }
+                if (hit.transform.gameObject.GetComponent<Interactable>() == null) {
+                    continue;
                 }
-                if (hit.transform.gameObject.GetComponent<Interactable>() != null) {
-                    Interactable hitInteractable = hit.transform.gameObject.GetComponent<Interactable>();
-                    // start conversation
-                    EvtSystem.EventDispatcher.Raise<ToggleDialogueWindow>(
-                            new ToggleDialogueWindow {text = hitInteractable.text});
-                    //clueManager.SetCurrentNPC(hitInteractable.speaker);
-                    EvtSystem.EventDispatcher.Raise<NewCurrentNPC>(
-                            new NewCurrentNPC { set = true, npcName = hitInteractable.speaker });
-                    playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
-                    Debug.Log("State: " + playerStateManager.GetCurrentState());
-                    return;
-                } else if (hit.transform.gameObject.GetComponent<Examinable>() != null) {
-                    Examinable hitExaminable = hit.transform.gameObject.GetComponent<Examinable>();
-                    // show description
-                    EvtSystem.EventDispatcher.Raise<ToggleDialogueWindow>(
-                            new ToggleDialogueWindow {text = hitExaminable.description});
+                if (hit.transform.gameObject.GetComponent<Pickup>() == null) {
+                    engagedGO = hit.transform.gameObject;
+                }
+                
+                if (hit.transform.gameObject.GetComponent<ConvoStarter>() == null) {
                     playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DESCRIPTION);
-                    Debug.Log("State: " + playerStateManager.GetCurrentState());
-                    return;
+                } else {
+                    playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
                 }
+
+                Debug.Log("State: " + playerStateManager.GetCurrentState());
+                hit.transform.gameObject.GetComponent<Interactable>().Interact();
+                return;
             }
         }
     }
 
-    public void UseItem(string itemName) {
-        EvtSystem.EventDispatcher.Raise<SendItemName>(
-                new SendItemName { itemName = itemName });
+    public void UseItem(RequestItemUse evt) {
+        if (engagedGO == null) { return; }
+        engagedGO.GetComponent<Interactable>().HandleItemUse(evt.item);
+    }
+
+    void OnDestroy() {
+        EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
     }
 }

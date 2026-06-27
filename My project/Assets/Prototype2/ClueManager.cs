@@ -1,44 +1,46 @@
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class ClueManager : Singleton<ClueManager>
 {
     public GameObject notebook;
     public GameObject clueTextPrefab;
+    public List<string> foundClues = new List<string>();
 
     private string currentNPC;
 
-    void Awake() {
-        EvtSystem.EventDispatcher.AddListener<NewCurrentNPC>(UpdateCurrentNPC);
-        EvtSystem.EventDispatcher.AddListener<SendItemName>(CheckValidItemUse);
-    }
-
-    void UpdateCurrentNPC(NewCurrentNPC evt) {
-        if (evt.set) {
-            SetCurrentNPC(evt.npcName);
-        } else {
-            ClearCurrentNPC();
+    public void UpdateFoundClueList(string id) {
+        if (CheckHasClueBeenAdded(id)) {
+            return;
         }
+        foundClues.Add(id);
     }
 
-    private void SetCurrentNPC(string text) {
+    public bool CheckHasClueBeenAdded(string id) {
+        foreach (string clueID in foundClues) {
+            if (clueID == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void SetCurrentNPC(string text) {
         currentNPC = text;
     }
 
-    private void ClearCurrentNPC() {
+    public void ClearCurrentNPC() {
         currentNPC = "";
     }
 
-    public void CheckValidItemUse(SendItemName evt) {
-        if (currentNPC == "NPC1" && evt.itemName == "$10") {
-            EvtSystem.EventDispatcher.Raise<RequestRemoveItem>(
-                    new RequestRemoveItem { itemName = evt.itemName });
+    public bool CheckValidItemUse(string itemID) {
+        if (currentNPC == "NPC1" && itemID == "item-01") {
+            return true;
         }
-        return;
+        return false;
     }
 
     void OnDestroy() {
-        EvtSystem.EventDispatcher.RemoveListener<NewCurrentNPC>(UpdateCurrentNPC);
-        EvtSystem.EventDispatcher.RemoveListener<SendItemName>(CheckValidItemUse);
     }
 }

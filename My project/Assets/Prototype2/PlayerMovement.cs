@@ -39,8 +39,6 @@ public class PlayerMovement : MonoBehaviour
                     // try up/down
                     if (!success) {
                         success = MovePlayer(new Vector2(0, movementDirection.y));
-
-                        if (!success) { Debug.Log("CANT MOVE"); }
                     }
                 }
                 break;

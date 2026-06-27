@@ -1,0 +1,32 @@
+using UnityEngine;
+
+public class Chest : Interactable
+{
+    private bool isLocked = true;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        isLocked = true;
+    }
+
+    public void override Interact() {
+        if (isLocked) {
+            Unlock();
+        }
+        Open();
+    }
+
+    void Unlock() {
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        // make transparent
+        Color newColor = new Color(sr.color.r, sr.color.g, sr.color.b, 0.5f);
+        sr.color = newColor;
+        // lock
+        isLocked = false;
+    }
+
+    void Open() {
+        Debug.Log("opening chest");
+    }
+}

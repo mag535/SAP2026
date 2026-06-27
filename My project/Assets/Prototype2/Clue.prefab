@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 568119137640458728}
   - component: {fileID: 1473091948194029250}
   - component: {fileID: 6469982365182908370}
+  - component: {fileID: 6558054318763889361}
   m_Layer: 5
   m_Name: Clue
   m_TagString: Untagged
@@ -75,7 +76,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294912256
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -182,3 +183,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6558054318763889361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047336519405768073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40e8c0a2d66f1a07bdbd38d226c6c5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

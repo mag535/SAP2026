@@ -1,19 +1,9 @@
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public abstract class Interactable : MonoBehaviour
 {
-    public string speaker = "NAME";
-    public string text = "Say something...";
+    public string soundEffect = "NONE";
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void Interact();
+    public abstract void HandleItemUse(Object item);
 }

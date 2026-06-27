@@ -10,38 +10,31 @@ public class PlayerInventory : MonoBehaviour
     public List<GameObject> inventory = new List<GameObject>();
 
     private PlayerInteract playerInteract;
-    private string pendingClue = "";
 
     void Awake() {
+        EvtSystem.EventDispatcher.AddListener<RequestAddItem>(AddItem);
         EvtSystem.EventDispatcher.AddListener<RequestRemoveItem>(RemoveItem);
     }
 
-    public void SetPendingClue(string text) {
-        playerInteract = GetComponent<PlayerInteract>();
-        pendingClue = text;
-        Debug.Log("pending clue: \"" + pendingClue + "\"");
-    }
+    public void AddItem(RequestAddItem evt) {
+        GameObject newItem = Instantiate(clueTextPrefab, inventoryDisplay.transform);
+        newItem.name = evt.item.objectID;
+        newItem.GetComponent<TextMeshProUGUI>().text = evt.item.description;
 
-    public void PopulateNotebook() {
-        if (string.IsNullOrEmpty(pendingClue)) {
-            return;
-        }
-        GameObject newClue = Instantiate(clueTextPrefab, inventoryDisplay.transform);
-        newClue.name = pendingClue;
-        newClue.GetComponent<TextMeshProUGUI>().text = pendingClue;
+        Item newItemItem = newItem.GetComponent<Item>();
+        newItemItem.objectData = evt.item;
 
-        Button newClueBtn = newClue.GetComponent<Button>();
-        //newClueBtn.onClick.AddListener(playerInteract.UseItem(pendingClue));
+        Button newItemBtn = newItem.GetComponent<Button>();
+        newItemBtn.onClick.AddListener(newItemItem.AttemptItemUse);
 
-        inventory.Add(newClue);
-        Debug.Log("populated *inventoryDisplay* with clue \"" + pendingClue + "\"");
-        pendingClue = "";
+        inventory.Add(newItem);
+        Debug.Log("populated *inventoryDisplay* with item [" + evt.item.objectID + "]");
     }
 
     public void RemoveItem(RequestRemoveItem evt) {
         GameObject target = null;
         for(int i = 0; i < inventory.Count; i++) {
-            if (inventory[i].name == evt.itemName) {
+            if (inventory[i].name == evt.item.objectID) {
                 target = inventory[i];
                 inventory.RemoveAt(i);
                 break;
@@ -50,10 +43,10 @@ public class PlayerInventory : MonoBehaviour
         if (target != null) {
             Destroy(target);
         }
-        // TODO: also get NPC dialogue to update!
     }
 
     void OnDestroy() {
+        EvtSystem.EventDispatcher.RemoveListener<RequestAddItem>(AddItem);
         EvtSystem.EventDispatcher.RemoveListener<RequestRemoveItem>(RemoveItem);
     }
 }

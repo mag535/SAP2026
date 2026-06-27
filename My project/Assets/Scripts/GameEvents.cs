@@ -4,41 +4,30 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class ExampleTrigger : EvtSystem.Event
-{
-    public string data1;
-    public float data2;
-}
-
-// CONVERSATION MANAGER --------------------------------------------------------
-public class ToggleDialogueWindow : EvtSystem.Event
+// DESCRIPTION BOX UI --------------------------------------------------------
+public class ToggleDescriptionBox : EvtSystem.Event
 {
     public string text;
 }
 
-// DESCRIPTION MANAGER --------------------------------------------------------
-public class ShowDescriptionWindow : EvtSystem.Event
-{
-}
-public class HideDescriptionWindow : EvtSystem.Event
-{
-}
-
-// CLUE MANAGER ----------------------------------------------------------------
-public class NewCurrentNPC : EvtSystem.Event
-{
-    // true == set
-    // false == clear
-    public bool set;
-    public string npcName;
-}
-public class SendItemName : EvtSystem.Event
-{
-    public string itemName;
-}
-
 // PLAYER INVENTORY ------------------------------------------------------------
+public class RequestAddItem : EvtSystem.Event
+{
+    public Object item;
+}
 public class RequestRemoveItem : EvtSystem.Event
 {
-    public string itemName;
+    public Object item;
+}
+
+// PLAYER INTERACT -------------------------------------------------------------
+public class RequestItemUse : EvtSystem.Event
+{
+    public Object item;
+}
+
+// ITEMS -----------------------------------------------------------------------
+public class OpenChest : EvtSystem.Event
+{
+    public string key;
 }

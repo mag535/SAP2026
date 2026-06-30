@@ -119,53 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &32980101
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 32980102}
-  - component: {fileID: 32980103}
-  m_Layer: 0
-  m_Name: (WHAT) ClueManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &32980102
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 32980101}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &32980103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 32980101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e475d2ff603e75824b4daeddecc2fde8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  notebook: {fileID: 1959493013}
-  clueTextPrefab: {fileID: 2047336519405768073, guid: fdada74e31b8b4afd96bd4158eba3db1, type: 3}
-  foundClues: []
 --- !u!1 &371859803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,57 +1189,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1800690043
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1800690045}
-  - component: {fileID: 1800690044}
-  m_Layer: 0
-  m_Name: (DELETED) ObjectManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1800690044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800690043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe2157957a782cde9dd74a234baff3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectUnlocks:
-  - host: Chest
-    key: {fileID: 11400000, guid: 79bed17687e9e51028e30d092a592891, type: 2}
-    val: {fileID: 11400000, guid: 79951a840ca0b8c0fb7bb7695d14503e, type: 2}
-  - host: NPC1
-    key: {fileID: 11400000, guid: f3dc04beae240f1d38552db91e877165, type: 2}
-    val: {fileID: 11400000, guid: 79bed17687e9e51028e30d092a592891, type: 2}
---- !u!4 &1800690045
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1800690043}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1863800929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,5 +1924,3 @@ SceneRoots:
   - {fileID: 2130106392}
   - {fileID: 636313239}
   - {fileID: 1186237204}
-  - {fileID: 32980102}
-  - {fileID: 1800690045}

@@ -1,47 +1,49 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class Chest : Interactable
-{
-    public bool isLocked = true;
-    public string description;
-    public Object key;
-    public List<Object> inventory = new List<Object>();
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+namespace Carp {
+    public class Chest : Interactable
     {
-        isLocked = true;
-    }
+        public bool isLocked = true;
+        public string description;
+        public Object key;
+        public List<Object> inventory = new List<Object>();
 
-    public override void Interact() {
-        if (isLocked) {
-            EvtSystem.EventDispatcher.Raise<ToggleDescriptionBox>(new ToggleDescriptionBox {
-                    text = description });
-            return;
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
+            isLocked = true;
         }
-        DisplayInventory();
-    }
 
-    public override void HandleItemUse(Object item) {
-        if (item.objectID != key.objectID) { return; }
-        Unlock();
-    }
-
-    void Unlock() {
-        SpriteRenderer sr = GetComponent<SpriteRenderer>();
-        // make transparent
-        Color newColor = new Color(sr.color.r, sr.color.g, sr.color.b, 0.5f);
-        sr.color = newColor;
-        // lock
-        isLocked = false;
-    }
-
-    void DisplayInventory() {
-        string text = "Chest Inventory:\n";
-        foreach (Object item in inventory) {
-            text += " - " + item.objectID + "\n";
+        public override void Interact() {
+            if (isLocked) {
+                EvtSystem.EventDispatcher.Raise<ToggleDescriptionBox>(new ToggleDescriptionBox {
+                        text = description });
+                return;
+            }
+            DisplayInventory();
         }
-        Debug.Log(text);
+
+        public override void HandleItemUse(Object item) {
+            if (item.objectID != key.objectID) { return; }
+            Unlock();
+        }
+
+        void Unlock() {
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            // make transparent
+            Color newColor = new Color(sr.color.r, sr.color.g, sr.color.b, 0.5f);
+            sr.color = newColor;
+            // lock
+            isLocked = false;
+        }
+
+        void DisplayInventory() {
+            string text = "Chest Inventory:\n";
+            foreach (Object item in inventory) {
+                text += " - " + item.objectID + "\n";
+            }
+            Debug.Log(text);
+        }
     }
 }

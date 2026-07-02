@@ -39,9 +39,15 @@ public class GraphSaveUtility
 
         foreach (var dialogueNode in Nodes.Where(node => !node.EntryPoint)) {
             dialogueContainer.DialogueNodeData.Add(new DialogueNodeData {
-                Guid = dialogueNode.GUID,
-                DialogueText = dialogueNode.DialogueText,
-                Position = dialogueNode.GetPosition().position
+                    type = dialogueNode.type,
+                    Guid = dialogueNode.GUID,
+                    DialogueText = dialogueNode.DialogueText,
+                    // TODO: cost
+                    cost = dialogueNode.cost,
+                    trade = dialogueNode.trade,
+                    flag = dialogueNode.flag,
+
+                    Position = dialogueNode.GetPosition().position,
             });
         }
 
@@ -100,12 +106,42 @@ public class GraphSaveUtility
 
     private void CreateNodes() {
         foreach (var nodeData in _containerCache.DialogueNodeData) {
-            var tempNode = _targetGraphView.CreateDialogueNode(nodeData.DialogueText);
+            DialogueNode tempNode = null;
+
+            switch (nodeData.type) {
+            case DialogueType.SIMPLE:
+                tempNode = _targetGraphView.CreateSimpleDialogueNode(
+                        nodeData.DialogueText);
+                break;
+            case DialogueType.BRANCH:
+                tempNode = _targetGraphView.CreateBranchDialogueNode(
+                        nodeData.DialogueText);
+                var nodePorts = _containerCache.NodeLinks.Where(x => 
+                        x.BaseNodeGuid == nodeData.Guid).ToList();
+                nodePorts.ForEach(x => _targetGraphView.AddChoicePort(tempNode, 
+                            x.PortName));
+                break;
+            case DialogueType.GIVEITEM:
+                tempNode = _targetGraphView.CreateGiveItemDialogueNode(
+                        nodeData.DialogueText,
+                        (Object) nodeData.cost,
+                        (Object) nodeData.trade);
+                tempNode.cost = (Object) nodeData.cost;
+                tempNode.trade = (Object) nodeData.trade;
+                break;
+            case DialogueType.SETFLAG:
+                tempNode = _targetGraphView.CreateSetFlagDialogueNode(
+                        nodeData.DialogueText,
+                        (string) nodeData.flag);
+                tempNode.flag = (string) nodeData.flag;
+                break;
+            }
+
             tempNode.GUID = nodeData.Guid;
             _targetGraphView.AddElement(tempNode);
-            
-            var nodePorts = _containerCache.NodeLinks.Where(x => x.BaseNodeGuid == nodeData.Guid).ToList();
-            nodePorts.ForEach(x => _targetGraphView.AddChoicePort(tempNode, x.PortName));
+
+            tempNode.RefreshExpandedState();
+            tempNode.RefreshPorts();
         }
     }
 

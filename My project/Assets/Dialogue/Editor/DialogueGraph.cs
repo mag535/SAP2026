@@ -42,14 +42,20 @@ public class DialogueGraph : EditorWindow
         toolbar.Add(new Button(() => RequestDataOperation(true)) { text = "Save Data" });
         toolbar.Add(new Button(() => RequestDataOperation(false)) { text = "Load Data" });
 
-        // Add button to create new node
-        // TODO: add dropdown of types of new nodes to create
-        var nodeCreateButton = new Button(() => 
-        {
-            _graphView.CreateNode("Dialogue Node");
-        });
-        nodeCreateButton.text = "Create Node";
-        toolbar.Add(nodeCreateButton);
+        // Add button to clear graph
+        toolbar.Add(new Button(() => ClearGraph()) { text = "Clear Graph" });
+
+        // Add dropdown menu for different dialogue node types
+        var toolbarMenu = new ToolbarMenu() { text = "Create Dialogue" };
+        toolbarMenu.menu.AppendAction("Simple", (a) => 
+                { _graphView.CreateNode(DialogueType.SIMPLE, "Simple Dialogue Node"); });
+        toolbarMenu.menu.AppendAction("Branch", (a) => 
+                { _graphView.CreateNode(DialogueType.BRANCH, "Branch Dialogue Node"); });
+        toolbarMenu.menu.AppendAction("Give-Item", (a) => 
+                { _graphView.CreateNode(DialogueType.GIVEITEM, "Give-Item Dialogue Node"); });
+        toolbarMenu.menu.AppendAction("Set-Flag", (a) => 
+                { _graphView.CreateNode(DialogueType.SETFLAG, "Set-Flag Dialogue Node"); });
+        toolbar.Add(toolbarMenu);
 
         rootVisualElement.Add(toolbar);
     }
@@ -69,6 +75,22 @@ public class DialogueGraph : EditorWindow
         } else {
             saveUtility.LoadGraph(_fileName);
         }
+    }
+
+    private void ClearGraph() {
+        Debug.Log("Not Implemented");
+        /*
+        Nodes.Find(x => x.EntryPoint).GUID = _containerCache.NodeLinks[0].BaseNodeGuid;
+        foreach (var node in Nodes) {
+            if (node.EntryPoint) continue;
+            // Remove edges that connected to this node
+            Edges.Where(x => x.input.node == node).ToList()
+                .ForEach(edge => _targetGraphView.RemoveElement(edge));
+
+            // Remove the node
+            _targetGraphView.RemoveElement(node);
+        }
+        */
     }
 
     private void OnDisable() {

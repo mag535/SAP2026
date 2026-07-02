@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEditor.UIElements;
 using UnityEditor.Experimental.GraphView;
 
 public class DialogueGraphView : GraphView
@@ -46,16 +47,19 @@ public class DialogueGraphView : GraphView
         return compatiblePorts;
     }
 
-    private Port GeneratePort(DialogueNode node, Direction portDirection, Port.Capacity capacity = Port.Capacity.Single) {
-        return node.InstantiatePort(Orientation.Horizontal, portDirection, capacity, typeof(float)); // arbitrary type
+    private Port GeneratePort(DialogueNode node, Direction portDirection, 
+            Port.Capacity capacity = Port.Capacity.Single) {
+        return node.InstantiatePort(Orientation.Horizontal, portDirection, 
+                capacity, typeof(float)); // arbitrary type
     }
 
+    // Entry Point Node
     private DialogueNode GenerateEntryPointNode() {
         var node = new DialogueNode {
+            EntryPoint = true,
             title = "START",
             GUID = Guid.NewGuid().ToString(),
             DialogueText = "ENTRYPOINT",
-            EntryPoint = true
         };
         var generatedPort = GeneratePort(node, Direction.Output);
         generatedPort.portName = "Next";
@@ -68,16 +72,76 @@ public class DialogueGraphView : GraphView
         return node;
     }
 
-    public void CreateNode(string nodeName) {
-        AddElement(CreateDialogueNode(nodeName));
+    public void CreateNode(DialogueType type, string nodeName) {
+        switch (type) {
+        case DialogueType.SIMPLE:
+            AddElement(CreateSimpleDialogueNode(nodeName));
+            break;
+        case DialogueType.BRANCH:
+            AddElement(CreateBranchDialogueNode(nodeName));
+            break;
+        case DialogueType.GIVEITEM:
+            AddElement(CreateGiveItemDialogueNode(nodeName));
+            break;
+        case DialogueType.SETFLAG:
+            AddElement(CreateSetFlagDialogueNode(nodeName));
+            break;
+        default:
+            break;
+        }
     }
 
-    public DialogueNode CreateDialogueNode(string nodeName) {
+    public DialogueNode CreateSimpleDialogueNode(string nodeName) {
         var dialogueNode = new DialogueNode {
-            title = nodeName,
+            type = DialogueType.SIMPLE,
+            GUID = Guid.NewGuid().ToString(),
             DialogueText = nodeName,
-            GUID = Guid.NewGuid().ToString()
+            title = nodeName,
         };
+
+        // Field to add the actual dialogue
+        var textField = new TextField(string.Empty);
+        textField.RegisterValueChangedCallback(evt => {
+            dialogueNode.DialogueText = evt.newValue;
+            dialogueNode.title = evt.newValue;
+        });
+        textField.SetValueWithoutNotify(dialogueNode.title);
+        dialogueNode.mainContainer.Add(textField);
+
+        // Input port
+        var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
+        inputPort.portName = "Input";
+        dialogueNode.inputContainer.Add(inputPort);
+
+        // Output port
+        var outputPort = GeneratePort(dialogueNode, Direction.Output, Port.Capacity.Single);
+        outputPort.portName = "Next";
+        dialogueNode.outputContainer.Add(outputPort);
+
+        dialogueNode.RefreshExpandedState();
+        dialogueNode.RefreshPorts();
+        dialogueNode.SetPosition(new Rect(Vector2.zero, defaultNodeSize));
+
+        return dialogueNode;
+    }
+
+    public DialogueNode CreateBranchDialogueNode(string nodeName) {
+        var dialogueNode = new DialogueNode {
+            type = DialogueType.BRANCH,
+            GUID = Guid.NewGuid().ToString(),
+            DialogueText = nodeName,
+            choices = new List<string>(),
+            title = nodeName,
+        };
+
+        // Field to add the actual dialogue
+        var textField = new TextField(string.Empty);
+        textField.RegisterValueChangedCallback(evt => {
+            dialogueNode.DialogueText = evt.newValue;
+            dialogueNode.title = evt.newValue;
+        });
+        textField.SetValueWithoutNotify(dialogueNode.title);
+        dialogueNode.mainContainer.Add(textField);
 
         // Input port
         var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
@@ -92,6 +156,34 @@ public class DialogueGraphView : GraphView
         button.text = "New Choice";
         dialogueNode.titleContainer.Add(button);
 
+        dialogueNode.RefreshExpandedState();
+        dialogueNode.RefreshPorts();
+        dialogueNode.SetPosition(new Rect(Vector2.zero, defaultNodeSize));
+
+        return dialogueNode;
+    }
+
+    public DialogueNode CreateGiveItemDialogueNode(string nodeName, 
+            Object costValue = null, Object tradeValue = null) {
+        var dialogueNode = new DialogueNode {
+            type = DialogueType.GIVEITEM,
+            GUID = Guid.NewGuid().ToString(),
+            DialogueText = nodeName,
+            cost = null,
+            trade = null,
+            title = nodeName,
+        };
+
+        // Input port
+        var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
+        inputPort.portName = "Input";
+        dialogueNode.inputContainer.Add(inputPort);
+
+        // Output port
+        var outputPort = GeneratePort(dialogueNode, Direction.Output, Port.Capacity.Single);
+        outputPort.portName = "Next";
+        dialogueNode.outputContainer.Add(outputPort);
+
         // Field to add the actual dialogue
         var textField = new TextField(string.Empty);
         textField.RegisterValueChangedCallback(evt => {
@@ -100,6 +192,71 @@ public class DialogueGraphView : GraphView
         });
         textField.SetValueWithoutNotify(dialogueNode.title);
         dialogueNode.mainContainer.Add(textField);
+
+        // Field for cost Object
+        var costObjectField = new ObjectField();
+        costObjectField.objectType = typeof(Object);
+        costObjectField.label = "Cost Object";
+        costObjectField.value = costValue;
+        costObjectField.RegisterValueChangedCallback(evt => {
+            dialogueNode.cost = (Object) evt.newValue;
+        });
+        dialogueNode.mainContainer.Add(costObjectField);
+
+        // Field for trade Object
+        var tradeObjectField = new ObjectField();
+        tradeObjectField.objectType = typeof(Object);
+        tradeObjectField.label = "Trade Object";
+        tradeObjectField.value = tradeValue;
+        tradeObjectField.RegisterValueChangedCallback(evt => {
+            dialogueNode.trade = (Object) evt.newValue;
+        });
+        dialogueNode.mainContainer.Add(tradeObjectField);
+
+        dialogueNode.RefreshExpandedState();
+        dialogueNode.RefreshPorts();
+        dialogueNode.SetPosition(new Rect(Vector2.zero, defaultNodeSize));
+
+        return dialogueNode;
+    }
+
+    public DialogueNode CreateSetFlagDialogueNode(string nodeName, 
+            string flagValue = "") {
+        var dialogueNode = new DialogueNode {
+            type = DialogueType.SETFLAG,
+            GUID = Guid.NewGuid().ToString(),
+            DialogueText = nodeName,
+            flag = string.Empty,
+            title = nodeName,
+        };
+
+        // Input port
+        var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
+        inputPort.portName = "Input";
+        dialogueNode.inputContainer.Add(inputPort);
+
+        // Output port
+        var outputPort = GeneratePort(dialogueNode, Direction.Output, Port.Capacity.Single);
+        outputPort.portName = "Next";
+        dialogueNode.outputContainer.Add(outputPort);
+
+        // Field to add the actual dialogue
+        var textField = new TextField(string.Empty);
+        textField.RegisterValueChangedCallback(evt => {
+            dialogueNode.DialogueText = evt.newValue;
+            dialogueNode.title = evt.newValue;
+        });
+        textField.SetValueWithoutNotify(dialogueNode.title);
+        dialogueNode.mainContainer.Add(textField);
+
+        // Field to set flag
+        var flagField = new TextField(string.Empty);
+        flagField.RegisterValueChangedCallback(evt => {
+            dialogueNode.flag = evt.newValue;
+        });
+        flagField.label = "Flag";
+        flagField.value = flagValue;
+        dialogueNode.mainContainer.Add(flagField);
 
         dialogueNode.RefreshExpandedState();
         dialogueNode.RefreshPorts();
@@ -120,6 +277,7 @@ public class DialogueGraphView : GraphView
                 ? $"Choice {outputPortCount + 1}"
                 : overridenPortName;
 
+        // Button to delete choice option
         var textField = new TextField {
             name = string.Empty,
             value = choicePortName
@@ -131,7 +289,7 @@ public class DialogueGraphView : GraphView
             text = "X"
         };
         generatedPort.contentContainer.Add(deleteButton);
-        
+
         generatedPort.portName = $"Choice {outputPortCount}";
         dialogueNode.outputContainer.Add(generatedPort);
         dialogueNode.RefreshExpandedState();

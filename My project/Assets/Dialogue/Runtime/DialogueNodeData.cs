@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -7,6 +8,7 @@ public enum DialogueType {
     BRANCH,
     GIVEITEM,
     SETFLAG,
+    ENDOFCONVERSATION,
 }
 
 
@@ -16,7 +18,6 @@ public class DialogueNodeData
     public DialogueType type;
     public string Guid;
     public string DialogueText;
-    // TODO: add choices parameter
     public Object cost;
     public Object trade;
     public string flag;

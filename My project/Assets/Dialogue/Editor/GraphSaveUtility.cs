@@ -135,6 +135,10 @@ public class GraphSaveUtility
                         (string) nodeData.flag);
                 tempNode.flag = (string) nodeData.flag;
                 break;
+            case DialogueType.ENDOFCONVERSATION:
+                tempNode = _targetGraphView.CreateEndOfConversationDialogueNode(
+                        nodeData.DialogueText);
+                break;
             }
 
             tempNode.GUID = nodeData.Guid;

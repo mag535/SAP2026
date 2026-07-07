@@ -25,6 +25,12 @@ MonoBehaviour:
   - BaseNodeGuid: 31f111ab-c24f-4df2-8ed6-c35773c2f530
     PortName: Choice 1
     TargetNodeGuid: c9d9738f-0835-4678-b717-00bed46b2dcd
+  - BaseNodeGuid: d7b468c5-a5f7-46ea-b44e-64ca56faa0fe
+    PortName: Next
+    TargetNodeGuid: 51dfc786-e5b1-4329-807d-6383ceeb1660
+  - BaseNodeGuid: c9d9738f-0835-4678-b717-00bed46b2dcd
+    PortName: Next
+    TargetNodeGuid: 1b92cc6c-287a-4065-a4a8-b2c90cc6d5f8
   DialogueNodeData:
   - type: 0
     Guid: 8dd3a9f3-3299-49b1-90b9-93888ad6daa8
@@ -54,3 +60,17 @@ MonoBehaviour:
     trade: {fileID: 0}
     flag: OPEN DOOR 3
     Position: {x: 725, y: 161}
+  - type: 4
+    Guid: 51dfc786-e5b1-4329-807d-6383ceeb1660
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1004, y: -53}
+  - type: 4
+    Guid: 1b92cc6c-287a-4065-a4a8-b2c90cc6d5f8
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1009, y: 155}

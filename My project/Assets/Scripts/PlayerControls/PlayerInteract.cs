@@ -33,7 +33,7 @@ namespace Carp {
                 if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.GAME) {
                     CallInteraction();
                 }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DIALOGUE) {
-                    bool success = DialogueManager2.Instance.ContinueDialogueThread();
+                    bool success = ConversationManager.Instance.ContinueConversation();
                     if (!success) {
                         ClueManager.Instance.ClearCurrentNPC();
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
@@ -81,7 +81,7 @@ namespace Carp {
                         engagedGO = hit.transform.gameObject;
                     }
                     
-                    if (hit.transform.gameObject.GetComponent<ConvoStarter>() == null) {
+                    if (hit.transform.gameObject.GetComponent<ConversationStarter>() == null) {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DESCRIPTION);
                     } else {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);

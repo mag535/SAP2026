@@ -6,11 +6,7 @@ using TMPro;
 namespace Carp {
     public class PlayerInventory : MonoBehaviour
     {
-        public GameObject inventoryDisplay;
-        public GameObject clueTextPrefab;
-        public List<GameObject> inventory = new List<GameObject>();
-
-        private Carp.PlayerInteract playerInteract;
+        public List<Object> inventory = new List<Object>();
 
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestAddItem>(AddItem);
@@ -18,6 +14,15 @@ namespace Carp {
         }
 
         public void AddItem(RequestAddItem evt) {
+            // Add item to inventory list
+            inventory.Add(evt.item);
+            Debug.Log("populated *inventoryDisplay* with item [" + evt.item.objectID + "]");
+
+            // TODO: send signal to inventory UI manager to create new
+            // item display
+            EvtSystem.EventDispatcher.Raise<RequestAddToInventoryDisplay>(
+                    new RequestAddToInventoryDisplay { objectData = evt.item });
+            /*
             GameObject newItem = Instantiate(clueTextPrefab, inventoryDisplay.transform);
             newItem.name = evt.item.objectID;
             newItem.GetComponent<TextMeshProUGUI>().text = evt.item.description;
@@ -27,12 +32,24 @@ namespace Carp {
 
             Button newItemBtn = newItem.GetComponent<Button>();
             newItemBtn.onClick.AddListener(newItemItem.AttemptItemUse);
-
-            inventory.Add(newItem);
-            Debug.Log("populated *inventoryDisplay* with item [" + evt.item.objectID + "]");
+            */
         }
 
         public void RemoveItem(RequestRemoveItem evt) {
+            // Remove item from list
+            for (int i = 0; i < inventory.Count; i++) {
+                if (inventory[i].objectID == evt.item.objectID) {
+                    inventory.RemoveAt(i);
+                    break;
+                }
+            }
+            Debug.Log("removed item [" + evt.item.objectID + "] from *inventory*");
+
+            // TODO: send signal to remove item from inventory display
+            EvtSystem.EventDispatcher.Raise<RequestRemoveFromInventoryDisplay>(
+                    new RequestRemoveFromInventoryDisplay { 
+                        objectData = evt.item });
+            /*
             GameObject target = null;
             for(int i = 0; i < inventory.Count; i++) {
                 if (inventory[i].name == evt.item.objectID) {
@@ -44,6 +61,7 @@ namespace Carp {
             if (target != null) {
                 Destroy(target);
             }
+            */
         }
 
         void OnDestroy() {

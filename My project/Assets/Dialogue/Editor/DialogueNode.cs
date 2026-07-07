@@ -14,9 +14,6 @@ public class DialogueNode : Node
     public string GUID;
     public string DialogueText;
 
-    // BRANCH
-    public List<string> choices; // GUID for the choice options dialogue nodes
-
     // GIVEITEM
     public Object cost;
     public Object trade;

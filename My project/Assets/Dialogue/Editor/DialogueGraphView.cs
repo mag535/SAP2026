@@ -86,7 +86,8 @@ public class DialogueGraphView : GraphView
         case DialogueType.SETFLAG:
             AddElement(CreateSetFlagDialogueNode(nodeName));
             break;
-        default:
+        case DialogueType.ENDOFCONVERSATION:
+            AddElement(CreateEndOfConversationDialogueNode(nodeName));
             break;
         }
     }
@@ -130,7 +131,6 @@ public class DialogueGraphView : GraphView
             type = DialogueType.BRANCH,
             GUID = Guid.NewGuid().ToString(),
             DialogueText = nodeName,
-            choices = new List<string>(),
             title = nodeName,
         };
 
@@ -257,6 +257,26 @@ public class DialogueGraphView : GraphView
         flagField.label = "Flag";
         flagField.value = flagValue;
         dialogueNode.mainContainer.Add(flagField);
+
+        dialogueNode.RefreshExpandedState();
+        dialogueNode.RefreshPorts();
+        dialogueNode.SetPosition(new Rect(Vector2.zero, defaultNodeSize));
+
+        return dialogueNode;
+    }
+
+    public DialogueNode CreateEndOfConversationDialogueNode(string nodeName) {
+        var dialogueNode = new DialogueNode {
+            type = DialogueType.ENDOFCONVERSATION,
+            GUID = Guid.NewGuid().ToString(),
+            DialogueText = nodeName,
+            title = nodeName,
+        };
+
+        // Input port
+        var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
+        inputPort.portName = "Input";
+        dialogueNode.inputContainer.Add(inputPort);
 
         dialogueNode.RefreshExpandedState();
         dialogueNode.RefreshPorts();

@@ -1,49 +1,43 @@
 using UnityEngine;
-using System.Collections.Generic;
 
 namespace Carp {
-    public class Chest : Interactable
+    public class Openable : Interactable
     {
-        public bool isLocked = true;
-        public string description;
+        public Sound unlockingSoundEffect;
+        public Object objectData;
         public Object key;
-        public List<Object> inventory = new List<Object>();
+
+        protected bool isLocked = true;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            isLocked = true;
+            
         }
 
         public override void Interact() {
             if (isLocked) {
                 EvtSystem.EventDispatcher.Raise<ToggleDescriptionBox>(new ToggleDescriptionBox {
-                        text = description });
+                        text = objectData.description });
                 return;
             }
-            DisplayInventory();
         }
 
         public override void HandleItemUse(Object item) {
-            if (item.objectID != key.objectID) { return; }
+            if (isLocked && item.objectID != key.objectID) { return; }
             Unlock();
         }
 
-        void Unlock() {
+        public virtual void Unlock() {
+            // TODO: change?
             SpriteRenderer sr = GetComponent<SpriteRenderer>();
             // make transparent
             Color newColor = new Color(sr.color.r, sr.color.g, sr.color.b, 0.5f);
             sr.color = newColor;
-            // lock
+
+            // unlock
             isLocked = false;
         }
 
-        void DisplayInventory() {
-            string text = "Chest Inventory:\n";
-            foreach (Object item in inventory) {
-                text += " - " + item.objectID + "\n";
-            }
-            Debug.Log(text);
-        }
     }
 }

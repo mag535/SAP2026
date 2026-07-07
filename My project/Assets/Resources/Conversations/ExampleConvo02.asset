@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: ExampleConvo02
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: f2422105-74a1-4a39-a7c5-98cfb4a64814
+    PortName: Next
+    TargetNodeGuid: 88f36a79-bfba-4120-ba0f-824f329bddf3
+  - BaseNodeGuid: 88f36a79-bfba-4120-ba0f-824f329bddf3
+    PortName: Next
+    TargetNodeGuid: 6ac9a43c-40ff-441a-9a95-3a2f34c4f8a1
+  - BaseNodeGuid: 6ac9a43c-40ff-441a-9a95-3a2f34c4f8a1
+    PortName: Next
+    TargetNodeGuid: 91ae3358-60ef-460e-814d-b0f4a859f16e
+  - BaseNodeGuid: 91ae3358-60ef-460e-814d-b0f4a859f16e
+    PortName: Next
+    TargetNodeGuid: 36f6aa8f-6adb-42d6-9132-9f6817c4d5d4
+  - BaseNodeGuid: 36f6aa8f-6adb-42d6-9132-9f6817c4d5d4
+    PortName: Choice 0
+    TargetNodeGuid: 45976bac-04df-44a0-af0e-9cefc79a0479
+  - BaseNodeGuid: 36f6aa8f-6adb-42d6-9132-9f6817c4d5d4
+    PortName: Choice 1
+    TargetNodeGuid: 61d6450f-ffb8-4f99-94bb-4b225d0a96c4
+  - BaseNodeGuid: 61d6450f-ffb8-4f99-94bb-4b225d0a96c4
+    PortName: Next
+    TargetNodeGuid: ecf7f8c0-10d5-4ada-8bcc-2235bada37d9
+  - BaseNodeGuid: 45976bac-04df-44a0-af0e-9cefc79a0479
+    PortName: Next
+    TargetNodeGuid: 781865b6-80d8-4d69-a04f-6a6e113e9f9f
+  DialogueNodeData:
+  - type: 0
+    Guid: 88f36a79-bfba-4120-ba0f-824f329bddf3
+    DialogueText: Hey, welcome to AAA!
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 246, y: 195}
+  - type: 0
+    Guid: 6ac9a43c-40ff-441a-9a95-3a2f34c4f8a1
+    DialogueText: This is a beautiful place to vacation.
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 467, y: 215}
+  - type: 0
+    Guid: 91ae3358-60ef-460e-814d-b0f4a859f16e
+    DialogueText: We've got arcades, fance restaurants, mini golf, and... a beach!
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 768, y: 148}
+  - type: 1
+    Guid: 36f6aa8f-6adb-42d6-9132-9f6817c4d5d4
+    DialogueText: So, what'dya say? The tickets are a good price! Only $4000.
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1292, y: 167}
+  - type: 0
+    Guid: 61d6450f-ffb8-4f99-94bb-4b225d0a96c4
+    DialogueText: Awesome! Just sign right here!
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1860, y: 303}
+  - type: 0
+    Guid: 45976bac-04df-44a0-af0e-9cefc79a0479
+    DialogueText: Well, you could afford it if you stopped being poor. *eye roll*
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1812, y: 141}
+  - type: 4
+    Guid: ecf7f8c0-10d5-4ada-8bcc-2235bada37d9
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 2108, y: 311}
+  - type: 4
+    Guid: 781865b6-80d8-4d69-a04f-6a6e113e9f9f
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 2223, y: 148}

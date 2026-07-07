@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: ExampleConvo05
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 036a83f7-dad7-43d1-8878-2bd932178a70
+    PortName: Next
+    TargetNodeGuid: b8a1e482-8272-4a97-8080-5a63df2dee8f
+  - BaseNodeGuid: b8a1e482-8272-4a97-8080-5a63df2dee8f
+    PortName: Choice 0
+    TargetNodeGuid: 3bc38436-a1bc-4cab-9f31-617843a6e033
+  - BaseNodeGuid: b8a1e482-8272-4a97-8080-5a63df2dee8f
+    PortName: Choice 1
+    TargetNodeGuid: 9d2e826f-cd49-477a-8f6e-72d76637c390
+  - BaseNodeGuid: 526844db-117d-43e9-901b-36bf9e178db6
+    PortName: Next
+    TargetNodeGuid: 84c7733e-b68c-4b5c-bc60-e4f3f56c6c39
+  - BaseNodeGuid: b8a1e482-8272-4a97-8080-5a63df2dee8f
+    PortName: Choice 2
+    TargetNodeGuid: 526844db-117d-43e9-901b-36bf9e178db6
+  DialogueNodeData:
+  - type: 4
+    Guid: 3bc38436-a1bc-4cab-9f31-617843a6e033
+    DialogueText: END_OF_CONVERSATION Dialogue Node
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 584, y: 71}
+  - type: 1
+    Guid: b8a1e482-8272-4a97-8080-5a63df2dee8f
+    DialogueText: Branch Dialogue Node
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 252, y: 176}
+  - type: 4
+    Guid: 9d2e826f-cd49-477a-8f6e-72d76637c390
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 618, y: 168}
+  - type: 0
+    Guid: 526844db-117d-43e9-901b-36bf9e178db6
+    DialogueText: Simple Dialogue Node
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 576, y: 269}
+  - type: 4
+    Guid: 84c7733e-b68c-4b5c-bc60-e4f3f56c6c39
+    DialogueText: END_OF_CONVERSATION Dialogue Node
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 784, y: 287}

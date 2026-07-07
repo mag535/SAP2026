@@ -55,6 +55,9 @@ public class DialogueGraph : EditorWindow
                 { _graphView.CreateNode(DialogueType.GIVEITEM, "Give-Item Dialogue Node"); });
         toolbarMenu.menu.AppendAction("Set-Flag", (a) => 
                 { _graphView.CreateNode(DialogueType.SETFLAG, "Set-Flag Dialogue Node"); });
+        toolbarMenu.menu.AppendAction("END_OF_CONVERSATION", (a) => 
+                { _graphView.CreateNode(DialogueType.ENDOFCONVERSATION, 
+                        "END OF CONVERSATION"); });
         toolbar.Add(toolbarMenu);
 
         rootVisualElement.Add(toolbar);

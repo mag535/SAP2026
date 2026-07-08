@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
   m_Name: ExampleSodaMachine
   m_EditorClassIdentifier: 
-  objectID: example-03
+  objectID: soda-machine
   description: Insert money for soda.
   sprite: {fileID: 0}
-  longDescription: Out of soda.
+  longDescription: Out of spda.
   spriteMagnified: {fileID: 0}
+  spriteIcon: {fileID: 0}

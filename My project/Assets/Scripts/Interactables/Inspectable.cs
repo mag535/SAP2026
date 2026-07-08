@@ -14,22 +14,23 @@ namespace Carp {
         }
 
         public override void Interact() {
+            AudioManager.Instance.Play(soundEffect.name);
+
+            // If this is a first time inspection:
+            // - add to notebook
+            // - set bool
             if (!hasBeenInspected) {
                 EvtSystem.EventDispatcher.Raise<RequestAddToNotebook>(
-                        new RequestAddToNotebook {
-                            spriteIcon = objectData.spriteIcon,
-                            longDescription = objectData.longDescription
-                        });
+                        new RequestAddToNotebook { objectData = objectData });
                 hasBeenInspected = true;
             }
 
-            // Send signal to have description and sprite displayed this is 
+            // Send signal to have description and sprite displayed. This is 
             // magnifying
             EvtSystem.EventDispatcher.Raise<RequestDisplayInspected>(
-                    new RequestDisplayInspected {
-                        spriteMagnified = objectData.spriteMagnified,
-                        longDescription = objectData.longDescription
-                    });
+                    new RequestDisplayInspected { 
+                    useLong = true,
+                    objectData = objectData });
         }
 
         public override void HandleItemUse(Object item) {}

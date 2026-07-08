@@ -19,6 +19,7 @@ public class PlayerUIManager : MonoBehaviour
     {
         EvtSystem.EventDispatcher.AddListener<RequestOpenInventory>(HandleOpenInventoryRequest);
         EvtSystem.EventDispatcher.AddListener<RequestAddToInventoryDisplay>(AddToInventoryDisplay);
+        EvtSystem.EventDispatcher.AddListener<RequestRemoveFromInventoryDisplay>(RemoveFromInventoryDisplay);
         EvtSystem.EventDispatcher.AddListener<RequestCloseInventory>(HandleCloseInventoryRequest);
         EvtSystem.EventDispatcher.AddListener<RequestOpenNotebook>(HandleOpenNotebookRequest);
         EvtSystem.EventDispatcher.AddListener<RequestAddToNotebookDisplay>(AddToNotebookDisplay);
@@ -46,6 +47,14 @@ public class PlayerUIManager : MonoBehaviour
             if (tmpImage != null) {
                 tmpImage.sprite = evt.objectData.spriteIcon;
                 continue;
+            }
+        }
+    }
+    void RemoveFromInventoryDisplay(RequestRemoveFromInventoryDisplay evt) {
+        foreach (Transform childTransform in inventoryParent.transform) {
+            if (childTransform.gameObject.name == evt.objectData.objectID) {
+                Destroy(childTransform.gameObject);
+                break;
             }
         }
     }
@@ -77,6 +86,7 @@ public class PlayerUIManager : MonoBehaviour
     void OnDestroy() {
         EvtSystem.EventDispatcher.RemoveListener<RequestOpenInventory>(HandleOpenInventoryRequest);
         EvtSystem.EventDispatcher.RemoveListener<RequestAddToInventoryDisplay>(AddToInventoryDisplay);
+        EvtSystem.EventDispatcher.RemoveListener<RequestRemoveFromInventoryDisplay>(RemoveFromInventoryDisplay);
         EvtSystem.EventDispatcher.RemoveListener<RequestCloseInventory>(HandleCloseInventoryRequest);
         EvtSystem.EventDispatcher.RemoveListener<RequestOpenNotebook>(HandleOpenNotebookRequest);
         EvtSystem.EventDispatcher.RemoveListener<RequestAddToNotebookDisplay>(AddToNotebookDisplay);

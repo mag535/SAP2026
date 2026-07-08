@@ -11,15 +11,15 @@ public class ToggleDescriptionBox : EvtSystem.Event
 }
 
 // DESCRIPTION UI --------------------------------------------------------------
-public class RequestDisplayDescription : EvtSystem.Event
-{
-    public string longDescription;
-}
-
 public class RequestDisplayInspected : EvtSystem.Event
 {
-    public string longDescription;
-    public Sprite spriteMagnified;
+    // true == use long description,
+    // false == use regular description
+    public bool useLong;
+    public Object objectData;
+}
+public class RequestCloseDisplayInspected : EvtSystem.Event
+{
 }
 
 // PLAYER INVENTORY & NOTEBOOK -------------------------------------------------
@@ -46,8 +46,7 @@ public class RequestOpenNotebook : EvtSystem.Event {}
 public class RequestCloseNotebook : EvtSystem.Event {}
 public class RequestAddToNotebook : EvtSystem.Event
 {
-    public string longDescription;
-    public Sprite spriteIcon;
+    public Object objectData;
 }
 public class RequestAddToNotebookDisplay : EvtSystem.Event
 {
@@ -64,9 +63,4 @@ public class RequestItemUse : EvtSystem.Event
 public class OpenChest : EvtSystem.Event
 {
     public string key;
-}
-
-public class RequestItemTrade : EvtSystem.Event
-{
-    public Object offer;
 }

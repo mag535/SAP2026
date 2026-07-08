@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
   m_Name: ExampleSoda
   m_EditorClassIdentifier: 
-  objectID: example-02
+  objectID: soda
   description: A soda
   sprite: {fileID: 0}
   longDescription: 
   spriteMagnified: {fileID: 0}
+  spriteIcon: {fileID: 0}

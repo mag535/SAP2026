@@ -15,3 +15,6 @@ MonoBehaviour:
   objectID: door-01
   description: A locked door
   sprite: {fileID: 0}
+  longDescription: It needs a key to open.
+  spriteMagnified: {fileID: 0}
+  spriteIcon: {fileID: 0}

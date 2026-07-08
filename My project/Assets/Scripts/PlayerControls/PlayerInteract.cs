@@ -35,15 +35,14 @@ namespace Carp {
                 }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DIALOGUE) {
                     bool success = ConversationManager.Instance.ContinueConversation();
                     if (!success) {
-                        //ClueManager.Instance.ClearCurrentNPC();
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
                         Debug.Log("State: " + playerStateManager.GetCurrentState());
                         engagedGO = null;
                     }
                 }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
                     // TODO: close description window
-                    EvtSystem.EventDispatcher.Raise<ToggleDescriptionBox>(new ToggleDescriptionBox {
-                            text = "" });
+                    EvtSystem.EventDispatcher.Raise<RequestCloseDisplayInspected>(
+                            new RequestCloseDisplayInspected {});
                     playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
                     Debug.Log("State: " + playerStateManager.GetCurrentState());
                     engagedGO = null;
@@ -84,8 +83,10 @@ namespace Carp {
                     // Conversation Starters go to DIALOGUE state
                     if (hit.transform.gameObject.GetComponent<ConversationStarter>() != null) {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
-                    // Inspectables go to DESCRIPTION state
-                    } else if (hit.transform.gameObject.GetComponent<Inspectable>() != null) {
+                    // Inspectables, Openables, Trader go to DESCRIPTION state
+                    } else if (hit.transform.gameObject.GetComponent<Inspectable>() != null ||
+                            hit.transform.gameObject.GetComponent<Openable>() != null ||
+                            hit.transform.gameObject.GetComponent<Trader>() != null) {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DESCRIPTION);
                     }
                     // All others stay in GAME state

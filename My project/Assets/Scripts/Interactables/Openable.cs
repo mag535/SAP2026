@@ -17,9 +17,11 @@ namespace Carp {
 
         public override void Interact() {
             if (isLocked) {
-                EvtSystem.EventDispatcher.Raise<ToggleDescriptionBox>(new ToggleDescriptionBox {
-                        text = objectData.description });
-                return;
+                AudioManager.Instance.Play(soundEffect.name);
+                EvtSystem.EventDispatcher.Raise<RequestDisplayInspected>(
+                        new RequestDisplayInspected { objectData = objectData });
+            } else {
+                AudioManager.Instance.Play(unlockingSoundEffect.name);
             }
         }
 
@@ -32,7 +34,7 @@ namespace Carp {
             // TODO: change?
             SpriteRenderer sr = GetComponent<SpriteRenderer>();
             // make transparent
-            Color newColor = new Color(sr.color.r, sr.color.g, sr.color.b, 0.5f);
+            Color newColor = new Color(sr.color.r, sr.color.g, sr.color.b, 0.25f);
             sr.color = newColor;
 
             // unlock

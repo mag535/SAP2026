@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbab95af1d3dea5ab1353b7cc592478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundEffect: {fileID: 11400000, guid: 4b059cb4fa515321180598757f024dbb, type: 2}
   hasAlreadyTraded: 0
   objectData: {fileID: 11400000, guid: 6504279deebd3ea3fa1f784b0e58fe53, type: 2}
   possibleTrades:

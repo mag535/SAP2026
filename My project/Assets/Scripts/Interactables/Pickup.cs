@@ -18,8 +18,11 @@ namespace Carp {
             // sfx
             AudioManager.Instance.Play(soundEffect.name);
             // display description
+            // TODO: Show Add-To-Inventory notification
+            /*
             EvtSystem.EventDispatcher.Raise<ToggleDescriptionBox>(new ToggleDescriptionBox {
                     text = objectData.description });
+            */
             // add to inventory
             EvtSystem.EventDispatcher.Raise<RequestAddItem>(new RequestAddItem {
                     item = objectData });

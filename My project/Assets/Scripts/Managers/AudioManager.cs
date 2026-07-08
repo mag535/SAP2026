@@ -25,8 +25,8 @@ public class AudioManager : Singleton<AudioManager>
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
-        // Play BGM
-        Play(startBGM);
+        // FIXME: Play BGM
+        //Play(startBGM);
     }
 
     public void Play(string name) {

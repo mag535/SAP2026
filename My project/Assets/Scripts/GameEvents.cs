@@ -23,6 +23,8 @@ public class RequestDisplayInspected : EvtSystem.Event
 }
 
 // PLAYER INVENTORY & NOTEBOOK -------------------------------------------------
+public class RequestOpenInventory : EvtSystem.Event {}
+public class RequestCloseInventory : EvtSystem.Event {}
 public class RequestAddItem : EvtSystem.Event
 {
     public Object item;
@@ -31,18 +33,23 @@ public class RequestRemoveItem : EvtSystem.Event
 {
     public Object item;
 }
-
-public class RequestAddToNotebook : EvtSystem.Event
-{
-    public string longDescription;
-    public Sprite spriteIcon;
-}
-
 public class RequestAddToInventoryDisplay : EvtSystem.Event
 {
     public Object objectData;
 }
 public class RequestRemoveFromInventoryDisplay : EvtSystem.Event
+{
+    public Object objectData;
+}
+
+public class RequestOpenNotebook : EvtSystem.Event {}
+public class RequestCloseNotebook : EvtSystem.Event {}
+public class RequestAddToNotebook : EvtSystem.Event
+{
+    public string longDescription;
+    public Sprite spriteIcon;
+}
+public class RequestAddToNotebookDisplay : EvtSystem.Event
 {
     public Object objectData;
 }

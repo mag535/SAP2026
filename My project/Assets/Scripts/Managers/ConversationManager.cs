@@ -10,39 +10,66 @@ public class ConversationManager : Singleton<ConversationManager>
     public TextMeshProUGUI textBox;
 
     //private string conversationsFolder = "Conversations/";
-    private DialogueContainer currentConversation;
+    private DialogueContainer _currentConversation;
+    private string _currentGuid;
 
     public void StartConversation(DialogueContainer start) {
-        currentConversation = start;
-        DisplayDialogue();
+        _currentConversation = start;
+        ParseConversationData();
+        SetDialogue();
         ShowDialogueWindow();
     }
 
-    // FIXME: use DialogueContainer data
     public bool ContinueConversation() {
-        // TODO: end dialogue when END_OF_CONVERSATION reached
-        
-        // TODO: go to next
-        Debug.Log("continue conversation");
+        // Advance to next dialogue node data
+        // FIXME: account for options (BRANCH type)
+        Debug.Log("continuing conversation...");
+        NodeLinkData currentLinkData = _currentConversation.NodeLinks.Find(
+                x => x.BaseNodeGuid == _currentGuid);
+        // If none found, end conversation
+        if (currentLinkData == null) { 
+            EndConversation();
+            return false;
+        }
 
-        // TODO: display dialogue
+        DialogueNodeData nextNode = _currentConversation.DialogueNodeData.Find(
+                x => x.Guid == currentLinkData.TargetNodeGuid);
+        // If next node marks end of conversation, end conversation
+        if (nextNode.type == DialogueType.ENDOFCONVERSATION) { 
+            EndConversation(); 
+            return false;
+        }
+
+        // Otherwise, update what current GUID is:
+        _currentGuid = nextNode.Guid;
+
+        // Display dialogue
+        SetDialogue();
+        ShowDialogueWindow();
         return true;
     }
 
     public void EndConversation() {
         Debug.Log("end conversation");
-        currentConversation = null;
+        _currentConversation = null;
+        _currentGuid = string.Empty;
         HideDialogueWindow();
     }
 
-    // TODO: end current converstaion and start new one
+    // End current converstaion and start new one
     public void InterruptConversation(DialogueContainer newConversation) {
+        EndConversation();
+        _currentConversation = newConversation;
+        ParseConversationData();
+        SetDialogue();
+        ShowDialogueWindow();
     }
 
-    // FIXME: parse dialogue node types and get data
-    public void DisplayDialogue() {
+    public void SetDialogue() {
         // TODO: set speaker
-        // TODO: display dialogue text
+        // Display dialogue text
+        textBox.text = _currentConversation.DialogueNodeData.Find(x =>
+                x.Guid == _currentGuid).DialogueText;
     }
 
     public void ShowDialogueWindow() {
@@ -51,15 +78,44 @@ public class ConversationManager : Singleton<ConversationManager>
     }
 
     public void HideDialogueWindow() {
+        textBox.text = string.Empty;
         background.SetActive(false);
         dialogueBox.SetActive(false);
     }
 
+    // Get some information on current dialogue node then parse
+    // current conversation to get next node
+    // HELP! How to I determine the first node in the graph??
+    // Work backwards from ENDOFCONVERSATION type?
     private void ParseConversationData() {
-        if (currentConversation == null) { return; }
-        // TODO: get some information on current dialogue node then parse
-        // current conversation to get next node
-        // TODO: HELP! How to I determine the first node in the graph??
-        // Work backwards from ENDOFCONVERSATION type?
+        if (_currentConversation == null) { return; }
+
+        // Find one END_OF_CONVERSATION nodes
+        DialogueNodeData _endOfConversation = null;
+        foreach (DialogueNodeData data in _currentConversation.DialogueNodeData) {
+            if (data.type != DialogueType.ENDOFCONVERSATION) { continue; }
+            _endOfConversation = data;
+        }
+        // If no ends found, return
+        if (_endOfConversation == null) { return; }
+
+        // Find first node in dialogue tree
+        _currentGuid = FindFirstNode(_endOfConversation.Guid);
+    }
+
+    string FindFirstNode(string endGuid) {
+        string firstNodeGuid = endGuid;
+
+        for (int i = 0; i < _currentConversation.NodeLinks.Count; i++) {
+            // if found newer node, update first node guid and reset loop
+            if (_currentConversation.NodeLinks[i].TargetNodeGuid ==
+                    firstNodeGuid) {
+                firstNodeGuid = _currentConversation.NodeLinks[i].BaseNodeGuid;
+                i = 0;
+            }
+            // otherwise, continue checking
+        }
+
+        return firstNodeGuid;
     }
 }

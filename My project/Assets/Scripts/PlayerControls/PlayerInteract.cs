@@ -35,7 +35,7 @@ namespace Carp {
                 }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DIALOGUE) {
                     bool success = ConversationManager.Instance.ContinueConversation();
                     if (!success) {
-                        ClueManager.Instance.ClearCurrentNPC();
+                        //ClueManager.Instance.ClearCurrentNPC();
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
                         Debug.Log("State: " + playerStateManager.GetCurrentState());
                         engagedGO = null;
@@ -81,11 +81,14 @@ namespace Carp {
                         engagedGO = hit.transform.gameObject;
                     }
                     
-                    if (hit.transform.gameObject.GetComponent<ConversationStarter>() == null) {
-                        playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DESCRIPTION);
-                    } else {
+                    // Conversation Starters go to DIALOGUE state
+                    if (hit.transform.gameObject.GetComponent<ConversationStarter>() != null) {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
+                    // Inspectables go to DESCRIPTION state
+                    } else if (hit.transform.gameObject.GetComponent<Inspectable>() != null) {
+                        playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DESCRIPTION);
                     }
+                    // All others stay in GAME state
 
                     Debug.Log("State: " + playerStateManager.GetCurrentState());
                     hit.transform.gameObject.GetComponent<Interactable>().Interact();

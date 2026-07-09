@@ -12,6 +12,7 @@ public class DialogueNode : Node
     // all / SIMPLE
     public DialogueType type;
     public string GUID;
+    public string speaker;
     public string DialogueText;
 
     // GIVEITEM

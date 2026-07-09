@@ -17,6 +17,7 @@ public class DialogueNodeData
 {
     public DialogueType type;
     public string Guid;
+    public string speaker;
     public string DialogueText;
     public Object cost;
     public Object trade;

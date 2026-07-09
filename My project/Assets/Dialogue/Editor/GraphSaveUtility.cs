@@ -41,6 +41,7 @@ public class GraphSaveUtility
             dialogueContainer.DialogueNodeData.Add(new DialogueNodeData {
                     type = dialogueNode.type,
                     Guid = dialogueNode.GUID,
+                    speaker = dialogueNode.speaker,
                     DialogueText = dialogueNode.DialogueText,
                     // TODO: cost
                     cost = dialogueNode.cost,
@@ -111,11 +112,11 @@ public class GraphSaveUtility
             switch (nodeData.type) {
             case DialogueType.SIMPLE:
                 tempNode = _targetGraphView.CreateSimpleDialogueNode(
-                        nodeData.DialogueText);
+                        nodeData.DialogueText, nodeData.speaker);
                 break;
             case DialogueType.BRANCH:
                 tempNode = _targetGraphView.CreateBranchDialogueNode(
-                        nodeData.DialogueText);
+                        nodeData.DialogueText, nodeData.speaker);
                 var nodePorts = _containerCache.NodeLinks.Where(x => 
                         x.BaseNodeGuid == nodeData.Guid).ToList();
                 nodePorts.ForEach(x => _targetGraphView.AddChoicePort(tempNode, 
@@ -124,6 +125,7 @@ public class GraphSaveUtility
             case DialogueType.GIVEITEM:
                 tempNode = _targetGraphView.CreateGiveItemDialogueNode(
                         nodeData.DialogueText,
+                        nodeData.speaker,
                         (Object) nodeData.cost,
                         (Object) nodeData.trade);
                 tempNode.cost = (Object) nodeData.cost;
@@ -132,6 +134,7 @@ public class GraphSaveUtility
             case DialogueType.SETFLAG:
                 tempNode = _targetGraphView.CreateSetFlagDialogueNode(
                         nodeData.DialogueText,
+                        nodeData.speaker,
                         (string) nodeData.flag);
                 tempNode.flag = (string) nodeData.flag;
                 break;
@@ -141,6 +144,7 @@ public class GraphSaveUtility
                 break;
             }
 
+            tempNode.speaker = nodeData.speaker;
             tempNode.GUID = nodeData.Guid;
             _targetGraphView.AddElement(tempNode);
 

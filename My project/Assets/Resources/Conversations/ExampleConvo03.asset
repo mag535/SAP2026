@@ -30,14 +30,8 @@ MonoBehaviour:
     TargetNodeGuid: 78824e59-7a4c-40a3-b45f-7d546e025348
   DialogueNodeData:
   - type: 0
-    Guid: 8dd3a9f3-3299-49b1-90b9-93888ad6daa8
-    DialogueText: This is the first node.
-    cost: {fileID: 0}
-    trade: {fileID: 0}
-    flag: 
-    Position: {x: 213, y: 182}
-  - type: 0
     Guid: 3fe31c74-a3c2-4b7f-8f81-b9aa6d79e00e
+    speaker: NPC1
     DialogueText: This is the second node.
     cost: {fileID: 0}
     trade: {fileID: 0}
@@ -45,6 +39,7 @@ MonoBehaviour:
     Position: {x: 395, y: 184}
   - type: 0
     Guid: 9ad9625b-a8d5-4a4f-84b7-a02071330719
+    speaker: NPC1
     DialogueText: This is the third node.
     cost: {fileID: 0}
     trade: {fileID: 0}
@@ -52,6 +47,7 @@ MonoBehaviour:
     Position: {x: 590, y: 184}
   - type: 0
     Guid: c26456c6-3639-4c81-9e28-07051cb0a3af
+    speaker: NPC1
     DialogueText: This is the fourth node.
     cost: {fileID: 0}
     trade: {fileID: 0}
@@ -59,8 +55,17 @@ MonoBehaviour:
     Position: {x: 777, y: 186}
   - type: 4
     Guid: 78824e59-7a4c-40a3-b45f-7d546e025348
+    speaker: 
     DialogueText: END OF CONVERSATION
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
     Position: {x: 971, y: 189}
+  - type: 0
+    Guid: 8dd3a9f3-3299-49b1-90b9-93888ad6daa8
+    speaker: NPC1
+    DialogueText: This is the first node.
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 213, y: 182}

@@ -8,6 +8,7 @@ public class ConversationManager : Singleton<ConversationManager>
     public GameObject background;
     public GameObject dialogueBox;
     public TextMeshProUGUI textBox;
+    public TextMeshProUGUI nameTag;
 
     //private string conversationsFolder = "Conversations/";
     private DialogueContainer _currentConversation;
@@ -67,6 +68,8 @@ public class ConversationManager : Singleton<ConversationManager>
 
     public void SetDialogue() {
         // TODO: set speaker
+        nameTag.text = _currentConversation.DialogueNodeData.Find(x =>
+                x.Guid == _currentGuid).speaker;
         // Display dialogue text
         textBox.text = _currentConversation.DialogueNodeData.Find(x =>
                 x.Guid == _currentGuid).DialogueText;

@@ -92,13 +92,24 @@ public class DialogueGraphView : GraphView
         }
     }
 
-    public DialogueNode CreateSimpleDialogueNode(string nodeName) {
+    public DialogueNode CreateSimpleDialogueNode(string nodeName, 
+            string speakerName = "") {
         var dialogueNode = new DialogueNode {
             type = DialogueType.SIMPLE,
             GUID = Guid.NewGuid().ToString(),
+            speaker = speakerName,
             DialogueText = nodeName,
             title = nodeName,
         };
+
+        // Field to add speaker name
+        var speakerField = new TextField(string.Empty);
+        speakerField.label = "Speaker Name";
+        speakerField.value = speakerName;
+        speakerField.RegisterValueChangedCallback(evt => {
+            dialogueNode.speaker = evt.newValue;
+        });
+        dialogueNode.mainContainer.Add(speakerField);
 
         // Field to add the actual dialogue
         var textField = new TextField(string.Empty);
@@ -126,13 +137,24 @@ public class DialogueGraphView : GraphView
         return dialogueNode;
     }
 
-    public DialogueNode CreateBranchDialogueNode(string nodeName) {
+    public DialogueNode CreateBranchDialogueNode(string nodeName,
+            string speakerName = "") {
         var dialogueNode = new DialogueNode {
             type = DialogueType.BRANCH,
             GUID = Guid.NewGuid().ToString(),
+            speaker = speakerName,
             DialogueText = nodeName,
             title = nodeName,
         };
+
+        // Field to add speaker name
+        var speakerField = new TextField(string.Empty);
+        speakerField.label = "Speaker Name";
+        speakerField.value = speakerName;
+        speakerField.RegisterValueChangedCallback(evt => {
+            dialogueNode.speaker = evt.newValue;
+        });
+        dialogueNode.mainContainer.Add(speakerField);
 
         // Field to add the actual dialogue
         var textField = new TextField(string.Empty);
@@ -164,10 +186,12 @@ public class DialogueGraphView : GraphView
     }
 
     public DialogueNode CreateGiveItemDialogueNode(string nodeName, 
-            Object costValue = null, Object tradeValue = null) {
+            string speakerName = "", Object costValue = null, 
+            Object tradeValue = null) {
         var dialogueNode = new DialogueNode {
             type = DialogueType.GIVEITEM,
             GUID = Guid.NewGuid().ToString(),
+            speaker = speakerName,
             DialogueText = nodeName,
             cost = null,
             trade = null,
@@ -183,6 +207,15 @@ public class DialogueGraphView : GraphView
         var outputPort = GeneratePort(dialogueNode, Direction.Output, Port.Capacity.Single);
         outputPort.portName = "Next";
         dialogueNode.outputContainer.Add(outputPort);
+
+        // Field to add speaker name
+        var speakerField = new TextField(string.Empty);
+        speakerField.label = "Speaker Name";
+        speakerField.value = speakerName;
+        speakerField.RegisterValueChangedCallback(evt => {
+            dialogueNode.speaker = evt.newValue;
+        });
+        dialogueNode.mainContainer.Add(speakerField);
 
         // Field to add the actual dialogue
         var textField = new TextField(string.Empty);
@@ -221,10 +254,11 @@ public class DialogueGraphView : GraphView
     }
 
     public DialogueNode CreateSetFlagDialogueNode(string nodeName, 
-            string flagValue = "") {
+            string speakerName = "", string flagValue = "") {
         var dialogueNode = new DialogueNode {
             type = DialogueType.SETFLAG,
             GUID = Guid.NewGuid().ToString(),
+            speaker = speakerName,
             DialogueText = nodeName,
             flag = string.Empty,
             title = nodeName,
@@ -239,6 +273,15 @@ public class DialogueGraphView : GraphView
         var outputPort = GeneratePort(dialogueNode, Direction.Output, Port.Capacity.Single);
         outputPort.portName = "Next";
         dialogueNode.outputContainer.Add(outputPort);
+
+        // Field to add speaker name
+        var speakerField = new TextField(string.Empty);
+        speakerField.label = "Speaker Name";
+        speakerField.value = speakerName;
+        speakerField.RegisterValueChangedCallback(evt => {
+            dialogueNode.speaker = evt.newValue;
+        });
+        dialogueNode.mainContainer.Add(speakerField);
 
         // Field to add the actual dialogue
         var textField = new TextField(string.Empty);

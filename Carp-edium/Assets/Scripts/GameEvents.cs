@@ -5,9 +5,10 @@ using UnityEngine.Events;
 
 
 // FIXME: UIs --------------------------------------------------------
-public class ToggleDescriptionBox : EvtSystem.Event
+public class TrackUIMenuOpen : EvtSystem.Event
 {
-    public string text;
+    // false means menu is closing
+    public bool isOpening;
 }
 
 // DESCRIPTION UI --------------------------------------------------------------
@@ -63,4 +64,9 @@ public class RequestItemUse : EvtSystem.Event
 public class OpenChest : EvtSystem.Event
 {
     public string key;
+}
+
+public class PropagateFlag : EvtSystem.Event
+{
+    public string flag;
 }

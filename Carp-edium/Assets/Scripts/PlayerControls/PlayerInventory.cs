@@ -16,7 +16,6 @@ namespace Carp {
         public void AddItem(RequestAddItem evt) {
             // Add item to inventory list
             inventory.Add(evt.item);
-            //Debug.Log("populated *inventoryDisplay* with item [" + evt.item.objectID + "]");
 
             // Send signal to inventory UI manager to create new
             // item display

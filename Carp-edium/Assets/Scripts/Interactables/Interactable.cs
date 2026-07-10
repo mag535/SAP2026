@@ -6,6 +6,6 @@ namespace Carp {
         public Sound soundEffect;
 
         public abstract void Interact();
-        public abstract void HandleItemUse(Object item);
+        public abstract bool HandleItemUse(Object item);
     }
 }

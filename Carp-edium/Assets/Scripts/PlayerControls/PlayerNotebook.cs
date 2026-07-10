@@ -7,7 +7,7 @@ namespace Carp {
 
         // Only `spriteIcon` and `longDescription` will be relevant for a note
         // entry.
-        private List<Object> noteEntries = new List<Object>();
+        public List<Object> noteEntries = new List<Object>();
 
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestAddToNotebook>(AddNote);

@@ -27,16 +27,22 @@ public class PlayerUIManager : MonoBehaviour
     }
 
     void HandleOpenInventoryRequest(RequestOpenInventory evt) {
+        EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
+                isOpening = true });
         inventoryDisplay.SetActive(true);
     }
     void HandleCloseInventoryRequest(RequestCloseInventory evt) {
+        EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
+                isOpening = false });
         inventoryDisplay.SetActive(false);
     }
     void AddToInventoryDisplay(RequestAddToInventoryDisplay evt) {
         GameObject newItem = Instantiate(itemDisplayPrefab, inventoryParent.transform);
+
         newItem.name = evt.objectData.objectID;
         Item newItemItem = newItem.GetComponent<Item>();
         newItemItem.objectData = evt.objectData;
+
         foreach (Transform childTransform in newItem.transform) {
             TextMeshProUGUI tmpText = childTransform.GetComponent<TextMeshProUGUI>();
             if (tmpText != null) {
@@ -61,18 +67,26 @@ public class PlayerUIManager : MonoBehaviour
 
     // Notebook
     void HandleOpenNotebookRequest(RequestOpenNotebook evt) {
+        EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
+                isOpening = true });
         notebookDisplay.SetActive(true);
     }
     void HandleCloseNotebookRequest(RequestCloseNotebook evt) {
+        EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
+                isOpening = false });
         notebookDisplay.SetActive(false);
     }
     void AddToNotebookDisplay(RequestAddToNotebookDisplay evt) {
         GameObject newEntry = Instantiate(noteEntryPrefab, notebookParent.transform);
         newEntry.name = evt.objectData.objectID;
+
+        Item newEntryItem = newEntry.GetComponent<Item>();
+        newEntryItem.objectData = evt.objectData;
+
         foreach (Transform childTransform in newEntry.transform) {
             TextMeshProUGUI tmpText = childTransform.GetComponent<TextMeshProUGUI>();
             if (tmpText != null) {
-                tmpText.text = evt.objectData.objectID;
+                tmpText.text = evt.objectData.longDescription;
                 continue;
             }
             Image tmpImage = childTransform.GetComponent<Image>();

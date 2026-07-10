@@ -4,6 +4,7 @@ using System.Collections.Generic;
 namespace Carp {
     public class ConversationStarter : Interactable
     {
+        [System.Serializable]
         public struct ItemConvoPair {
             public Object itemTrigger;
             public DialogueContainer conversation;
@@ -19,17 +20,30 @@ namespace Carp {
             ConversationManager.Instance.StartConversation(conversationStart);
         }
 
-        public override void HandleItemUse(Object item) {
+        public override bool HandleItemUse(Object item) {
+            bool wrongItemFlag = true;
             DialogueContainer correspondingConversation = null;
+            DialogueContainer wrongItemConversation = null;
+
             foreach (ItemConvoPair pair in itemConvoPairList) {
+                if (pair.itemTrigger == null) {
+                    wrongItemConversation = pair.conversation;
+                    continue;
+                }
                 if (item.objectID == pair.itemTrigger.objectID) {
                     correspondingConversation = pair.conversation;
-                    break;
+                    wrongItemFlag = false;
                 }
+            }
+
+            if (wrongItemFlag) {
+                correspondingConversation = wrongItemConversation;
             }
 
             ConversationManager.Instance.InterruptConversation(
                     correspondingConversation);
+
+            return !wrongItemFlag;
         }
     }
 }

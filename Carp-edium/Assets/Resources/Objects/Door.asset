@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
   m_Name: Door
   m_EditorClassIdentifier: 
+  isNoteEntry: 0
   objectID: door-01
   description: A locked door
   sprite: {fileID: 0}

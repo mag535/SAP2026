@@ -35,9 +35,10 @@ namespace Carp {
                     objectData = objectData });
         }
 
-        public override void HandleItemUse(Object item) {
+        public override bool HandleItemUse(Object item) {
             // Attempt trade, set hasAlreadyTraded as result
             hasAlreadyTraded = MakeTrade(item);
+            return hasAlreadyTraded;
         }
 
         public bool MakeTrade(Object offer) {

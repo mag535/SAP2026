@@ -17,16 +17,19 @@ namespace Carp {
 
         public override void Interact() {
             if (isLocked) {
+                /* FIXME
                 EvtSystem.EventDispatcher.Raise<ToggleDescriptionBox>(new ToggleDescriptionBox {
                         text = description });
+                */
                 return;
             }
             DisplayInventory();
         }
 
-        public override void HandleItemUse(Object item) {
-            if (item.objectID != key.objectID) { return; }
+        public override bool HandleItemUse(Object item) {
+            if (item.objectID != key.objectID) { return false; }
             Unlock();
+            return true;
         }
 
         void Unlock() {

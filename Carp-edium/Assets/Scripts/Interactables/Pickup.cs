@@ -17,12 +17,6 @@ namespace Carp {
         public override void Interact() {
             // sfx
             AudioManager.Instance.Play(soundEffect.name);
-            // display description
-            // TODO: Show Add-To-Inventory notification
-            /*
-            EvtSystem.EventDispatcher.Raise<ToggleDescriptionBox>(new ToggleDescriptionBox {
-                    text = objectData.description });
-            */
             // add to inventory
             EvtSystem.EventDispatcher.Raise<RequestAddItem>(new RequestAddItem {
                     item = objectData });
@@ -30,6 +24,6 @@ namespace Carp {
             Destroy(gameObject, destroyDelay);
         }
 
-        public override void HandleItemUse(Object item) {}
+        public override bool HandleItemUse(Object item) { return false; }
     }
 }

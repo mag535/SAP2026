@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 927937507187468432}
   - component: {fileID: 937473934537937284}
   - component: {fileID: 2281768357408128118}
+  - component: {fileID: 8322970319975573531}
   m_Layer: 0
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -300,6 +301,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe65c212f3bdf73b97d4f85f51f495b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryDisplay: {fileID: 0}
-  clueTextPrefab: {fileID: 2047336519405768073, guid: fdada74e31b8b4afd96bd4158eba3db1, type: 3}
   inventory: []
+--- !u!114 &8322970319975573531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548012394192768574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a687fd6d265381b291878e1e2b9a716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteEntries: []

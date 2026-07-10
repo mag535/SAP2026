@@ -17,6 +17,8 @@ public class ConversationManager : Singleton<ConversationManager>
     public void StartConversation(DialogueContainer start) {
         _currentConversation = start;
         ParseConversationData();
+        HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find(
+                    x => x.Guid == _currentGuid));
         SetDialogue();
         ShowDialogueWindow();
     }
@@ -45,6 +47,7 @@ public class ConversationManager : Singleton<ConversationManager>
         _currentGuid = nextNode.Guid;
 
         // Display dialogue
+        HandleSpecialDialogue(nextNode);
         SetDialogue();
         ShowDialogueWindow();
         return true;
@@ -59,9 +62,12 @@ public class ConversationManager : Singleton<ConversationManager>
 
     // End current converstaion and start new one
     public void InterruptConversation(DialogueContainer newConversation) {
+        if (newConversation == null) { return; }
         EndConversation();
         _currentConversation = newConversation;
         ParseConversationData();
+        HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find( x =>
+                    x.Guid == _currentGuid));
         SetDialogue();
         ShowDialogueWindow();
     }
@@ -121,4 +127,35 @@ public class ConversationManager : Singleton<ConversationManager>
 
         return firstNodeGuid;
     }
+
+    void HandleSpecialDialogue(DialogueNodeData node) {
+        switch (node.type) {
+        case DialogueType.BRANCH:
+            Debug.Log("Not yet implemented.");
+            break;
+        case DialogueType.GIVEITEM:
+            HandleGiveItemDialogue(node);
+            break;
+        case DialogueType.SETFLAG:
+            break;
+        }
+    }
+
+    void HandleGiveItemDialogue(DialogueNodeData node) {
+        if (node.cost == null) {
+            EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
+                    RequestAddItem { item = node.trade });
+            return;
+        }
+
+        // TODO: what to do? How to handle cost item?
+    }
+
+    void HandleSetFlagDialogue(DialogueNodeData node) {
+        if (node.flag == string.Empty) { return; }
+
+        EvtSystem.EventDispatcher.Raise<PropagateFlag>( new
+                PropagateFlag { flag = node.flag });
+    }
+
 }

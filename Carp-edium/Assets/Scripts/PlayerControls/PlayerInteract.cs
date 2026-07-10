@@ -100,7 +100,14 @@ namespace Carp {
 
         public void UseItem(RequestItemUse evt) {
             if (engagedGO == null) { return; }
-            engagedGO.GetComponent<Interactable>().HandleItemUse(evt.item);
+            bool success = engagedGO.GetComponent<Interactable>()
+                .HandleItemUse(evt.item);
+            // Avoids removing clues in Notebook by only requesting removal
+            // from Inventory.
+            if (success) {
+                EvtSystem.EventDispatcher.Raise<RequestRemoveItem>(new 
+                        RequestRemoveItem { item = evt.item });
+            }
         }
 
         void OnDestroy() {

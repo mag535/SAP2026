@@ -19,15 +19,20 @@ namespace Carp {
             if (isLocked) {
                 AudioManager.Instance.Play(soundEffect.name);
                 EvtSystem.EventDispatcher.Raise<RequestDisplayInspected>(
-                        new RequestDisplayInspected { objectData = objectData });
+                        new RequestDisplayInspected { 
+                        useLong = true,
+                        objectData = objectData });
+                EvtSystem.EventDispatcher.Raise<RequestAddToNotebook>(
+                        new RequestAddToNotebook { objectData = objectData });
             } else {
                 AudioManager.Instance.Play(unlockingSoundEffect.name);
             }
         }
 
-        public override void HandleItemUse(Object item) {
-            if (isLocked && item.objectID != key.objectID) { return; }
+        public override bool HandleItemUse(Object item) {
+            if (isLocked && item.objectID != key.objectID) { return false; }
             Unlock();
+            return true;
         }
 
         public virtual void Unlock() {

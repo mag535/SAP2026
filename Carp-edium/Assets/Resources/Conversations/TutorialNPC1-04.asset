@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: TutorialNPC1-04
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: eedd5047-a09d-4270-b367-97aac7f3289b
+    PortName: Next
+    TargetNodeGuid: c6e23ee7-9715-4c03-8192-085f61ee35f7
+  - BaseNodeGuid: c6e23ee7-9715-4c03-8192-085f61ee35f7
+    PortName: Next
+    TargetNodeGuid: b648622c-82f8-4a62-aa1a-ad0d90a68ee5
+  DialogueNodeData:
+  - type: 2
+    Guid: c6e23ee7-9715-4c03-8192-085f61ee35f7
+    speaker: NPC1
+    DialogueText: Pleaure doing business with you.
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 79bed17687e9e51028e30d092a592891, type: 2}
+    flag: 
+    Position: {x: 259, y: 191}
+  - type: 4
+    Guid: b648622c-82f8-4a62-aa1a-ad0d90a68ee5
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 538, y: 180}

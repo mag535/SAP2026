@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 4448644608504110566}
   - component: {fileID: 6127061753781660325}
   - component: {fileID: 899386962393782505}
+  - component: {fileID: 5563154669381864443}
   m_Layer: 5
   m_Name: InventoryPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3066179819461791288
 RectTransform:
   m_ObjectHideFlags: 0
@@ -90,6 +91,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2e7f532053bc0d4b103099986ed574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1818360610 &5563154669381864443
+ScaleConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177736408134821110}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_ScaleAtRest: {x: 1, y: 1, z: 1}
+  m_ScaleOffset: {x: 1, y: 1, z: 1}
+  m_AffectScalingX: 1
+  m_AffectScalingY: 1
+  m_AffectScalingZ: 1
+  m_Active: 1
+  m_IsLocked: 1
+  m_Sources: []
 --- !u!1 &3530229074663693802
 GameObject:
   m_ObjectHideFlags: 0

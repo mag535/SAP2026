@@ -752,10 +752,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventoryPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 1177736408134821110, guid: f9cc004c04d2c8798844722a79d41fcb, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3066179819461791288, guid: f9cc004c04d2c8798844722a79d41fcb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -818,7 +814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3066179819461791288, guid: f9cc004c04d2c8798844722a79d41fcb, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175
+      value: 168.6
       objectReference: {fileID: 0}
     - target: {fileID: 3066179819461791288, guid: f9cc004c04d2c8798844722a79d41fcb, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1498,11 +1494,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774998701327239543, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 444.6
+      value: 450.492
       objectReference: {fileID: 0}
     - target: {fileID: 4774998701327239543, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 301.772
+      value: 320.8506
       objectReference: {fileID: 0}
     - target: {fileID: 4774998701327239543, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1534,11 +1530,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4774998701327239543, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -286
+      value: -272.05408
       objectReference: {fileID: 0}
     - target: {fileID: 4774998701327239543, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -275
+      value: -273.5265
       objectReference: {fileID: 0}
     - target: {fileID: 4774998701327239543, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1555,10 +1551,6 @@ PrefabInstance:
     - target: {fileID: 5621542415225796012, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
       propertyPath: m_Name
       value: NotebookPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 5621542415225796012, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8911155229219583007, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

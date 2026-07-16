@@ -3,24 +3,42 @@ using UnityEngine;
 namespace Carp {
     public class Door : Openable
     {
-        public override void Interact() {
-            base.Interact();
+        public string nextRoomName;
 
-            if (!isLocked) {
-                DoSomething();
+        void Update() {
+            if (isLocked) {
+                Lock();
+            } else {
+                Unlock();
+            }
+        }
+
+        public override void Interact() {
+            if (isLocked) { 
+                base.Interact(); 
+            } else { 
+                AudioManager.Instance.Play(unlockingSoundEffect.name);
+                GoToNextRoom();
             }
         }
 
         public override void Unlock() {
             base.Unlock();
 
-            gameObject.GetComponent<Collider2D>().enabled = false;
+            //gameObject.GetComponent<Collider2D>().enabled = false;
             //gameObject.GetComponent<Rigidbody2D>().enabled = false;
         }
 
-        void DoSomething() {
-            Debug.Log("Do the Door thing (teleport and change level).");
+        public override void Lock() {
+            base.Lock();
+
+            //gameObject.GetComponent<Collider2D>().enabled = true;
+            //gameObject.GetComponent<Rigidbody2D>().enabled = false;
         }
 
+        void GoToNextRoom() {
+            EvtSystem.EventDispatcher.Raise<RequestRoomTransition>(new RequestRoomTransition
+                    { roomName = nextRoomName });
+        }
     }
 }

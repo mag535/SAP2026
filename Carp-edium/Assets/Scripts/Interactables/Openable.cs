@@ -7,7 +7,7 @@ namespace Carp {
         public Object objectData;
         public Object key;
 
-        protected bool isLocked = true;
+        public bool isLocked = true;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -46,5 +46,15 @@ namespace Carp {
             isLocked = false;
         }
 
+        public virtual void Lock() {
+            // TODO: change?
+            SpriteRenderer sr = GetComponent<SpriteRenderer>();
+            // make transparent
+            Color newColor = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
+            sr.color = newColor;
+
+            // unlock
+            isLocked = true;
+        }
     }
 }

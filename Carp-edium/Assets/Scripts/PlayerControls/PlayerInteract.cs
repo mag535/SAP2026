@@ -40,7 +40,6 @@ namespace Carp {
                         engagedGO = null;
                     }
                 }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
-                    // TODO: close description window
                     EvtSystem.EventDispatcher.Raise<RequestCloseDisplayInspected>(
                             new RequestCloseDisplayInspected {});
                     playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
@@ -76,6 +75,7 @@ namespace Carp {
                     if (hit.transform.gameObject.GetComponent<Interactable>() == null) {
                         continue;
                     }
+
                     if (hit.transform.gameObject.GetComponent<Pickup>() == null) {
                         engagedGO = hit.transform.gameObject;
                     }
@@ -83,6 +83,16 @@ namespace Carp {
                     // Conversation Starters go to DIALOGUE state
                     if (hit.transform.gameObject.GetComponent<ConversationStarter>() != null) {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
+                    // Doors go to ROOMTRANSITION state
+                    } else if (hit.transform.gameObject.GetComponent<Door>() != null) {
+                        Door targetDoor = hit.transform.gameObject.GetComponent<Door>();
+                        if (targetDoor.isLocked) {
+                            playerStateManager.ChangeCurrentState(PlayerState
+                                    .PlayerStates.DESCRIPTION);
+                        } else {
+                            playerStateManager.ChangeCurrentState(PlayerState
+                                    .PlayerStates.ROOMTRANSITION);
+                        }
                     // Inspectables, Openables, Trader go to DESCRIPTION state
                     } else if (hit.transform.gameObject.GetComponent<Inspectable>() != null ||
                             hit.transform.gameObject.GetComponent<Openable>() != null ||
@@ -91,7 +101,7 @@ namespace Carp {
                     }
                     // All others stay in GAME state
 
-                    Debug.Log("State: " + playerStateManager.GetCurrentState());
+                    //Debug.Log("State: " + playerStateManager.GetCurrentState());
                     hit.transform.gameObject.GetComponent<Interactable>().Interact();
                     return;
                 }

@@ -33,7 +33,7 @@ namespace Carp {
             }
             Debug.Log("removed item [" + evt.item.objectID + "] from *inventory*");
 
-            // TODO: send signal to remove item from inventory display
+            // Send signal to remove item from inventory display
             EvtSystem.EventDispatcher.Raise<RequestRemoveFromInventoryDisplay>(
                     new RequestRemoveFromInventoryDisplay { 
                         objectData = evt.item });

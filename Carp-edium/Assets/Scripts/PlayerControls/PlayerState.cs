@@ -7,6 +7,7 @@ namespace Carp {
             GAME,
             DIALOGUE,
             DESCRIPTION,
+            ROOMTRANSITION,
         }
 
         public PlayerStates initialPlayerState;

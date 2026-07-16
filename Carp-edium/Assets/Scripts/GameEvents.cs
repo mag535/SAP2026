@@ -4,7 +4,13 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-// FIXME: UIs --------------------------------------------------------
+// SCENE & ROOM LOADING --------------------------------------------------------
+public class RequestLoadRoom : EvtSystem.Event
+{
+    public string roomName;
+}
+
+// UIs -------------------------------------------------------------------------
 public class TrackUIMenuOpen : EvtSystem.Event
 {
     // false means menu is closing

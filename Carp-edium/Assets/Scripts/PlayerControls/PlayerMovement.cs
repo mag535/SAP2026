@@ -47,6 +47,8 @@ namespace Carp {
                     break;
                 case PlayerState.PlayerStates.DESCRIPTION:
                     break;
+                case PlayerState.PlayerStates.ROOMTRANSITION:
+                    break;
             }
         }
 

@@ -73,7 +73,7 @@ public class ConversationManager : Singleton<ConversationManager>
     }
 
     public void SetDialogue() {
-        // TODO: set speaker
+        // Set speaker
         nameTag.text = _currentConversation.DialogueNodeData.Find(x =>
                 x.Guid == _currentGuid).speaker;
         // Display dialogue text

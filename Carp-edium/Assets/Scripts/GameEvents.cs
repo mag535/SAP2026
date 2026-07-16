@@ -9,6 +9,18 @@ public class RequestLoadRoom : EvtSystem.Event
 {
     public string roomName;
 }
+public class RequestRoomTransition : EvtSystem.Event
+{
+    public string roomName;
+}
+public class RequestChangePlayerPosition : EvtSystem.Event
+{
+    public Vector2 newPosition;
+}
+public class RequestChangePlayerState : EvtSystem.Event
+{
+    public string newState;
+}
 
 // UIs -------------------------------------------------------------------------
 public class TrackUIMenuOpen : EvtSystem.Event

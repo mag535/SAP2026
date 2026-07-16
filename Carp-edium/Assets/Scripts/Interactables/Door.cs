@@ -37,13 +37,7 @@ namespace Carp {
         }
 
         void GoToNextRoom() {
-            // TODO: what needs to happen:
-            // - room loading screen
-            // - unload current room
-            // - load next room
-            // - position player
-            // - remove loading screen
-            EvtSystem.EventDispatcher.Raise<RequestLoadRoom>(new RequestLoadRoom
+            EvtSystem.EventDispatcher.Raise<RequestRoomTransition>(new RequestRoomTransition
                     { roomName = nextRoomName });
         }
     }

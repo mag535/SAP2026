@@ -763,6 +763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gate
       objectReference: {fileID: 0}
+    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: nextRoomName
+      value: Testing
+      objectReference: {fileID: 0}
     - target: {fileID: 5793836740155761900, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_LocalScale.x
       value: 3

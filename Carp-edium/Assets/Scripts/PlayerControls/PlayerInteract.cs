@@ -40,7 +40,6 @@ namespace Carp {
                         engagedGO = null;
                     }
                 }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
-                    // TODO: close description window
                     EvtSystem.EventDispatcher.Raise<RequestCloseDisplayInspected>(
                             new RequestCloseDisplayInspected {});
                     playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
@@ -102,7 +101,7 @@ namespace Carp {
                     }
                     // All others stay in GAME state
 
-                    Debug.Log("State: " + playerStateManager.GetCurrentState());
+                    //Debug.Log("State: " + playerStateManager.GetCurrentState());
                     hit.transform.gameObject.GetComponent<Interactable>().Interact();
                     return;
                 }

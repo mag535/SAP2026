@@ -25,6 +25,9 @@ namespace Carp {
             rb = GetComponent<Rigidbody2D>();
             playerStateManager = GetComponent<PlayerState>();
             Debug.Log("State: " + playerStateManager.GetCurrentState());
+
+            EvtSystem.EventDispatcher.AddListener<RequestChangePlayerPosition>(
+                    HandlePlayerPositionChange);
         }
 
         void FixedUpdate()
@@ -108,6 +111,16 @@ namespace Carp {
             }
 
             return Vector2.zero;
+        }
+
+        void HandlePlayerPositionChange(RequestChangePlayerPosition evt) {
+            // FIXME: not changing position...
+            rb.MovePosition(evt.newPosition);
+        }
+
+        void OnDestroy() {
+            EvtSystem.EventDispatcher.RemoveListener<RequestChangePlayerPosition>(
+                    HandlePlayerPositionChange);
         }
     }
 }

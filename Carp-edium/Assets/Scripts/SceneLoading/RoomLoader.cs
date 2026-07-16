@@ -21,10 +21,6 @@ namespace Carp {
                 }
             } 
             */
-            if (gameObject.name == "Testing") {
-                LoadScene();
-            }
-
             EvtSystem.EventDispatcher.AddListener<RequestLoadRoom>(HandleLoadRoom);
         }
 
@@ -43,7 +39,6 @@ namespace Carp {
         }
 
         void HandleLoadRoom(RequestLoadRoom evt) {
-            // TODO
             if (evt.roomName != gameObject.name) { 
                 UnloadScene();
                 return;

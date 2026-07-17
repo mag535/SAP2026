@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
+  m_Name: VendingMachine02
+  m_EditorClassIdentifier: 
+  isNoteEntry: 0
+  objectID: vendingMachine02
+  description: Insert money for Ginger Ale.
+  sprite: {fileID: 0}
+  longDescription: out of stock
+  spriteMagnified: {fileID: 0}
+  spriteIcon: {fileID: 0}

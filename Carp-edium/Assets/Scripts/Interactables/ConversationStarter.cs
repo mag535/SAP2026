@@ -4,12 +4,6 @@ using System.Collections.Generic;
 namespace Carp {
     public class ConversationStarter : Interactable
     {
-        [System.Serializable]
-        public struct ItemConvoPair {
-            public Object itemTrigger;
-            public DialogueContainer conversation;
-        }
-
         public DialogueContainer conversationStart;
         public List<ItemConvoPair> itemConvoPairList = new List<ItemConvoPair>();
 

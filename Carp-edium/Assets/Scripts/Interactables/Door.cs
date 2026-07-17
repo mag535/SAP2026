@@ -37,8 +37,7 @@ namespace Carp {
         }
 
         void GoToNextRoom() {
-            EvtSystem.EventDispatcher.Raise<RequestRoomTransition>(new RequestRoomTransition
-                    { roomName = nextRoomName });
+            RoomTransitionManager.Instance.DoRoomTransition(nextRoomName);
         }
     }
 }

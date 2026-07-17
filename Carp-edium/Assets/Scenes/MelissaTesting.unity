@@ -764,6 +764,10 @@ PrefabInstance:
       value: Gate
       objectReference: {fileID: 0}
     - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: isLocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: nextRoomName
       value: Testing
       objectReference: {fileID: 0}
@@ -1001,7 +1005,7 @@ PrefabInstance:
     - target: {fileID: 894255382071809242, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: objectData
       value: 
-      objectReference: {fileID: 11400000, guid: f3dc04beae240f1d38552db91e877165, type: 2}
+      objectReference: {fileID: 11400000, guid: bf4d85eb0efa88f34be88bc95a5f128a, type: 2}
     - target: {fileID: 3099111105866683866, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.18
@@ -1044,7 +1048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4956452020254165825, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: m_Name
-      value: Money (1)
+      value: Money02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

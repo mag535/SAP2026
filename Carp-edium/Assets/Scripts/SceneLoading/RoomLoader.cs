@@ -8,6 +8,10 @@ namespace Carp {
         public bool isLoaded;
         public bool shouldLoad;
 
+        void Awake() {
+            EvtSystem.EventDispatcher.AddListener<RequestLoadRoom>(HandleLoadRoom);
+        }
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -21,7 +25,6 @@ namespace Carp {
                 }
             } 
             */
-            EvtSystem.EventDispatcher.AddListener<RequestLoadRoom>(HandleLoadRoom);
         }
 
         void LoadScene() {

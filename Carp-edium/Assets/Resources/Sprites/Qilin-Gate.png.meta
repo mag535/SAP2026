@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3f153e3e863c8fc4c8626c0839d3d03c
+guid: ca7b7b7cacdaade45b2c3dafdf615668
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7438953651349944770
-    second: Fish-Sprite-Draft_0
+      213: 6152172117261340860
+    second: Qilin-Gate_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fish-Sprite-Draft_0
+      name: Qilin-Gate_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 36
-        width: 742
-        height: 1137
+        x: 68
+        y: 95
+        width: 693
+        height: 1104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3601be311783c890800000000000000
-      internalID: -7438953651349944770
+      spriteID: cb0dc6ee1f7e06550800000000000000
+      internalID: 6152172117261340860
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fish-Sprite-Draft_0: -7438953651349944770
+      Qilin-Gate_0: 6152172117261340860
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

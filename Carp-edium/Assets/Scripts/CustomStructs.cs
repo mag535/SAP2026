@@ -15,4 +15,10 @@ namespace Carp {
         public Object itemTrigger;
         public DialogueContainer conversation;
     }
+
+    [System.Serializable]
+    public struct FoxUnlockPosition {
+        public string areaName;
+        public Transform position;
+    }
 }

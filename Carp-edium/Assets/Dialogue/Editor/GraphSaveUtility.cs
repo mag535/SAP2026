@@ -1,3 +1,4 @@
+using System.IO;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ public class GraphSaveUtility
 {
     private string savedGraphsFolder = "Conversations";
 
+    private string _loadedGraphPath = "";
     private DialogueGraphView _targetGraphView;
     private DialogueContainer _containerCache;
 
@@ -52,6 +54,8 @@ public class GraphSaveUtility
             });
         }
 
+        // TODO: use cached loadedGraphPath to save graph in same location
+        //
         // Is "Resources" folder doesn't exist, create it
         if (!AssetDatabase.IsValidFolder("Assets/Resources"))
             AssetDatabase.CreateFolder("Assets", "Resources");
@@ -59,12 +63,48 @@ public class GraphSaveUtility
         if (!AssetDatabase.IsValidFolder("Assets/Resources/Conversations"))
             AssetDatabase.CreateFolder("Assets/Resources", "Conversations");
 
-        AssetDatabase.CreateAsset(dialogueContainer, $"Assets/Resources/Conversations/{fileName}.asset");
+        // If filename already exists, save in same path
+        string[] fileNames = Directory.GetFiles("Assets/Resources/Conversations", 
+                "*", SearchOption.AllDirectories);
+        string existingFilePath = "";
+        foreach (string s in fileNames) {
+            if (s.Contains(fileName)) { 
+                existingFilePath = s;
+                break;
+            }
+        }
+        if (!string.IsNullOrEmpty(existingFilePath)) {
+            AssetDatabase.CreateAsset(dialogueContainer, existingFilePath);
+        // Otherwise, save in top directory `Resources/Conversations/`
+        } else {
+            AssetDatabase.CreateAsset(dialogueContainer, 
+                    $"Assets/Resources/Conversations/{fileName}.asset");
+        }
         AssetDatabase.SaveAssets();
     }
 
     public void LoadGraph(string fileName) {
-        _containerCache = Resources.Load<DialogueContainer>(savedGraphsFolder + "/" + fileName);
+        // Use `Assets/Resources/Conversations/"
+        string resourcesPath = Application.dataPath + "/Resources";
+        string[] subDirectories = Directory.GetDirectories(resourcesPath + "/" +
+                savedGraphsFolder, "*", SearchOption.AllDirectories);
+
+        // Search top directory: `Resources/Conversations/`
+        _containerCache = Resources.Load<DialogueContainer>(savedGraphsFolder + 
+                "/" + fileName);
+        // Search sub-directories if top directory search fails
+        if (_containerCache == null) {
+            foreach (string directory in subDirectories) {
+                string subDir = directory.Substring(resourcesPath.Length+1);
+                _containerCache = Resources.Load<DialogueContainer>(
+                        subDir + "/" + fileName);
+                if (_containerCache != null) {
+                    _loadedGraphPath = subDir;
+                    break;
+                }
+            }
+        }
+
         if (_containerCache == null) {
             EditorUtility.DisplayDialog(
                     "File Not Found",

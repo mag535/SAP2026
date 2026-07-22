@@ -114,10 +114,9 @@ namespace Carp {
                 .HandleItemUse(evt.item);
             // Avoids removing clues in Notebook by only requesting removal
             // from Inventory.
-            if (success) {
-                EvtSystem.EventDispatcher.Raise<RequestRemoveItem>(new 
-                        RequestRemoveItem { item = evt.item });
-            }
+            if (evt.item.isNoteEntry) { return; }
+            EvtSystem.EventDispatcher.Raise<RequestRemoveItem>(new 
+                    RequestRemoveItem { item = evt.item });
         }
 
         void OnDestroy() {

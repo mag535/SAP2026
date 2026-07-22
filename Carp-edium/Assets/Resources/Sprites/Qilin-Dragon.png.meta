@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3f153e3e863c8fc4c8626c0839d3d03c
+guid: f6905b8f032f29041b3a1fe6d70da971
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7438953651349944770
-    second: Fish-Sprite-Draft_0
+      213: 7001008070662297697
+    second: Qilin-Dragon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fish-Sprite-Draft_0
+      name: Qilin-Dragon_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 36
-        width: 742
-        height: 1137
+        x: 74
+        y: 72
+        width: 2862
+        height: 1697
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3601be311783c890800000000000000
-      internalID: -7438953651349944770
+      spriteID: 16818715fb3982160800000000000000
+      internalID: 7001008070662297697
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fish-Sprite-Draft_0: -7438953651349944770
+      Qilin-Dragon_0: 7001008070662297697
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

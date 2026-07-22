@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cf8a8f7981ee4d447a0876fafb061a31
+guid: 1b3fa05e98ed4444abe6b78a5df56ea4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4549871927518758641
-    second: Test_0
+      213: -1437170902778716802
+    second: RedDragon&Turtas_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 10000
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Test_0
+      name: RedDragon&Turtas_0
       rect:
         serializedVersion: 2
-        x: 527
-        y: 591
-        width: 946
-        height: 819
+        x: 74
+        y: 72
+        width: 2862
+        height: 1697
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f09f8b2969b9bd0c0800000000000000
-      internalID: -4549871927518758641
+      spriteID: e7dd85aada42e0ce0800000000000000
+      internalID: -1437170902778716802
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Test_0: -4549871927518758641
+      RedDragon&Turtas_0: -1437170902778716802
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

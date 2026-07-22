@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 3f153e3e863c8fc4c8626c0839d3d03c
+guid: 41bae30838cff244594dcf5700a0e2c6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7438953651349944770
-    second: Fish-Sprite-Draft_0
+      213: 7829023597686284592
+    second: Draft-Spritesheet_0
+  - first:
+      213: -1744544042997504947
+    second: Draft-Spritesheet_1
+  - first:
+      213: -8485836109178673504
+    second: Draft-Spritesheet_2
+  - first:
+      213: 8192548633022811398
+    second: Draft-Spritesheet_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,13 +122,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Fish-Sprite-Draft_0
+      name: Draft-Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 36
-        width: 742
-        height: 1137
+        x: 172
+        y: 214
+        width: 406
+        height: 1071
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +137,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3601be311783c890800000000000000
-      internalID: -7438953651349944770
+      spriteID: 031ed3e6b7746ac60800000000000000
+      internalID: 7829023597686284592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Draft-Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 155
+        width: 483
+        height: 1130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d442c169f622ac7e0800000000000000
+      internalID: -1744544042997504947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Draft-Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 155
+        width: 483
+        height: 1130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a6e832c4014c3a80800000000000000
+      internalID: -8485836109178673504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Draft-Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2422
+        y: 214
+        width: 406
+        height: 1071
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60dcf646397c1b170800000000000000
+      internalID: 8192548633022811398
       vertices: []
       indices: 
       edges: []
@@ -138,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +223,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Fish-Sprite-Draft_0: -7438953651349944770
+      Draft-Spritesheet_0: 7829023597686284592
+      Draft-Spritesheet_1: -1744544042997504947
+      Draft-Spritesheet_2: -8485836109178673504
+      Draft-Spritesheet_3: 8192548633022811398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

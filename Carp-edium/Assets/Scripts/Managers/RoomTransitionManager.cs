@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 
 namespace Carp {
-    public class RoomTransitionManager : MonoBehaviour
+    public class RoomTransitionManager : Singleton<RoomTransitionManager>
     {
         [System.Serializable]
         public struct PlayerEntrancePosition {
@@ -18,8 +18,6 @@ namespace Carp {
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            EvtSystem.EventDispatcher.AddListener<RequestRoomTransition>(HandleRoomTransition);
-
             LoadInitialRoom();
         }
 
@@ -41,17 +39,17 @@ namespace Carp {
                     { newState = "GAME" });
         }
 
-        void HandleRoomTransition(RequestRoomTransition evt) {
+        public void DoRoomTransition(string roomName) {
             // TODO: Turn on loading screen
 
             // Send signal for room loading / unloading
             EvtSystem.EventDispatcher.Raise<RequestLoadRoom>(new RequestLoadRoom
-                    { roomName = evt.roomName });
+                    { roomName = roomName });
 
             // Send signal for player position change
             Vector2 newPosition = Vector2.zero;
             foreach (PlayerEntrancePosition pair in playerEntrancePositions) {
-                if (pair.roomName == evt.roomName) {
+                if (pair.roomName == roomName) {
                     newPosition = pair.playerEntrancePosition;
                     break;
                 }
@@ -64,10 +62,6 @@ namespace Carp {
             // Send signal for player state change
             EvtSystem.EventDispatcher.Raise<RequestChangePlayerState>(new RequestChangePlayerState
                     { newState = "GAME" });
-        }
-
-        void OnDestroy() {
-            EvtSystem.EventDispatcher.RemoveListener<RequestRoomTransition>(HandleRoomTransition);
         }
     }
 }

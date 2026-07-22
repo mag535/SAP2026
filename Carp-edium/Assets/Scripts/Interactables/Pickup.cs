@@ -9,9 +9,17 @@ namespace Carp {
 
         void Start() {
             // set sprite on load
-            if (objectData.sprite == null) { return; }
-            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = objectData.sprite;
+            if (objectData.sprite != null) {
+                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = objectData.sprite;
+            }
+
+            if (GameManager.Instance.AmIAModifiedPickup(objectData.objectID)) {
+                // destroy
+                Destroy(gameObject, destroyDelay);
+            }
+
+            Debug.Log("Pickup Start()");
         }
 
         public override void Interact() {
@@ -20,6 +28,8 @@ namespace Carp {
             // add to inventory
             EvtSystem.EventDispatcher.Raise<RequestAddItem>(new RequestAddItem {
                     item = objectData });
+            // Update GM on modification
+            GameManager.Instance.AddModifiedPickup(objectData.objectID);
             // destroy
             Destroy(gameObject, destroyDelay);
         }

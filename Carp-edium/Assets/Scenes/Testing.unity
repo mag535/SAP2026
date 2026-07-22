@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: 894255382071809242, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: objectData
       value: 
-      objectReference: {fileID: 11400000, guid: f3dc04beae240f1d38552db91e877165, type: 2}
+      objectReference: {fileID: 11400000, guid: 949ee240d61770e6db7840684fce73bd, type: 2}
     - target: {fileID: 3099111105866683866, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.16
@@ -185,7 +185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4956452020254165825, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: m_Name
-      value: Money (2)
+      value: Money05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -404,6 +404,14 @@ PrefabInstance:
       value: Gate
       objectReference: {fileID: 0}
     - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: isLocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 757fc4dc38ef3ce88b55e29ac1f10469, type: 2}
+    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: nextRoomName
       value: MelissaTesting
       objectReference: {fileID: 0}
@@ -465,6 +473,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1390452733622243126, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7b718c157681fc99c828b503d2b8fece, type: 2}
+    - target: {fileID: 1390452733622243126, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
       propertyPath: possibleTrades.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -518,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8884152298615517204, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
       propertyPath: m_Name
-      value: VendingMachine (1)
+      value: VendingMachine02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -696,6 +708,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1390452733622243126, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 548c77d3a7306877dac40bedad84f256, type: 2}
+    - target: {fileID: 1390452733622243126, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
       propertyPath: possibleTrades.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -749,7 +765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8884152298615517204, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
       propertyPath: m_Name
-      value: VendingMachine (3)
+      value: VendingMachine04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -779,7 +795,7 @@ PrefabInstance:
     - target: {fileID: 894255382071809242, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: objectData
       value: 
-      objectReference: {fileID: 11400000, guid: f3dc04beae240f1d38552db91e877165, type: 2}
+      objectReference: {fileID: 11400000, guid: 9b3d918dbde9903e2bb48fc074aae0bb, type: 2}
     - target: {fileID: 3099111105866683866, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.52
@@ -822,7 +838,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4956452020254165825, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: m_Name
-      value: Money
+      value: Money03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -837,6 +853,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1390452733622243126, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: f28ce0a9d6e057aa284c3dd7cd710975, type: 2}
     - target: {fileID: 1390452733622243126, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
       propertyPath: possibleTrades.Array.size
       value: 1
@@ -891,7 +911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8884152298615517204, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
       propertyPath: m_Name
-      value: VendingMachine (2)
+      value: VendingMachine03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1231,6 +1251,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1390452733622243126, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 1cf01a2562292c436b0af08e1a0c32dd, type: 2}
+    - target: {fileID: 1390452733622243126, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
       propertyPath: possibleTrades.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -1284,7 +1308,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8884152298615517204, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
       propertyPath: m_Name
-      value: VendingMachine
+      value: VendingMachine01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1836,7 +1860,7 @@ PrefabInstance:
     - target: {fileID: 894255382071809242, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: objectData
       value: 
-      objectReference: {fileID: 11400000, guid: f3dc04beae240f1d38552db91e877165, type: 2}
+      objectReference: {fileID: 11400000, guid: fd1dd18eba122e7d3836269707413e1d, type: 2}
     - target: {fileID: 3099111105866683866, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.03
@@ -1879,7 +1903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4956452020254165825, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: m_Name
-      value: Money (1)
+      value: Money04
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1909,7 +1933,7 @@ PrefabInstance:
     - target: {fileID: 894255382071809242, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: objectData
       value: 
-      objectReference: {fileID: 11400000, guid: f3dc04beae240f1d38552db91e877165, type: 2}
+      objectReference: {fileID: 11400000, guid: 5feb12e994c8c54f984c4b85681b6f94, type: 2}
     - target: {fileID: 3099111105866683866, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.39
@@ -1952,7 +1976,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4956452020254165825, guid: b879f2e06664e409386264d75a07e322, type: 3}
       propertyPath: m_Name
-      value: Money (3)
+      value: Money06
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

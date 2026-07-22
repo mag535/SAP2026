@@ -4,14 +4,18 @@ using System.Collections.Generic;
 namespace Carp {
     public class ConversationStarter : Interactable
     {
-        [System.Serializable]
-        public struct ItemConvoPair {
-            public Object itemTrigger;
-            public DialogueContainer conversation;
-        }
-
         public DialogueContainer conversationStart;
         public List<ItemConvoPair> itemConvoPairList = new List<ItemConvoPair>();
+
+        private DialogueContainer wrongItemConversation = null;
+
+        void Start() {
+            foreach (ItemConvoPair pair in itemConvoPairList) {
+                if (pair.itemTrigger == null) {
+                    wrongItemConversation = pair.conversation;
+                }
+            }
+        }
 
         public override void Interact() {
             // sfx
@@ -23,16 +27,12 @@ namespace Carp {
         public override bool HandleItemUse(Object item) {
             bool wrongItemFlag = true;
             DialogueContainer correspondingConversation = null;
-            DialogueContainer wrongItemConversation = null;
 
             foreach (ItemConvoPair pair in itemConvoPairList) {
-                if (pair.itemTrigger == null) {
-                    wrongItemConversation = pair.conversation;
-                    continue;
-                }
                 if (item.objectID == pair.itemTrigger.objectID) {
                     correspondingConversation = pair.conversation;
                     wrongItemFlag = false;
+                    break;
                 }
             }
 

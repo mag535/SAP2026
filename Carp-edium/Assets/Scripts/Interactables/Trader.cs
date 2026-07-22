@@ -4,15 +4,25 @@ using System.Collections.Generic;
 namespace Carp {
     public class Trader : Interactable
     {
-        [System.Serializable]
-        public struct Listing {
-            public Object cost;
-            public Object trade;
-        }
-
-        public bool hasAlreadyTraded = false;
         public Object objectData;
         public List<Listing> possibleTrades = new List<Listing>();
+
+        void Start() {
+            if (GameManager.Instance.AmIAModifiedTrader(objectData.objectID)) {
+                List<Listing> removedTrades = GameManager.Instance.
+                    GetModifiedTraderData(objectData.objectID);
+                foreach (Listing removed in removedTrades) {
+                    foreach (Listing trade in possibleTrades) {
+                        if (trade.cost == removed.cost &&
+                                trade.trade == removed.trade) {
+                            possibleTrades.Remove(trade);
+                            Debug.Log("trade removed");
+                            break;
+                        }
+                    }
+                }
+            }
+        }
 
         public override void Interact() {
             AudioManager.Instance.Play(soundEffect.name);
@@ -23,7 +33,6 @@ namespace Carp {
                         new RequestDisplayInspected { 
                         useLong = true,
                         objectData = objectData });
-                Debug.Log("OUT OF STOCK");
                 return;
             }
 
@@ -37,20 +46,22 @@ namespace Carp {
 
         public override bool HandleItemUse(Object item) {
             // Attempt trade, set hasAlreadyTraded as result
-            hasAlreadyTraded = MakeTrade(item);
-            return hasAlreadyTraded;
+            return MakeTrade(item);
         }
 
         public bool MakeTrade(Object offer) {
             foreach (Listing listing in possibleTrades) {
                 if (offer.objectID == listing.cost.objectID) {
-                    Debug.Log("traded [" + offer.objectID + "] for [" + 
-                            listing.trade.objectID + "]");
                     possibleTrades.Remove(listing);
+                    // Update GM of modification
+                    GameManager.Instance.AddModifiedTrader(objectData.objectID,
+                            listing);
+                    // Remove offer from inventory
                     EvtSystem.EventDispatcher.Raise<RequestRemoveItem>( 
                             new RequestRemoveItem {
                                 item = offer 
                             });
+                    // Add trade to inventory
                     EvtSystem.EventDispatcher.Raise<RequestAddItem>( 
                             new RequestAddItem {
                                 item = listing.trade 
@@ -58,7 +69,6 @@ namespace Carp {
                     return true;
                 }
             }
-            Debug.Log("I don't want anything you have.");
             return false;
         }
     }

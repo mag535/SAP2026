@@ -1973,6 +1973,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6201216283158570454, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249607503163302344, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
+      propertyPath: m_margin.w
+      value: -274.49243
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249607503163302344, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
+      propertyPath: m_margin.z
+      value: -1570.1425
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249607503163302344, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
+      propertyPath: m_overflowMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7249607503163302344, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
+      propertyPath: m_TextWrappingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8640138080538840172, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 204

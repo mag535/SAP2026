@@ -16,9 +16,6 @@ MonoBehaviour:
   - BaseNodeGuid: edc066d3-2a03-4ed8-90a7-0818df1cb23c
     PortName: Next
     TargetNodeGuid: 8dd3a9f3-3299-49b1-90b9-93888ad6daa8
-  - BaseNodeGuid: 8dd3a9f3-3299-49b1-90b9-93888ad6daa8
-    PortName: Next
-    TargetNodeGuid: 3fe31c74-a3c2-4b7f-8f81-b9aa6d79e00e
   - BaseNodeGuid: 3fe31c74-a3c2-4b7f-8f81-b9aa6d79e00e
     PortName: Next
     TargetNodeGuid: 9ad9625b-a8d5-4a4f-84b7-a02071330719
@@ -28,15 +25,10 @@ MonoBehaviour:
   - BaseNodeGuid: c26456c6-3639-4c81-9e28-07051cb0a3af
     PortName: Next
     TargetNodeGuid: 78824e59-7a4c-40a3-b45f-7d546e025348
+  - BaseNodeGuid: 8dd3a9f3-3299-49b1-90b9-93888ad6daa8
+    PortName: Next
+    TargetNodeGuid: 3fe31c74-a3c2-4b7f-8f81-b9aa6d79e00e
   DialogueNodeData:
-  - type: 0
-    Guid: 3fe31c74-a3c2-4b7f-8f81-b9aa6d79e00e
-    speaker: NPC1
-    DialogueText: This is the second node.
-    cost: {fileID: 0}
-    trade: {fileID: 0}
-    flag: 
-    Position: {x: 395, y: 184}
   - type: 0
     Guid: 9ad9625b-a8d5-4a4f-84b7-a02071330719
     speaker: NPC1
@@ -69,3 +61,11 @@ MonoBehaviour:
     trade: {fileID: 0}
     flag: 
     Position: {x: 213, y: 182}
+  - type: 0
+    Guid: 3fe31c74-a3c2-4b7f-8f81-b9aa6d79e00e
+    speaker: NPC1
+    DialogueText: This is the second node.
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 399, y: 370}

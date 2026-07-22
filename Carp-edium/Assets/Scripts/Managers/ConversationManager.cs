@@ -143,8 +143,13 @@ public class ConversationManager : Singleton<ConversationManager>
 
     void HandleGiveItemDialogue(DialogueNodeData node) {
         if (node.cost == null) {
-            EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
-                    RequestAddItem { item = node.trade });
+            if (node.trade.isNoteEntry) {
+                EvtSystem.EventDispatcher.Raise<RequestAddToNotebook>( new
+                        RequestAddToNotebook { objectData = node.trade });
+            } else {
+                EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
+                        RequestAddItem { item = node.trade });
+            }
             return;
         }
 

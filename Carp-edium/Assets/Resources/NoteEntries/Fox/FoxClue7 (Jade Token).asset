@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
   m_Name: FoxClue7 (Jade Token)
   m_EditorClassIdentifier: 
-  isNoteEntry: 0
-  objectID: 
+  isNoteEntry: 1
+  objectID: Fox Clue 7 (Jade Token)
   description: 
   sprite: {fileID: 0}
-  longDescription: 
+  longDescription: Try looking inside temple
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

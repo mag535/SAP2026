@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: OxUnlockedDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 8021a591-a6c5-4ca1-8c17-b8d4161c7eb2
+    PortName: Next
+    TargetNodeGuid: d488a551-bb85-45c5-9213-b6a0ab662049
+  - BaseNodeGuid: d488a551-bb85-45c5-9213-b6a0ab662049
+    PortName: Next
+    TargetNodeGuid: 61ea07f0-db2a-4f20-acd8-c8848ecb4ba4
+  - BaseNodeGuid: 61ea07f0-db2a-4f20-acd8-c8848ecb4ba4
+    PortName: Next
+    TargetNodeGuid: 96d6abfe-8b3c-43d9-9945-6904b93e09fb
+  - BaseNodeGuid: 96d6abfe-8b3c-43d9-9945-6904b93e09fb
+    PortName: Next
+    TargetNodeGuid: 8dc8c85e-cbb2-46c8-a010-af1d14ec5e8d
+  DialogueNodeData:
+  - type: 0
+    Guid: d488a551-bb85-45c5-9213-b6a0ab662049
+    speaker: Ox
+    DialogueText: '"Eager to learn, eh? Think you''ll be the first to uncover the
+      Dragon Gate?"  '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 291.2, y: 107.200005}
+  - type: 2
+    Guid: 61ea07f0-db2a-4f20-acd8-c8848ecb4ba4
+    speaker: Ox
+    DialogueText: '"For this much coin, I can tell ya <color="yellow">there''s a
+      Gate outside if ya keep going straight through the bar </color>. Not sure if
+      it''s the Dragon Gate, but ya can take a look." '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 826.4, y: 98.4}
+  - type: 2
+    Guid: 96d6abfe-8b3c-43d9-9945-6904b93e09fb
+    speaker: Ox
+    DialogueText: '"If you''re serious about this, ya best <color="yellow">head over
+      to the Blue Dragon Temple</color> across the plaza."'
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1846.4, y: 284.80002}
+  - type: 4
+    Guid: 8dc8c85e-cbb2-46c8-a010-af1d14ec5e8d
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 2696.8, y: 349.6}

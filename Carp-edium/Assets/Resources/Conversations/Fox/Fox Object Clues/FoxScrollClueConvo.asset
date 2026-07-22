@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxScrollClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: f0645a39-5b2f-4947-bd82-04fd1c84dd5c
+    PortName: Next
+    TargetNodeGuid: bb9d243f-ce12-4abf-8345-1c8185543790
+  - BaseNodeGuid: bb9d243f-ce12-4abf-8345-1c8185543790
+    PortName: Next
+    TargetNodeGuid: 9e328997-dde0-45f3-a271-19a68577824a
+  DialogueNodeData:
+  - type: 2
+    Guid: bb9d243f-ce12-4abf-8345-1c8185543790
+    speaker: Fox
+    DialogueText: '"''Dragon represents Strength?'' That''s a really old saying.
+      These days, <color="yellow">it represents Intellect. </color>" '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: e71f46427f9989a4d9bf45d7a9397d7f, type: 2}
+    flag: 
+    Position: {x: 219.2, y: 85.6}
+  - type: 4
+    Guid: 9e328997-dde0-45f3-a271-19a68577824a
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 500.8, y: 322.4}

@@ -1,35 +1,38 @@
 using UnityEngine;
-using Syste.Collections.Generic;
+using System.Collections.Generic;
 
-public class Fox : MonoBehaviour
-{
-    List<FoxUnlockPosition> areaPositions = new List<FoxUnlockPosition>();
-
-    private Dictionary<string, Vector3> _areaPositions =
-        new Dictionary<string, Vector3>();
-
-    void Awake() {
-        EvtSystem.EventDispatcher.AddListener<PropagateFlag>(HandleFlag);
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+namespace Carp {
+    public class Fox : MonoBehaviour
     {
-        foreach (FoxUnlockPosition pair in areaPositions) {
-            _areaPositions[pair.areaName] = pair.position.position;
-        }
-    }
+        public FoxUnlockPosition barPosition = new FoxUnlockPosition("Bar", Vector2.zero);
+        public FoxUnlockPosition templePosition = new FoxUnlockPosition("Temple", Vector2.zero);
+        public FoxUnlockPosition palacePosition = new FoxUnlockPosition("Palace", Vector2.zero);
 
-    void HandleFlag(PropagateFlag evt) {
-        if (evt.flag == "Bar_Unlocked") {
-            gameObject.transform.position = _areaPositions["Bar"];
-        } else if (evt.flag == "Temple_Unlocked") {
-            gameObject.transform.position = _areaPositions["Temple"];
-        } else if (evt.flag == "Palace_Unlocked") {
-            gameObject.transform.position = _areaPositions["Palace"];
+        void Awake() {
+            EvtSystem.EventDispatcher.AddListener<PropagateFlag>(HandleFlag);
         }
-    }
 
-    void OnDestroy() {
-        EvtSystem.EventDispatcher.RemoveListener<PropagateFlag>(HandleFlag);
+        void HandleFlag(PropagateFlag evt) {
+            if (evt.flag == "Bar_Unlocked") {
+                gameObject.transform.position = new Vector3(
+                        barPosition.position.x,
+                        barPosition.position.y,
+                        0);
+            } else if (evt.flag == "Temple_Unlocked") {
+                gameObject.transform.position = new Vector3(
+                        templePosition.position.x,
+                        templePosition.position.y,
+                        0);
+            } else if (evt.flag == "Palace_Unlocked") {
+                gameObject.transform.position = new Vector3(
+                        palacePosition.position.x,
+                        palacePosition.position.y,
+                        0);
+            }
+        }
+
+        void OnDestroy() {
+            EvtSystem.EventDispatcher.RemoveListener<PropagateFlag>(HandleFlag);
+        }
     }
 }

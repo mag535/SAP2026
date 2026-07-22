@@ -58,6 +58,8 @@ namespace Carp {
         public void Move(InputAction.CallbackContext context) {
             if (context.started) {
                 inputVector = context.ReadValue<Vector2>();
+                EvtSystem.EventDispatcher.Raise<ChangePlayerSprite>(new
+                        ChangePlayerSprite { direction = inputVector });
             } else if (context.canceled) {
                 inputVector = Vector2.zero;
             }

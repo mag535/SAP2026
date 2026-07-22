@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2749080024282045263}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8948594874251413769
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -179,3 +179,5 @@ MonoBehaviour:
   unlockingSoundEffect: {fileID: 11400000, guid: ac2c28ac2a5e73b7c93e74d0d19f2fa3, type: 2}
   objectData: {fileID: 11400000, guid: 5b7fbd5c76e5ef26a9afb1e4acad108d, type: 2}
   key: {fileID: 11400000, guid: 79bed17687e9e51028e30d092a592891, type: 2}
+  isLocked: 1
+  nextRoomName: 

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxCoinClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 3e526984-6103-484e-a1d4-36ca4fc3a7b2
+    PortName: Next
+    TargetNodeGuid: e03ad1ca-dfc0-4951-b668-dd03e47ec27c
+  - BaseNodeGuid: e03ad1ca-dfc0-4951-b668-dd03e47ec27c
+    PortName: Next
+    TargetNodeGuid: 60996ff2-2958-404b-88e3-5053d93969cf
+  - BaseNodeGuid: 60996ff2-2958-404b-88e3-5053d93969cf
+    PortName: Next
+    TargetNodeGuid: f1a9e4f0-35f7-4d43-96c9-e045b7a895b5
+  - BaseNodeGuid: f1a9e4f0-35f7-4d43-96c9-e045b7a895b5
+    PortName: Next
+    TargetNodeGuid: 98a0d5f7-2717-4fef-895d-e5f0e39ddbde
+  DialogueNodeData:
+  - type: 0
+    Guid: e03ad1ca-dfc0-4951-b668-dd03e47ec27c
+    speaker: Fox
+    DialogueText: '"Well lookie here, there really was a coin in that telephone booth,
+      eh?"  '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 313.6, y: 112.799995}
+  - type: 2
+    Guid: 60996ff2-2958-404b-88e3-5053d93969cf
+    speaker: Fox
+    DialogueText: '"Great, now<color="yellow"> give it to the bartender</color> if
+      you wanna learn more about that Dragon Gate... if it even exists. "  '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 996be32e118a57a4f93915068fa56cbe, type: 2}
+    flag: 
+    Position: {x: 336.8, y: 242.4}
+  - type: 0
+    Guid: f1a9e4f0-35f7-4d43-96c9-e045b7a895b5
+    speaker: Fox
+    DialogueText: '"Again, if you find anything in the bar, be sure to show it to
+      me so I can explain what those objects are." '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 369.6, y: 443.2}
+  - type: 4
+    Guid: 98a0d5f7-2717-4fef-895d-e5f0e39ddbde
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1053.6, y: 442.4}

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
-  m_Name: FoxClue1 (Gate)
+  m_Name: FoxClue6 (Compass Poster)
   m_EditorClassIdentifier: 
-  isNoteEntry: 1
-  objectID: 'FoxClue1 (Gate) '
+  isNoteEntry: 0
+  objectID: 
   description: 
-  sprite: {fileID: 21300000, guid: d16f90cc7e326a840863908fec0ba0c8, type: 3}
-  longDescription: Dragon Gate is red, green, or gold
+  sprite: {fileID: 0}
+  longDescription: 
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

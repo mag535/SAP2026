@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
   m_Name: FoxClue3 (Booth)
   m_EditorClassIdentifier: 
-  isNoteEntry: 0
+  isNoteEntry: 1
   objectID: FoxClue3 (Booth)
-  description: Check telephone booth for coins
+  description: 
   sprite: {fileID: 0}
-  longDescription: 
+  longDescription: Check telephone booth for coins
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

@@ -114,8 +114,8 @@ namespace Carp {
         }
 
         void HandlePlayerPositionChange(RequestChangePlayerPosition evt) {
-            Vector3 newPos = new Vector3(evt.newPosition.x, evt.newPosition.y, 0);
-            gameObject.transform.position = newPos;
+            // FIXME: not changing position...
+            rb.MovePosition(evt.newPosition);
         }
 
         void OnDestroy() {

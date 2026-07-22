@@ -74,7 +74,7 @@ public class RequestItemUse : EvtSystem.Event
     public Object item;
 }
 
-// INTERACTABLES ---------------------------------------------------------------
+// INTERACTABLES -----------------------------------------------------------------------
 public class OpenChest : EvtSystem.Event
 {
     public string key;

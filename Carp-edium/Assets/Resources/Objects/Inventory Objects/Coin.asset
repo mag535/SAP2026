@@ -15,7 +15,7 @@ MonoBehaviour:
   isNoteEntry: 0
   objectID: Coin
   description: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: ea4c54f5017063e43a4d233268b40b2d, type: 3}
   longDescription: 'A gold coin. Appears to be this world''s currency. '
   spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 0}
+  spriteIcon: {fileID: 21300000, guid: ea4c54f5017063e43a4d233268b40b2d, type: 3}

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNoteEntry: 1
   objectID: FoxClue2 (Bar)
-  description: Go to bar for more info
+  description: 
   sprite: {fileID: 0}
-  longDescription: 
+  longDescription: Go to bar for more info
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

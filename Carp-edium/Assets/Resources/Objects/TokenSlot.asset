@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: TokenSlot
   m_EditorClassIdentifier: 
   isNoteEntry: 0
-  objectID: 
+  objectID: TokenSlot
   description: 
   sprite: {fileID: 0}
-  longDescription: 
+  longDescription: 'An unsuspecting slot in the wall. '
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

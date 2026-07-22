@@ -15,7 +15,7 @@ MonoBehaviour:
   isNoteEntry: 0
   objectID: SnakeAndTigerPainting
   description: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 41d7300a36e883f4cb3460975679fb02, type: 3}
   longDescription: A painting depicting a Green Snake and a White Tiger together.
-  spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 0}
+  spriteMagnified: {fileID: 21300000, guid: 41d7300a36e883f4cb3460975679fb02, type: 3}
+  spriteIcon: {fileID: 21300000, guid: 41d7300a36e883f4cb3460975679fb02, type: 3}

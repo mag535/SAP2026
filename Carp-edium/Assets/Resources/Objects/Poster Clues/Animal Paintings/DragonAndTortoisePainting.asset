@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: DragonAndTortoisePainting
   m_EditorClassIdentifier: 
   isNoteEntry: 0
-  objectID: 
+  objectID: DragonAndTortoisePainting
   description: 
-  sprite: {fileID: 0}
-  longDescription: 
-  spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1b3fa05e98ed4444abe6b78a5df56ea4, type: 3}
+  longDescription: A painting depicting a Red Dragon and a Black Tortoise together.
+  spriteMagnified: {fileID: 21300000, guid: 1b3fa05e98ed4444abe6b78a5df56ea4, type: 3}
+  spriteIcon: {fileID: 21300000, guid: 1b3fa05e98ed4444abe6b78a5df56ea4, type: 3}

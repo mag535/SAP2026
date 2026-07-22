@@ -15,8 +15,8 @@ MonoBehaviour:
   isNoteEntry: 0
   objectID: CompassRosePoster
   description: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: bb9c8aeaeab35c14eb95e1a92b65ef59, type: 3}
   longDescription: A poster with four auspicious beasts. There appears to be a compass
     rose in the center. Could that be significant?
-  spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 0}
+  spriteMagnified: {fileID: 21300000, guid: bb9c8aeaeab35c14eb95e1a92b65ef59, type: 3}
+  spriteIcon: {fileID: 21300000, guid: bb9c8aeaeab35c14eb95e1a92b65ef59, type: 3}

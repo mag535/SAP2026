@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Translation Scroll
   m_EditorClassIdentifier: 
   isNoteEntry: 0
-  objectID: 
+  objectID: TranslationScroll
   description: 
   sprite: {fileID: 0}
-  longDescription: 
+  longDescription: "A calligraphy scroll with 3 chinese characters and their translations.
+    \"\u529B\" for Strength, \"\u7406\" for Intellect, and \"\u6069\" for Compassion. "
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

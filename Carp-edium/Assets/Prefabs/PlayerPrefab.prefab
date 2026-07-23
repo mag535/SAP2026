@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9088972957475419036}
   - component: {fileID: 8928229754008088046}
   - component: {fileID: 4239255292208668719}
+  - component: {fileID: 3485561002063747036}
   - component: {fileID: 927937507187468432}
   - component: {fileID: 937473934537937284}
   - component: {fileID: 2281768357408128118}
@@ -33,13 +34,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3548012394192768574}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &940780364199249824
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -84,15 +85,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.35408783, b: 1, a: 1}
+  m_Sprite: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2073361435286918668
@@ -234,6 +235,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialPlayerState: 0
   playerState: 0
+--- !u!114 &3485561002063747036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548012394192768574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b894515fa9f2d888e9bf89b7c703e02c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteArray:
+  - {fileID: 7829023597686284592, guid: 41bae30838cff244594dcf5700a0e2c6, type: 3}
+  - {fileID: -1744544042997504947, guid: 41bae30838cff244594dcf5700a0e2c6, type: 3}
+  - {fileID: -8485836109178673504, guid: 41bae30838cff244594dcf5700a0e2c6, type: 3}
+  - {fileID: 8192548633022811398, guid: 41bae30838cff244594dcf5700a0e2c6, type: 3}
 --- !u!114 &927937507187468432
 MonoBehaviour:
   m_ObjectHideFlags: 0

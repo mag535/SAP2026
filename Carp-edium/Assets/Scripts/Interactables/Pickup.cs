@@ -5,13 +5,17 @@ namespace Carp {
     {
         public static float destroyDelay = 0.1f;
 
-        public Object objectData;
-
         void Start() {
             // set sprite on load
-            if (objectData.sprite == null) { return; }
-            SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-            spriteRenderer.sprite = objectData.sprite;
+            if (objectData.sprite != null) {
+                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                spriteRenderer.sprite = objectData.sprite;
+            }
+
+            if (GameManager.Instance.AmIAModifiedPickup(objectData.objectID)) {
+                // destroy
+                Destroy(gameObject, destroyDelay);
+            }
         }
 
         public override void Interact() {
@@ -20,6 +24,13 @@ namespace Carp {
             // add to inventory
             EvtSystem.EventDispatcher.Raise<RequestAddItem>(new RequestAddItem {
                     item = objectData });
+            // create notification
+            EvtSystem.EventDispatcher.Raise<RequestCreateNotification>(new
+                    RequestCreateNotification { 
+                    isNoteEntry = objectData.isNoteEntry,
+                    objectName = objectData.name });
+            // Update GM on modification
+            GameManager.Instance.AddModifiedPickup(objectData.objectID);
             // destroy
             Destroy(gameObject, destroyDelay);
         }

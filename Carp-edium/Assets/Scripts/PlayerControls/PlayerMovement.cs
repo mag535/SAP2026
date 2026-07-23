@@ -14,8 +14,6 @@ namespace Carp {
         private Rigidbody2D rb;
         private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
-        private PlayerState playerStateManager;
-
         void Awake() {
             inputVector = Vector2.zero;
             movementDirection = Vector2.zero;
@@ -23,36 +21,31 @@ namespace Carp {
 
         void Start() {
             rb = GetComponent<Rigidbody2D>();
-            playerStateManager = GetComponent<PlayerState>();
-            Debug.Log("State: " + playerStateManager.GetCurrentState());
+
+            EvtSystem.EventDispatcher.AddListener<RequestChangePlayerPosition>(
+                    HandlePlayerPositionChange);
         }
 
         void FixedUpdate()
         {
-            switch (playerStateManager.GetCurrentState()) {
-                case PlayerState.PlayerStates.GAME:
-                    bool success = MovePlayer(movementDirection);
+            bool success = MovePlayer(movementDirection);
 
-                    if (!success) {
-                        // try left/right
-                        success = MovePlayer(new Vector2(movementDirection.x, 0));
+            if (!success) {
+                // try left/right
+                success = MovePlayer(new Vector2(movementDirection.x, 0));
 
-                        // try up/down
-                        if (!success) {
-                            success = MovePlayer(new Vector2(0, movementDirection.y));
-                        }
-                    }
-                    break;
-                case PlayerState.PlayerStates.DIALOGUE:
-                    break;
-                case PlayerState.PlayerStates.DESCRIPTION:
-                    break;
+                // try up/down
+                if (!success) {
+                    success = MovePlayer(new Vector2(0, movementDirection.y));
+                }
             }
         }
 
         public void Move(InputAction.CallbackContext context) {
             if (context.started) {
                 inputVector = context.ReadValue<Vector2>();
+                EvtSystem.EventDispatcher.Raise<ChangePlayerSprite>(new
+                        ChangePlayerSprite { direction = inputVector });
             } else if (context.canceled) {
                 inputVector = Vector2.zero;
             }
@@ -106,6 +99,16 @@ namespace Carp {
             }
 
             return Vector2.zero;
+        }
+
+        void HandlePlayerPositionChange(RequestChangePlayerPosition evt) {
+            // FIXME: not changing position...
+            rb.MovePosition(evt.newPosition);
+        }
+
+        void OnDestroy() {
+            EvtSystem.EventDispatcher.RemoveListener<RequestChangePlayerPosition>(
+                    HandlePlayerPositionChange);
         }
     }
 }

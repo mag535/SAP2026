@@ -4,11 +4,31 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-// FIXME: UIs --------------------------------------------------------
+// SCENE & ROOM LOADING --------------------------------------------------------
+public class RequestLoadRoom : EvtSystem.Event
+{
+    public string roomName;
+}
+public class RequestChangePlayerPosition : EvtSystem.Event
+{
+    public Vector2 newPosition;
+}
+public class RequestChangePlayerState : EvtSystem.Event
+{
+    public string newState;
+}
+
+// UIs -------------------------------------------------------------------------
 public class TrackUIMenuOpen : EvtSystem.Event
 {
     // false means menu is closing
     public bool isOpening;
+}
+
+public class RequestCreateNotification : EvtSystem.Event
+{
+    public bool isNoteEntry;
+    public string objectName;
 }
 
 // DESCRIPTION UI --------------------------------------------------------------
@@ -58,6 +78,11 @@ public class RequestAddToNotebookDisplay : EvtSystem.Event
 public class RequestItemUse : EvtSystem.Event
 {
     public Object item;
+}
+
+// PLAYER ANIMATION ------------------------------------------------------------
+public class ChangePlayerSprite : EvtSystem.Event {
+    public Vector2 direction;
 }
 
 // INTERACTABLES -----------------------------------------------------------------------

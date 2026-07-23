@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxIntroDialogue1
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 0e8824df-cdd3-48c6-adbf-78a51fb84cc1
+    PortName: Next
+    TargetNodeGuid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
+  - BaseNodeGuid: 614aff0a-ad10-474d-8602-d33ffaae2f99
+    PortName: Next
+    TargetNodeGuid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
+  - BaseNodeGuid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
+    PortName: Next
+    TargetNodeGuid: 614aff0a-ad10-474d-8602-d33ffaae2f99
+  - BaseNodeGuid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
+    PortName: Next
+    TargetNodeGuid: 29909da4-86ce-4960-898d-2308afb0e612
+  - BaseNodeGuid: 29909da4-86ce-4960-898d-2308afb0e612
+    PortName: Next
+    TargetNodeGuid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
+  DialogueNodeData:
+  - type: 4
+    Guid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1656, y: 351.2}
+  - type: 0
+    Guid: 614aff0a-ad10-474d-8602-d33ffaae2f99
+    speaker: Fox
+    DialogueText: '"If you find anything in the bar, be sure to show it to me so
+      I can explain what those objects are." '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 417.6, y: 257.6}
+  - type: 2
+    Guid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
+    speaker: Fox
+    DialogueText: "\"\u201CNo? I usually <color=\"yellow\">check the telephone booth</color>
+      for spare change. If your luck is any good, you\u2019ll find something in there.\u201D "
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: c0ed06e2ffa20694e89703e6be73dcb0, type: 2}
+    flag: 
+    Position: {x: 17.6, y: 44.799995}
+  - type: 2
+    Guid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
+    speaker: Fox
+    DialogueText: "\u201COh, another little fish? What are you doing here? Looking
+      for a big, amazing Dragon Gate? So many have come before you~ Let\u2019s see
+      if you can figure it out.. Or end up like the other fishies who\u2019ve come
+      before you\u2026 <color=\"yellow\"> The gate is either red, green, or gold</color>,
+      I can tell you that much.\u201D "
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: b9c264cce1d8264418a39a7c53088682, type: 2}
+    flag: 
+    Position: {x: -111.2, y: -458.4}
+  - type: 2
+    Guid: 29909da4-86ce-4960-898d-2308afb0e612
+    speaker: Fox
+    DialogueText: "\u201CIf you want more information, you should <color=\"yellow\">
+      go to the bar</color>. But the bartender won\u2019t give you that information
+      for free.. You got any coin on you?\u201D  "
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 8d822821a65625847bb4f867a5a496e6, type: 2}
+    flag: 
+    Position: {x: -10.4, y: -167.2}

@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: DogUnlockedDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 5803cc25-de15-450c-90ed-bdb45886dbe3
+    PortName: Next
+    TargetNodeGuid: a38dd524-12d4-4e18-8aef-54a08fc126cf
+  - BaseNodeGuid: a38dd524-12d4-4e18-8aef-54a08fc126cf
+    PortName: Next
+    TargetNodeGuid: 1247b095-79fe-47e9-8014-f0a1addfdd61
+  - BaseNodeGuid: 1247b095-79fe-47e9-8014-f0a1addfdd61
+    PortName: Next
+    TargetNodeGuid: 19e6a1e0-24ea-4dbb-9b21-39accfeed1b4
+  - BaseNodeGuid: 19e6a1e0-24ea-4dbb-9b21-39accfeed1b4
+    PortName: Next
+    TargetNodeGuid: e4eda37e-99c8-4e53-8d1e-d15cc742a158
+  - BaseNodeGuid: e4eda37e-99c8-4e53-8d1e-d15cc742a158
+    PortName: Next
+    TargetNodeGuid: 1b60627c-718f-4cc7-8b8d-4e678d28b5d9
+  - BaseNodeGuid: 1b60627c-718f-4cc7-8b8d-4e678d28b5d9
+    PortName: Next
+    TargetNodeGuid: e11fa485-f143-4243-a164-017984685929
+  DialogueNodeData:
+  - type: 0
+    Guid: a38dd524-12d4-4e18-8aef-54a08fc126cf
+    speaker: Dog
+    DialogueText: '"Thank you so much! I am truly grateful for your help."  '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 280.8, y: 200}
+  - type: 0
+    Guid: 1247b095-79fe-47e9-8014-f0a1addfdd61
+    speaker: Dog
+    DialogueText: '"Ah, where was I? Yes, the paintings." '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 766.4, y: 200}
+  - type: 0
+    Guid: 19e6a1e0-24ea-4dbb-9b21-39accfeed1b4
+    speaker: Dog
+    DialogueText: '"The one on the North wall has a Snake and a White Tiger."  '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1118.4, y: 199.20001}
+  - type: 0
+    Guid: e4eda37e-99c8-4e53-8d1e-d15cc742a158
+    speaker: Dog
+    DialogueText: '"The one on the East wall has a QiLin and an Azure Dragon."  '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1650.4, y: 192}
+  - type: 0
+    Guid: 1b60627c-718f-4cc7-8b8d-4e678d28b5d9
+    speaker: Dog
+    DialogueText: '"The one on the South Wall has a Red Dragon and a Black Tortoise."  '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 2168, y: 192}
+  - type: 4
+    Guid: e11fa485-f143-4243-a164-017984685929
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 2681.6, y: 215.20001}

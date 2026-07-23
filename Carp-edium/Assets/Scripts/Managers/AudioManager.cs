@@ -36,8 +36,9 @@ public class AudioManager : Singleton<AudioManager>
             return;
         }
         if (s.source.isPlaying) {
-            Debug.LogWarning("Sound: " + name + " is already playing.");
-            return;
+            //Debug.LogWarning("Sound: " + name + " is already playing.");
+            Stop(name);
+            //return;
         }
         s.source.Play();
     }

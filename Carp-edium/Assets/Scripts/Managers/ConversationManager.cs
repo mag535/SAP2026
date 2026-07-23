@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public class ConversationManager : Singleton<ConversationManager>
 {
     public GameObject background;
-    public GameObject dialogueBox;
     public TextMeshProUGUI textBox;
     public TextMeshProUGUI nameTag;
 
@@ -73,7 +72,7 @@ public class ConversationManager : Singleton<ConversationManager>
     }
 
     public void SetDialogue() {
-        // TODO: set speaker
+        // Set speaker
         nameTag.text = _currentConversation.DialogueNodeData.Find(x =>
                 x.Guid == _currentGuid).speaker;
         // Display dialogue text
@@ -83,13 +82,11 @@ public class ConversationManager : Singleton<ConversationManager>
 
     public void ShowDialogueWindow() {
         background.SetActive(true);
-        dialogueBox.SetActive(true);
     }
 
     public void HideDialogueWindow() {
         textBox.text = string.Empty;
         background.SetActive(false);
-        dialogueBox.SetActive(false);
     }
 
     // Get some information on current dialogue node then parse
@@ -143,8 +140,17 @@ public class ConversationManager : Singleton<ConversationManager>
 
     void HandleGiveItemDialogue(DialogueNodeData node) {
         if (node.cost == null) {
-            EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
-                    RequestAddItem { item = node.trade });
+            if (node.trade.isNoteEntry) {
+                EvtSystem.EventDispatcher.Raise<RequestAddToNotebook>( new
+                        RequestAddToNotebook { objectData = node.trade });
+            } else {
+                EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
+                        RequestAddItem { item = node.trade });
+            }
+            EvtSystem.EventDispatcher.Raise<RequestCreateNotification>( new
+                    RequestCreateNotification {
+                    isNoteEntry = node.trade.isNoteEntry,
+                    objectName = node.trade.name });
             return;
         }
 

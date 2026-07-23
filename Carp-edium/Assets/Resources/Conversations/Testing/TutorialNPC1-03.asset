@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: TutorialNPC1-03
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: b99802bc-7d74-40eb-b81c-74cdab038dd9
+    PortName: Next
+    TargetNodeGuid: 3afccb2b-9b92-4c41-b8fe-2c8edd85422f
+  - BaseNodeGuid: 3afccb2b-9b92-4c41-b8fe-2c8edd85422f
+    PortName: Next
+    TargetNodeGuid: dc6b99e7-ac26-4b9d-8555-124391f1d967
+  DialogueNodeData:
+  - type: 2
+    Guid: 3afccb2b-9b92-4c41-b8fe-2c8edd85422f
+    speaker: NPC1
+    DialogueText: You want to get into [TOWN NAME]? I might have something that could
+      help you... for a price ;)
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 21594005a9b8e84a39e0100d873f586d, type: 2}
+    flag: 
+    Position: {x: 231, y: 197}
+  - type: 4
+    Guid: dc6b99e7-ac26-4b9d-8555-124391f1d967
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 863, y: 223}

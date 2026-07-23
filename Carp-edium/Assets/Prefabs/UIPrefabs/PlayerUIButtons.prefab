@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8222499757523779066}
   - component: {fileID: 8462667604278127974}
   - component: {fileID: 5063413401026470390}
+  - component: {fileID: 6208611297562809370}
   m_Layer: 5
   m_Name: PlayerUIButtons
   m_TagString: Untagged
@@ -30,8 +31,8 @@ RectTransform:
   m_GameObject: {fileID: 9122724778542385904}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.85, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.77, y: 2.0823529, z: 2.0823529}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5677162337625143139}
   - {fileID: 7897082850613701923}
@@ -132,6 +133,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8c34c90c9e507ff9baa29b3be3a829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6208611297562809370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9122724778542385904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 3, y: 3}
+  m_UseGraphicAlpha: 1
 --- !u!1001 &5920436936871325848
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: DogTranslationScrollClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 1a0e56ed-cc2c-4382-ba00-adb682529b43
+    PortName: Next
+    TargetNodeGuid: 2352b28b-b412-4e36-aa3e-d3f8af171358
+  - BaseNodeGuid: 2352b28b-b412-4e36-aa3e-d3f8af171358
+    PortName: Next
+    TargetNodeGuid: ac1da99d-ce05-430d-a039-cd01a4c73c3d
+  DialogueNodeData:
+  - type: 2
+    Guid: 2352b28b-b412-4e36-aa3e-d3f8af171358
+    speaker: Dog
+    DialogueText: '"You found a scroll with translations? Wow! <color="yellow">Those
+      characters are the same as the ones next to the paintings</color>!" '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 36d26675e9d42844795235c28308a57b, type: 2}
+    flag: 
+    Position: {x: 250.4, y: 228}
+  - type: 4
+    Guid: ac1da99d-ce05-430d-a039-cd01a4c73c3d
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1120, y: 241.6}

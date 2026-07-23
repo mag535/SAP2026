@@ -26,8 +26,8 @@ MonoBehaviour:
   - type: 2
     Guid: 4a51333d-2df9-4615-a27a-4df50773cebd
     speaker: Dog
-    DialogueText: '"Wow, you found a Dragon Scroll? That''s great! The scrolls are
-      always correct." '
+    DialogueText: '"Wow, you found a Dragon Scroll? That''s great! <color="yellow">The
+      scrolls are always correct</color>." '
     cost: {fileID: 0}
     trade: {fileID: 11400000, guid: 2ed143115624dc242945ed3dd0f43ce0, type: 2}
     flag: 

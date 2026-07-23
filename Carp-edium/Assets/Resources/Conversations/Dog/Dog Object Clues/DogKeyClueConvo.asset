@@ -10,30 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
-  m_Name: DogJadeTokenClueConvo
+  m_Name: DogKeyClueConvo
   m_EditorClassIdentifier: 
   NodeLinks:
-  - BaseNodeGuid: 221a56ed-7634-45df-8658-466e8395fd74
+  - BaseNodeGuid: 1e0d5943-d618-4c68-8cfd-12de515bf0ae
     PortName: Next
-    TargetNodeGuid: eb52ad26-dfd8-4479-a75b-9c273f881fbb
-  - BaseNodeGuid: eb52ad26-dfd8-4479-a75b-9c273f881fbb
+    TargetNodeGuid: bcca21f6-fe37-422c-aabb-d02003a5e2d8
+  - BaseNodeGuid: bcca21f6-fe37-422c-aabb-d02003a5e2d8
     PortName: Next
-    TargetNodeGuid: 0d74fac5-aa42-45a2-95f7-01f6726ada75
+    TargetNodeGuid: adef6f77-782b-4369-a38e-11423b4824b0
   DialogueNodeData:
   - type: 2
-    Guid: eb52ad26-dfd8-4479-a75b-9c273f881fbb
+    Guid: bcca21f6-fe37-422c-aabb-d02003a5e2d8
     speaker: Dog
-    DialogueText: '"Interesting token! Have you found <color="yellow">something to
-      put the token in yet</color>?" '
+    DialogueText: '"That key looks like <color="yellow">it could unlock something</color>!" '
     cost: {fileID: 0}
-    trade: {fileID: 11400000, guid: 242ce799e87795f488bc3602d7e5506c, type: 2}
+    trade: {fileID: 11400000, guid: f794dd224ef70be4ab11ae4666a26415, type: 2}
     flag: 
-    Position: {x: 251.2, y: 167.20001}
+    Position: {x: 253.6, y: 175.20001}
   - type: 4
-    Guid: 0d74fac5-aa42-45a2-95f7-01f6726ada75
+    Guid: adef6f77-782b-4369-a38e-11423b4824b0
     speaker: 
     DialogueText: END OF CONVERSATION
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 906.4, y: 297.6}
+    Position: {x: 792, y: 267.2}

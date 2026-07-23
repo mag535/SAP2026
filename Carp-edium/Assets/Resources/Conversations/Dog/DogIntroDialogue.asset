@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: DogIntroDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 7ce7c84a-ca9b-4092-94ef-06dcfceb840c
+    PortName: Next
+    TargetNodeGuid: e221dff7-3c3f-4fb2-a02e-e0a098abaf3a
+  - BaseNodeGuid: e221dff7-3c3f-4fb2-a02e-e0a098abaf3a
+    PortName: Next
+    TargetNodeGuid: 480ec357-40a5-456e-b211-4f768959a05f
+  - BaseNodeGuid: 480ec357-40a5-456e-b211-4f768959a05f
+    PortName: Next
+    TargetNodeGuid: 277d0674-6062-4e98-a681-6e4442d6be33
+  DialogueNodeData:
+  - type: 0
+    Guid: e221dff7-3c3f-4fb2-a02e-e0a098abaf3a
+    speaker: Dog
+    DialogueText: '"Hello! Welcome to the Azure Dragon Temple. Would you like a tour?"  '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 284.8, y: 147.20001}
+  - type: 2
+    Guid: 480ec357-40a5-456e-b211-4f768959a05f
+    speaker: Dog
+    DialogueText: '"Here we have the three paintings of- Wait, where''s the <color="yellow">Buddha
+      Statue?</color> I could''ve sworn it was right here! I need to find it immediately!"'
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 6c485c09895510f438d2568148d8d05d, type: 2}
+    flag: 
+    Position: {x: 786.4, y: 131.20001}
+  - type: 4
+    Guid: 277d0674-6062-4e98-a681-6e4442d6be33
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1744, y: 228}

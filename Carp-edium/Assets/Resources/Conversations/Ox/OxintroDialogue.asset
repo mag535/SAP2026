@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: OxintroDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: c22fa5e4-8402-4eaf-ad2c-a2e59f8f1fa8
+    PortName: Next
+    TargetNodeGuid: 8c66bfc8-cb71-4785-9df1-96086efcf42f
+  - BaseNodeGuid: 8c66bfc8-cb71-4785-9df1-96086efcf42f
+    PortName: Next
+    TargetNodeGuid: 32d557fd-e6dd-4a34-b434-cdc4abd490b6
+  - BaseNodeGuid: 32d557fd-e6dd-4a34-b434-cdc4abd490b6
+    PortName: Next
+    TargetNodeGuid: 7a2feac8-b431-41f7-b10f-8af5ab925197
+  DialogueNodeData:
+  - type: 0
+    Guid: 8c66bfc8-cb71-4785-9df1-96086efcf42f
+    speaker: Ox
+    DialogueText: '"You wanna know about the Dragon Gate? It''s a bit of a fable
+      around these parts.. I could tell ya a thing or two, but it''ll cost ya."  '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 241.6, y: 123.200005}
+  - type: 2
+    Guid: 32d557fd-e6dd-4a34-b434-cdc4abd490b6
+    speaker: Ox
+    DialogueText: '"You wanna know about the Dragon Gate? It''s a bit of a fable
+      around these parts.. I could tell ya a thing or two, but <color="yellow">it''ll
+      cost ya</color>.'
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: aacd762caf811ca44b3447c6fb554ead, type: 2}
+    flag: 
+    Position: {x: 1117.6, y: 140}
+  - type: 4
+    Guid: 7a2feac8-b431-41f7-b10f-8af5ab925197
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 2036.8, y: 179.20001}

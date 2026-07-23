@@ -18,8 +18,6 @@ namespace Carp {
                 // destroy
                 Destroy(gameObject, destroyDelay);
             }
-
-            Debug.Log("Pickup Start()");
         }
 
         public override void Interact() {

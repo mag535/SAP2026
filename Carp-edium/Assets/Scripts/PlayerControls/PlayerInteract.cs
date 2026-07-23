@@ -114,11 +114,8 @@ namespace Carp {
             if (engagedGO == null) { return; }
             bool success = engagedGO.GetComponent<Interactable>()
                 .HandleItemUse(evt.item);
-            // Avoids removing clues in Notebook by only requesting removal
-            // from Inventory.
-            if (evt.item.isNoteEntry) { return; }
-            EvtSystem.EventDispatcher.Raise<RequestRemoveItem>(new 
-                    RequestRemoveItem { item = evt.item });
+            // TODO: only remove coin when used on ???? and Buddha statue when
+            // used on ????. Nothing else is consumable
         }
 
         void OnDestroy() {

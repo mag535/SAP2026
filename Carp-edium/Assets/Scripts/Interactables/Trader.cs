@@ -4,7 +4,6 @@ using System.Collections.Generic;
 namespace Carp {
     public class Trader : Interactable
     {
-        public Object objectData;
         public List<Listing> possibleTrades = new List<Listing>();
 
         void Start() {
@@ -26,22 +25,6 @@ namespace Carp {
 
         public override void Interact() {
             AudioManager.Instance.Play(soundEffect.name);
-            
-            // Display out of stock description if no more trades available
-            if (possibleTrades.Count == 0) {
-                EvtSystem.EventDispatcher.Raise<RequestDisplayInspected>(
-                        new RequestDisplayInspected { 
-                        useLong = true,
-                        objectData = objectData });
-                return;
-            }
-
-            // Send signal to have description and sprite displayed. This is 
-            // magnifying
-            EvtSystem.EventDispatcher.Raise<RequestDisplayInspected>(
-                    new RequestDisplayInspected { 
-                    useLong = false,
-                    objectData = objectData });
         }
 
         public override bool HandleItemUse(Object item) {

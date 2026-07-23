@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3464539509204465337}
   - component: {fileID: 7350036617910625748}
   - component: {fileID: 3751247312692651592}
+  - component: {fileID: 4483991975019223209}
   m_Layer: 0
   m_Name: DoorPrefab
   m_TagString: Untagged
@@ -181,3 +182,17 @@ MonoBehaviour:
   key: {fileID: 11400000, guid: 79bed17687e9e51028e30d092a592891, type: 2}
   isLocked: 1
   nextRoomName: 
+--- !u!114 &4483991975019223209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2749080024282045263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22b5bd9857d925c29aa74346723509e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffect: {fileID: 0}
+  objectData: {fileID: 0}

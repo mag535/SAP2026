@@ -4,7 +4,6 @@ namespace Carp {
     public class Openable : Interactable
     {
         public Sound unlockingSoundEffect;
-        public Object objectData;
         public Object key;
 
         public bool isLocked = true;
@@ -25,12 +24,6 @@ namespace Carp {
         public override void Interact() {
             if (isLocked) {
                 AudioManager.Instance.Play(soundEffect.name);
-                EvtSystem.EventDispatcher.Raise<RequestDisplayInspected>(
-                        new RequestDisplayInspected { 
-                        useLong = true,
-                        objectData = objectData });
-                EvtSystem.EventDispatcher.Raise<RequestAddToNotebook>(
-                        new RequestAddToNotebook { objectData = objectData });
             } else {
                 AudioManager.Instance.Play(unlockingSoundEffect.name);
             }

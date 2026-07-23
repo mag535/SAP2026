@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbdf2a82544d6da984f0fae57f16a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialRoom: Testing
+  initialRoom: 0_PlayerSpawn
   playerEntrancePositions:
   - roomName: Testing
     playerEntrancePosition: {x: 0, y: -3}

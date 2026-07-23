@@ -13,27 +13,27 @@ MonoBehaviour:
   m_Name: FoxBuddhaClueConvo
   m_EditorClassIdentifier: 
   NodeLinks:
-  - BaseNodeGuid: 78201711-6f1a-440a-a3bf-e62053e23fce
+  - BaseNodeGuid: c1f064eb-fed1-434c-b02c-e3bd18a551ec
     PortName: Next
-    TargetNodeGuid: 1b511fff-b3a6-4c6b-adb3-79d8c46e4e51
-  - BaseNodeGuid: 1b511fff-b3a6-4c6b-adb3-79d8c46e4e51
+    TargetNodeGuid: fb2a11ce-8c79-45f9-a855-89710108ecc5
+  - BaseNodeGuid: fb2a11ce-8c79-45f9-a855-89710108ecc5
     PortName: Next
-    TargetNodeGuid: 505c5ee7-b7aa-443a-8827-2e6121895b3e
+    TargetNodeGuid: b6e48e1f-0f76-4897-8337-a495f861a1bc
   DialogueNodeData:
   - type: 2
-    Guid: 1b511fff-b3a6-4c6b-adb3-79d8c46e4e51
+    Guid: fb2a11ce-8c79-45f9-a855-89710108ecc5
     speaker: Fox
     DialogueText: '"Nice Buddha Statue. I don''t have a use for it, though. Maybe
-      you could <color="yellow">give it to someone else</color>."'
+      you could <color="yellow">give it to someone else.</color>"'
     cost: {fileID: 0}
     trade: {fileID: 11400000, guid: 22bbc1c93e0116844b50ed4ed498e3fd, type: 2}
     flag: 
-    Position: {x: 212.8, y: 236.80002}
+    Position: {x: 212.8, y: 233.6}
   - type: 4
-    Guid: 505c5ee7-b7aa-443a-8827-2e6121895b3e
+    Guid: b6e48e1f-0f76-4897-8337-a495f861a1bc
     speaker: 
     DialogueText: END OF CONVERSATION
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 926.4, y: 168}
+    Position: {x: 1045.6, y: 277.6}

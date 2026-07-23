@@ -18,8 +18,6 @@ namespace Carp {
         }
 
         void Start() {
-            EvtSystem.EventDispatcher
-                .AddListener<RequestChangePlayerState>(HandlePlayerStateChange);
         }
 
         public PlayerStates GetCurrentState() {
@@ -30,15 +28,7 @@ namespace Carp {
             playerState = newState;
         }
 
-        void HandlePlayerStateChange(RequestChangePlayerState evt) {
-            if (evt.newState == "GAME") {
-                playerState = PlayerStates.GAME;
-            }
-        }
-
         void OnDestroy() {
-            EvtSystem.EventDispatcher
-                .RemoveListener<RequestChangePlayerState>(HandlePlayerStateChange);
         }
     }
 }

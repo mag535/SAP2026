@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: OxScepterClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: ada3f424-cf9e-4553-9be9-d9b6fdb6d55e
+    PortName: Next
+    TargetNodeGuid: 98be4781-95c1-4eac-a0a5-079680fdde53
+  - BaseNodeGuid: 98be4781-95c1-4eac-a0a5-079680fdde53
+    PortName: Next
+    TargetNodeGuid: c9e23c74-baac-44a2-b219-e7743f0b0d66
+  DialogueNodeData:
+  - type: 0
+    Guid: 98be4781-95c1-4eac-a0a5-079680fdde53
+    speaker: Ox
+    DialogueText: '"Huh, we could use that. Not sure where you''d put it, though." '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 266.4, y: 140}
+  - type: 4
+    Guid: c9e23c74-baac-44a2-b219-e7743f0b0d66
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 714.4, y: 224.8}

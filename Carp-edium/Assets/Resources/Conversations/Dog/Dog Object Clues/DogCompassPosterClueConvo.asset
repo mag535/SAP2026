@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: DogCompassPosterClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 9b8e750d-f796-4257-babb-f0a10076e461
+    PortName: Next
+    TargetNodeGuid: b7a012a9-1139-43cd-8865-f02c79a58f0d
+  - BaseNodeGuid: b7a012a9-1139-43cd-8865-f02c79a58f0d
+    PortName: Next
+    TargetNodeGuid: 65b41440-8ead-43c0-aeae-e23ff01e12a2
+  DialogueNodeData:
+  - type: 2
+    Guid: b7a012a9-1139-43cd-8865-f02c79a58f0d
+    speaker: Dog
+    DialogueText: '"Yes, the four auspicious beasts! <color="yellow">Each beast is
+      assigned a cardinal direction</color> to represent. This temple is in the East,
+      symbolic of the Azure Dragon on the poster."'
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: fa7a909ff62a8fe4ca2b35b7fa36dd28, type: 2}
+    flag: 
+    Position: {x: 309.6, y: 100.799995}
+  - type: 4
+    Guid: 65b41440-8ead-43c0-aeae-e23ff01e12a2
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1375.2, y: 274.4}

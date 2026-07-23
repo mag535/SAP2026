@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: DogDragonScrollClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 43372078-deb3-44e1-8f08-b2d28d550956
+    PortName: Next
+    TargetNodeGuid: 4a51333d-2df9-4615-a27a-4df50773cebd
+  - BaseNodeGuid: 4a51333d-2df9-4615-a27a-4df50773cebd
+    PortName: Next
+    TargetNodeGuid: ebea2a73-f616-4865-8545-b1e6d15e52c8
+  - BaseNodeGuid: ebea2a73-f616-4865-8545-b1e6d15e52c8
+    PortName: Next
+    TargetNodeGuid: ee830552-ab0b-4ea0-a6bd-d6d3279dece4
+  DialogueNodeData:
+  - type: 2
+    Guid: 4a51333d-2df9-4615-a27a-4df50773cebd
+    speaker: Dog
+    DialogueText: '"Wow, you found a Dragon Scroll? That''s great! The scrolls are
+      always correct." '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 2ed143115624dc242945ed3dd0f43ce0, type: 2}
+    flag: 
+    Position: {x: 230.4, y: 199.20001}
+  - type: 2
+    Guid: ebea2a73-f616-4865-8545-b1e6d15e52c8
+    speaker: Dog
+    DialogueText: '"Like it says, the Dragon has always meant strength." '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 48bb7a61d6c257c4ea0e63e7a782e60b, type: 2}
+    flag: 
+    Position: {x: 816, y: 237.6}
+  - type: 4
+    Guid: ee830552-ab0b-4ea0-a6bd-d6d3279dece4
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1296, y: 356.80002}

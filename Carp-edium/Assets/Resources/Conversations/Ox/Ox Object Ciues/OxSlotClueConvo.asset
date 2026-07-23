@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: OxSlotClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 421c0537-1218-45c8-aacf-013e06b5d0ec
+    PortName: Next
+    TargetNodeGuid: 9f335aa4-5870-4d08-967f-ad5f6fa89786
+  - BaseNodeGuid: 9f335aa4-5870-4d08-967f-ad5f6fa89786
+    PortName: Next
+    TargetNodeGuid: 7ddbbdf7-20cc-466f-88bc-60c6b8c5ce04
+  DialogueNodeData:
+  - type: 0
+    Guid: 9f335aa4-5870-4d08-967f-ad5f6fa89786
+    speaker: Ox
+    DialogueText: '"Why would there be a slot in the side of a temple?" '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 279.2, y: 178.40001}
+  - type: 4
+    Guid: 7ddbbdf7-20cc-466f-88bc-60c6b8c5ce04
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 672.8, y: 209.6}

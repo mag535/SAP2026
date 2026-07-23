@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: OxKeyClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 8eed1a96-65e7-44a1-ad35-0432d4b15689
+    PortName: Next
+    TargetNodeGuid: 2568376b-49a9-45bc-b2f9-0d0280964695
+  - BaseNodeGuid: 2568376b-49a9-45bc-b2f9-0d0280964695
+    PortName: Next
+    TargetNodeGuid: ce13bd9f-9f54-4992-beac-35975172d091
+  DialogueNodeData:
+  - type: 2
+    Guid: 2568376b-49a9-45bc-b2f9-0d0280964695
+    speaker: Ox
+    DialogueText: '"That key''s the one to the <color="yellow">palace.</color>" '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: b8b34b005b1674f42aefcf74de543c91, type: 2}
+    flag: 
+    Position: {x: 200.8, y: 72.799995}
+  - type: 4
+    Guid: ce13bd9f-9f54-4992-beac-35975172d091
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 584, y: 154.40001}

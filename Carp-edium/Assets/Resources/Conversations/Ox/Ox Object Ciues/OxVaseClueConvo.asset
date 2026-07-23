@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: OxVaseClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 4bd970f9-ffcf-4545-92fe-00ae8202e8b5
+    PortName: Next
+    TargetNodeGuid: a33cf2fe-10e8-42f7-a48e-733a588927ad
+  - BaseNodeGuid: a33cf2fe-10e8-42f7-a48e-733a588927ad
+    PortName: Next
+    TargetNodeGuid: 276f5ab5-3531-4040-962d-7f2c865a0b71
+  DialogueNodeData:
+  - type: 2
+    Guid: a33cf2fe-10e8-42f7-a48e-733a588927ad
+    speaker: Ox
+    DialogueText: '"Never seen that gate before. Since there''s a gate behind this
+      bar and the temple, did you <color="yellow">check the back of the palace</color>
+      for one?" '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: dd5495e57c2dd8a49b29ebf609645cca, type: 2}
+    flag: 
+    Position: {x: 246.4, y: 279.2}
+  - type: 4
+    Guid: 276f5ab5-3531-4040-962d-7f2c865a0b71
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1284.8, y: 296.80002}

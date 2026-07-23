@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: DogJadeTokenClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 221a56ed-7634-45df-8658-466e8395fd74
+    PortName: Next
+    TargetNodeGuid: eb52ad26-dfd8-4479-a75b-9c273f881fbb
+  - BaseNodeGuid: eb52ad26-dfd8-4479-a75b-9c273f881fbb
+    PortName: Next
+    TargetNodeGuid: 0d74fac5-aa42-45a2-95f7-01f6726ada75
+  DialogueNodeData:
+  - type: 2
+    Guid: eb52ad26-dfd8-4479-a75b-9c273f881fbb
+    speaker: Dog
+    DialogueText: '"Interesting token! Have you found <color="yellow">something to
+      put the token in yet?" '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 242ce799e87795f488bc3602d7e5506c, type: 2}
+    flag: 
+    Position: {x: 251.2, y: 167.20001}
+  - type: 4
+    Guid: 0d74fac5-aa42-45a2-95f7-01f6726ada75
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 906.4, y: 297.6}

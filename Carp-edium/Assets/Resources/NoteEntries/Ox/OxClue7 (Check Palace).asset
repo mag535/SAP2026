@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
   m_Name: OxClue7 (Check Palace)
   m_EditorClassIdentifier: 
-  isNoteEntry: 0
-  objectID: 
+  isNoteEntry: 1
+  objectID: Ox Clue 7 (Check Palace)
   description: 
   sprite: {fileID: 0}
-  longDescription: 
+  longDescription: Check back of palace for gate
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dragon Scroll
   m_EditorClassIdentifier: 
   isNoteEntry: 0
-  objectID: DragonScroll
+  objectID: Dragon Scroll
   description: 
   sprite: {fileID: 21300000, guid: ca0aed948900c974f943d53e9c024afb, type: 3}
   longDescription: 'A scroll with a dragon insignia. The only thing legible on it

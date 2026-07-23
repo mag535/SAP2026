@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxBuddhaClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 78201711-6f1a-440a-a3bf-e62053e23fce
+    PortName: Next
+    TargetNodeGuid: 1b511fff-b3a6-4c6b-adb3-79d8c46e4e51
+  - BaseNodeGuid: 1b511fff-b3a6-4c6b-adb3-79d8c46e4e51
+    PortName: Next
+    TargetNodeGuid: 505c5ee7-b7aa-443a-8827-2e6121895b3e
+  DialogueNodeData:
+  - type: 2
+    Guid: 1b511fff-b3a6-4c6b-adb3-79d8c46e4e51
+    speaker: Fox
+    DialogueText: '"Nice Buddha Statue. I don''t have a use for it, though. Maybe
+      you could <color="yellow">give it to someone else</color>."'
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 22bbc1c93e0116844b50ed4ed498e3fd, type: 2}
+    flag: 
+    Position: {x: 212.8, y: 236.80002}
+  - type: 4
+    Guid: 505c5ee7-b7aa-443a-8827-2e6121895b3e
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 926.4, y: 168}

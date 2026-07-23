@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
-  m_Name: DogClue4 (Compass Poster)
+  m_Name: DogClue8 (Scepter)
   m_EditorClassIdentifier: 
   isNoteEntry: 1
-  objectID: 
+  objectID: Dog Clue 8 (Scepter)
   description: 
   sprite: {fileID: 0}
-  longDescription: Each beast is assigned a cardinal direction
+  longDescription: Check palace for scepter holder
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

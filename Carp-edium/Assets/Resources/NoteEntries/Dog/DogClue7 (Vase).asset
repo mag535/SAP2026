@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
-  m_Name: DogClue4 (Compass Poster)
+  m_Name: DogClue7 (Vase)
   m_EditorClassIdentifier: 
   isNoteEntry: 1
-  objectID: 
+  objectID: Dog Clue 7 (Vase)
   description: 
   sprite: {fileID: 0}
-  longDescription: Each beast is assigned a cardinal direction
+  longDescription: Vase's gate could be behind palace
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

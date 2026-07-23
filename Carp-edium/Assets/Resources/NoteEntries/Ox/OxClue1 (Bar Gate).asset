@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OxClue1 (Bar Gate)
   m_EditorClassIdentifier: 
   isNoteEntry: 1
-  objectID: OxClue1 (Bar Gate)
+  objectID: Ox Clue1 (Bar Gate)
   description: 
   sprite: {fileID: 0}
   longDescription: Investigatable Gate outside bar

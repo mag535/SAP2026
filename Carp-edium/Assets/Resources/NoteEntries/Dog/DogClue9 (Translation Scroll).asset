@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
-  m_Name: DogClue4 (Compass Poster)
+  m_Name: DogClue9 (Translation Scroll)
   m_EditorClassIdentifier: 
   isNoteEntry: 1
-  objectID: 
+  objectID: Dog Clue 9 (Translation Scroll)
   description: 
   sprite: {fileID: 0}
-  longDescription: Each beast is assigned a cardinal direction
+  longDescription: Characters are similar to ones by the paintings
   spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 0}
+  spriteIcon: {fileID: 4227211085033731931, guid: 253112f41fc22f945bbd7388cedaa2e9, type: 3}

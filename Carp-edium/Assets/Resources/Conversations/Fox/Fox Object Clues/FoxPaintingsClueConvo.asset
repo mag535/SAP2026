@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxPaintingsClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 18e78ea8-955d-4936-a375-6f6e3f1f8920
+    PortName: Next
+    TargetNodeGuid: 62065661-6088-45ab-adad-7a21ab14fd1d
+  DialogueNodeData:
+  - type: 2
+    Guid: 18e78ea8-955d-4936-a375-6f6e3f1f8920
+    speaker: Fox
+    DialogueText: '"The Dog tell you about the paintings? Always thought it was weird
+      they had two dragons. If you''re looking for the Dragon Gate, wouldn''t it
+      make the most sense that it''s <color="yellow">behind the Azure Dragon Temple
+      anyway?</color> You should go look for it." '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: fa482fd0ad2943d45b4958b0e41bbdda, type: 2}
+    flag: 
+    Position: {x: 237.6, y: 148.8}
+  - type: 4
+    Guid: 62065661-6088-45ab-adad-7a21ab14fd1d
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1788.8, y: 211.20001}

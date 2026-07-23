@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: OxClue6 (Key)
   m_EditorClassIdentifier: 
   isNoteEntry: 0
-  objectID: 
+  objectID: Ox Clue 6 (Key)
   description: 
   sprite: {fileID: 0}
-  longDescription: 
+  longDescription: Key opens palace
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

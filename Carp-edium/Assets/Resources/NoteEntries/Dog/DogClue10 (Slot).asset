@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
   m_Name: DogClue10 (Slot)
   m_EditorClassIdentifier: 
-  isNoteEntry: 0
+  isNoteEntry: 1
   objectID: Dog Clue 10 (Slot)
   description: 
   sprite: {fileID: 0}

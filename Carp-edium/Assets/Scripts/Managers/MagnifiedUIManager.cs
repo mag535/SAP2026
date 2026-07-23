@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class MagnifiedUIManager : MonoBehaviour
 {
     public GameObject descriptionDisplay;
-    public Image imageDisplay;
+    public GameObject imageDisplay;
     public TextMeshProUGUI descriptionTextBox;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,14 +21,16 @@ public class MagnifiedUIManager : MonoBehaviour
         } else {
             descriptionTextBox.text = evt.objectData.description;
         }
-        imageDisplay.sprite = evt.objectData.spriteMagnified;
+        imageDisplay.GetComponent<Image>().sprite = evt.objectData.spriteMagnified;
+        imageDisplay.SetActive(true);
         descriptionDisplay.SetActive(true);
     }
 
     void HideMagnifyWindow(RequestCloseDisplayInspected evt) {
         descriptionDisplay.SetActive(false);
+        imageDisplay.SetActive(false);
         descriptionTextBox.text = "";
-        imageDisplay.sprite = null;
+        imageDisplay.GetComponent<Image>().sprite = null;
     }
 
     // Update is called once per frame

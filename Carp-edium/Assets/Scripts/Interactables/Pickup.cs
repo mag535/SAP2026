@@ -5,8 +5,6 @@ namespace Carp {
     {
         public static float destroyDelay = 0.1f;
 
-        public Object objectData;
-
         void Start() {
             // set sprite on load
             if (objectData.sprite != null) {
@@ -18,8 +16,6 @@ namespace Carp {
                 // destroy
                 Destroy(gameObject, destroyDelay);
             }
-
-            Debug.Log("Pickup Start()");
         }
 
         public override void Interact() {
@@ -28,6 +24,11 @@ namespace Carp {
             // add to inventory
             EvtSystem.EventDispatcher.Raise<RequestAddItem>(new RequestAddItem {
                     item = objectData });
+            // create notification
+            EvtSystem.EventDispatcher.Raise<RequestCreateNotification>(new
+                    RequestCreateNotification { 
+                    isNoteEntry = objectData.isNoteEntry,
+                    objectName = objectData.name });
             // Update GM on modification
             GameManager.Instance.AddModifiedPickup(objectData.objectID);
             // destroy

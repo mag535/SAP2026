@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7438188759956281897}
   - component: {fileID: 3191345613141783707}
   - component: {fileID: 1390452733622243126}
+  - component: {fileID: 4306452597491947129}
   m_Layer: 0
   m_Name: TraderPrefab
   m_TagString: Untagged
@@ -180,3 +181,17 @@ MonoBehaviour:
   possibleTrades:
   - cost: {fileID: 11400000, guid: f3dc04beae240f1d38552db91e877165, type: 2}
     trade: {fileID: 11400000, guid: 7c373a711028475c88709049ca676d39, type: 2}
+--- !u!114 &4306452597491947129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8884152298615517204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22b5bd9857d925c29aa74346723509e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffect: {fileID: 0}
+  objectData: {fileID: 0}

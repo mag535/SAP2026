@@ -83,7 +83,7 @@ namespace Carp {
                     // Conversation Starters go to DIALOGUE state
                     if (hit.transform.gameObject.GetComponent<ConversationStarter>() != null) {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
-                    // Doors go to ROOMTRANSITION state
+                    // Doors go to ROOMTRANSITION state if unlocked, DESCRIPTION otherwise
                     } else if (hit.transform.gameObject.GetComponent<Door>() != null) {
                         Door targetDoor = hit.transform.gameObject.GetComponent<Door>();
                         if (targetDoor.isLocked) {
@@ -94,15 +94,17 @@ namespace Carp {
                                     .PlayerStates.ROOMTRANSITION);
                         }
                     // Inspectables, Openables, Trader go to DESCRIPTION state
-                    } else if (hit.transform.gameObject.GetComponent<Inspectable>() != null ||
-                            hit.transform.gameObject.GetComponent<Openable>() != null ||
-                            hit.transform.gameObject.GetComponent<Trader>() != null) {
+                    } else if (hit.transform.gameObject.GetComponent<Inspectable>() != null) {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DESCRIPTION);
                     }
                     // All others stay in GAME state
 
-                    //Debug.Log("State: " + playerStateManager.GetCurrentState());
-                    hit.transform.gameObject.GetComponent<Interactable>().Interact();
+                    Interactable[] scripts = hit.transform.gameObject.
+                        GetComponents<Interactable>();
+                    foreach (Interactable script in scripts) {
+                        script.Interact();
+                    }
+                    //hit.transform.gameObject.GetComponent<Interactable>().Interact();
                     return;
                 }
             }

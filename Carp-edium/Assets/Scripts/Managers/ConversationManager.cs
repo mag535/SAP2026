@@ -147,6 +147,10 @@ public class ConversationManager : Singleton<ConversationManager>
                 EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
                         RequestAddItem { item = node.trade });
             }
+            EvtSystem.EventDispatcher.Raise<RequestCreateNotification>( new
+                    RequestCreateNotification {
+                    isNoteEntry = node.trade.isNoteEntry,
+                    objectName = node.trade.name });
             return;
         }
 

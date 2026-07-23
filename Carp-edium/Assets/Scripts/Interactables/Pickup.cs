@@ -5,8 +5,6 @@ namespace Carp {
     {
         public static float destroyDelay = 0.1f;
 
-        public Object objectData;
-
         void Start() {
             // set sprite on load
             if (objectData.sprite != null) {

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 public class ConversationManager : Singleton<ConversationManager>
 {
     public GameObject background;
-    public GameObject dialogueBox;
     public TextMeshProUGUI textBox;
     public TextMeshProUGUI nameTag;
 
@@ -83,13 +82,11 @@ public class ConversationManager : Singleton<ConversationManager>
 
     public void ShowDialogueWindow() {
         background.SetActive(true);
-        dialogueBox.SetActive(true);
     }
 
     public void HideDialogueWindow() {
         textBox.text = string.Empty;
         background.SetActive(false);
-        dialogueBox.SetActive(false);
     }
 
     // Get some information on current dialogue node then parse

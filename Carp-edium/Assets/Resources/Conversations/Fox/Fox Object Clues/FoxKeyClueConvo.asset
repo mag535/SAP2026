@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxKeyClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 7921a03c-1623-4ea9-9b3a-218e83bd03ef
+    PortName: Next
+    TargetNodeGuid: 9eed35a9-f533-4e5e-9889-728b87d236d9
+  - BaseNodeGuid: 9eed35a9-f533-4e5e-9889-728b87d236d9
+    PortName: Next
+    TargetNodeGuid: 51268cae-163e-4768-99b9-547d1dba09ca
+  DialogueNodeData:
+  - type: 2
+    Guid: 9eed35a9-f533-4e5e-9889-728b87d236d9
+    speaker: Fox
+    DialogueText: '"Oh, wow! What a nice, fancy key you have there. Go <color="yellow">find
+      something to open</color> with it."'
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 880a50dc8b6de0445a2b7eed18f0d63e, type: 2}
+    flag: 
+    Position: {x: 311.2, y: 238.4}
+  - type: 4
+    Guid: 51268cae-163e-4768-99b9-547d1dba09ca
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 892.8, y: 107.200005}

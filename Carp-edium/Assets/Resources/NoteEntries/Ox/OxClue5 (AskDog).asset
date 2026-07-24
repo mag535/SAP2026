@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
   m_Name: OxClue5 (AskDog)
   m_EditorClassIdentifier: 
-  isNoteEntry: 0
-  objectID: 
+  isNoteEntry: 1
+  objectID: 'Ox Clue 5 (Ask Dog) '
   description: 
   sprite: {fileID: 0}
-  longDescription: 
+  longDescription: Ask Dog about paintings
   spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 0}
+  spriteIcon: {fileID: 1595103067050995165, guid: 6c729b23d023e154faaea671677e86ac, type: 3}

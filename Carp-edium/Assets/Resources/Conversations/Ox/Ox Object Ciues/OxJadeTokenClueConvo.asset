@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: OxJadeTokenClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: db584fd9-3b28-464b-bf6d-b0ab7ee04123
+    PortName: Next
+    TargetNodeGuid: 11db005a-637d-48cf-80b8-68c6ad53ba35
+  - BaseNodeGuid: 11db005a-637d-48cf-80b8-68c6ad53ba35
+    PortName: Next
+    TargetNodeGuid: 571087fe-6eca-4333-8a07-fb573766c0ef
+  DialogueNodeData:
+  - type: 0
+    Guid: 11db005a-637d-48cf-80b8-68c6ad53ba35
+    speaker: Ox
+    DialogueText: '"I don''t know what that could be useful for. You''re not getting
+      a drink with that." '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 255.2, y: 184}
+  - type: 4
+    Guid: 571087fe-6eca-4333-8a07-fb573766c0ef
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 812.8, y: 234.4}

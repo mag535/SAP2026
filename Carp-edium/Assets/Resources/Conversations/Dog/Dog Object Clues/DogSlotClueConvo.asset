@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: DogSlotClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: f8a245bd-4c19-44e2-99be-49412a671659
+    PortName: Next
+    TargetNodeGuid: 7baac4c6-9847-4048-9dc0-85be494007fb
+  - BaseNodeGuid: 7baac4c6-9847-4048-9dc0-85be494007fb
+    PortName: Next
+    TargetNodeGuid: 940e9e57-af90-4635-8ed2-1f6d4a2cc155
+  DialogueNodeData:
+  - type: 2
+    Guid: 7baac4c6-9847-4048-9dc0-85be494007fb
+    speaker: Dog
+    DialogueText: '"There''s a slot in the temple wall? <color="yellow">Is there
+      anything you could put into it</color>?" '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: d76b879b24214764db3e47c982649ffb, type: 2}
+    flag: 
+    Position: {x: 255.2, y: 149.6}
+  - type: 4
+    Guid: 940e9e57-af90-4635-8ed2-1f6d4a2cc155
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 919.2, y: 186.40001}

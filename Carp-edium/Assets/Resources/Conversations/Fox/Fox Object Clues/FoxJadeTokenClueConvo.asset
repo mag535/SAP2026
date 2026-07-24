@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxJadeTokenClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: c22519fd-a30c-4296-88ac-84f3d05ad2f2
+    PortName: Next
+    TargetNodeGuid: e6efc9ff-0aa0-45a9-b518-b8f9818bdd2e
+  - BaseNodeGuid: e6efc9ff-0aa0-45a9-b518-b8f9818bdd2e
+    PortName: Next
+    TargetNodeGuid: 7f6f1d00-50f8-47ac-844d-7f61c0f6040b
+  DialogueNodeData:
+  - type: 0
+    Guid: e6efc9ff-0aa0-45a9-b518-b8f9818bdd2e
+    speaker: Fox
+    DialogueText: '"Huh. you said you found this outside the temple? Not sure what
+      it''d be used for. Did you <color="yellow">try looking inside the temple</color>
+      for a place to put this?"'
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 229.6, y: 229.6}
+  - type: 4
+    Guid: 7f6f1d00-50f8-47ac-844d-7f61c0f6040b
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1165.6, y: 231.20001}

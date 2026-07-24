@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxTranslationScrollClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: d75da3b7-5865-45fe-ac32-fae9dd2f41e8
+    PortName: Next
+    TargetNodeGuid: e0b3e7e3-a8e1-4ddf-a2f4-2d8a1b616ae9
+  - BaseNodeGuid: e0b3e7e3-a8e1-4ddf-a2f4-2d8a1b616ae9
+    PortName: Next
+    TargetNodeGuid: d5f4b78e-9dd3-4c05-992a-795e7707762a
+  DialogueNodeData:
+  - type: 2
+    Guid: e0b3e7e3-a8e1-4ddf-a2f4-2d8a1b616ae9
+    speaker: Fox
+    DialogueText: '"You found that old scroll? It''s been ages since anyone found
+      saw that thing. <color="yellow">Would you really trust the translations on
+      a scroll that old, though?</color>" '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 121b6270b9d088a4d821675cddb5c697, type: 2}
+    flag: 
+    Position: {x: 271.2, y: 114.4}
+  - type: 4
+    Guid: d5f4b78e-9dd3-4c05-992a-795e7707762a
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1392, y: 216.8}

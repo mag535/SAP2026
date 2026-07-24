@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxCompassPosterClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: e2765711-73c6-4b11-a24b-535c92ac7b50
+    PortName: Next
+    TargetNodeGuid: da58b397-3dba-42aa-9cfd-9a940681d101
+  - BaseNodeGuid: da58b397-3dba-42aa-9cfd-9a940681d101
+    PortName: Next
+    TargetNodeGuid: dc2a34c9-da1f-4e7f-9d9b-1927a9f333ce
+  - BaseNodeGuid: dc2a34c9-da1f-4e7f-9d9b-1927a9f333ce
+    PortName: Next
+    TargetNodeGuid: 99be6845-b32e-4a6c-963c-d210b75ec3e8
+  DialogueNodeData:
+  - type: 2
+    Guid: da58b397-3dba-42aa-9cfd-9a940681d101
+    speaker: Fox
+    DialogueText: '"Oh, you saw the poster in the bar? It has the <color="yellow">four
+      auspicious beasts and its corresponding direction.</color>" '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: f78f1f7a48c88c4458b5dbfba4215e75, type: 2}
+    flag: 
+    Position: {x: 235.2, y: 160}
+  - type: 0
+    Guid: dc2a34c9-da1f-4e7f-9d9b-1927a9f333ce
+    speaker: Fox
+    DialogueText: '"You see how the bar on the west side has the White Tiger, and
+      the temple in the east has an Azure Dragon? Think you could rub those two braincells
+      together to figure out what animal would be in the palace north?"'
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1068.8, y: 291.2}
+  - type: 4
+    Guid: 99be6845-b32e-4a6c-963c-d210b75ec3e8
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 2449.6, y: 311.2}

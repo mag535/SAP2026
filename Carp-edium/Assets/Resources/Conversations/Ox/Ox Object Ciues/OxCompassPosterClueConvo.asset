@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: OxCompassPosterClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: da767bf8-ce92-48ec-abf9-067df59651da
+    PortName: Next
+    TargetNodeGuid: df377d7f-3217-46f7-8b9c-94dab000e5ca
+  - BaseNodeGuid: df377d7f-3217-46f7-8b9c-94dab000e5ca
+    PortName: Next
+    TargetNodeGuid: cdb0ea79-8c4f-421f-8b4f-f3726c655e8f
+  DialogueNodeData:
+  - type: 2
+    Guid: df377d7f-3217-46f7-8b9c-94dab000e5ca
+    speaker: Ox
+    DialogueText: '"The poster represents <color="yellow">the four auspicious beasts.
+      One for each cardinal direction.</color>" '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: b6e7e1a28b8a2e644a567312f8577201, type: 2}
+    flag: 
+    Position: {x: 266.4, y: 214.40001}
+  - type: 4
+    Guid: cdb0ea79-8c4f-421f-8b4f-f3726c655e8f
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1046.4, y: 281.6}

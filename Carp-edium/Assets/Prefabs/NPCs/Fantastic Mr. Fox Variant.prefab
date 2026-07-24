@@ -52,6 +52,118 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: conversationStart
+      value: 
+      objectReference: {fileID: 11400000, guid: e5d451c5a28517e4aaac1c3158ea3641, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[0].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: 14b0c740fbda9ba45b27be6ce8adb40f, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[1].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: 8b43db6f7bb26b345bc1eb61d882e9cc, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[2].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: 80991b5d61a61aa4aa22515b2d68c48a, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[3].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: 2e684f42d3a1a384fbb5894b30a35ad1, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[4].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: b19e0ced109918b42a6de70748897257, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[5].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: a4bc0f1234f9c1144914651fc1e7a6f8, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[6].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c4645025581d984d8c1a8bf0563939a, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[7].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: 745894d72f9410b4d9da4de535bb1690, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[8].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: f20887532ee272e4ea639d22414d7a26, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[9].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: 02e0bb4b22f62424ca0f70adadf3f6f4, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[0].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: b371a8cbc3c6bea419dce4a77cd99f3c, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[10].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: a7618ba78830f2f439a1b300a56d8ace, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[11].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: b43c4cd712a9f1d4d8e067fd1ef90b29, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[12].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: c05f460f67e38bf47b18ca81cc8b1889, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[1].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: e1a40ed24289f1e43b56f3a39b008b4f, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[2].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: c4a38a1b89f7f9f448a8b182dbf332d1, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[3].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: 95255b648c7d57749a90adf83300bbdd, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[4].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: 30b484b77d3b3f048bc51465bd17ba25, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[5].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: d69b7a6bde756764d8e28f925d5293b8, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[6].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: ce9998a36fa6b914b8adfc4496187a15, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[7].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: 87e337748e73c3148b2907345ddf184f, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[8].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: 54215ef6e3e077647ad942948c8ae9cc, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[9].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: 54215ef6e3e077647ad942948c8ae9cc, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[10].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: 54215ef6e3e077647ad942948c8ae9cc, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[11].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: 0c7a6adc06b87ae41bcada36756e4809, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[12].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: c5e2277948eb6f746b842d2128a28607, type: 2}
     - target: {fileID: 7789519705045525420, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: m_Name
       value: Fantastic Mr. Fox Variant

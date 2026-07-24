@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
   m_Name: DogClue4 (Compass Poster)
   m_EditorClassIdentifier: 
-  isNoteEntry: 0
-  objectID: 
+  isNoteEntry: 1
+  objectID: Dog Clue 4 (Compass Poster)
   description: 
   sprite: {fileID: 0}
-  longDescription: 
+  longDescription: Each beast is assigned a cardinal direction
   spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 0}
+  spriteIcon: {fileID: 4227211085033731931, guid: 253112f41fc22f945bbd7388cedaa2e9, type: 3}

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxSlotClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 73902274-48f9-4b40-83cc-7890bffec40c
+    PortName: Next
+    TargetNodeGuid: c0c210a3-8ab0-4a65-8412-cb3b08d09111
+  - BaseNodeGuid: c0c210a3-8ab0-4a65-8412-cb3b08d09111
+    PortName: Next
+    TargetNodeGuid: 21a5e503-d620-4db9-a71f-ce67c2930f6b
+  DialogueNodeData:
+  - type: 0
+    Guid: c0c210a3-8ab0-4a65-8412-cb3b08d09111
+    speaker: Fox
+    DialogueText: '"You know what goes into slots? Tokens."'
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 272.8, y: 243.20001}
+  - type: 4
+    Guid: 21a5e503-d620-4db9-a71f-ce67c2930f6b
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 597.6, y: 276.80002}

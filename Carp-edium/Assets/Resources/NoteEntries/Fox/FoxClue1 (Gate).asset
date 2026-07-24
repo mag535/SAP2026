@@ -18,4 +18,4 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: d16f90cc7e326a840863908fec0ba0c8, type: 3}
   longDescription: Dragon Gate is red, green, or gold
   spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 0}
+  spriteIcon: {fileID: -8676108945931752408, guid: 0c3a6d68f73315f478a322bc1e460096, type: 3}

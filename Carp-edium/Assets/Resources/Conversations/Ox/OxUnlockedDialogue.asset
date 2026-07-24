@@ -42,7 +42,7 @@ MonoBehaviour:
       Gate outside if ya keep going straight through the bar </color>. Not sure if
       it''s the Dragon Gate, but ya can take a look." '
     cost: {fileID: 0}
-    trade: {fileID: 0}
+    trade: {fileID: 11400000, guid: c992fb5e25c0097438968fc6d35a2aac, type: 2}
     flag: 
     Position: {x: 826.4, y: 98.4}
   - type: 2
@@ -51,7 +51,7 @@ MonoBehaviour:
     DialogueText: '"If you''re serious about this, ya best <color="yellow">head over
       to the Blue Dragon Temple</color> across the plaza."'
     cost: {fileID: 0}
-    trade: {fileID: 0}
+    trade: {fileID: 11400000, guid: 994a754e62f15b746ac9dd323559c8f9, type: 2}
     flag: 
     Position: {x: 1846.4, y: 284.80002}
   - type: 4

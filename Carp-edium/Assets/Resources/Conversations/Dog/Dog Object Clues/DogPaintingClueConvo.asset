@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: DogPaintingClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 0e5ff8a1-b465-4d08-b307-1de146905df5
+    PortName: Next
+    TargetNodeGuid: a6067a9e-29b0-4407-9f6e-ac4cc7a75281
+  - BaseNodeGuid: a6067a9e-29b0-4407-9f6e-ac4cc7a75281
+    PortName: Next
+    TargetNodeGuid: d3f2ccb2-de3c-4675-8419-1658aec1511e
+  DialogueNodeData:
+  - type: 0
+    Guid: a6067a9e-29b0-4407-9f6e-ac4cc7a75281
+    speaker: Dog
+    DialogueText: '"Yes, the three paintings each have two animals in them. I wonder
+      what they could mean?"'
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 254.4, y: 183.20001}
+  - type: 4
+    Guid: d3f2ccb2-de3c-4675-8419-1658aec1511e
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 829.6, y: 224.8}

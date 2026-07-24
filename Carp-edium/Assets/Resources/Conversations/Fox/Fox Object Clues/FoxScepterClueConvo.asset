@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: FoxScepterClueConvo
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 8c47b9ac-eb13-49f3-a446-8c510c88d159
+    PortName: Next
+    TargetNodeGuid: 5df8f3f9-3407-4a81-a857-20d6358ba302
+  - BaseNodeGuid: 5df8f3f9-3407-4a81-a857-20d6358ba302
+    PortName: Next
+    TargetNodeGuid: 9619a487-6cbb-45e0-bf4a-cb8b125820e3
+  DialogueNodeData:
+  - type: 2
+    Guid: 5df8f3f9-3407-4a81-a857-20d6358ba302
+    speaker: Fox
+    DialogueText: '"Pretty scepter. They usually <color="yellow">go outside doorways</color>.
+      Which of these buildings looks fancy enough to need protection?" '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: b57937f443c1a0c4caf4472686a86f4c, type: 2}
+    flag: 
+    Position: {x: 281.6, y: 131.20001}
+  - type: 4
+    Guid: 9619a487-6cbb-45e0-bf4a-cb8b125820e3
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1089.6, y: 224.8}

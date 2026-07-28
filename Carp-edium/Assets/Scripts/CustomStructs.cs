@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 
 namespace Carp {
@@ -25,5 +26,33 @@ namespace Carp {
             areaName = an;
             position = pos;
         }
+    }
+
+    [System.Serializable]
+    public enum RoomName {
+        NONE,
+        SPAWN,
+        HUB,
+        BAR,
+        TEMPLE,
+        PALACE,
+        TESTING,
+        MELISSA,
+        SERENA
+    }
+
+    public class Stuff {
+        public static Dictionary<RoomName, string> roomNameDict = new 
+            Dictionary<RoomName, string>() {
+            { RoomName.SPAWN, "0_PlayerSpawn" },
+            { RoomName.HUB, "1_CenterHub" },
+            { RoomName.BAR, "2_WhiteTigerBar" },
+            { RoomName.TEMPLE, "3_AzureDragonTemple" },
+            { RoomName.PALACE, "4_BlackTortoisePalace" },
+            // Testing Rooms
+            { RoomName.TESTING, "Testing" },
+            { RoomName.MELISSA, "MelissaTesting" },
+            { RoomName.SERENA, "SerenaTesting" }
+        };
     }
 }

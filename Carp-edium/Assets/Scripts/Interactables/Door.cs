@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Carp {
     public class Door : Openable
     {
-        public string nextRoomName;
+        public RoomName nextRoomName;
 
         void Update() {
             if (isLocked) {

@@ -44,9 +44,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bbdf2a82544d6da984f0fae57f16a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialRoom: 0_PlayerSpawn
+  initialRoom: 1
   playerEntrancePositions:
-  - roomName: Testing
-    playerEntrancePosition: {x: 0, y: -3}
-  - roomName: MelissaTesting
-    playerEntrancePosition: {x: 3.5, y: 0.5}
+  - currentRoom: 0
+    nextRoom: 1
+    entrancePosition: {x: 0, y: 0}
+  - currentRoom: 1
+    nextRoom: 3
+    entrancePosition: {x: 6.5, y: -2}
+  - currentRoom: 1
+    nextRoom: 4
+    entrancePosition: {x: -1.5, y: -3.5}
+  - currentRoom: 1
+    nextRoom: 5
+    entrancePosition: {x: 4.5, y: -3}
+  - currentRoom: 3
+    nextRoom: 1
+    entrancePosition: {x: -18.5, y: -4.5}
+  - currentRoom: 4
+    nextRoom: 1
+    entrancePosition: {x: 2, y: 16.5}
+  - currentRoom: 5
+    nextRoom: 1
+    entrancePosition: {x: -30.5, y: 17.5}

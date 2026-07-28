@@ -7,61 +7,52 @@ namespace Carp {
     {
         [System.Serializable]
         public struct PlayerEntrancePosition {
-            public string roomName;
-            public Vector2 playerEntrancePosition;
+            public RoomName currentRoom;
+            public RoomName nextRoom;
+            public Vector2 entrancePosition;
         }
 
-        public string initialRoom;
+        public RoomName initialRoom;
         public List<PlayerEntrancePosition> playerEntrancePositions = 
             new List<PlayerEntrancePosition>();
+
+        private RoomName _currentRoom;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            LoadInitialRoom();
+            _currentRoom = RoomName.NONE;
+            DoRoomTransition(initialRoom);
         }
 
-        void LoadInitialRoom() {
-            EvtSystem.EventDispatcher.Raise<RequestLoadRoom>(new RequestLoadRoom
-                    { roomName = initialRoom });
-
-            Vector2 newPosition = Vector2.zero;
-            foreach (PlayerEntrancePosition pair in playerEntrancePositions) {
-                if (pair.roomName == initialRoom) {
-                    newPosition = pair.playerEntrancePosition;
-                    break;
-                }
-            }
-            EvtSystem.EventDispatcher.Raise<RequestChangePlayerPosition>(new RequestChangePlayerPosition
-                    { newPosition = newPosition });
-
-            EvtSystem.EventDispatcher.Raise<RequestChangePlayerState>(new RequestChangePlayerState
-                    { newState = "GAME" });
-        }
-
-        public void DoRoomTransition(string roomName) {
+        public void DoRoomTransition(RoomName roomName) {
             // TODO: Turn on loading screen
 
             // Send signal for room loading / unloading
             EvtSystem.EventDispatcher.Raise<RequestLoadRoom>(new RequestLoadRoom
-                    { roomName = roomName });
+                    { roomName = Stuff.roomNameDict[roomName] });
 
             // Send signal for player position change
-            Vector2 newPosition = Vector2.zero;
-            foreach (PlayerEntrancePosition pair in playerEntrancePositions) {
-                if (pair.roomName == roomName) {
-                    newPosition = pair.playerEntrancePosition;
-                    break;
-                }
-            }
             EvtSystem.EventDispatcher.Raise<RequestChangePlayerPosition>(new RequestChangePlayerPosition
-                    { newPosition = newPosition });
+                    { newPosition = GetEntrancePosition(roomName) });
 
             // TODO: Turnoff loading screen
 
             // Send signal for player state change
             EvtSystem.EventDispatcher.Raise<RequestChangePlayerState>(new RequestChangePlayerState
                     { newState = "GAME" });
+
+            _currentRoom = roomName;
+        }
+
+        private Vector2 GetEntrancePosition(RoomName nextRoom) {
+            foreach (PlayerEntrancePosition data in playerEntrancePositions) {
+                if (_currentRoom == data.currentRoom && nextRoom == data.nextRoom) {
+                    return data.entrancePosition;
+                }
+            }
+
+            return Vector2.zero;
         }
     }
 }

@@ -15,15 +15,14 @@ namespace Carp {
         private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
         void Awake() {
-            inputVector = Vector2.zero;
-            movementDirection = Vector2.zero;
+            EvtSystem.EventDispatcher.AddListener<RequestChangePlayerPosition>(
+                    HandlePlayerPositionChange);
         }
 
         void Start() {
+            inputVector = Vector2.zero;
+            movementDirection = Vector2.zero;
             rb = GetComponent<Rigidbody2D>();
-
-            EvtSystem.EventDispatcher.AddListener<RequestChangePlayerPosition>(
-                    HandlePlayerPositionChange);
         }
 
         void FixedUpdate()
@@ -102,8 +101,9 @@ namespace Carp {
         }
 
         void HandlePlayerPositionChange(RequestChangePlayerPosition evt) {
-            // FIXME: not changing position...
-            rb.MovePosition(evt.newPosition);
+            Vector3 newPos = new Vector3(
+                    evt.newPosition.x, evt.newPosition.y, 0);
+            gameObject.transform.position = newPos;
         }
 
         void OnDestroy() {

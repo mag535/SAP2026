@@ -24,7 +24,7 @@ namespace Carp {
         }
 
         public override void Interact() {
-            AudioManager.Instance.Play(soundEffect.name);
+            AudioManager.Instance.Play(soundEffect);
         }
 
         public override bool HandleItemUse(Object item) {

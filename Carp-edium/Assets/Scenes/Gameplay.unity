@@ -642,6 +642,22 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4048116856737809816, guid: 15ec9d4dad6c3e8fdb8b55b47ad03a11, type: 3}
+      propertyPath: playerEntrancePositions.Array.data[2].entrancePosition.x
+      value: -2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048116856737809816, guid: 15ec9d4dad6c3e8fdb8b55b47ad03a11, type: 3}
+      propertyPath: playerEntrancePositions.Array.data[2].entrancePosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048116856737809816, guid: 15ec9d4dad6c3e8fdb8b55b47ad03a11, type: 3}
+      propertyPath: playerEntrancePositions.Array.data[3].entrancePosition.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048116856737809816, guid: 15ec9d4dad6c3e8fdb8b55b47ad03a11, type: 3}
+      propertyPath: playerEntrancePositions.Array.data[3].entrancePosition.y
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048116856737809816, guid: 15ec9d4dad6c3e8fdb8b55b47ad03a11, type: 3}
       propertyPath: playerEntrancePositions.Array.data[7].entrancePosition.x
       value: -30.5
       objectReference: {fileID: 0}

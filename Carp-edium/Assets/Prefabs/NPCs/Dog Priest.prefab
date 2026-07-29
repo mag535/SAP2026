@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 749954e7b3f2e064fa9d2e60169669be, type: 3}
+    - target: {fileID: 752147686689374519, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 752147686689374519, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1988449737
+      objectReference: {fileID: 0}
     - target: {fileID: 2520089052518915929, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -151,6 +159,10 @@ PrefabInstance:
     - target: {fileID: 7789519705045525420, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: m_Name
       value: Dog Priest
+      objectReference: {fileID: 0}
+    - target: {fileID: 7789519705045525420, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using System;
+using System.Collections.Generic;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -8,7 +9,9 @@ public class AudioManager : Singleton<AudioManager>
     public AudioSource sfxSource;
 
     public string startBGM;
-    public Sound[] sounds;
+    //public Sound[] sounds;
+
+    public List<Sound> sounds;
 
     [SerializeField]
     private AudioMixer audioMixer;
@@ -16,19 +19,39 @@ public class AudioManager : Singleton<AudioManager>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Add AudioSource and initialize
-        foreach (Sound s in sounds) {
-            s.source = gameObject.AddComponent<AudioSource>();
-
-            s.source.clip = s.clip;
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
-            s.source.loop = s.loop;
-        }
         // FIXME: Play BGM
         //Play(startBGM);
     }
 
+    public void Play(Sound sound) {
+        if (sound == null) {
+            Debug.LogWarning("Sound: " + sound.name + " not found.");
+            return;
+        }
+        if (sound.source != null && sound.source.isPlaying) {
+            Stop(sound);
+        } else {
+        // Add audio source
+            sound.source = gameObject.AddComponent<AudioSource>();
+
+            sound.source.clip = sound.clip;
+            sound.source.volume = sound.volume;
+            sound.source.pitch = sound.pitch;
+            sound.source.loop = sound.loop;
+        }
+        // Play
+        sound.source.Play();
+    }
+
+    public void Stop(Sound sound) {
+        if (sound == null) {
+            Debug.LogWarning("Sound: " + sound.name + " not found.");
+            return;
+        }
+        sound.source.Stop();
+    }
+
+    /*
     public void Play(string name) {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null) {
@@ -74,6 +97,7 @@ public class AudioManager : Singleton<AudioManager>
             s.source.Stop();
         }
     }
+    */
 
     // TODO: connect to sliders in a settings menu
 

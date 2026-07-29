@@ -19,7 +19,7 @@ namespace Carp {
 
         public override void Interact() {
             // sfx
-            AudioManager.Instance.Play(soundEffect.name);
+            AudioManager.Instance.Play(soundEffect);
             // start dialogue, send dialogue id to dialogue manager
             ConversationManager.Instance.StartConversation(conversationStart);
         }

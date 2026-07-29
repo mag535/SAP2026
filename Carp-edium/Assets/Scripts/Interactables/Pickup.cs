@@ -20,7 +20,7 @@ namespace Carp {
 
         public override void Interact() {
             // sfx
-            AudioManager.Instance.Play(soundEffect.name);
+            AudioManager.Instance.Play(soundEffect);
             // add to inventory
             EvtSystem.EventDispatcher.Raise<RequestAddItem>(new RequestAddItem {
                     item = objectData });

@@ -13,12 +13,14 @@ namespace Carp {
 
         private PlayerState playerStateManager;
         private PlayerInventory playerInventory;
+        private CircleCollider2D interactionCollider;
 
         private GameObject engagedGO;
 
         void Awake() {
             playerStateManager = GetComponent<PlayerState>();
             playerInventory = GetComponent<PlayerInventory>();
+            interactionCollider = GetComponent<CircleCollider2D>();
             EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
         }
 

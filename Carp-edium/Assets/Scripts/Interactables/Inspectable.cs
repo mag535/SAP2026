@@ -3,47 +3,41 @@ using UnityEngine;
 namespace Carp {
     public class Inspectable : Interactable
     {
-        private int otherScriptsCount;
-
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             Interactable[] interactableScripts = GetComponents<Interactable>();
             foreach (Interactable script in interactableScripts) {
-                otherScriptsCount++;
                 if (script == this) { continue; }
                 objectData = script.objectData;
                 soundEffect = script.soundEffect;
                 break;
             }
-
-            foreach (Interactable _ in interactableScripts) { otherScriptsCount++; }
         }
 
         public override void Interact() {
-            if (otherScriptsCount == 1) {
-                AudioManager.Instance.Play(soundEffect.name);
-
-                // Send signal to have description and sprite displayed. This is 
-                // magnifying
-                EvtSystem.EventDispatcher.Raise<RequestDisplayInspected>(
-                        new RequestDisplayInspected { 
-                        useLong = true,
-                        objectData = objectData });
-                return;
-            }
-
             // otherwise, handle special cases
             if (GetComponent<Openable>() != null) {
                 OpenableInspection();
             } else if (GetComponent<Trader>() != null) {
                 TraderInspection();
             } else {
-                Debug.Log("missing interactable type?");
+                BasicInspection();
             }
         }
 
         public override bool HandleItemUse(Object item) { return false; }
+
+        public void BasicInspection() {
+            AudioManager.Instance.Play(soundEffect);
+
+            // Send signal to have description and sprite displayed. This is 
+            // magnifying
+            EvtSystem.EventDispatcher.Raise<RequestDisplayInspected>(
+                    new RequestDisplayInspected { 
+                    useLong = true,
+                    objectData = objectData });
+        }
 
         public void OpenableInspection() {
             Openable script = GetComponent<Openable>();

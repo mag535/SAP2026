@@ -17,7 +17,7 @@ namespace Carp {
             if (isLocked) { 
                 base.Interact(); 
             } else { 
-                AudioManager.Instance.Play(unlockingSoundEffect.name);
+                AudioManager.Instance.Play(unlockingSoundEffect);
                 GoToNextRoom();
             }
         }

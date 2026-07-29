@@ -8,11 +8,15 @@ public class PlayerUIManager : MonoBehaviour
     public GameObject inventoryDisplay;
     public GameObject inventoryParent;
     public GameObject itemDisplayPrefab;
+    public Sound inventoryOpenSoundEffect;
+    public Sound inventoryCloseSoundEffect;
 
     // For Notebook
     public GameObject notebookDisplay;
     public GameObject notebookParent;
     public GameObject noteEntryPrefab;
+    public Sound notebookOpenSoundEffect;
+    public Sound notebookCloseSoundEffect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,11 +34,13 @@ public class PlayerUIManager : MonoBehaviour
         EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
                 isOpening = true });
         inventoryDisplay.SetActive(true);
+        AudioManager.Instance.Play(inventoryOpenSoundEffect);
     }
     void HandleCloseInventoryRequest(RequestCloseInventory evt) {
         EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
                 isOpening = false });
         inventoryDisplay.SetActive(false);
+        AudioManager.Instance.Play(inventoryCloseSoundEffect);
     }
     void AddToInventoryDisplay(RequestAddToInventoryDisplay evt) {
         GameObject newItem = Instantiate(itemDisplayPrefab, inventoryParent.transform);
@@ -70,11 +76,13 @@ public class PlayerUIManager : MonoBehaviour
         EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
                 isOpening = true });
         notebookDisplay.SetActive(true);
+        AudioManager.Instance.Play(notebookOpenSoundEffect);
     }
     void HandleCloseNotebookRequest(RequestCloseNotebook evt) {
         EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
                 isOpening = false });
         notebookDisplay.SetActive(false);
+        AudioManager.Instance.Play(notebookCloseSoundEffect);
     }
     void AddToNotebookDisplay(RequestAddToNotebookDisplay evt) {
         GameObject newEntry = Instantiate(noteEntryPrefab, notebookParent.transform);

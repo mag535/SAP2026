@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 41d7300a36e883f4cb3460975679fb02
+guid: f6905b8f032f29041b3a1fe6d70da971
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2577608466463955317
-    second: Tiger-Snake-Draft_0
+      213: 7001008070662297697
+    second: Qilin-Dragon_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tiger-Snake-Draft_0
+      name: Qilin-Dragon_0
       rect:
         serializedVersion: 2
         x: 74
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b86606aa1ce7a3cd0800000000000000
-      internalID: -2577608466463955317
+      spriteID: 16818715fb3982160800000000000000
+      internalID: 7001008070662297697
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tiger-Snake-Draft_0: -2577608466463955317
+      Qilin-Dragon_0: 7001008070662297697
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

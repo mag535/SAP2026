@@ -26,8 +26,7 @@ MonoBehaviour:
   - type: 0
     Guid: 8c66bfc8-cb71-4785-9df1-96086efcf42f
     speaker: Ox
-    DialogueText: '"You wanna know about the Dragon Gate? It''s a bit of a fable
-      around these parts.. I could tell ya a thing or two, but it''ll cost ya."  '
+    DialogueText: '"You wanna know about the Dragon Gate?"'
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
@@ -35,9 +34,8 @@ MonoBehaviour:
   - type: 2
     Guid: 32d557fd-e6dd-4a34-b434-cdc4abd490b6
     speaker: Ox
-    DialogueText: '"You wanna know about the Dragon Gate? It''s a bit of a fable
-      around these parts.. I could tell ya a thing or two, but <color="yellow">it''ll
-      cost ya</color>.'
+    DialogueText: '"It''s a bit of a fable around these parts.. I could tell ya a
+      thing or two, but <color="yellow">it''ll cost ya</color>.'
     cost: {fileID: 0}
     trade: {fileID: 11400000, guid: aacd762caf811ca44b3447c6fb554ead, type: 2}
     flag: 

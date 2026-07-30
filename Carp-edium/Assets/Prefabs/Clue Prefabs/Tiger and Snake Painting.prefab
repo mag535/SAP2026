@@ -114,8 +114,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1988449737
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -6432805223064486900, guid: 0278e29df3822144c8a384709e567f10, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -194,7 +194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3891781669714632481, guid: fd9c220a273305c4799efc2f3cbb0522, type: 3}
       propertyPath: m_Name
-      value: QiLin and Dragon Poster 1
+      value: Tiger and Snake Painting
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9191606251529137339, guid: fd9c220a273305c4799efc2f3cbb0522, type: 3}
@@ -269,7 +269,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 30.001125, y: 18.78}
+    oldSize: {x: 2.5000937, y: 1.565}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

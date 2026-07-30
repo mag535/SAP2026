@@ -1988,22 +1988,6 @@ PrefabInstance:
       propertyPath: inventoryDisplay
       value: 
       objectReference: {fileID: 554840432}
-    - target: {fileID: 579019758823308136, guid: 0512e7f4c5357124e88a5847e980e228, type: 3}
-      propertyPath: notebookOpenSoundEffect
-      value: 
-      objectReference: {fileID: 11400000, guid: 4b059cb4fa515321180598757f024dbb, type: 2}
-    - target: {fileID: 579019758823308136, guid: 0512e7f4c5357124e88a5847e980e228, type: 3}
-      propertyPath: inventoryOpenSoundEffect
-      value: 
-      objectReference: {fileID: 11400000, guid: 4b059cb4fa515321180598757f024dbb, type: 2}
-    - target: {fileID: 579019758823308136, guid: 0512e7f4c5357124e88a5847e980e228, type: 3}
-      propertyPath: notebookCloseSoundEffect
-      value: 
-      objectReference: {fileID: 11400000, guid: 4b059cb4fa515321180598757f024dbb, type: 2}
-    - target: {fileID: 579019758823308136, guid: 0512e7f4c5357124e88a5847e980e228, type: 3}
-      propertyPath: inventoryCloseSoundEffect
-      value: 
-      objectReference: {fileID: 11400000, guid: 4b059cb4fa515321180598757f024dbb, type: 2}
     - target: {fileID: 4377785565023110728, guid: 0512e7f4c5357124e88a5847e980e228, type: 3}
       propertyPath: m_Name
       value: PlayerUIManager

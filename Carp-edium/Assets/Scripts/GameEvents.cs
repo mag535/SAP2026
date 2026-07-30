@@ -63,15 +63,22 @@ public class RequestRemoveFromInventoryDisplay : EvtSystem.Event
     public Object objectData;
 }
 
-public class RequestOpenNotebook : EvtSystem.Event {}
+public class RequestOpenNotebookPre : EvtSystem.Event {}
+public class RequestOpenNotebook : EvtSystem.Event 
+{
+    public List<Object> notes;
+}
 public class RequestCloseNotebook : EvtSystem.Event {}
 public class RequestAddToNotebook : EvtSystem.Event
 {
     public Object objectData;
 }
-public class RequestAddToNotebookDisplay : EvtSystem.Event
+// TODO: needs to be on sepeate script to attach to button
+public class RequestNextPage : EvtSystem.Event {}
+public class RequestPreviousPage : EvtSystem.Event {}
+public class SendNextPage : EvtSystem.Event
 {
-    public Object objectData;
+    public List<Object> notes;
 }
 
 // PLAYER INTERACT -------------------------------------------------------------

@@ -463,7 +463,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_Name
-      value: DoorPrefab (2)
+      value: PalaceDoor
       objectReference: {fileID: 0}
     - target: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_Layer
@@ -540,15 +540,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_Name
-      value: DoorPrefab
+      value: BarDoor
       objectReference: {fileID: 0}
     - target: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_Layer
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
-      propertyPath: isLocked
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: nextRoomName
@@ -605,8 +601,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1109426373}
   m_SourcePrefab: {fileID: 100100000, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+--- !u!1 &1109426372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+  m_PrefabInstance: {fileID: 1109426371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109426373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109426372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6b05eb7138902c890796ea31d8efa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagToWatch: OpenBarDoor
 --- !u!1 &1201630619
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,6 +750,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 637704792586313316, guid: ca491510ab2a809faa60afeb950a69f8, type: 3}
+      propertyPath: conversationStart
+      value: 
+      objectReference: {fileID: 11400000, guid: 36ed5e2b3dd91d8d09ff7c9269e269f5, type: 2}
     - target: {fileID: 1855599743097580206, guid: ca491510ab2a809faa60afeb950a69f8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.14
@@ -1088,15 +1109,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_Name
-      value: DoorPrefab (1)
+      value: TempleDoor
       objectReference: {fileID: 0}
     - target: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_Layer
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
-      propertyPath: isLocked
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: nextRoomName
@@ -1153,8 +1170,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1795597284}
   m_SourcePrefab: {fileID: 100100000, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+--- !u!1 &1795597283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+  m_PrefabInstance: {fileID: 1795597282}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1795597284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795597283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6b05eb7138902c890796ea31d8efa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flagToWatch: OpenTempleDoor
 --- !u!1 &1951889184
 GameObject:
   m_ObjectHideFlags: 0

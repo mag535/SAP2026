@@ -8,7 +8,7 @@ public class PlayerUIControls : MonoBehaviour
     }
 
     public void SendOpenNotebookEvent() {
-        EvtSystem.EventDispatcher.Raise<RequestOpenNotebook>(new
-                RequestOpenNotebook {});
+        EvtSystem.EventDispatcher.Raise<RequestOpenNotebookPre>(new
+                RequestOpenNotebookPre {});
     }
 }

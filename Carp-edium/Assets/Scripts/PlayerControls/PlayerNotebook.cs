@@ -13,6 +13,7 @@ namespace Carp {
 
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestAddToNotebook>(AddNote);
+            EvtSystem.EventDispatcher.AddListener<RequestPreviousPage>(HandlePreviousPageRequest);
             EvtSystem.EventDispatcher.AddListener<RequestNextPage>(HandleNextPageRequest);
             EvtSystem.EventDispatcher.AddListener<RequestOpenNotebookPre>(HandleOpenNotebookPreRequest);
             EvtSystem.EventDispatcher.AddListener<RequestCloseNotebook>(HandleCloseNotebookRequest);
@@ -40,13 +41,33 @@ namespace Carp {
                     notes = noteEntries.GetRange(currentNotePosition, noteCount) });
         }
 
-        void HandleNextPageRequest(RequestNextPage evt) {
-            currentNotePosition += maxNotesPerPage;
-            if (currentNotePosition > noteEntries.Count) {
+        void HandlePreviousPageRequest(RequestPreviousPage evt) {
+            if (currentNotePosition - maxNotesPerPage < 0) {
                 // TODO: have some feedback for EOF
                 return;
             }
 
+            currentNotePosition -= maxNotesPerPage;
+            int noteCount = maxNotesPerPage;
+            if (noteEntries.Count < currentNotePosition + maxNotesPerPage) {
+                noteCount = noteEntries.Count - currentNotePosition;
+            }
+
+            List<Object> notesForPage = new List<Object>();
+            for (int i = currentNotePosition; i < currentNotePosition + noteCount; i++) {
+                notesForPage.Add(noteEntries[i]);
+            }
+            EvtSystem.EventDispatcher.Raise<SendNextPage>(new SendNextPage {
+                    notes = notesForPage });
+        }
+
+        void HandleNextPageRequest(RequestNextPage evt) {
+            if (currentNotePosition + maxNotesPerPage > noteEntries.Count) {
+                // TODO: have some feedback for EOF
+                return;
+            }
+
+            currentNotePosition += maxNotesPerPage;
             int noteCount = maxNotesPerPage;
             if (noteEntries.Count < currentNotePosition + maxNotesPerPage) {
                 noteCount = noteEntries.Count - currentNotePosition;
@@ -66,6 +87,7 @@ namespace Carp {
 
         void OnDestroy() {
             EvtSystem.EventDispatcher.RemoveListener<RequestAddToNotebook>(AddNote);
+            EvtSystem.EventDispatcher.RemoveListener<RequestPreviousPage>(HandlePreviousPageRequest);
             EvtSystem.EventDispatcher.RemoveListener<RequestNextPage>(HandleNextPageRequest);
             EvtSystem.EventDispatcher.RemoveListener<RequestOpenNotebookPre>(HandleOpenNotebookPreRequest);
             EvtSystem.EventDispatcher.RemoveListener<RequestCloseNotebook>(HandleCloseNotebookRequest);

@@ -79,14 +79,6 @@ namespace Carp {
             EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
                     isOpening = true });
             // Create displays
-            if (evt.notes == null) { 
-                Debug.Log("null");
-                return;
-            }
-            if (evt.notes.Count == 0) { 
-                Debug.Log("empty");
-                return;
-            }
             foreach (Object note in evt.notes) {
                 AddToNotebookDisplay(note);
             }

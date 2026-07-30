@@ -5,6 +5,15 @@ namespace Carp {
     {
         public RoomName nextRoomName;
 
+        void Start() {
+            if (isLocked) {
+                Lock();
+            } else {
+                Unlock();
+            }
+        }
+
+        /* For live updating during testing
         void Update() {
             if (isLocked) {
                 Lock();
@@ -12,6 +21,7 @@ namespace Carp {
                 Unlock();
             }
         }
+        */
 
         public override void Interact() {
             if (isLocked) { 

@@ -11,7 +11,8 @@ namespace Carp {
 
         void HandleFlag(PropagateFlag evt) {
             if (evt.flag == flagToWatch) {
-                GetComponent<Door>().Unlock();
+                Door thisDoor = GetComponent<Door>();
+                thisDoor.Unlock();
             }
         }
 

@@ -16,7 +16,9 @@ namespace Carp {
                     .GetModifiedDoorData(objectData.objectID);
             }
 
-            if (!isLocked) {
+            if (isLocked) {
+                Lock();
+            } else {
                 Unlock();
             }
         }
@@ -46,6 +48,7 @@ namespace Carp {
             isLocked = false;
             // Update GM of status
             GameManager.Instance.AddModifiedDoor(objectData.objectID, isLocked);
+            Debug.Log($"Success on [{gameObject.name}]");
         }
 
         public virtual void Lock() {

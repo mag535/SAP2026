@@ -6,7 +6,8 @@ namespace Carp {
     {
         public Dictionary<string, bool> modifiedDoors = 
             new Dictionary<string, bool>();
-        public List<string> modifiedPickups = new List<string>();
+        public List<string> modifiedPickups = 
+            new List<string>();
         public Dictionary<string, List<Listing>> modifiedTraders =
             new Dictionary<string, List<Listing>>();
 
@@ -48,6 +49,7 @@ namespace Carp {
         }
 
         public bool AmIAModifiedDoor(string id) {
+            Debug.Log($"Containes key [{id}]: {modifiedDoors.ContainsKey(id)}");
             return modifiedDoors.ContainsKey(id);
         }
 

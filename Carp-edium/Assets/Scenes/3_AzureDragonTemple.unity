@@ -273,12 +273,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_Name
-      value: DoorPrefab
+      value: ExitDoor
       objectReference: {fileID: 0}
     - target: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: isLocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 908d4fab3a60ffbd99bb3a1b4781fbf1, type: 2}
     - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: nextRoomName
       value: 1

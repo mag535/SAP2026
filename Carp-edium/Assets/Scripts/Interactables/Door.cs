@@ -5,15 +5,11 @@ namespace Carp {
     {
         public RoomName nextRoomName;
 
-        void Start() {
-            if (isLocked) {
-                Lock();
-            } else {
-                Unlock();
-            }
+        new void Start() {
+            base.Start();
         }
 
-        /* For live updating during testing
+        /*
         void Update() {
             if (isLocked) {
                 Lock();

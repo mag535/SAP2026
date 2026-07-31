@@ -12,22 +12,35 @@ namespace Carp {
             EvtSystem.EventDispatcher.AddListener<PropagateFlag>(HandleFlag);
         }
 
+        void Start() {
+            if (GameManager.Instance.AmIAModifiedFox()) {
+                Vector2 newPosition = GameManager.Instance.GetModifiedFoxData();
+                gameObject.transform.position = new Vector3 (
+                        newPosition.x,
+                        newPosition.y,
+                        0);
+            }
+        }
+
         void HandleFlag(PropagateFlag evt) {
-            if (evt.flag == "Bar_Unlocked") {
+            if (evt.flag == "OpenBarDoor") {
                 gameObject.transform.position = new Vector3(
                         barPosition.position.x,
                         barPosition.position.y,
                         0);
-            } else if (evt.flag == "Temple_Unlocked") {
+                GameManager.Instance.AddModifiedFox(barPosition.position);
+            } else if (evt.flag == "OpenTempleDoor") {
                 gameObject.transform.position = new Vector3(
                         templePosition.position.x,
                         templePosition.position.y,
                         0);
-            } else if (evt.flag == "Palace_Unlocked") {
+                GameManager.Instance.AddModifiedFox(templePosition.position);
+            } else if (evt.flag == "PalaceIsUnlocked") {
                 gameObject.transform.position = new Vector3(
                         palacePosition.position.x,
                         palacePosition.position.y,
                         0);
+                GameManager.Instance.AddModifiedFox(palacePosition.position);
             }
         }
 

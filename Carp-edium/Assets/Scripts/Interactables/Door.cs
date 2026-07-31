@@ -5,20 +5,6 @@ namespace Carp {
     {
         public RoomName nextRoomName;
 
-        new void Start() {
-            base.Start();
-        }
-
-        /*
-        void Update() {
-            if (isLocked) {
-                Lock();
-            } else {
-                Unlock();
-            }
-        }
-        */
-
         public override void Interact() {
             if (isLocked) { 
                 base.Interact(); 
@@ -42,7 +28,7 @@ namespace Carp {
             //gameObject.GetComponent<Rigidbody2D>().enabled = false;
         }
 
-        void GoToNextRoom() {
+        public void GoToNextRoom() {
             RoomTransitionManager.Instance.DoRoomTransition(nextRoomName);
         }
     }

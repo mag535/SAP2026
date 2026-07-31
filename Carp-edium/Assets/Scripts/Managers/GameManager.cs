@@ -14,7 +14,7 @@ namespace Carp {
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            
+            EvtSystem.EventDispatcher.AddListener<PropagateFlag>(HandleFlag);
         }
 
         public void AddModifiedDoor(string id, bool isLocked) {
@@ -76,6 +76,16 @@ namespace Carp {
 
         public List<Listing> GetModifiedTraderData(string id) {
             return modifiedTraders[id];
+        }
+
+        void HandleFlag(PropagateFlag evt) {
+            if (evt.flag == "OpenTempleDoor") {
+                AddModifiedDoor("TempleDoor", false);
+            }
+        }
+
+        void OnDestroy() {
+            EvtSystem.EventDispatcher.RemoveListener<PropagateFlag>(HandleFlag);
         }
     }
 }

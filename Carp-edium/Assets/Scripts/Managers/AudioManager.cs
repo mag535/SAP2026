@@ -5,20 +5,24 @@ using System.Collections.Generic;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    public AudioSource bgmSource;
-    public AudioSource sfxSource;
-
     public Sound startBGM;
 
     [SerializeField]
     private AudioMixer audioMixer;
+    [SerializeField]
+    private AudioSource bgmSource;
+    [SerializeField]
+    private AudioSource sfxSource;
 
     private List<Sound> currentlyPlayingSounds = new List<Sound>();
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Play(startBGM);
+        bgmSource = gameObject.AddComponent<AudioSource>();
+        sfxSource = gameObject.AddComponent<AudioSource>();
     }
 
     public void Play(Sound sound) {
@@ -26,20 +30,18 @@ public class AudioManager : Singleton<AudioManager>
             Debug.LogWarning($"Sound: not found.");
             return;
         }
-        if (sound.source != null && sound.source.isPlaying) {
-            Stop(sound);
-        } else {
-        // Add audio source
+        if (sfxSource.isPlaying) {
+            sfxSource.Stop();
+        }
+        if (sound.clip != sfxSource.clip) {
             sound.source = gameObject.AddComponent<AudioSource>();
 
-            sound.source.clip = sound.clip;
-            sound.source.volume = sound.volume;
-            sound.source.pitch = sound.pitch;
-            sound.source.loop = sound.loop;
+            sfxSource.clip = sound.clip;
+            sfxSource.volume = sound.volume;
+            sfxSource.pitch = sound.pitch;
+            sfxSource.loop = sound.loop;
         }
-        // Play
-        sound.source.Play();
-        currentlyPlayingSounds.Add(sound);
+        sfxSource.Play();
     }
 
     public void Stop(Sound sound) {
@@ -47,12 +49,7 @@ public class AudioManager : Singleton<AudioManager>
             Debug.LogWarning($"Sound: not found.");
             return;
         }
-        sound.source.Stop();
-        foreach(Sound s in currentlyPlayingSounds) {
-            if (s == sound) {
-                currentlyPlayingSounds.Remove(sound);
-            }
-        }
+        sfxSource.Stop();
     }
 
     public void StopAll() {

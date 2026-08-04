@@ -19,6 +19,9 @@ namespace Carp {
         public Sound notebookOpenSoundEffect;
         public Sound notebookCloseSoundEffect;
 
+        private bool notebookState = false;
+        private bool inventoryState = false;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
@@ -29,19 +32,26 @@ namespace Carp {
             EvtSystem.EventDispatcher.AddListener<RequestOpenNotebook>(HandleOpenNotebookRequest);
             EvtSystem.EventDispatcher.AddListener<RequestCloseNotebook>(HandleCloseNotebookRequest);
             EvtSystem.EventDispatcher.AddListener<SendNextPage>(HandleNextPage);
+
+            notebookState = false;
+            inventoryState = false;
         }
 
         void HandleOpenInventoryRequest(RequestOpenInventory evt) {
+            if (inventoryState) { return; }
+
             EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
                     isOpening = true });
             inventoryDisplay.SetActive(true);
             AudioManager.Instance.Play(inventoryOpenSoundEffect);
+            inventoryState = true;
         }
         void HandleCloseInventoryRequest(RequestCloseInventory evt) {
             EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
                     isOpening = false });
             inventoryDisplay.SetActive(false);
             AudioManager.Instance.Play(inventoryCloseSoundEffect);
+            inventoryState = false;
         }
         void AddToInventoryDisplay(RequestAddToInventoryDisplay evt) {
             GameObject newItem = Instantiate(itemDisplayPrefab, inventoryParent.transform);
@@ -76,6 +86,8 @@ namespace Carp {
         // NOTEBOOK ----------------------------------------------------------------
 
         void HandleOpenNotebookRequest(RequestOpenNotebook evt) {
+            if (notebookState) { return; }
+
             EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
                     isOpening = true });
             // Create displays
@@ -84,6 +96,7 @@ namespace Carp {
             }
             notebookDisplay.SetActive(true);
             AudioManager.Instance.Play(notebookOpenSoundEffect);
+            notebookState = true;
         }
 
         void HandleCloseNotebookRequest(RequestCloseNotebook evt) {
@@ -95,6 +108,7 @@ namespace Carp {
                 Destroy(childTransform.gameObject);
             }
             AudioManager.Instance.Play(notebookCloseSoundEffect);
+            notebookState = false;
         }
 
         void HandleNextPage(SendNextPage evt) {

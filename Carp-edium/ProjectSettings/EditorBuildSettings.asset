@@ -9,12 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Gameplay.unity
     guid: fa93136dc8c7279a98434a3cebf6d6a5
   - enabled: 1
-    path: Assets/Scenes/Testing.unity
-    guid: d616155226c5b6543b2fcfcd51249787
-  - enabled: 1
-    path: Assets/Scenes/MelissaTesting.unity
-    guid: 6bc61cabc56a4e25aa1abc1f5187dbcd
-  - enabled: 1
     path: Assets/Scenes/0_PlayerSpawn.unity
     guid: ec70f9b6f1cb0a8f5a56758872979424
   - enabled: 1
@@ -29,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/4_BlackTortoisePalace.unity
     guid: 845a8e0a832b46be29dfe57b2d2f85f9
+  - enabled: 0
+    path: Assets/Scenes/Testing.unity
+    guid: d616155226c5b6543b2fcfcd51249787
+  - enabled: 0
+    path: Assets/Scenes/MelissaTesting.unity
+    guid: 6bc61cabc56a4e25aa1abc1f5187dbcd
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -25,7 +25,6 @@ public class ConversationManager : Singleton<ConversationManager>
     public bool ContinueConversation() {
         // Advance to next dialogue node data
         // FIXME: account for options (BRANCH type)
-        Debug.Log("continuing conversation...");
         NodeLinkData currentLinkData = _currentConversation.NodeLinks.Find(
                 x => x.BaseNodeGuid == _currentGuid);
         // If none found, end conversation
@@ -53,7 +52,6 @@ public class ConversationManager : Singleton<ConversationManager>
     }
 
     public void EndConversation() {
-        Debug.Log("end conversation");
         _currentConversation = null;
         _currentGuid = string.Empty;
         HideDialogueWindow();
@@ -134,6 +132,7 @@ public class ConversationManager : Singleton<ConversationManager>
             HandleGiveItemDialogue(node);
             break;
         case DialogueType.SETFLAG:
+            HandleSetFlagDialogue(node);
             break;
         }
     }

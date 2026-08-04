@@ -9,14 +9,16 @@ namespace Carp {
         public bool isLocked = true;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start() {
+        public void Start() {
             // Check for modified data
             if (GameManager.Instance.AmIAModifiedDoor(objectData.objectID)) {
                 isLocked = GameManager.Instance
                     .GetModifiedDoorData(objectData.objectID);
             }
 
-            if (!isLocked) {
+            if (isLocked) {
+                Lock();
+            } else {
                 Unlock();
             }
         }

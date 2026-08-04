@@ -6,14 +6,16 @@ namespace Carp {
     {
         public Dictionary<string, bool> modifiedDoors = 
             new Dictionary<string, bool>();
-        public List<string> modifiedPickups = new List<string>();
+        public List<string> modifiedPickups = 
+            new List<string>();
         public Dictionary<string, List<Listing>> modifiedTraders =
             new Dictionary<string, List<Listing>>();
+        public Vector2 modifiedFox = Vector2.zero;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-            
+            EvtSystem.EventDispatcher.AddListener<PropagateFlag>(HandleFlag);
         }
 
         public void AddModifiedDoor(string id, bool isLocked) {
@@ -47,7 +49,12 @@ namespace Carp {
             return;
         }
 
+        public void AddModifiedFox(Vector2 newPostion) {
+            modifiedFox = newPostion;
+        }
+
         public bool AmIAModifiedDoor(string id) {
+            Debug.Log($"Containes key [{id}]: {modifiedDoors.ContainsKey(id)}");
             return modifiedDoors.ContainsKey(id);
         }
 
@@ -65,6 +72,13 @@ namespace Carp {
             return modifiedTraders.ContainsKey(id);
         }
 
+        public bool AmIAModifiedFox() {
+            if (modifiedFox == Vector2.zero) {
+                return false;
+            }
+            return true;
+        }
+
         public bool GetModifiedDoorData(string id) {
             return modifiedDoors[id];
         }
@@ -74,6 +88,21 @@ namespace Carp {
 
         public List<Listing> GetModifiedTraderData(string id) {
             return modifiedTraders[id];
+        }
+
+        public Vector2 GetModifiedFoxData() {
+            return modifiedFox;
+        }
+
+        void HandleFlag(PropagateFlag evt) {
+            if (evt.flag == "OpenTempleDoor") {
+                AddModifiedDoor("TempleDoor", false);
+                AddModifiedFox(new Vector2(-4, 16));
+            }
+        }
+
+        void OnDestroy() {
+            EvtSystem.EventDispatcher.RemoveListener<PropagateFlag>(HandleFlag);
         }
     }
 }

@@ -5,99 +5,77 @@ using System.Collections.Generic;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    public AudioSource bgmSource;
-    public AudioSource sfxSource;
-
-    public string startBGM;
-    //public Sound[] sounds;
-
-    public List<Sound> sounds;
+    public Sound startBGM;
 
     [SerializeField]
     private AudioMixer audioMixer;
+    [SerializeField]
+    private AudioSource bgmSource;
+    [SerializeField]
+    private AudioSource sfxSource;
+
+    private List<Sound> currentlyPlayingSounds = new List<Sound>();
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // FIXME: Play BGM
-        //Play(startBGM);
+        Play(startBGM);
+        bgmSource = gameObject.AddComponent<AudioSource>();
+        sfxSource = gameObject.AddComponent<AudioSource>();
     }
 
     public void Play(Sound sound) {
         if (sound == null) {
-            Debug.LogWarning("Sound: " + sound.name + " not found.");
+            Debug.LogWarning($"Sound: not found.");
             return;
         }
-        if (sound.source != null && sound.source.isPlaying) {
-            Stop(sound);
-        } else {
-        // Add audio source
+        if (sfxSource.isPlaying) {
+            sfxSource.Stop();
+        }
+        if (sound.clip != sfxSource.clip) {
             sound.source = gameObject.AddComponent<AudioSource>();
 
-            sound.source.clip = sound.clip;
-            sound.source.volume = sound.volume;
-            sound.source.pitch = sound.pitch;
-            sound.source.loop = sound.loop;
+            sfxSource.clip = sound.clip;
+            sfxSource.volume = sound.volume;
+            sfxSource.pitch = sound.pitch;
+            sfxSource.loop = sound.loop;
         }
-        // Play
-        sound.source.Play();
+        sfxSource.Play();
     }
 
     public void Stop(Sound sound) {
         if (sound == null) {
-            Debug.LogWarning("Sound: " + sound.name + " not found.");
+            Debug.LogWarning($"Sound: not found.");
             return;
         }
-        sound.source.Stop();
-    }
-
-    /*
-    public void Play(string name) {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null) {
-            Debug.LogWarning("Sound: " + name + " not found.");
-            return;
-        }
-        if (s.source.isPlaying) {
-            //Debug.LogWarning("Sound: " + name + " is already playing.");
-            Stop(name);
-            //return;
-        }
-        s.source.Play();
-    }
-
-    public void Stop(string name) {
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s == null) {
-            Debug.LogWarning("Sound: " + name + " not found.");
-            return;
-        }
-        s.source.Stop();
+        sfxSource.Stop();
     }
 
     public void StopAll() {
-        foreach (Sound s in sounds) {
+        foreach (Sound s in currentlyPlayingSounds) {
             if (s == null) {
-                Debug.LogWarning("Sound: " + name + " not found.");
+                Debug.LogWarning($"Sound: not found.");
                 return;
             }
             s.source.Stop();
         }
+        currentlyPlayingSounds.Clear();
     }
 
     public void StopAllSFX() {
-        foreach (Sound s in sounds) {
+        foreach (Sound s in currentlyPlayingSounds) {
             if (s == null) {
-                Debug.LogWarning("Sound: " + name + " not found.");
+                Debug.LogWarning($"Sound: not found.");
                 return;
             }
             if (s.type != SoundType.SFX) {
                 continue;
             }
             s.source.Stop();
+            currentlyPlayingSounds.Remove(s);
         }
     }
-    */
 
     // TODO: connect to sliders in a settings menu
 

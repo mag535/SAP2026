@@ -195,10 +195,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barPosition:
     areaName: Bar
-    position: {x: 0, y: 0}
+    position: {x: -18, y: 5}
   templePosition:
     areaName: Temple
-    position: {x: 0, y: 0}
+    position: {x: -4, y: 16}
   palacePosition:
     areaName: Palace
-    position: {x: 0, y: 0}
+    position: {x: -20, y: 16}

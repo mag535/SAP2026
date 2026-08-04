@@ -1906,11 +1906,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4130695692904811666, guid: 7bf3bb823d300a847a5f457b74e08272, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.87
+      value: -2.08
       objectReference: {fileID: 0}
     - target: {fileID: 4130695692904811666, guid: 7bf3bb823d300a847a5f457b74e08272, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.92
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 4130695692904811666, guid: 7bf3bb823d300a847a5f457b74e08272, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1961,6 +1961,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 637704792586313316, guid: 1194558edc2e38c4d8ab4339cf93390f, type: 3}
+      propertyPath: conversationStart
+      value: 
+      objectReference: {fileID: 11400000, guid: f95da51da6694c590abf019d6320cc41, type: 2}
     - target: {fileID: 1855599743097580206, guid: 1194558edc2e38c4d8ab4339cf93390f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.88
@@ -2693,8 +2697,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_Name
-      value: DoorPrefab
+      value: BarExit
       objectReference: {fileID: 0}
+    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: key
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: isLocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 908d4fab3a60ffbd99bb3a1b4781fbf1, type: 2}
     - target: {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: nextRoomName
       value: 1

@@ -22,12 +22,12 @@ MonoBehaviour:
   - BaseNodeGuid: 61ea07f0-db2a-4f20-acd8-c8848ecb4ba4
     PortName: Next
     TargetNodeGuid: 8a077461-eb2b-4d72-8d1f-99ba704238bb
-  - BaseNodeGuid: 8a077461-eb2b-4d72-8d1f-99ba704238bb
-    PortName: Next
-    TargetNodeGuid: 96d6abfe-8b3c-43d9-9945-6904b93e09fb
   - BaseNodeGuid: 96d6abfe-8b3c-43d9-9945-6904b93e09fb
     PortName: Next
     TargetNodeGuid: 8dc8c85e-cbb2-46c8-a010-af1d14ec5e8d
+  - BaseNodeGuid: 8a077461-eb2b-4d72-8d1f-99ba704238bb
+    PortName: Next
+    TargetNodeGuid: 96d6abfe-8b3c-43d9-9945-6904b93e09fb
   DialogueNodeData:
   - type: 0
     Guid: d488a551-bb85-45c5-9213-b6a0ab662049
@@ -38,16 +38,6 @@ MonoBehaviour:
     trade: {fileID: 0}
     flag: 
     Position: {x: 291.2, y: 107.200005}
-  - type: 2
-    Guid: 61ea07f0-db2a-4f20-acd8-c8848ecb4ba4
-    speaker: Ox
-    DialogueText: '"For this much coin, I can tell ya <color="yellow">there''s a
-      Gate outside if ya keep going straight through the bar </color>. Not sure if
-      it''s the Dragon Gate, but ya can take a look." '
-    cost: {fileID: 0}
-    trade: {fileID: 11400000, guid: c992fb5e25c0097438968fc6d35a2aac, type: 2}
-    flag: 
-    Position: {x: 826.4, y: 98.4}
   - type: 4
     Guid: 8dc8c85e-cbb2-46c8-a010-af1d14ec5e8d
     speaker: 
@@ -68,8 +58,18 @@ MonoBehaviour:
     Guid: 8a077461-eb2b-4d72-8d1f-99ba704238bb
     speaker: Ox
     DialogueText: '"If you''re serious about this, ya best <color="yellow">head over
-      to the Blue Dragon Temple</color> across the plaza."'
+      to the Azure Dragon Temple</color> across the plaza."'
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: OpenTempleDoor
     Position: {x: 1058.4, y: 529.6}
+  - type: 2
+    Guid: 61ea07f0-db2a-4f20-acd8-c8848ecb4ba4
+    speaker: Ox
+    DialogueText: '"For this much coin, I can tell ya <color="yellow">there''s a
+      Gate out by the left side by the bar</color>. Not sure if it''s the Dragon
+      Gate, but ya can take a look." '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: c992fb5e25c0097438968fc6d35a2aac, type: 2}
+    flag: 
+    Position: {x: 826.4, y: 98.4}

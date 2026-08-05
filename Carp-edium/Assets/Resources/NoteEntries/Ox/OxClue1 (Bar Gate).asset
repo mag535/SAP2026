@@ -16,6 +16,6 @@ MonoBehaviour:
   objectID: Ox Clue1 (Bar Gate)
   description: 
   sprite: {fileID: 0}
-  longDescription: Investigatable Gate outside bar
+  longDescription: Investigatable Gate outside left of bar
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 1595103067050995165, guid: 6c729b23d023e154faaea671677e86ac, type: 3}

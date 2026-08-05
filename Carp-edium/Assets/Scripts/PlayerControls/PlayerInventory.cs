@@ -14,13 +14,24 @@ namespace Carp {
         }
 
         public void AddItem(RequestAddItem evt) {
+            foreach (Object item in inventory) {
+                if (item.objectID == evt.item.objectID) {
+                    Debug.Log("Note [" + item.objectID + 
+                            "] is already in the inventory.");
+                    return;
+                }
+            }
+
             // Add item to inventory list
             inventory.Add(evt.item);
-
             // Send signal to inventory UI manager to create new
             // item display
             EvtSystem.EventDispatcher.Raise<RequestAddToInventoryDisplay>(
                     new RequestAddToInventoryDisplay { objectData = evt.item });
+            EvtSystem.EventDispatcher.Raise<RequestCreateNotification>( new
+                    RequestCreateNotification {
+                    isNoteEntry = evt.item.isNoteEntry,
+                    objectName = evt.item.name });
         }
 
         public void RemoveItem(RequestRemoveItem evt) {

@@ -25,6 +25,10 @@ public class TrackUIMenuOpen : EvtSystem.Event
     public bool isOpening;
 }
 
+public class RequestCollectedCheck : EvtSystem.Event
+{
+    public Object objectData;
+}
 public class RequestCreateNotification : EvtSystem.Event
 {
     public bool isNoteEntry;

@@ -15,10 +15,6 @@ namespace Carp {
             if (!hasBeenInspected) {
                 EvtSystem.EventDispatcher.Raise<RequestAddToNotebook>(
                         new RequestAddToNotebook { objectData = objectData });
-                EvtSystem.EventDispatcher.Raise<RequestCreateNotification>( new
-                        RequestCreateNotification {
-                        isNoteEntry = objectData.isNoteEntry,
-                        objectName = objectData.name });
                 hasBeenInspected = true;
             }
 

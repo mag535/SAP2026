@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: bf7c305c84579224386272edc270cc48, type: 2}
     - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: itemConvoPairList.Array.size
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: itemConvoPairList.Array.data[0].itemTrigger
@@ -117,6 +117,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c05f460f67e38bf47b18ca81cc8b1889, type: 2}
     - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[11].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c4645025581d984d8c1a8bf0563939a, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: itemConvoPairList.Array.data[1].conversation
       value: 
       objectReference: {fileID: 11400000, guid: ac9b4c68486751445aa7dcf1e3ea5822, type: 2}
@@ -156,6 +160,10 @@ PrefabInstance:
       propertyPath: itemConvoPairList.Array.data[10].conversation
       value: 
       objectReference: {fileID: 11400000, guid: 46e09d4c4c3f91640b8164893eb31181, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[11].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: 20ebcfc6fba6c964b823fae402accdf7, type: 2}
     - target: {fileID: 7789519705045525420, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: m_Name
       value: Dog Priest

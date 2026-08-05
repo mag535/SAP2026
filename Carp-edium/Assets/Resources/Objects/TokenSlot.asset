@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNoteEntry: 0
   objectID: TokenSlot
-  description: 
+  description: 'An unsuspecting slot in the wall. '
   sprite: {fileID: 0}
   longDescription: 'An unsuspecting slot in the wall. '
-  spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 0}
+  spriteMagnified: {fileID: 21300000, guid: b8cf926195662b742a63366ec0f97355, type: 3}
+  spriteIcon: {fileID: 21300000, guid: b8cf926195662b742a63366ec0f97355, type: 3}

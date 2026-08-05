@@ -21,6 +21,9 @@ MonoBehaviour:
     TargetNodeGuid: 61ea07f0-db2a-4f20-acd8-c8848ecb4ba4
   - BaseNodeGuid: 61ea07f0-db2a-4f20-acd8-c8848ecb4ba4
     PortName: Next
+    TargetNodeGuid: 8a077461-eb2b-4d72-8d1f-99ba704238bb
+  - BaseNodeGuid: 8a077461-eb2b-4d72-8d1f-99ba704238bb
+    PortName: Next
     TargetNodeGuid: 96d6abfe-8b3c-43d9-9945-6904b93e09fb
   - BaseNodeGuid: 96d6abfe-8b3c-43d9-9945-6904b93e09fb
     PortName: Next
@@ -45,15 +48,6 @@ MonoBehaviour:
     trade: {fileID: 11400000, guid: c992fb5e25c0097438968fc6d35a2aac, type: 2}
     flag: 
     Position: {x: 826.4, y: 98.4}
-  - type: 2
-    Guid: 96d6abfe-8b3c-43d9-9945-6904b93e09fb
-    speaker: Ox
-    DialogueText: '"If you''re serious about this, ya best <color="yellow">head over
-      to the Blue Dragon Temple</color> across the plaza."'
-    cost: {fileID: 0}
-    trade: {fileID: 11400000, guid: 994a754e62f15b746ac9dd323559c8f9, type: 2}
-    flag: 
-    Position: {x: 1846.4, y: 284.80002}
   - type: 4
     Guid: 8dc8c85e-cbb2-46c8-a010-af1d14ec5e8d
     speaker: 
@@ -62,3 +56,20 @@ MonoBehaviour:
     trade: {fileID: 0}
     flag: 
     Position: {x: 2696.8, y: 349.6}
+  - type: 2
+    Guid: 96d6abfe-8b3c-43d9-9945-6904b93e09fb
+    speaker: Ox
+    DialogueText: '"See ya around." '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: 994a754e62f15b746ac9dd323559c8f9, type: 2}
+    flag: 
+    Position: {x: 1846.4, y: 284.80002}
+  - type: 3
+    Guid: 8a077461-eb2b-4d72-8d1f-99ba704238bb
+    speaker: Ox
+    DialogueText: '"If you''re serious about this, ya best <color="yellow">head over
+      to the Blue Dragon Temple</color> across the plaza."'
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: OpenTempleDoor
+    Position: {x: 1058.4, y: 529.6}

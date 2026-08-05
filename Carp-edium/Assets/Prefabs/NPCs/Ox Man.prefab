@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 5cc79d9429fe0ab4ba2ddadd295703f3, type: 2}
     - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: itemConvoPairList.Array.size
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: itemConvoPairList.Array.data[0].itemTrigger
@@ -113,6 +113,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c05f460f67e38bf47b18ca81cc8b1889, type: 2}
     - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[12].itemTrigger
+      value: 
+      objectReference: {fileID: 11400000, guid: 14b0c740fbda9ba45b27be6ce8adb40f, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: itemConvoPairList.Array.data[1].conversation
       value: 
       objectReference: {fileID: 11400000, guid: 8d0c55f55773e8342bb950ce714d7e11, type: 2}
@@ -156,6 +160,10 @@ PrefabInstance:
       propertyPath: itemConvoPairList.Array.data[11].conversation
       value: 
       objectReference: {fileID: 11400000, guid: 9446bbce4c5b685469d39e6abff47e6a, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: itemConvoPairList.Array.data[12].conversation
+      value: 
+      objectReference: {fileID: 11400000, guid: a86231171cc3d0e45a29862a33553a95, type: 2}
     - target: {fileID: 7789519705045525420, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: m_Name
       value: Ox Man

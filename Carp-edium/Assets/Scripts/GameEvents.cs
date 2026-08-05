@@ -31,6 +31,9 @@ public class RequestCreateNotification : EvtSystem.Event
     public string objectName;
 }
 
+public class TriggerWinScreen : EvtSystem.Event {}
+public class TriggerLoseScreen : EvtSystem.Event {}
+
 // DESCRIPTION UI --------------------------------------------------------------
 public class RequestDisplayInspected : EvtSystem.Event
 {

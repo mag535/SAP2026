@@ -29,6 +29,10 @@ namespace Carp {
             }
 
             noteEntries.Add(evt.objectData);
+            EvtSystem.EventDispatcher.Raise<RequestCreateNotification>( new
+                    RequestCreateNotification {
+                    isNoteEntry = evt.objectData.isNoteEntry,
+                    objectName = evt.objectData.name });
         }
 
         void HandleOpenNotebookPreRequest(RequestOpenNotebookPre evt) {

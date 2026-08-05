@@ -55,4 +55,11 @@ namespace Carp {
             { RoomName.SERENA, "SerenaTesting" }
         };
     }
+
+    [System.Serializable]
+    public enum EndScreen {
+        DRAGON,
+        LOSE1,
+        LOSE2
+    }
 }

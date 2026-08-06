@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: 1988449737
       objectReference: {fileID: 0}
+    - target: {fileID: 2509635105718849081, guid: fd9c220a273305c4799efc2f3cbb0522, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3891781669714632481, guid: fd9c220a273305c4799efc2f3cbb0522, type: 3}
       propertyPath: m_Name
       value: Tiger and Snake Painting

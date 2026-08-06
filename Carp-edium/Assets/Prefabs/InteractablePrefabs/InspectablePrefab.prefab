@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3094705744970737701}
   - component: {fileID: 549186203531888189}
   - component: {fileID: 9191606251529137339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: InspectablePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

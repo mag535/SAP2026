@@ -54,7 +54,6 @@ namespace Carp {
         }
 
         public bool AmIAModifiedDoor(string id) {
-            Debug.Log($"Containes key [{id}]: {modifiedDoors.ContainsKey(id)}");
             return modifiedDoors.ContainsKey(id);
         }
 

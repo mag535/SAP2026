@@ -16,6 +16,7 @@ MonoBehaviour:
   objectID: DragonAndTortoisePainting
   description: 
   sprite: {fileID: 21300000, guid: 1b3fa05e98ed4444abe6b78a5df56ea4, type: 3}
-  longDescription: A painting depicting a Red Dragon and a Black Tortoise together.
+  longDescription: <color="yellow">A painting depicting a Red Dragon and a Black
+    Tortoise together. </color>
   spriteMagnified: {fileID: 21300000, guid: 53a99b97f8680634ba8b8f3d23725500, type: 3}
   spriteIcon: {fileID: 21300000, guid: 1b3fa05e98ed4444abe6b78a5df56ea4, type: 3}

@@ -16,9 +16,6 @@ MonoBehaviour:
   - BaseNodeGuid: 0e8824df-cdd3-48c6-adbf-78a51fb84cc1
     PortName: Next
     TargetNodeGuid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
-  - BaseNodeGuid: 614aff0a-ad10-474d-8602-d33ffaae2f99
-    PortName: Next
-    TargetNodeGuid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
   - BaseNodeGuid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
     PortName: Next
     TargetNodeGuid: 614aff0a-ad10-474d-8602-d33ffaae2f99
@@ -28,6 +25,12 @@ MonoBehaviour:
   - BaseNodeGuid: 29909da4-86ce-4960-898d-2308afb0e612
     PortName: Next
     TargetNodeGuid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
+  - BaseNodeGuid: 614aff0a-ad10-474d-8602-d33ffaae2f99
+    PortName: Next
+    TargetNodeGuid: 7350bcc6-ce3f-498f-8a49-98af6626bf56
+  - BaseNodeGuid: 7350bcc6-ce3f-498f-8a49-98af6626bf56
+    PortName: Next
+    TargetNodeGuid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
   DialogueNodeData:
   - type: 4
     Guid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
@@ -37,15 +40,6 @@ MonoBehaviour:
     trade: {fileID: 0}
     flag: 
     Position: {x: 1656, y: 351.2}
-  - type: 0
-    Guid: 614aff0a-ad10-474d-8602-d33ffaae2f99
-    speaker: Fox
-    DialogueText: '"If you find anything in the bar, be sure to show it to me so
-      I can explain what those objects are." '
-    cost: {fileID: 0}
-    trade: {fileID: 0}
-    flag: 
-    Position: {x: 417.6, y: 257.6}
   - type: 2
     Guid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
     speaker: Fox
@@ -77,3 +71,22 @@ MonoBehaviour:
     trade: {fileID: 11400000, guid: 8d822821a65625847bb4f867a5a496e6, type: 2}
     flag: 
     Position: {x: -10.4, y: -167.2}
+  - type: 0
+    Guid: 614aff0a-ad10-474d-8602-d33ffaae2f99
+    speaker: Fox
+    DialogueText: '"If you find anything in the bar, be sure to show it to me so
+      I can explain what those objects are." '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 283.2, y: 246.4}
+  - type: 0
+    Guid: 7350bcc6-ce3f-498f-8a49-98af6626bf56
+    speaker: Fox
+    DialogueText: '"You can show me things by clicking on objects in your inventory
+      while talking to me, or clicking yellow clues in your notebook while talking
+      to me. '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 725.6, y: 460}

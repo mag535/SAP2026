@@ -16,7 +16,8 @@ MonoBehaviour:
   objectID: TranslationScroll
   description: 
   sprite: {fileID: 0}
-  longDescription: "A calligraphy scroll with 3 chinese characters and their translations.
-    \"\u529B\" for Strength, \"\u7406\" for Intellect, and \"\u6069\" for Compassion. "
+  longDescription: "<color=\"yellow\">A calligraphy scroll with 3 chinese characters
+    and their translations. \"\u529B\" for Strength, \"\u7406\" for Intellect, and
+    \"\u6069\" for Compassion. </color>"
   spriteMagnified: {fileID: 21300000, guid: f4f97e1c80b89d54692fd8454f4e189f, type: 3}
   spriteIcon: {fileID: 21300000, guid: aa03dfb989bc8bf4d98a926d813eb031, type: 3}

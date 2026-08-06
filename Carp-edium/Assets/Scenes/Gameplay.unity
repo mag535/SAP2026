@@ -1272,6 +1272,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9842686359808796, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
   m_PrefabInstance: {fileID: 1299587571}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1299587573 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7249607503163302344, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
+  m_PrefabInstance: {fileID: 1299587571}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1313289610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,6 +1825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueBox
       objectReference: {fileID: 0}
+    - target: {fileID: 6201216283158570454, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2138,7 +2153,7 @@ PrefabInstance:
     - target: {fileID: 4432666135913858437, guid: 6e24d0c45275dd6ab894a81b60eb15a0, type: 3}
       propertyPath: descriptionTextBox
       value: 
-      objectReference: {fileID: 1635778373}
+      objectReference: {fileID: 1299587573}
     - target: {fileID: 7581289424607459998, guid: 6e24d0c45275dd6ab894a81b60eb15a0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -85,7 +85,7 @@ MonoBehaviour:
     speaker: Fox
     DialogueText: '"You can show me things by clicking on objects in your inventory
       while talking to me, or clicking yellow clues in your notebook while talking
-      to me. '
+      to me. "'
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 

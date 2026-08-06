@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b0e6b760b96b4b98f020316971b5da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffect: {fileID: 11400000, guid: 4b059cb4fa515321180598757f024dbb, type: 2}
+  soundEffect: {fileID: 11400000, guid: de0feb3658e1ca2448d5e19bc08cc0dc, type: 2}
+  objectData: {fileID: 0}
   conversationStart: {fileID: 11400000, guid: 158d016d5a8ed826c8740aeef9498f51, type: 2}
   itemConvoPairList: []

@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d1472b06beae9f8e81c5f167fa4a62c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffect: {fileID: 11400000, guid: 4b059cb4fa515321180598757f024dbb, type: 2}
+  soundEffect: {fileID: 11400000, guid: 7a6be7f66c9f3d8478bcc28f276c88c4, type: 2}
   objectData: {fileID: 11400000, guid: 02e0bb4b22f62424ca0f70adadf3f6f4, type: 2}
 --- !u!61 &634350141973477069
 BoxCollider2D:

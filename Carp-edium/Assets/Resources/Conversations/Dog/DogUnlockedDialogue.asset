@@ -30,6 +30,12 @@ MonoBehaviour:
     TargetNodeGuid: 1b60627c-718f-4cc7-8b8d-4e678d28b5d9
   - BaseNodeGuid: 1b60627c-718f-4cc7-8b8d-4e678d28b5d9
     PortName: Next
+    TargetNodeGuid: 8f249601-2fe8-49c5-b881-b4a426691c4e
+  - BaseNodeGuid: 8f249601-2fe8-49c5-b881-b4a426691c4e
+    PortName: Next
+    TargetNodeGuid: e14d83c9-2e91-486e-a682-92b6af7da60c
+  - BaseNodeGuid: e14d83c9-2e91-486e-a682-92b6af7da60c
+    PortName: Next
     TargetNodeGuid: e11fa485-f143-4243-a164-017984685929
   DialogueNodeData:
   - type: 0
@@ -47,15 +53,15 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 766.4, y: 200}
+    Position: {x: 234.4, y: 378.4}
   - type: 0
     Guid: 19e6a1e0-24ea-4dbb-9b21-39accfeed1b4
     speaker: Dog
-    DialogueText: '"The one on the North wall has a Snake and a White Tiger."  '
+    DialogueText: '"The one on the South wall has a Snake and a White Tiger."  '
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 1118.4, y: 199.20001}
+    Position: {x: 90.4, y: 599.19995}
   - type: 0
     Guid: e4eda37e-99c8-4e53-8d1e-d15cc742a158
     speaker: Dog
@@ -63,15 +69,32 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 1650.4, y: 192}
+    Position: {x: 632.8, y: 624}
   - type: 0
     Guid: 1b60627c-718f-4cc7-8b8d-4e678d28b5d9
     speaker: Dog
-    DialogueText: '"The one on the South Wall has a Red Dragon and a Black Tortoise."  '
+    DialogueText: '"The one on the North Wall has a Red Dragon and a Black Tortoise."  '
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 2168, y: 192}
+    Position: {x: 1153.6, y: 592}
+  - type: 0
+    Guid: 8f249601-2fe8-49c5-b881-b4a426691c4e
+    speaker: Dog
+    DialogueText: '"Why don''t you take a look at the paintings yourself? They can
+      help you find the Dragon Gate."'
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1738.4, y: 540.8}
+  - type: 0
+    Guid: e14d83c9-2e91-486e-a682-92b6af7da60c
+    speaker: Dog
+    DialogueText: '"You can start with the Gate outside on the left side of the Temple!" '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 2025.6, y: 742.39996}
   - type: 4
     Guid: e11fa485-f143-4243-a164-017984685929
     speaker: 
@@ -79,4 +102,4 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 2681.6, y: 215.20001}
+    Position: {x: 2024.8, y: 1004}

@@ -8,6 +8,7 @@ namespace Carp {
         public float speed = 5f;
         public float collisionOffset = 0.1f;
         public ContactFilter2D movementFilters;
+        public Sound footsteps;
 
         private Vector2 inputVector;
         private Vector2 movementDirection;
@@ -65,6 +66,7 @@ namespace Carp {
             if (count == 0) {
                 Vector2 moveVector = direction * speed * Time.fixedDeltaTime;
                 rb.MovePosition(rb.position + moveVector);
+                AudioManager.Instance.Play(footsteps);
                 return true;
             }
 

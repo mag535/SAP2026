@@ -80,7 +80,7 @@ public class RequestAddToNotebook : EvtSystem.Event
 {
     public Object objectData;
 }
-// TODO: needs to be on sepeate script to attach to button
+
 public class RequestNextPage : EvtSystem.Event {}
 public class RequestPreviousPage : EvtSystem.Event {}
 public class SendNextPage : EvtSystem.Event

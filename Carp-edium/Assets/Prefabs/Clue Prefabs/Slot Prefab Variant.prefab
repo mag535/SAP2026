@@ -141,6 +141,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: c05f460f67e38bf47b18ca81cc8b1889, type: 2}
     - target: {fileID: 1390452733622243126, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
+      propertyPath: soundEffect
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1390452733622243126, guid: ca5eaea207d0daa8898f3e9b20ea0909, type: 3}
       propertyPath: possibleTrades.Array.data[0].cost
       value: 
       objectReference: {fileID: 11400000, guid: 2e684f42d3a1a384fbb5894b30a35ad1, type: 2}

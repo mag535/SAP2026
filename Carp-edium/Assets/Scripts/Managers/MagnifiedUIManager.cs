@@ -4,32 +4,39 @@ using UnityEngine.UI;
 
 public class MagnifiedUIManager : MonoBehaviour
 {
-    public GameObject descriptionDisplay;
+    public GameObject displayWindow;
     public GameObject imageDisplay;
-    public TextMeshProUGUI descriptionTextBox;
+    public GameObject descriptionBox;
+    public TextMeshProUGUI descriptionText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         EvtSystem.EventDispatcher.AddListener<RequestDisplayInspected>(ShowMagnifyWindow);
         EvtSystem.EventDispatcher.AddListener<RequestCloseDisplayInspected>(HideMagnifyWindow);
+        
+        imageDisplay.SetActive(false);
+        descriptionBox.SetActive(false);
+        displayWindow.SetActive(false);
     }
     
     void ShowMagnifyWindow(RequestDisplayInspected evt) {
         if (evt.useLong) {
-            descriptionTextBox.text = evt.objectData.longDescription;
+            descriptionText.text = evt.objectData.longDescription;
         } else {
-            descriptionTextBox.text = evt.objectData.description;
+            descriptionText.text = evt.objectData.description;
         }
         imageDisplay.GetComponent<Image>().sprite = evt.objectData.spriteMagnified;
         imageDisplay.SetActive(true);
-        descriptionDisplay.SetActive(true);
+        descriptionBox.SetActive(true);
+        displayWindow.SetActive(true);
     }
 
     void HideMagnifyWindow(RequestCloseDisplayInspected evt) {
-        descriptionDisplay.SetActive(false);
+        displayWindow.SetActive(false);
+        descriptionBox.SetActive(false);
         imageDisplay.SetActive(false);
-        descriptionTextBox.text = "";
+        descriptionText.text = "";
         imageDisplay.GetComponent<Image>().sprite = null;
     }
 

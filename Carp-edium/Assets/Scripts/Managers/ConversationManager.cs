@@ -5,13 +5,19 @@ using System.Collections.Generic;
 
 public class ConversationManager : Singleton<ConversationManager>
 {
-    public GameObject background;
+    public GameObject displayWindow;
+    public GameObject dialogueBox;
     public TextMeshProUGUI textBox;
     public TextMeshProUGUI nameTag;
 
     //private string conversationsFolder = "Conversations/";
     private DialogueContainer _currentConversation;
     private string _currentGuid;
+
+    void Start() {
+        dialogueBox.SetActive(false);
+        displayWindow.SetActive(false);
+    }
 
     public void StartConversation(DialogueContainer start) {
         _currentConversation = start;
@@ -79,12 +85,14 @@ public class ConversationManager : Singleton<ConversationManager>
     }
 
     public void ShowDialogueWindow() {
-        background.SetActive(true);
+        dialogueBox.SetActive(true);
+        displayWindow.SetActive(true);
     }
 
     public void HideDialogueWindow() {
         textBox.text = string.Empty;
-        background.SetActive(false);
+        dialogueBox.SetActive(false);
+        displayWindow.SetActive(false);
     }
 
     // Get some information on current dialogue node then parse

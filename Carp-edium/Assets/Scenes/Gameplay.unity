@@ -124,6 +124,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8117896739989744397, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
   m_PrefabInstance: {fileID: 9177239352216962901}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &86038222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6201216283158570454, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
+  m_PrefabInstance: {fileID: 1299587571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &103574105
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,6 +2152,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1897347858}
     - target: {fileID: 4432666135913858437, guid: 6e24d0c45275dd6ab894a81b60eb15a0, type: 3}
+      propertyPath: displayWindow
+      value: 
+      objectReference: {fileID: 1490156868}
+    - target: {fileID: 4432666135913858437, guid: 6e24d0c45275dd6ab894a81b60eb15a0, type: 3}
+      propertyPath: descriptionBox
+      value: 
+      objectReference: {fileID: 86038222}
+    - target: {fileID: 4432666135913858437, guid: 6e24d0c45275dd6ab894a81b60eb15a0, type: 3}
+      propertyPath: descriptionText
+      value: 
+      objectReference: {fileID: 1299587573}
+    - target: {fileID: 4432666135913858437, guid: 6e24d0c45275dd6ab894a81b60eb15a0, type: 3}
       propertyPath: descriptionDisplay
       value: 
       objectReference: {fileID: 1490156868}
@@ -2441,6 +2458,10 @@ PrefabInstance:
       propertyPath: dialogueBox
       value: 
       objectReference: {fileID: 1635778374}
+    - target: {fileID: 7481966571704695557, guid: 3d2cc78beec4f6577937505ca558245c, type: 3}
+      propertyPath: displayWindow
+      value: 
+      objectReference: {fileID: 1490156868}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

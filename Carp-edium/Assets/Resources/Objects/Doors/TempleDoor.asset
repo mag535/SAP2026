@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNoteEntry: 0
   objectID: TempleDoor
-  description: The Temple Door is locked.
+  description: The Temple Door is locked. Did you talk to the Ox?
   sprite: {fileID: 0}
-  longDescription: The Temple Door is locked.
+  longDescription: The Temple Door is locked. Did you talk to the Ox?
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

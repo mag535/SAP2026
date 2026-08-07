@@ -10,6 +10,8 @@ namespace Carp {
         public ContactFilter2D movementFilters;
         public Sound footsteps;
 
+        public float rotationAngle = Mathf.PI / 6f; // 30 degrees
+
         private Vector2 inputVector;
         private Vector2 movementDirection;
         private Rigidbody2D rb;
@@ -66,7 +68,9 @@ namespace Carp {
             if (count == 0) {
                 Vector2 moveVector = direction * speed * Time.fixedDeltaTime;
                 rb.MovePosition(rb.position + moveVector);
-                AudioManager.Instance.Play(footsteps);
+                if (footsteps != null) {
+                    AudioManager.Instance.Play(footsteps);
+                }
                 return true;
             }
 
@@ -82,24 +86,17 @@ namespace Carp {
 
         // rotate 45 degrees clockwise
         private Vector2 RotateDirection(Vector2 direction) {
-            // up
-            if (direction.x == 0 && direction.y == 1) {
-                return new Vector2(Mathf.Sqrt(2), Mathf.Sqrt(2)); // upper right
-            } else
-            // right
             if (direction.x == 1 && direction.y == 0) {
-                return new Vector2(Mathf.Sqrt(2), -Mathf.Sqrt(2)); // lower right
-            } else
-            // down
-            if (direction.x == 0 && direction.y == -1) {
-                return new Vector2(-Mathf.Sqrt(2), -Mathf.Sqrt(2)); // lower left
-            } else
-            // left
-            if (direction.x == -1 && direction.y == 0) {
-                return new Vector2(-Mathf.Sqrt(2), Mathf.Sqrt(2)); // upper left
+                return new Vector2(Mathf.Sqrt(3f)/2f, -0.5f); // 11PI/6
+            } else if (direction.x == 0 && direction.y == 1) {
+                return new Vector2(Mathf.Sqrt(3f)/2f, 0.5f); // PI/6
+            } else if (direction.x == -1 && direction.y == 0) {
+                return new Vector2(-(Mathf.Sqrt(3f)/2f), 0.5f); // 5PI/6
+            } else if (direction.x == 0 && direction.y == -1) {
+                return new Vector2(-(Mathf.Sqrt(3f)/2f), -0.5f); // 7PI/6
             }
 
-            return Vector2.zero;
+            return new Vector2(0,0);
         }
 
         void HandlePlayerPositionChange(RequestChangePlayerPosition evt) {

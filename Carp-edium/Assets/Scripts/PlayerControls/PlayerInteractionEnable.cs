@@ -14,5 +14,9 @@ namespace Carp {
         void OnTriggerEnter2D(Collider2D other) {
             playerInteract.EnableInteraction(other.gameObject);
         }
+
+        void OnTriggerExit2D(Collider2D _) {
+            playerInteract.CancelInteraction();
+        }
     }
 }

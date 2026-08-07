@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3191345613141783707}
   - component: {fileID: 1390452733622243126}
   - component: {fileID: 4306452597491947129}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: TraderPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}

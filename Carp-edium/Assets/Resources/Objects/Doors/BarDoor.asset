@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNoteEntry: 0
   objectID: BarDoor
-  description: The Bar  Door is locked.
+  description: The Bar  Door is locked.  Did you talk to the Fox?
   sprite: {fileID: 0}
-  longDescription: The Bar  Door is locked.
+  longDescription: The Bar Door is locked. Did you talk to the Fox?
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: 0}

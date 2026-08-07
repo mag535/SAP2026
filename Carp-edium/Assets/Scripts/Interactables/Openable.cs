@@ -41,7 +41,7 @@ namespace Carp {
             // TODO: change?
             SpriteRenderer sr = GetComponent<SpriteRenderer>();
             // make transparent
-            Color newColor = new Color(sr.color.r, sr.color.g, sr.color.b, 0.25f);
+            Color newColor = new Color(1, 1, 0, sr.color.a);
             sr.color = newColor;
 
             // unlock

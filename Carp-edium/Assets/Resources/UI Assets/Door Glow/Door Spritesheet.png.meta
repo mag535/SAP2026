@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: ea4c54f5017063e43a4d233268b40b2d
+guid: 184c9942586a7fa42a1a849dda49e3f3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7675826601332790545
-    second: coin_0
+      213: 7257573344292889285
+    second: Door Spritesheet_0
+  - first:
+      213: 1238534565191315110
+    second: Door Spritesheet_1
+  - first:
+      213: 2389891613940292000
+    second: Door Spritesheet_2
+  - first:
+      213: 2878652847960155853
+    second: Door Spritesheet_3
+  - first:
+      213: -5949179593168799560
+    second: Door Spritesheet_4
+  - first:
+      213: -6848670027901677123
+    second: Door Spritesheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,13 +61,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 800
-  spriteBorder: {x: 23, y: 53, z: 40, w: 14}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -113,23 +128,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: coin_0
+      name: Door Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 53
-        width: 560
-        height: 567
+        x: 0
+        y: 0
+        width: 430
+        height: 418
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1155fe920a3068a60800000000000000
-      internalID: 7675826601332790545
+      spriteID: 5c2ebed118418b460800000000000000
+      internalID: 7257573344292889285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 0
+        width: 430
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ae654000a8203110800000000000000
+      internalID: 1238534565191315110
       vertices: []
       indices: 
       edges: []
@@ -138,8 +175,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 8b176094f1a5b4c409471e90c2d9bfeb
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -148,7 +185,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      coin_0: 7675826601332790545
+      Door Spritesheet_0: 7257573344292889285
+      Door Spritesheet_1: 1238534565191315110
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

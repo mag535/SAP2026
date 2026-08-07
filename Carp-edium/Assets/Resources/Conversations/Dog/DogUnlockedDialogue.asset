@@ -57,7 +57,7 @@ MonoBehaviour:
   - type: 0
     Guid: 19e6a1e0-24ea-4dbb-9b21-39accfeed1b4
     speaker: Dog
-    DialogueText: '"The one on the South wall has a Snake and a White Tiger."  '
+    DialogueText: '"The one on the right wall has a Snake and a White Tiger."  '
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
@@ -65,7 +65,7 @@ MonoBehaviour:
   - type: 0
     Guid: e4eda37e-99c8-4e53-8d1e-d15cc742a158
     speaker: Dog
-    DialogueText: '"The one on the East wall has a QiLin and an Azure Dragon."  '
+    DialogueText: '"The one on the middle wall has a QiLin and an Azure Dragon."  '
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
@@ -73,7 +73,7 @@ MonoBehaviour:
   - type: 0
     Guid: 1b60627c-718f-4cc7-8b8d-4e678d28b5d9
     speaker: Dog
-    DialogueText: '"The one on the North Wall has a Red Dragon and a Black Tortoise."  '
+    DialogueText: '"The one on the left Wall has a Red Dragon and a Black Tortoise."  '
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 

@@ -62,14 +62,14 @@ namespace Carp {
                     if (!success) {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
                         //Debug.Log("State: " + playerStateManager.GetCurrentState());
-                        engagedGO = null;
+                        //engagedGO = null;
                     }
                 }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
                     EvtSystem.EventDispatcher.Raise<RequestCloseDisplayInspected>(
                             new RequestCloseDisplayInspected {});
                     playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
                     //Debug.Log("State: " + playerStateManager.GetCurrentState());
-                    engagedGO = null;
+                    //engagedGO = null;
                 }
             }
         }

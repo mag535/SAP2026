@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: some decently really long text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 818e327a9f1fc9d4499a14086c32f504, type: 2}
-  m_sharedMaterial: {fileID: -5802490043069594155, guid: 818e327a9f1fc9d4499a14086c32f504, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -235,12 +235,12 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.95294124, b: 0.21568629, a: 1}
+    m_PressedColor: {r: 1, g: 0.79108876, b: 0.20188677, a: 1}
+    m_SelectedColor: {r: 1, g: 0.9518435, b: 0.216981, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -256,7 +256,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 5826705149398672818}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:

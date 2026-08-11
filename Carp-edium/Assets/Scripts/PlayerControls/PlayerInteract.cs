@@ -26,14 +26,14 @@ namespace Carp {
         public void EnableInteraction(GameObject detectedGO) {
             interactionsAreEnabled = true;
             engagedGO = detectedGO;
-            Debug.Log($"Interactions Enabled by [{detectedGO.name}]");
+            //Debug.Log($"Interactions Enabled by [{detectedGO.name}]");
         }
 
         // Triggers when the player walks far enough away from the engagedGO
         // that it is no longer within the InteractionCancelRadius.
         public void CancelInteraction() {
             if (engagedGO == null) { return; }
-            Debug.Log($"Cancelling interactions with [{engagedGO.name}]");
+            //Debug.Log($"Cancelling interactions with [{engagedGO.name}]");
 
             Cancel();
             interactionsAreEnabled = false;
@@ -61,15 +61,15 @@ namespace Carp {
                     bool success = ConversationManager.Instance.ContinueConversation();
                     if (!success) {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
-                        Debug.Log("State: " + playerStateManager.GetCurrentState());
-                        engagedGO = null;
+                        //Debug.Log("State: " + playerStateManager.GetCurrentState());
+                        //engagedGO = null;
                     }
                 }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
                     EvtSystem.EventDispatcher.Raise<RequestCloseDisplayInspected>(
                             new RequestCloseDisplayInspected {});
                     playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
-                    Debug.Log("State: " + playerStateManager.GetCurrentState());
-                    engagedGO = null;
+                    //Debug.Log("State: " + playerStateManager.GetCurrentState());
+                    //engagedGO = null;
                 }
             }
         }

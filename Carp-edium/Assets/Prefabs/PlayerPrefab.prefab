@@ -343,7 +343,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  footsteps: {fileID: 0}
+  footsteps: {fileID: 11400000, guid: 9dd8ac8cb7a06694993c83308eb6663a, type: 2}
   rotationAngle: 0.5235988
 --- !u!114 &937473934537937284
 MonoBehaviour:

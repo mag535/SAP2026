@@ -193,6 +193,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2228320698359410632, guid: f491ecd6bd56d1435af24bb7eba51340, type: 3}
+      propertyPath: barPosition.position.x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228320698359410632, guid: f491ecd6bd56d1435af24bb7eba51340, type: 3}
+      propertyPath: barPosition.position.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228320698359410632, guid: f491ecd6bd56d1435af24bb7eba51340, type: 3}
+      propertyPath: templePosition.position.x
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2228320698359410632, guid: f491ecd6bd56d1435af24bb7eba51340, type: 3}
+      propertyPath: templePosition.position.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8360031708868442219, guid: f491ecd6bd56d1435af24bb7eba51340, type: 3}
       propertyPath: m_Name
       value: GameManager

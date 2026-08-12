@@ -2572,6 +2572,14 @@ PrefabInstance:
       propertyPath: endScreenParent
       value: 
       objectReference: {fileID: 1512952785}
+    - target: {fileID: 3041424037612855615, guid: a701b0600bbb80d6e8720fe596228d12, type: 3}
+      propertyPath: winScreenPrefab
+      value: 
+      objectReference: {fileID: 944541766514155007, guid: 0e73285d295380d44a195bed4a9d26a9, type: 3}
+    - target: {fileID: 3041424037612855615, guid: a701b0600bbb80d6e8720fe596228d12, type: 3}
+      propertyPath: loseScreenPrefab
+      value: 
+      objectReference: {fileID: 944541766514155007, guid: 6b6a51efd8abb1e8585e42a934e01bf5, type: 3}
     - target: {fileID: 3239647103081983361, guid: a701b0600bbb80d6e8720fe596228d12, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

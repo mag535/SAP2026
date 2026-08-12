@@ -10,8 +10,14 @@ namespace Carp {
             new List<string>();
         public Dictionary<string, List<Listing>> modifiedTraders =
             new Dictionary<string, List<Listing>>();
+
         public Vector2 modifiedFox = Vector2.zero;
+        [SerializeField]
+        private FoxUnlockPosition barPosition = new FoxUnlockPosition("Bar", Vector2.zero);
+        public FoxUnlockPosition templePosition = new FoxUnlockPosition("Temple", Vector2.zero);
+
         public bool areGatesUnlocked = false;
+
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -99,9 +105,12 @@ namespace Carp {
         }
 
         void HandleFlag(PropagateFlag evt) {
+            if (evt.flag == "FoxToBarPosition") {
+                AddModifiedFox(barPosition.position);
+            }
             if (evt.flag == "OpenTempleDoor") {
                 AddModifiedDoor("TempleDoor", false);
-                AddModifiedFox(new Vector2(-4, 16));
+                AddModifiedFox(templePosition.position);
             } else if (evt.flag == "UnlockGates") {
                 areGatesUnlocked = true;
             }

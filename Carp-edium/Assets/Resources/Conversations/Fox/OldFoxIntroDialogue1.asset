@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
-  m_Name: FoxIntroDialogue1
+  m_Name: OldFoxIntroDialogue1
   m_EditorClassIdentifier: 
   NodeLinks:
   - BaseNodeGuid: 0e8824df-cdd3-48c6-adbf-78a51fb84cc1
@@ -32,14 +32,6 @@ MonoBehaviour:
     PortName: Next
     TargetNodeGuid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
   DialogueNodeData:
-  - type: 4
-    Guid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
-    speaker: 
-    DialogueText: END OF CONVERSATION
-    cost: {fileID: 0}
-    trade: {fileID: 0}
-    flag: 
-    Position: {x: 1656, y: 351.2}
   - type: 2
     Guid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
     speaker: Fox
@@ -79,7 +71,7 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 283.2, y: 246.4}
+    Position: {x: 154.4, y: 254.4}
   - type: 0
     Guid: 7350bcc6-ce3f-498f-8a49-98af6626bf56
     speaker: Fox
@@ -89,4 +81,12 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 725.6, y: 460}
+    Position: {x: 751.2, y: 524.8}
+  - type: 4
+    Guid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1707.2, y: 310.4}

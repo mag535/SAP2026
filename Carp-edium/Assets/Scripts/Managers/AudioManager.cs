@@ -14,15 +14,13 @@ public class AudioManager : Singleton<AudioManager>
     [SerializeField]
     private AudioSource sfxSource;
 
-    private List<Sound> currentlyPlayingSounds = new List<Sound>();
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Play(startBGM);
-        bgmSource = gameObject.AddComponent<AudioSource>();
-        sfxSource = gameObject.AddComponent<AudioSource>();
+        //bgmSource = gameObject.AddComponent<AudioSource>();
+        //sfxSource = gameObject.AddComponent<AudioSource>();
     }
 
     public void Play(Sound sound) {
@@ -30,18 +28,32 @@ public class AudioManager : Singleton<AudioManager>
             Debug.LogWarning($"Sound: not found.");
             return;
         }
-        if (sfxSource.isPlaying) {
-            sfxSource.Stop();
-        }
-        if (sound.clip != sfxSource.clip) {
-            sound.source = gameObject.AddComponent<AudioSource>();
 
-            sfxSource.clip = sound.clip;
-            sfxSource.volume = sound.volume;
-            sfxSource.pitch = sound.pitch;
-            sfxSource.loop = sound.loop;
+        if (sound.type == SoundType.SFX) {
+            AudioSource[] existingSources = GetComponents<AudioSource>();
+            foreach(AudioSource src in existingSources) {
+                if (src.clip == sound.clip) {
+                    src.Stop();
+                    src.Play();
+                    Debug.Log($"old sound [{sound.name}] replayed");
+                    return;
+                }
+            }
+            AudioSource newSource = gameObject.AddComponent<AudioSource>();
+            newSource.clip = sound.clip;
+            newSource.volume = sound.volume;
+            newSource.pitch = sound.pitch;
+            newSource.loop = sound.loop;
+            newSource.Play();
+            Debug.Log($"new sound [{sound.name}] created");
+        } else {
+            bgmSource.Stop();
+            bgmSource.clip = sound.clip;
+            bgmSource.volume = sound.volume;
+            bgmSource.pitch = sound.pitch;
+            bgmSource.loop = sound.loop;
+            bgmSource.Play();
         }
-        sfxSource.Play();
     }
 
     public void Stop(Sound sound) {
@@ -49,31 +61,14 @@ public class AudioManager : Singleton<AudioManager>
             Debug.LogWarning($"Sound: not found.");
             return;
         }
-        sfxSource.Stop();
-    }
-
-    public void StopAll() {
-        foreach (Sound s in currentlyPlayingSounds) {
-            if (s == null) {
-                Debug.LogWarning($"Sound: not found.");
-                return;
+        if (sound.type == SoundType.SFX) {
+            foreach(AudioSource src in GetComponents<AudioSource>()) {
+                if (src.clip == sound.clip) {
+                    src.Stop();
+                }
             }
-            s.source.Stop();
-        }
-        currentlyPlayingSounds.Clear();
-    }
-
-    public void StopAllSFX() {
-        foreach (Sound s in currentlyPlayingSounds) {
-            if (s == null) {
-                Debug.LogWarning($"Sound: not found.");
-                return;
-            }
-            if (s.type != SoundType.SFX) {
-                continue;
-            }
-            s.source.Stop();
-            currentlyPlayingSounds.Remove(s);
+        } else {
+            bgmSource.Stop();
         }
     }
 

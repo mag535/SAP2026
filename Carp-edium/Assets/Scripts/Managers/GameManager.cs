@@ -11,6 +11,7 @@ namespace Carp {
         public Dictionary<string, List<Listing>> modifiedTraders =
             new Dictionary<string, List<Listing>>();
         public Vector2 modifiedFox = Vector2.zero;
+        public bool areGatesUnlocked = false;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -93,10 +94,16 @@ namespace Carp {
             return modifiedFox;
         }
 
+        public bool GetAreGatesUnlocked() {
+            return areGatesUnlocked;
+        }
+
         void HandleFlag(PropagateFlag evt) {
             if (evt.flag == "OpenTempleDoor") {
                 AddModifiedDoor("TempleDoor", false);
                 AddModifiedFox(new Vector2(-4, 16));
+            } else if (evt.flag == "UnlockGates") {
+                areGatesUnlocked = true;
             }
         }
 

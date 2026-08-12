@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 937473934537937284}
   - component: {fileID: 2281768357408128118}
   - component: {fileID: 8322970319975573531}
+  - component: {fileID: 3923999628715952768}
   m_Layer: 3
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -235,6 +236,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0158306c-59e2-4fdc-8ef6-fddc58705f87
     m_ActionName: 'Game/Interact[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: TogglePauseMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7d81f958-364a-4905-8e3a-6f84e6baf563
+    m_ActionName: 'Game/Pause[/Keyboard/escape]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Game
@@ -368,6 +385,18 @@ MonoBehaviour:
   noteEntries: []
   maxNotesPerPage: 10
   currentNotePosition: 0
+--- !u!114 &3923999628715952768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548012394192768574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac9883e251cdae4d87ee29179a0c0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6265383279366427065
 GameObject:
   m_ObjectHideFlags: 0

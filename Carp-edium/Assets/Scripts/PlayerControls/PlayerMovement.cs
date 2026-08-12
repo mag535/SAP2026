@@ -17,6 +17,8 @@ namespace Carp {
         private Rigidbody2D rb;
         private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
+        private bool isMoving = false;
+
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestChangePlayerPosition>(
                     HandlePlayerPositionChange);
@@ -41,6 +43,10 @@ namespace Carp {
                     success = MovePlayer(new Vector2(0, movementDirection.y));
                 }
             }
+
+            if (!isMoving) {
+                AudioManager.Instance.Stop(footsteps);
+            }
         }
 
         public void Move(InputAction.CallbackContext context) {
@@ -48,8 +54,11 @@ namespace Carp {
                 inputVector = context.ReadValue<Vector2>();
                 EvtSystem.EventDispatcher.Raise<ChangePlayerSprite>(new
                         ChangePlayerSprite { direction = inputVector });
+                isMoving = true;
+                AudioManager.Instance.Play(footsteps);
             } else if (context.canceled) {
                 inputVector = Vector2.zero;
+                AudioManager.Instance.Stop(footsteps);
             }
             // NSEW
             //movementDirection = inputVector;
@@ -58,6 +67,11 @@ namespace Carp {
         }
 
         private bool MovePlayer(Vector2 direction) {
+            if (direction == Vector2.zero) {
+                isMoving = false;
+                return false;
+            }
+
             int count = rb.Cast(
                     direction,
                     movementFilters, // Layers valid for collision detection (eg. wall, NPC, object)
@@ -68,9 +82,7 @@ namespace Carp {
             if (count == 0) {
                 Vector2 moveVector = direction * speed * Time.fixedDeltaTime;
                 rb.MovePosition(rb.position + moveVector);
-                if (footsteps != null) {
-                    AudioManager.Instance.Play(footsteps);
-                }
+                isMoving = true;
                 return true;
             }
 
@@ -81,6 +93,7 @@ namespace Carp {
                 print(hit.ToString());
             }
             */
+            isMoving = false;
             return false;
         }
 
@@ -96,7 +109,7 @@ namespace Carp {
                 return new Vector2(-(Mathf.Sqrt(3f)/2f), -0.5f); // 7PI/6
             }
 
-            return new Vector2(0,0);
+            return Vector2.zero;
         }
 
         void HandlePlayerPositionChange(RequestChangePlayerPosition evt) {

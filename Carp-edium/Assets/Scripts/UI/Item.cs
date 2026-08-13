@@ -4,8 +4,9 @@ public class Item : MonoBehaviour
 {
     public Object objectData;
 
-    public void AttemptItemUse() {
+    public void AttemptItemUse(Sound sfx) {
         Debug.Log(" attempting item use...");
+        AudioManager.Instance.Play(sfx);
         EvtSystem.EventDispatcher.Raise<RequestItemUse>(
                 new RequestItemUse { item = objectData });
     }

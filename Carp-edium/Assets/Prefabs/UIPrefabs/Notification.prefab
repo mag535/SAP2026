@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '[Something somthing] has been added to Inventory.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 818e327a9f1fc9d4499a14086c32f504, type: 2}
-  m_sharedMaterial: {fileID: -5802490043069594155, guid: 818e327a9f1fc9d4499a14086c32f504, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5927d4b569fcd9443bc1f06aed638104, type: 2}
+  m_sharedMaterial: {fileID: 8911186857897725719, guid: 5927d4b569fcd9443bc1f06aed638104, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

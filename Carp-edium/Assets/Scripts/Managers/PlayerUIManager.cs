@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace Carp {
     public class PlayerUIManager : MonoBehaviour
@@ -45,6 +46,12 @@ namespace Carp {
             inventoryDisplay.SetActive(true);
             AudioManager.Instance.Play(inventoryOpenSoundEffect);
             inventoryState = true;
+
+            // Set focused game object
+            foreach (Transform childTransform in inventoryParent.transform) {
+                EventSystem.current.SetSelectedGameObject(childTransform.gameObject);
+                break;
+            }
         }
         void HandleCloseInventoryRequest(RequestCloseInventory evt) {
             EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
@@ -97,6 +104,12 @@ namespace Carp {
             notebookDisplay.SetActive(true);
             AudioManager.Instance.Play(notebookOpenSoundEffect);
             notebookState = true;
+
+            // Set focused game object
+            foreach (Transform childTransform in notebookParent.transform) {
+                EventSystem.current.SetSelectedGameObject(childTransform.gameObject);
+                break;
+            }
         }
 
         void HandleCloseNotebookRequest(RequestCloseNotebook evt) {

@@ -142,8 +142,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Item Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 818e327a9f1fc9d4499a14086c32f504, type: 2}
-  m_sharedMaterial: {fileID: -5802490043069594155, guid: 818e327a9f1fc9d4499a14086c32f504, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5927d4b569fcd9443bc1f06aed638104, type: 2}
+  m_sharedMaterial: {fileID: 8911186857897725719, guid: 5927d4b569fcd9443bc1f06aed638104, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -310,12 +310,12 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.6735818, b: 0, a: 1}
+    m_PressedColor: {r: 1, g: 0.7921569, b: 0.2, a: 1}
+    m_SelectedColor: {r: 1, g: 0.95294124, b: 0.21568629, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -331,17 +331,17 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 342380091020170685}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8508582889878037734}
         m_TargetAssemblyTypeName: Item, Assembly-CSharp
         m_MethodName: AttemptItemUse
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: a409386385486ae48ab3d68ffdd9a151, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Sound, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

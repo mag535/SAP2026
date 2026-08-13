@@ -18,10 +18,7 @@ MonoBehaviour:
     TargetNodeGuid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
   - BaseNodeGuid: 614aff0a-ad10-474d-8602-d33ffaae2f99
     PortName: Next
-    TargetNodeGuid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
-  - BaseNodeGuid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
-    PortName: Next
-    TargetNodeGuid: 614aff0a-ad10-474d-8602-d33ffaae2f99
+    TargetNodeGuid: f72eaba8-902e-4670-9e17-3d830e534368
   - BaseNodeGuid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
     PortName: Next
     TargetNodeGuid: 29909da4-86ce-4960-898d-2308afb0e612
@@ -31,6 +28,12 @@ MonoBehaviour:
   - BaseNodeGuid: a5bfc3c6-9ec7-4098-b789-8ddd1a7847ef
     PortName: Next
     TargetNodeGuid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
+  - BaseNodeGuid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
+    PortName: Next
+    TargetNodeGuid: 614aff0a-ad10-474d-8602-d33ffaae2f99
+  - BaseNodeGuid: f72eaba8-902e-4670-9e17-3d830e534368
+    PortName: Next
+    TargetNodeGuid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
   DialogueNodeData:
   - type: 4
     Guid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
@@ -39,7 +42,7 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 1656, y: 351}
+    Position: {x: 1656, y: 350.4}
   - type: 0
     Guid: 614aff0a-ad10-474d-8602-d33ffaae2f99
     speaker: Fox
@@ -48,16 +51,7 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 418, y: 258}
-  - type: 2
-    Guid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
-    speaker: Fox
-    DialogueText: "\"\u201CNo? I usually <color=\"yellow\">check the telephone booth</color>
-      for spare change. If your luck is any good, you\u2019ll find something in there.\u201D "
-    cost: {fileID: 0}
-    trade: {fileID: 11400000, guid: c0ed06e2ffa20694e89703e6be73dcb0, type: 2}
-    flag: 
-    Position: {x: 18, y: 45}
+    Position: {x: 418.4, y: 257.6}
   - type: 2
     Guid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
     speaker: Fox
@@ -69,22 +63,41 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 11400000, guid: b9c264cce1d8264418a39a7c53088682, type: 2}
     flag: 
-    Position: {x: -111, y: -458}
+    Position: {x: -111.2, y: -458.4}
   - type: 2
     Guid: 29909da4-86ce-4960-898d-2308afb0e612
     speaker: Fox
     DialogueText: "\u201CIf you want more information, you should <color=\"yellow\">
       go to the bar</color>. But the bartender won\u2019t give you that information
-      for free.. "
+      for free..\""
     cost: {fileID: 0}
     trade: {fileID: 11400000, guid: 8d822821a65625847bb4f867a5a496e6, type: 2}
     flag: 
-    Position: {x: -10, y: -167}
+    Position: {x: -9.6, y: -167.2}
   - type: 3
     Guid: a5bfc3c6-9ec7-4098-b789-8ddd1a7847ef
     speaker: Fox
-    DialogueText: "You got any coin on you?\u201D  "
+    DialogueText: '"You got any coin on you?"'
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: OpenBarDoor
-    Position: {x: 866, y: -144}
+    Position: {x: 866.4, y: -144}
+  - type: 2
+    Guid: 99d7adb8-4192-4b9b-8267-d8f0aec95c70
+    speaker: Fox
+    DialogueText: "\"\u201CNo? I usually <color=\"yellow\">check the telephone booth</color>
+      for spare change. If your luck is any good, you\u2019ll find something in there.\u201D "
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: c0ed06e2ffa20694e89703e6be73dcb0, type: 2}
+    flag: 
+    Position: {x: 18.4, y: 44.799995}
+  - type: 0
+    Guid: f72eaba8-902e-4670-9e17-3d830e534368
+    speaker: Fox
+    DialogueText: '"You can show me things by clicking on objects in your inventory
+      while talking to me, or clicking yellow clues in your notebook while talking
+      to me. "'
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 799.2, y: 532.8}

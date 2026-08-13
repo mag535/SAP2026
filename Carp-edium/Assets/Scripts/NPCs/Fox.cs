@@ -4,8 +4,6 @@ using System.Collections.Generic;
 namespace Carp {
     public class Fox : MonoBehaviour
     {
-        public FoxUnlockPosition barPosition = new FoxUnlockPosition("Bar", Vector2.zero);
-        public FoxUnlockPosition templePosition = new FoxUnlockPosition("Temple", Vector2.zero);
         public FoxUnlockPosition palacePosition = new FoxUnlockPosition("Palace", Vector2.zero);
 
         void Awake() {
@@ -23,6 +21,7 @@ namespace Carp {
         }
 
         void HandleFlag(PropagateFlag evt) {
+            /*
             if (evt.flag == "OpenBarDoor") {
                 gameObject.transform.position = new Vector3(
                         barPosition.position.x,
@@ -35,7 +34,7 @@ namespace Carp {
                         templePosition.position.y,
                         0);
                 GameManager.Instance.AddModifiedFox(templePosition.position);
-            } else if (evt.flag == "PalaceIsUnlocked") {
+            } else*/ if (evt.flag == "PalaceIsUnlocked") {
                 gameObject.transform.position = new Vector3(
                         palacePosition.position.x,
                         palacePosition.position.y,

@@ -18,6 +18,9 @@ public class RequestChangePlayerState : EvtSystem.Event
     public string newState;
 }
 
+public class TurnOffPlayerControls : EvtSystem.Event {}
+public class TurnOnPlayerControls : EvtSystem.Event {}
+
 // UIs -------------------------------------------------------------------------
 public class TrackUIMenuOpen : EvtSystem.Event
 {

@@ -18,16 +18,10 @@ namespace Carp {
 
         public override void Unlock() {
             base.Unlock();
-
-            //gameObject.GetComponent<Collider2D>().enabled = false;
-            //gameObject.GetComponent<Rigidbody2D>().enabled = false;
         }
 
         public override void Lock() {
             base.Lock();
-
-            //gameObject.GetComponent<Collider2D>().enabled = true;
-            //gameObject.GetComponent<Rigidbody2D>().enabled = false;
         }
 
         public bool GetIsFirstTime() {

@@ -341,7 +341,7 @@
                 },
                 {
                     "name": "Point",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "e349cb51-c7e2-4aff-a640-56ddffacc2de",
                     "expectedControlType": "",
                     "processors": "",
@@ -350,7 +350,7 @@
                 },
                 {
                     "name": "Click",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "4ed44a3e-9ffd-4a6f-abff-e2ff9faa27e8",
                     "expectedControlType": "",
                     "processors": "",
@@ -667,6 +667,12 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Loading",
+            "id": "b0cf93be-cbff-49cb-802e-be937be0c2ef",
+            "actions": [],
+            "bindings": []
         }
     ],
     "controlSchemes": [

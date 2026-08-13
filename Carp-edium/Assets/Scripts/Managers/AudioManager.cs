@@ -5,7 +5,10 @@ using System.Collections.Generic;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    public Sound startBGM;
+    [SerializeField]
+    private Sound startBGM;
+    [SerializeField]
+    private Sound uiClick;
 
     [SerializeField]
     private AudioMixer audioMixer;
@@ -13,6 +16,8 @@ public class AudioManager : Singleton<AudioManager>
     private AudioSource bgmSource;
     [SerializeField]
     private AudioSource sfxSource;
+    [SerializeField]
+    private AudioSource uicSource;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +26,11 @@ public class AudioManager : Singleton<AudioManager>
         Play(startBGM);
         //bgmSource = gameObject.AddComponent<AudioSource>();
         //sfxSource = gameObject.AddComponent<AudioSource>();
+        uicSource = gameObject.AddComponent<AudioSource>();
+        uicSource.clip = uiClick.clip;
+        uicSource.volume = uiClick.volume;
+        uicSource.pitch = uiClick.pitch;
+        uicSource.loop = uiClick.loop;
     }
 
     public void Play(Sound sound) {
@@ -54,6 +64,15 @@ public class AudioManager : Singleton<AudioManager>
             bgmSource.loop = sound.loop;
             bgmSource.Play();
         }
+    }
+
+    public void PlayUIClick() {
+        if (uiClick == null) { return; }
+        if (uicSource.isPlaying) {
+            uicSource.Stop();
+        }
+        uicSource.Play();
+        Debug.Log($"UI Click played");
     }
 
     public void Stop(Sound sound) {

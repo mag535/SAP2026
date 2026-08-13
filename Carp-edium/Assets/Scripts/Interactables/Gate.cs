@@ -4,6 +4,8 @@ namespace Carp {
     public class Gate : Openable
     {
         public EndScreen screenToTrigger;
+        [SerializeField]
+        private string endingScene;
 
         [SerializeField]
         private float lockedOpacity = 0.5f;
@@ -11,9 +13,7 @@ namespace Carp {
 
         public override void Start() {
             if (GameManager.Instance.GetAreGatesUnlocked()) {
-                foreach (Transform childtransform in gameObject.transform) {
-                    isLocked = true;
-                }
+                isLocked = true;
             }
 
             if (isLocked) {
@@ -29,14 +29,17 @@ namespace Carp {
             if (isLocked) {
             } else {
                 if (screenToTrigger == EndScreen.DRAGON) {
-                    EvtSystem.EventDispatcher.Raise<TriggerWinScreen>(new
-                            TriggerWinScreen {});
+                    //EvtSystem.EventDispatcher.Raise<TriggerWinScreen>(new
+                    //        TriggerWinScreen {});
+                    GetComponent<SceneLoader>().GoToScene(endingScene);
                 } else if (screenToTrigger == EndScreen.LOSE1) {
-                    EvtSystem.EventDispatcher.Raise<TriggerLoseScreen>(new
-                            TriggerLoseScreen {});
+                    //EvtSystem.EventDispatcher.Raise<TriggerLoseScreen>(new
+                    //        TriggerLoseScreen {});
+                    GetComponent<SceneLoader>().GoToScene(endingScene);
                 } else if (screenToTrigger == EndScreen.LOSE2) {
-                    EvtSystem.EventDispatcher.Raise<TriggerLoseScreen>(new
-                            TriggerLoseScreen {});
+                    //EvtSystem.EventDispatcher.Raise<TriggerLoseScreen>(new
+                    //        TriggerLoseScreen {});
+                    GetComponent<SceneLoader>().GoToScene(endingScene);
                 }
             }
         }

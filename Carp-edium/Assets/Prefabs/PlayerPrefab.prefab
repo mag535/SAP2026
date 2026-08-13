@@ -254,8 +254,156 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7d81f958-364a-4905-8e3a-6f84e6baf563
     m_ActionName: 'Game/Pause[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: OpenNotebook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5ba0dc5a-4a0d-4c60-9a1c-ed5e98972e0f
+    m_ActionName: 'Game/OpenNotebook[/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: OpenInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2c098805-ec9a-4653-a7f3-ba9f88eb1a74
+    m_ActionName: 'Game/OpenInventory[/Keyboard/s]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 971f3d64-b06b-4812-9399-b30e2e1c8069
+    m_ActionName: 'UI/Navigate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aed41d74-053a-4f71-ab1a-ed7cbb5d31ff
+    m_ActionName: 'UI/Submit[/Keyboard/enter,/KeychronLemokeyX3SystemControl/trigger,/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0c2d6da1-396c-407b-a6ce-a93ae928e86d
+    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e349cb51-c7e2-4aff-a640-56ddffacc2de
+    m_ActionName: 'UI/Point[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ed44a3e-9ffd-4a6f-abff-e2ff9faa27e8
+    m_ActionName: 'UI/Click[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: PageForward
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4c958ab5-bf4a-4212-8bc4-b46e3587344c
+    m_ActionName: 'UI/PageForward[/Keyboard/f]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: PageBackwards
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b0682d5e-d253-426b-853e-20420fca20a9
+    m_ActionName: 'UI/PageBackwards[/Keyboard/a]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: CloseNotebook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: eccf87bb-a478-4b80-8b3c-3cd0cc9eb54d
+    m_ActionName: 'UI/CloseNotebook[/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: CloseInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e6cf1334-ba9f-4730-92ad-f466e4ee0670
+    m_ActionName: 'UI/CloseInventory[/Keyboard/s]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: SwitchToInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 27ed6ad4-1b70-4187-a99a-ad4bdc4a3649
+    m_ActionName: 'UI/SwitchToInventory[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: SwitchToNotebook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 61140cf0-6ddf-4b3b-98b5-afa39a7a6733
+    m_ActionName: 'UI/SwitchToNotebook[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Game
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -399,6 +547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eac9883e251cdae4d87ee29179a0c0ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parentOfInventoryFocus: {fileID: 0}
+  parentOfNotebookFocus: {fileID: 0}
 --- !u!114 &311335737523688615
 MonoBehaviour:
   m_ObjectHideFlags: 0

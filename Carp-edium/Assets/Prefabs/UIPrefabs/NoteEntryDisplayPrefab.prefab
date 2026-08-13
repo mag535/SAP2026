@@ -341,10 +341,10 @@ MonoBehaviour:
       - m_Target: {fileID: 2377474756419627498}
         m_TargetAssemblyTypeName: Item, Assembly-CSharp
         m_MethodName: AttemptItemUse
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: a409386385486ae48ab3d68ffdd9a151, type: 2}
+          m_ObjectArgumentAssemblyTypeName: Sound, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

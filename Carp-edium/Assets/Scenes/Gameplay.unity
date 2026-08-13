@@ -426,6 +426,11 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &462420416 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7390264480860331944, guid: 4cdfb6d023509af17b20bf8edc5b20df, type: 3}
+  m_PrefabInstance: {fileID: 2261051057577108339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &551534790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -932,6 +937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2662884587254480285, guid: 4452b891398b9ade1a015bf09c20d062, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8704905590360238530, guid: 4452b891398b9ade1a015bf09c20d062, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1291,17 +1300,17 @@ MonoBehaviour:
   m_MoveRepeatDelay: 0.5
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
-  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_PointAction: {fileID: -1654692200621890270, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MoveAction: {fileID: -8784545083839296357, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_SubmitAction: {fileID: 392368643174621059, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_CancelAction: {fileID: 7727032971491509709, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_LeftClickAction: {fileID: 3001919216989983466, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_MiddleClickAction: {fileID: -2185481485913320682, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_RightClickAction: {fileID: -4090225696740746782, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_ScrollWheelAction: {fileID: 6240969308177333660, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDevicePositionAction: {fileID: 6564999863303420839, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ActionsAsset: {fileID: -944628639613478452, guid: bef3d846e1a025d24b5239df9e2eb94b, type: 3}
+  m_PointAction: {fileID: 7917361606494700260, guid: bef3d846e1a025d24b5239df9e2eb94b, type: 3}
+  m_MoveAction: {fileID: -7942450268494190376, guid: bef3d846e1a025d24b5239df9e2eb94b, type: 3}
+  m_SubmitAction: {fileID: 6698292457549154926, guid: bef3d846e1a025d24b5239df9e2eb94b, type: 3}
+  m_CancelAction: {fileID: -891156432292660863, guid: bef3d846e1a025d24b5239df9e2eb94b, type: 3}
+  m_LeftClickAction: {fileID: -8291252414307411551, guid: bef3d846e1a025d24b5239df9e2eb94b, type: 3}
+  m_MiddleClickAction: {fileID: 0}
+  m_RightClickAction: {fileID: 0}
+  m_ScrollWheelAction: {fileID: 0}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
@@ -1516,10 +1525,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Controller
+      objectReference: {fileID: 0}
     - target: {fileID: 3548012394192768574, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_Name
       value: PlayerPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3923999628715952768, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
+      propertyPath: pauseFocus
+      value: 
+      objectReference: {fileID: 462420416}
+    - target: {fileID: 3923999628715952768, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
+      propertyPath: parentOfNotebookFocus
+      value: 
+      objectReference: {fileID: 32329829}
+    - target: {fileID: 3923999628715952768, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
+      propertyPath: parentOfInventoryFocus
+      value: 
+      objectReference: {fileID: 2139818122}
     - target: {fileID: 4468472538677718253, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

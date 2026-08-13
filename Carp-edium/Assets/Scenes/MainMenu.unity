@@ -482,6 +482,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8192970238521233502, guid: 04b42e451dcf9d24a890cdd9456e810d, type: 3}
+      propertyPath: m_DeselectOnBackgroundClick
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8192970238521233502, guid: 04b42e451dcf9d24a890cdd9456e810d, type: 3}
       propertyPath: m_TrackedDevicePositionAction
       value: 
       objectReference: {fileID: 0}

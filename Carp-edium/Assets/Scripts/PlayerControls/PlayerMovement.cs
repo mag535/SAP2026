@@ -44,9 +44,11 @@ namespace Carp {
                 }
             }
 
-            if (!isMoving) {
-                AudioManager.Instance.Stop(footsteps);
-            }
+            isMoving = success;
+        }
+
+        public bool GetIsMoving() {
+            return isMoving;
         }
 
         public void Move(InputAction.CallbackContext context) {
@@ -54,11 +56,8 @@ namespace Carp {
                 inputVector = context.ReadValue<Vector2>();
                 EvtSystem.EventDispatcher.Raise<ChangePlayerSprite>(new
                         ChangePlayerSprite { direction = inputVector });
-                isMoving = true;
-                AudioManager.Instance.Play(footsteps);
             } else if (context.canceled) {
                 inputVector = Vector2.zero;
-                AudioManager.Instance.Stop(footsteps);
             }
             // NSEW
             //movementDirection = inputVector;

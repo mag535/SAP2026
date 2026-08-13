@@ -175,13 +175,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a6480ef965bc431899bf3598e5babce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startBGM: {fileID: 0}
+  uiClick: {fileID: 11400000, guid: a409386385486ae48ab3d68ffdd9a151, type: 2}
+  audioMixer: {fileID: 24100000, guid: 2022d65ab2f914340b4651a55f637011, type: 2}
   bgmSource: {fileID: 2647237222606653489}
   sfxSource: {fileID: 9074932322143086327}
-  startBGM: 
-  sounds:
-  - {fileID: 11400000, guid: ac2c28ac2a5e73b7c93e74d0d19f2fa3, type: 2}
-  - {fileID: 11400000, guid: 4b059cb4fa515321180598757f024dbb, type: 2}
-  audioMixer: {fileID: 24100000, guid: 2022d65ab2f914340b4651a55f637011, type: 2}
+  uicSource: {fileID: 0}
 --- !u!1 &4431937221564005600
 GameObject:
   m_ObjectHideFlags: 0

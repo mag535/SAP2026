@@ -49,6 +49,7 @@ namespace Carp {
             EvtSystem.EventDispatcher.Raise<TurnOnPlayerControls>( new
                     TurnOnPlayerControls {});
             loadingScreen.SetActive(false);
+            // TODO: play corresponding BGM of rooms
         }
 
         public void DoRoomTransition(RoomName roomName) {

@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 2281768357408128118}
   - component: {fileID: 8322970319975573531}
   - component: {fileID: 3923999628715952768}
+  - component: {fileID: 311335737523688615}
   m_Layer: 3
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -122,6 +123,7 @@ Transform:
   m_Children:
   - {fileID: 8207865977349120878}
   - {fileID: 8887205432239837166}
+  - {fileID: 1148294630077955744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &940780364199249824
@@ -252,6 +254,154 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7d81f958-364a-4905-8e3a-6f84e6baf563
     m_ActionName: 'Game/Pause[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: OpenNotebook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 5ba0dc5a-4a0d-4c60-9a1c-ed5e98972e0f
+    m_ActionName: 'Game/OpenNotebook[/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: OpenInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 2c098805-ec9a-4653-a7f3-ba9f88eb1a74
+    m_ActionName: 'Game/OpenInventory[/Keyboard/s]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 971f3d64-b06b-4812-9399-b30e2e1c8069
+    m_ActionName: 'UI/Navigate[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: aed41d74-053a-4f71-ab1a-ed7cbb5d31ff
+    m_ActionName: 'UI/Submit[/Keyboard/enter,/KeychronLemokeyX3SystemControl/trigger,/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0c2d6da1-396c-407b-a6ce-a93ae928e86d
+    m_ActionName: 'UI/Cancel[/Keyboard/escape]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e349cb51-c7e2-4aff-a640-56ddffacc2de
+    m_ActionName: 'UI/Point[/Mouse/position]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ed44a3e-9ffd-4a6f-abff-e2ff9faa27e8
+    m_ActionName: 'UI/Click[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: PageForward
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4c958ab5-bf4a-4212-8bc4-b46e3587344c
+    m_ActionName: 'UI/PageForward[/Keyboard/f]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: PageBackwards
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b0682d5e-d253-426b-853e-20420fca20a9
+    m_ActionName: 'UI/PageBackwards[/Keyboard/a]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: CloseNotebook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: eccf87bb-a478-4b80-8b3c-3cd0cc9eb54d
+    m_ActionName: 'UI/CloseNotebook[/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: CloseInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e6cf1334-ba9f-4730-92ad-f466e4ee0670
+    m_ActionName: 'UI/CloseInventory[/Keyboard/s]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: SwitchToInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 27ed6ad4-1b70-4187-a99a-ad4bdc4a3649
+    m_ActionName: 'UI/SwitchToInventory[/Keyboard/q]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: SwitchToNotebook
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 61140cf0-6ddf-4b3b-98b5-afa39a7a6733
+    m_ActionName: 'UI/SwitchToNotebook[/Keyboard/e]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Game
@@ -343,7 +493,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  footsteps: {fileID: 0}
+  footsteps: {fileID: 11400000, guid: 9dd8ac8cb7a06694993c83308eb6663a, type: 2}
   rotationAngle: 0.5235988
 --- !u!114 &937473934537937284
 MonoBehaviour:
@@ -395,6 +545,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eac9883e251cdae4d87ee29179a0c0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentOfInventoryFocus: {fileID: 0}
+  parentOfNotebookFocus: {fileID: 0}
+  pauseFocus: {fileID: 0}
+--- !u!114 &311335737523688615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3548012394192768574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1933bc1c1c07703098a7fce76d3c5042, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6265383279366427065
@@ -466,3 +631,65 @@ CapsuleCollider2D:
   m_Offset: {x: -0.03, y: -0.67}
   m_Size: {x: 0.6, y: 0.4}
   m_Direction: 1
+--- !u!1001 &6405980109332382375
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 4468472538677718253}
+    m_Modifications:
+    - target: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.22421783
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.22488889
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.026720522
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7238070575406663099, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+      propertyPath: m_Name
+      value: Footsteps rando
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+--- !u!4 &1148294630077955744 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6271564957501979655, guid: a12e1647bd215ed46b87c0e7ebec775f, type: 3}
+  m_PrefabInstance: {fileID: 6405980109332382375}
+  m_PrefabAsset: {fileID: 0}

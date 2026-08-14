@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: 41170c3d51cc89c4eb0290c912b00809
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8896630140282809594
+    second: Carp-UpLeft-Idle-Spritesheet_0
+  - first:
+      213: -4762134773200939837
+    second: Carp-UpLeft-Idle-Spritesheet_1
+  - first:
+      213: -7645961296196081882
+    second: Carp-UpLeft-Idle-Spritesheet_2
+  - first:
+      213: 279633396729813478
+    second: Carp-UpLeft-Idle-Spritesheet_3
+  - first:
+      213: -2222163145959975241
+    second: Carp-UpLeft-Idle-Spritesheet_4
+  - first:
+      213: -5670511712977762466
+    second: Carp-UpLeft-Idle-Spritesheet_5
+  - first:
+      213: -4752006299870097338
+    second: Carp-UpLeft-Idle-Spritesheet_6
+  - first:
+      213: 4988720068165504636
+    second: Carp-UpLeft-Idle-Spritesheet_7
+  - first:
+      213: -7444308338482681337
+    second: Carp-UpLeft-Idle-Spritesheet_8
+  - first:
+      213: 265288157310296415
+    second: Carp-UpLeft-Idle-Spritesheet_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Carp-UpLeft-Idle-Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 536
+        width: 118
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc2799e9fd277b70800000000000000
+      internalID: 8896630140282809594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carp-UpLeft-Idle-Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 0
+        width: 577
+        height: 1096
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c492d697af79edb0800000000000000
+      internalID: -4762134773200939837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carp-UpLeft-Idle-Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 524
+        width: 118
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 627e8dd06b614e590800000000000000
+      internalID: -7645961296196081882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carp-UpLeft-Idle-Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 0
+        width: 578
+        height: 1096
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e99a6fb71571e300800000000000000
+      internalID: 279633396729813478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carp-UpLeft-Idle-Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 524
+        width: 118
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6571c646a4921e0800000000000000
+      internalID: -2222163145959975241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carp-UpLeft-Idle-Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1559
+        y: 0
+        width: 573
+        height: 1096
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57c44504ab4e41b0800000000000000
+      internalID: -5670511712977762466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carp-UpLeft-Idle-Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 2302
+        y: 524
+        width: 118
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64013dd827b7d0eb0800000000000000
+      internalID: -4752006299870097338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carp-UpLeft-Idle-Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 2309
+        y: 0
+        width: 570
+        height: 1096
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7e0eda787e7b3540800000000000000
+      internalID: 4988720068165504636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carp-UpLeft-Idle-Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 524
+        width: 118
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70ae24ef10180b890800000000000000
+      internalID: -7444308338482681337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Carp-UpLeft-Idle-Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 3059
+        y: 0
+        width: 558
+        height: 1096
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f51299b6c2e7ea300800000000000000
+      internalID: 265288157310296415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Carp-UpLeft-Idle-Spritesheet_0: 8896630140282809594
+      Carp-UpLeft-Idle-Spritesheet_1: -4762134773200939837
+      Carp-UpLeft-Idle-Spritesheet_2: -7645961296196081882
+      Carp-UpLeft-Idle-Spritesheet_3: 279633396729813478
+      Carp-UpLeft-Idle-Spritesheet_4: -2222163145959975241
+      Carp-UpLeft-Idle-Spritesheet_5: -5670511712977762466
+      Carp-UpLeft-Idle-Spritesheet_6: -4752006299870097338
+      Carp-UpLeft-Idle-Spritesheet_7: 4988720068165504636
+      Carp-UpLeft-Idle-Spritesheet_8: -7444308338482681337
+      Carp-UpLeft-Idle-Spritesheet_9: 265288157310296415
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

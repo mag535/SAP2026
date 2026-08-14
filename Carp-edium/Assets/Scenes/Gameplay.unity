@@ -1538,12 +1538,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
-      propertyPath: m_DefaultControlScheme
-      value: Keyboard
-      objectReference: {fileID: 0}
-    - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_ActionId
@@ -1560,6 +1556,10 @@ PrefabInstance:
     - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_ActionEvents.Array.data[17].m_ActionName
       value: 'Game/Click[/Mouse/leftButton]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3485561002063747036, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
+      propertyPath: anim
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3548012394192768574, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_Name
@@ -1623,8 +1623,38 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4468472538677718253, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 442007832}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3548012394192768574, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1432520489}
   m_SourcePrefab: {fileID: 100100000, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
+--- !u!1 &1432520488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3548012394192768574, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
+  m_PrefabInstance: {fileID: 1432520487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1432520489
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432520488}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e2ea0ccfbc4b99f4a9fabb41ef9bcdd7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1490156868
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ namespace Carp {
 
         public override void Start() {
             if (GameManager.Instance.GetAreGatesUnlocked()) {
-                isLocked = true;
+                isLocked = false;
             }
 
             if (isLocked) {

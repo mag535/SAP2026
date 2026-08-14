@@ -36,6 +36,9 @@ MonoBehaviour:
     TargetNodeGuid: ae412b06-7548-42c1-b605-b77fc42cd2cd
   - BaseNodeGuid: ae412b06-7548-42c1-b605-b77fc42cd2cd
     PortName: Next
+    TargetNodeGuid: 121eeafc-1aa3-47d1-adaa-c267b058416b
+  - BaseNodeGuid: 121eeafc-1aa3-47d1-adaa-c267b058416b
+    PortName: Next
     TargetNodeGuid: e11fa485-f143-4243-a164-017984685929
   DialogueNodeData:
   - type: 0
@@ -45,7 +48,7 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 281, y: 200}
+    Position: {x: 280.8, y: 200}
   - type: 0
     Guid: 1247b095-79fe-47e9-8014-f0a1addfdd61
     speaker: Dog
@@ -53,7 +56,7 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 234, y: 378}
+    Position: {x: 234.4, y: 377.6}
   - type: 0
     Guid: 19e6a1e0-24ea-4dbb-9b21-39accfeed1b4
     speaker: Dog
@@ -61,7 +64,7 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 90, y: 599}
+    Position: {x: 90.4, y: 598.39996}
   - type: 0
     Guid: e4eda37e-99c8-4e53-8d1e-d15cc742a158
     speaker: Dog
@@ -69,7 +72,7 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 633, y: 624}
+    Position: {x: 632.8, y: 624}
   - type: 0
     Guid: 1b60627c-718f-4cc7-8b8d-4e678d28b5d9
     speaker: Dog
@@ -77,7 +80,7 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 1154, y: 592}
+    Position: {x: 1154.4, y: 592}
   - type: 0
     Guid: 8f249601-2fe8-49c5-b881-b4a426691c4e
     speaker: Dog
@@ -86,15 +89,7 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 1738, y: 541}
-  - type: 4
-    Guid: e11fa485-f143-4243-a164-017984685929
-    speaker: 
-    DialogueText: END OF CONVERSATION
-    cost: {fileID: 0}
-    trade: {fileID: 0}
-    flag: 
-    Position: {x: 2025, y: 1004}
+    Position: {x: 1738.4, y: 540.8}
   - type: 3
     Guid: ae412b06-7548-42c1-b605-b77fc42cd2cd
     speaker: Dog
@@ -102,4 +97,21 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: UnlockGates
-    Position: {x: 2015, y: 731}
+    Position: {x: 2416, y: 514.39996}
+  - type: 0
+    Guid: 121eeafc-1aa3-47d1-adaa-c267b058416b
+    speaker: Dog
+    DialogueText: '"Now that you''ve explored everything in this world, you can now
+      pick a gate! Which of the three gates around do you think is the Dragon Gate?"'
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 2115.2, y: 799.19995}
+  - type: 4
+    Guid: e11fa485-f143-4243-a164-017984685929
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 3344, y: 905.6}

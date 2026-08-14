@@ -17,5 +17,5 @@ MonoBehaviour:
   description: It should be unlocked.
   sprite: {fileID: 0}
   longDescription: This is the exit door for the Bar, Temple, and Palace.
-  spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 0}
+  spriteMagnified: {fileID: -4157423981781422560, guid: da2b1590daa6c494ebdebbf1aa2dc417, type: 3}
+  spriteIcon: {fileID: -4157423981781422560, guid: da2b1590daa6c494ebdebbf1aa2dc417, type: 3}

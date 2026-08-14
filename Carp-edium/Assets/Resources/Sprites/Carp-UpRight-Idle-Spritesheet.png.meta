@@ -78,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 500
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -143,9 +143,9 @@ TextureImporter:
       name: Carp-UpRight-Idle-Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 53
+        x: 52
         y: 0
-        width: 558
+        width: 572
         height: 1096
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -162,34 +162,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Carp-UpRight-Idle-Spritesheet_1
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 524
-        width: 118
-        height: 414
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5e480e38aad4b7980800000000000000
-      internalID: -8540146873625705243
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Carp-UpRight-Idle-Spritesheet_2
       rect:
         serializedVersion: 2
-        x: 791
+        x: 790
         y: 0
-        width: 570
+        width: 586
         height: 1096
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -206,34 +184,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Carp-UpRight-Idle-Spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 1250
-        y: 524
-        width: 118
-        height: 414
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65ada09b82b09dc90800000000000000
-      internalID: -7144667064315487658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Carp-UpRight-Idle-Spritesheet_4
       rect:
         serializedVersion: 2
-        x: 1538
+        x: 1537
         y: 0
-        width: 573
+        width: 589
         height: 1096
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -250,34 +206,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Carp-UpRight-Idle-Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 524
-        width: 118
-        height: 414
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3db0792c9b5465320800000000000000
-      internalID: 2546299303460539347
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Carp-UpRight-Idle-Spritesheet_6
       rect:
         serializedVersion: 2
-        x: 2283
+        x: 2282
         y: 0
-        width: 578
+        width: 597
         height: 1096
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -294,34 +228,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Carp-UpRight-Idle-Spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 2750
-        y: 524
-        width: 118
-        height: 414
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a793e75ca8731df0800000000000000
-      internalID: -210692075952040025
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Carp-UpRight-Idle-Spritesheet_8
       rect:
         serializedVersion: 2
-        x: 3031
+        x: 3029
         y: 0
-        width: 577
+        width: 597
         height: 1096
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -337,33 +249,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Carp-UpRight-Idle-Spritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 3499
-        y: 536
-        width: 118
-        height: 414
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1a81584f44fd7b6a0800000000000000
-      internalID: -6433428055422330719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e5d7dcfdec575a442ba1c5868810104f
     internalID: 0
     vertices: []
     indices: 

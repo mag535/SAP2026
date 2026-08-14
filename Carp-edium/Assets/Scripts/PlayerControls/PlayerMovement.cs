@@ -51,6 +51,8 @@ namespace Carp {
             return isMoving;
         }
 
+        public Vector2 GetInputVector() {return inputVector;}
+
         public void Move(InputAction.CallbackContext context) {
             if (context.started) {
                 inputVector = context.ReadValue<Vector2>();

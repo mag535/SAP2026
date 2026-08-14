@@ -23,7 +23,8 @@ MonoBehaviour:
   - type: 2
     Guid: bcca21f6-fe37-422c-aabb-d02003a5e2d8
     speaker: Dog
-    DialogueText: '"That key looks like <color="yellow">it could unlock something</color>!" '
+    DialogueText: '"That key looks like <color="yellow">it could unlock something</color>!
+      Perhaps the palace?" '
     cost: {fileID: 0}
     trade: {fileID: 11400000, guid: f794dd224ef70be4ab11ae4666a26415, type: 2}
     flag: 

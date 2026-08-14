@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
-  m_Name: BarDoor
+  m_Name: Dragon Gate
   m_EditorClassIdentifier: 
   isNoteEntry: 0
-  objectID: BarDoor
-  description: The Bar  Door is locked.  Did you talk to the Fox?
+  objectID: Red Gate
+  description: The Red Gate is locked. Have you finished the Dog's task?
   sprite: {fileID: 0}
-  longDescription: The Bar Door is locked. Did you talk to the Fox?
-  spriteMagnified: {fileID: -4157423981781422560, guid: da2b1590daa6c494ebdebbf1aa2dc417, type: 3}
-  spriteIcon: {fileID: -4157423981781422560, guid: da2b1590daa6c494ebdebbf1aa2dc417, type: 3}
+  longDescription: The Red Gate is locked. Have you finished the Dog's task?
+  spriteMagnified: {fileID: 21300000, guid: 6e72ad810290c1e4294aa2fd543ccc78, type: 3}
+  spriteIcon: {fileID: 21300000, guid: 6e72ad810290c1e4294aa2fd543ccc78, type: 3}

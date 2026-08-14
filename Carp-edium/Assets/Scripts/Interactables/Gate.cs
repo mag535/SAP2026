@@ -13,9 +13,7 @@ namespace Carp {
 
         public override void Start() {
             if (GameManager.Instance.GetAreGatesUnlocked()) {
-                foreach (Transform childtransform in gameObject.transform) {
-                    isLocked = true;
-                }
+                isLocked = false;
             }
 
             if (isLocked) {

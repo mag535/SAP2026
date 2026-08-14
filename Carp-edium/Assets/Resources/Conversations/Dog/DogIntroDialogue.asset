@@ -21,6 +21,9 @@ MonoBehaviour:
     TargetNodeGuid: 480ec357-40a5-456e-b211-4f768959a05f
   - BaseNodeGuid: 480ec357-40a5-456e-b211-4f768959a05f
     PortName: Next
+    TargetNodeGuid: 828b8235-d51a-4a0d-b10f-55bffe4c8b4b
+  - BaseNodeGuid: 828b8235-d51a-4a0d-b10f-55bffe4c8b4b
+    PortName: Next
     TargetNodeGuid: 277d0674-6062-4e98-a681-6e4442d6be33
   DialogueNodeData:
   - type: 0
@@ -47,4 +50,12 @@ MonoBehaviour:
     cost: {fileID: 0}
     trade: {fileID: 0}
     flag: 
-    Position: {x: 1744, y: 228}
+    Position: {x: 1889.6, y: 222.40001}
+  - type: 0
+    Guid: 828b8235-d51a-4a0d-b10f-55bffe4c8b4b
+    speaker: Dog
+    DialogueText: '"Can you help me find the Buddha Statue?"'
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 1663.2, y: 403.2}

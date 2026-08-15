@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using System;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -23,7 +24,9 @@ public class AudioManager : Singleton<AudioManager>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Play(startBGM);
+        if (SceneManager.GetActiveScene().name == "MainMenu") {
+            Play(startBGM);
+        }
         //bgmSource = gameObject.AddComponent<AudioSource>();
         //sfxSource = gameObject.AddComponent<AudioSource>();
         uicSource = gameObject.AddComponent<AudioSource>();

@@ -8,9 +8,6 @@ namespace Carp {
         public float speed = 5f;
         public float collisionOffset = 0.1f;
         public ContactFilter2D movementFilters;
-        public Sound footsteps;
-
-        public float rotationAngle = Mathf.PI / 6f; // 30 degrees
 
         private Vector2 inputVector;
         private Vector2 movementDirection;
@@ -32,6 +29,8 @@ namespace Carp {
 
         void FixedUpdate()
         {
+            GetInput();
+
             bool success = MovePlayer(movementDirection);
 
             if (!success) {
@@ -53,9 +52,18 @@ namespace Carp {
 
         public Vector2 GetInputVector() {return inputVector;}
 
+        void GetInput() {
+            inputVector.x = Input.GetAxisRaw("Horizontal");
+            inputVector.y = Input.GetAxisRaw("Vertical");
+            movementDirection = inputVector;
+            movementDirection.Normalize();
+        }
+
+        /*
         public void Move(InputAction.CallbackContext context) {
             if (context.started) {
                 inputVector = context.ReadValue<Vector2>();
+                Debug.Log($"Input Vector: {context}");
                 EvtSystem.EventDispatcher.Raise<ChangePlayerSprite>(new
                         ChangePlayerSprite { direction = inputVector });
             } else if (context.canceled) {
@@ -64,8 +72,9 @@ namespace Carp {
             // NSEW
             //movementDirection = inputVector;
             // isometric
-            movementDirection = RotateDirection(inputVector);
+            movementDirection = inputVector; //RotateDirection(inputVector);
         }
+        */
 
         private bool MovePlayer(Vector2 direction) {
             if (direction == Vector2.zero) {

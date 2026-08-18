@@ -20,6 +20,10 @@ public class ConversationManager : Singleton<ConversationManager>
     }
 
     public void StartConversation(DialogueContainer start) {
+        if (start == null) {
+            Debug.Log("No dialogue provided");
+            return;
+        }
         _currentConversation = start;
         ParseConversationData();
         HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find(

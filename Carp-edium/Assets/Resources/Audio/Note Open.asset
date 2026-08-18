@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 059d0c434f0b0304892f1928e58b4bdb, type: 3}
-  m_Name: Note_Open
+  m_Name: Note Open
   m_EditorClassIdentifier: 
   type: 1
-  clip: {fileID: 8300000, guid: f4bc1212c732fff4aaa4698cfdf6fe60, type: 3}
+  clip: {fileID: 8300000, guid: cc11b4606ff4e8840bbd6be7852c7ec9, type: 3}
   volume: 1
   pitch: 1
   loop: 0

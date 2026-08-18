@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using System;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -9,6 +10,8 @@ public class AudioManager : Singleton<AudioManager>
     private Sound startBGM;
     [SerializeField]
     private Sound uiClick;
+    [SerializeField]
+    private Sound deduction;
 
     [SerializeField]
     private AudioMixer audioMixer;
@@ -18,12 +21,16 @@ public class AudioManager : Singleton<AudioManager>
     private AudioSource sfxSource;
     [SerializeField]
     private AudioSource uicSource;
+    [SerializeField]
+    private AudioSource dedSource;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Play(startBGM);
+        if (SceneManager.GetActiveScene().name == "MainMenu") {
+            Play(startBGM);
+        }
         //bgmSource = gameObject.AddComponent<AudioSource>();
         //sfxSource = gameObject.AddComponent<AudioSource>();
         uicSource = gameObject.AddComponent<AudioSource>();
@@ -31,6 +38,11 @@ public class AudioManager : Singleton<AudioManager>
         uicSource.volume = uiClick.volume;
         uicSource.pitch = uiClick.pitch;
         uicSource.loop = uiClick.loop;
+        dedSource = gameObject.AddComponent<AudioSource>();
+        dedSource.clip = deduction.clip;
+        dedSource.volume = deduction.volume;
+        dedSource.pitch = deduction.pitch;
+        dedSource.loop = uiClick.loop;
     }
 
     public void Play(Sound sound) {
@@ -73,6 +85,15 @@ public class AudioManager : Singleton<AudioManager>
         }
         uicSource.Play();
         Debug.Log($"UI Click played");
+    }
+
+    public void PlayDeduction() {
+        if (deduction == null) { return; }
+        if (dedSource.isPlaying) {
+            uicSource.Stop();
+        }
+        dedSource.Play();
+        Debug.Log($"Deduction SFX played");
     }
 
     public void Stop(Sound sound) {

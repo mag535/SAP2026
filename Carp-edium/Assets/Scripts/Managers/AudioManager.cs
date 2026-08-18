@@ -12,6 +12,8 @@ public class AudioManager : Singleton<AudioManager>
     private Sound uiClick;
     [SerializeField]
     private Sound deduction;
+    [SerializeField]
+    private Sound pageFlip;
 
     [SerializeField]
     private AudioMixer audioMixer;
@@ -23,6 +25,8 @@ public class AudioManager : Singleton<AudioManager>
     private AudioSource uicSource;
     [SerializeField]
     private AudioSource dedSource;
+    [SerializeField]
+    private AudioSource pagSource;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -43,6 +47,11 @@ public class AudioManager : Singleton<AudioManager>
         dedSource.volume = deduction.volume;
         dedSource.pitch = deduction.pitch;
         dedSource.loop = uiClick.loop;
+        pagSource = gameObject.AddComponent<AudioSource>();
+        pagSource.clip = pageFlip.clip;
+        pagSource.volume = pageFlip.volume;
+        pagSource.pitch = pageFlip.pitch;
+        pagSource.loop = pageFlip.loop;
     }
 
     public void Play(Sound sound) {
@@ -86,14 +95,21 @@ public class AudioManager : Singleton<AudioManager>
         uicSource.Play();
         Debug.Log($"UI Click played");
     }
-
     public void PlayDeduction() {
         if (deduction == null) { return; }
         if (dedSource.isPlaying) {
-            uicSource.Stop();
+            dedSource.Stop();
         }
         dedSource.Play();
         Debug.Log($"Deduction SFX played");
+    }
+    public void PlayPageFlip() {
+        if (pageFlip == null) { return; }
+        if (pagSource.isPlaying) {
+            pagSource.Stop();
+        }
+        pagSource.Play();
+        Debug.Log($"Page Flip played");
     }
 
     public void Stop(Sound sound) {

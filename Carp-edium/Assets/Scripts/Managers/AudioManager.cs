@@ -47,11 +47,13 @@ public class AudioManager : Singleton<AudioManager>
         dedSource.volume = deduction.volume;
         dedSource.pitch = deduction.pitch;
         dedSource.loop = uiClick.loop;
-        pagSource = gameObject.AddComponent<AudioSource>();
-        pagSource.clip = pageFlip.clip;
-        pagSource.volume = pageFlip.volume;
-        pagSource.pitch = pageFlip.pitch;
-        pagSource.loop = pageFlip.loop;
+        if (pageFlip != null) {
+            pagSource = gameObject.AddComponent<AudioSource>();
+            pagSource.clip = pageFlip.clip;
+            pagSource.volume = pageFlip.volume;
+            pagSource.pitch = pageFlip.pitch;
+            pagSource.loop = pageFlip.loop;
+        }
     }
 
     public void Play(Sound sound) {

@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startBGM: {fileID: 11400000, guid: 5f77832d7362800bc9b8a19070e0e1d6, type: 2}
   uiClick: {fileID: 11400000, guid: a409386385486ae48ab3d68ffdd9a151, type: 2}
-  deduction: {fileID: 11400000, guid: 4b059cb4fa515321180598757f024dbb, type: 2}
+  deduction: {fileID: 11400000, guid: 6d7a07ea443772b4da11432003c340fb, type: 2}
   audioMixer: {fileID: 24100000, guid: 2022d65ab2f914340b4651a55f637011, type: 2}
   bgmSource: {fileID: 2647237222606653489}
   sfxSource: {fileID: 9074932322143086327}

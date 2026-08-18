@@ -154,6 +154,7 @@ public class ConversationManager : Singleton<ConversationManager>
                 EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
                         RequestAddItem { item = node.trade });
             }
+            AudioManager.Instance.PlayDeduction();
             return;
         }
 

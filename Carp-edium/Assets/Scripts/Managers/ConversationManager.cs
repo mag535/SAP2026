@@ -71,6 +71,7 @@ public class ConversationManager : Singleton<ConversationManager>
         HandleSpecialDialogue(nextNode);
         SetDialogue();
         ShowDialogueWindow();
+        AudioManager.Instance.PlayContinueSFX();
         return true;
     }
 

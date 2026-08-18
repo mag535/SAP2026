@@ -14,6 +14,8 @@ public class AudioManager : Singleton<AudioManager>
     private Sound deduction;
     [SerializeField]
     private Sound pageFlip;
+    [SerializeField]
+    private Sound continueDialogueSFX;
 
     [SerializeField]
     private AudioMixer audioMixer;
@@ -27,6 +29,8 @@ public class AudioManager : Singleton<AudioManager>
     private AudioSource dedSource;
     [SerializeField]
     private AudioSource pagSource;
+    [SerializeField]
+    private AudioSource conSource;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -53,6 +57,13 @@ public class AudioManager : Singleton<AudioManager>
             pagSource.volume = pageFlip.volume;
             pagSource.pitch = pageFlip.pitch;
             pagSource.loop = pageFlip.loop;
+        }
+        if (continueDialogueSFX != null) {
+            conSource = gameObject.AddComponent<AudioSource>();
+            conSource.clip = continueDialogueSFX.clip;
+            conSource.volume = continueDialogueSFX.volume;
+            conSource.pitch = continueDialogueSFX.pitch;
+            conSource.loop = continueDialogueSFX.loop;
         }
     }
 
@@ -112,6 +123,14 @@ public class AudioManager : Singleton<AudioManager>
         }
         pagSource.Play();
         Debug.Log($"Page Flip played");
+    }
+    public void PlayContinueSFX() {
+        if (continueDialogueSFX == null) { return; }
+        if (conSource.isPlaying) {
+            conSource.Stop();
+        }
+        conSource.Play();
+        Debug.Log($"Continue Dialogue SFX played");
     }
 
     public void Stop(Sound sound) {

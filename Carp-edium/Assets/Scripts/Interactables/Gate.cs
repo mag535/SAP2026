@@ -26,21 +26,10 @@ namespace Carp {
         public override void Interact() {
             base.Interact();
 
-            if (isLocked) {
-            } else {
-                if (screenToTrigger == EndScreen.DRAGON) {
-                    //EvtSystem.EventDispatcher.Raise<TriggerWinScreen>(new
-                    //        TriggerWinScreen {});
-                    GetComponent<SceneLoader>().GoToScene(endingScene);
-                } else if (screenToTrigger == EndScreen.LOSE1) {
-                    //EvtSystem.EventDispatcher.Raise<TriggerLoseScreen>(new
-                    //        TriggerLoseScreen {});
-                    GetComponent<SceneLoader>().GoToScene(endingScene);
-                } else if (screenToTrigger == EndScreen.LOSE2) {
-                    //EvtSystem.EventDispatcher.Raise<TriggerLoseScreen>(new
-                    //        TriggerLoseScreen {});
-                    GetComponent<SceneLoader>().GoToScene(endingScene);
-                }
+            if (!isLocked) {
+                EvtSystem.EventDispatcher.Raise<RequestOpenConfirmationScreen>(
+                        new RequestOpenConfirmationScreen {
+                        endingScreenName = endingScene });
             }
         }
 

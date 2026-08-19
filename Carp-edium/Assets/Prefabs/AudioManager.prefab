@@ -182,6 +182,8 @@ MonoBehaviour:
   continueDialogueSFX: {fileID: 11400000, guid: 7b002b43a6a74b54e8b8846710ff0200, type: 2}
   errorSFX: {fileID: 11400000, guid: 0116f11778220bf4aa185f0db35353cb, type: 2}
   audioMixer: {fileID: 24100000, guid: 2022d65ab2f914340b4651a55f637011, type: 2}
+  bgmSource: {fileID: 2647237222606653489}
+  sfxSource: {fileID: 9074932322143086327}
 --- !u!1 &4431937221564005600
 GameObject:
   m_ObjectHideFlags: 0

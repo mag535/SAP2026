@@ -21,7 +21,9 @@ public class AudioManager : Singleton<AudioManager>
 
     [SerializeField]
     private AudioMixer audioMixer;
+    [SerializeField]
     private AudioSource bgmSource;
+    [SerializeField]
     private AudioSource sfxSource;
     private AudioSource uicSource;
     private AudioSource dedSource;

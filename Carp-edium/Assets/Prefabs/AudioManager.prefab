@@ -178,11 +178,15 @@ MonoBehaviour:
   startBGM: {fileID: 11400000, guid: 5f77832d7362800bc9b8a19070e0e1d6, type: 2}
   uiClick: {fileID: 11400000, guid: a409386385486ae48ab3d68ffdd9a151, type: 2}
   deduction: {fileID: 11400000, guid: 6d7a07ea443772b4da11432003c340fb, type: 2}
+  pageFlip: {fileID: 11400000, guid: 883fa86315c7f244d8f08e2f8560e128, type: 2}
+  continueDialogueSFX: {fileID: 11400000, guid: 7b002b43a6a74b54e8b8846710ff0200, type: 2}
   audioMixer: {fileID: 24100000, guid: 2022d65ab2f914340b4651a55f637011, type: 2}
   bgmSource: {fileID: 2647237222606653489}
   sfxSource: {fileID: 9074932322143086327}
   uicSource: {fileID: 0}
   dedSource: {fileID: 0}
+  pagSource: {fileID: 0}
+  conSource: {fileID: 0}
 --- !u!1 &4431937221564005600
 GameObject:
   m_ObjectHideFlags: 0

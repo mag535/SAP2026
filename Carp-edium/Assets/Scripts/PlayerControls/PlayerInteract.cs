@@ -116,7 +116,10 @@ namespace Carp {
             if (engagedGO == null) { return; }
             bool success = engagedGO.GetComponent<Interactable>()
                 .HandleItemUse(evt.item);
-            if (!success) { return; }
+            if (!success) { 
+                AudioManager.Instance.PlayError();
+                return; 
+            }
 
             if ((evt.item.name == "Coin" && engagedGO.name == "Ox Man") ||
                     (evt.item.name == "JadeToken" && engagedGO.name == "TokenSlot") ||

@@ -49,6 +49,9 @@ namespace Carp {
                             new RequestAddItem {
                                 item = listing.trade 
                             });
+                    // Close display
+                    EvtSystem.EventDispatcher.Raise<RequestCloseDisplayInspected>(
+                            new RequestCloseDisplayInspected {});
                     return true;
                 }
             }

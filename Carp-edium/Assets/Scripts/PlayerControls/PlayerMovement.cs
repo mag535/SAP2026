@@ -16,6 +16,8 @@ namespace Carp {
 
         private bool isMoving = false;
 
+        private PlayerState playerState;
+
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestChangePlayerPosition>(
                     HandlePlayerPositionChange);
@@ -25,25 +27,31 @@ namespace Carp {
             inputVector = Vector2.zero;
             movementDirection = Vector2.zero;
             rb = GetComponent<Rigidbody2D>();
+            playerState = GetComponent<PlayerState>();
         }
 
         void FixedUpdate()
         {
-            GetInput();
+            switch (playerState.GetCurrentState()) {
+            case PlayerState.PlayerStates.DIALOGUE: 
+                break;
+            default:
+                GetInput();
+                bool success = MovePlayer(movementDirection);
 
-            bool success = MovePlayer(movementDirection);
-
-            if (!success) {
-                // try left/right
-                success = MovePlayer(new Vector2(movementDirection.x, 0));
-
-                // try up/down
                 if (!success) {
-                    success = MovePlayer(new Vector2(0, movementDirection.y));
-                }
-            }
+                    // try left/right
+                    success = MovePlayer(new Vector2(movementDirection.x, 0));
 
-            isMoving = success;
+                    // try up/down
+                    if (!success) {
+                        success = MovePlayer(new Vector2(0, movementDirection.y));
+                    }
+                }
+
+                isMoving = success;
+                break;
+            }
         }
 
         public bool GetIsMoving() {

@@ -116,8 +116,18 @@ namespace Carp {
             if (engagedGO == null) { return; }
             bool success = engagedGO.GetComponent<Interactable>()
                 .HandleItemUse(evt.item);
-            // TODO: only remove coin when used on ???? and Buddha statue when
-            // used on ????. Nothing else is consumable
+            if (!success) { 
+                AudioManager.Instance.PlayError();
+                return; 
+            }
+
+            if ((evt.item.name == "Coin" && engagedGO.name == "Ox Man") ||
+                    (evt.item.name == "JadeToken" && engagedGO.name == "TokenSlot") ||
+                    (evt.item.name == "Palace Key" && engagedGO.name == "PalaceDoor") ||
+                    (evt.item.name == "Buddha Statue" && engagedGO.name == "Dog Priest")) {
+                EvtSystem.EventDispatcher.Raise<RequestRemoveItem>( new
+                        RequestRemoveItem { item = evt.item });
+            }
         }
 
         void OnDestroy() {

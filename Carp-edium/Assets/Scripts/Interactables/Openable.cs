@@ -34,6 +34,8 @@ namespace Carp {
         public override bool HandleItemUse(Object item) {
             if (isLocked && item.objectID != key.objectID) { return false; }
             Unlock();
+            EvtSystem.EventDispatcher.Raise<RequestCloseDisplayInspected>(
+                    new RequestCloseDisplayInspected {});
             return true;
         }
 

@@ -41,6 +41,13 @@ namespace Carp {
         SERENA
     }
 
+    [System.Serializable]
+    public enum EndScreen {
+        DRAGON,
+        QILIN,
+        SNAKE
+    }
+
     public class Stuff {
         public static Dictionary<RoomName, string> roomNameDict = new 
             Dictionary<RoomName, string>() {
@@ -54,12 +61,11 @@ namespace Carp {
             { RoomName.MELISSA, "MelissaTesting" },
             { RoomName.SERENA, "SerenaTesting" }
         };
-    }
-
-    [System.Serializable]
-    public enum EndScreen {
-        DRAGON,
-        LOSE1,
-        LOSE2
+        public static Dictionary<EndScreen, string> endScreenDict = new 
+            Dictionary<EndScreen, string>() {
+            { EndScreen.DRAGON, "5_DragonEnding" },
+            { EndScreen.QILIN, "6_QiLinEnding" },
+            { EndScreen.SNAKE, "7_SnakeEnding" }
+        };
     }
 }

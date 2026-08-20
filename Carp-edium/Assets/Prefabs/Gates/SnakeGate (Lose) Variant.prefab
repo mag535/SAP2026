@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4483991975019223209, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 442d9fc669c692b44a8d2224c77545c4, type: 2}
     - target: {fileID: 5793836740155761900, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -18.58
@@ -94,7 +98,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
-    - {fileID: 4483991975019223209, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
     - {fileID: 7844600031246488693, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -102,9 +105,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5050796284930078803}
-    - targetCorrespondingSourceObject: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5350796961317856893}
     - targetCorrespondingSourceObject: {fileID: 2749080024282045263, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4036748270380015445}
@@ -131,23 +131,8 @@ MonoBehaviour:
   unlockingSoundEffect: {fileID: 0}
   key: {fileID: 0}
   isLocked: 1
-  screenToTrigger: 2
-  endingScene: 7_SnakeEnding
+  endScreen: 2
   lockedOpacity: 0.5
---- !u!114 &5350796961317856893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3489302408254401103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22b5bd9857d925c29aa74346723509e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEffect: {fileID: 0}
-  objectData: {fileID: 11400000, guid: 442d9fc669c692b44a8d2224c77545c4, type: 2}
 --- !u!114 &4036748270380015445
 MonoBehaviour:
   m_ObjectHideFlags: 0

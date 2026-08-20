@@ -2756,30 +2756,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c5393337118e9499b9750f79bddf00, type: 3}
---- !u!1 &1900054480 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4631173914085642403, guid: 99315876d1c22454e9fe1cb0bea104e7, type: 3}
-  m_PrefabInstance: {fileID: 4414183655603651627}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1900054482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3892335233168715520, guid: 99315876d1c22454e9fe1cb0bea104e7, type: 3}
   m_PrefabInstance: {fileID: 4414183655603651627}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1900054483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1900054480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22b5bd9857d925c29aa74346723509e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEffect: {fileID: 0}
-  objectData: {fileID: 11400000, guid: 71ac90c0f96656c41b0d26557d977b77, type: 2}
 --- !u!1 &1951889184
 GameObject:
   m_ObjectHideFlags: 0
@@ -2972,10 +2953,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4631173914085642403, guid: 99315876d1c22454e9fe1cb0bea104e7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1900054483}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99315876d1c22454e9fe1cb0bea104e7, type: 3}
 --- !u!1001 &7761580525822947788
 PrefabInstance:
@@ -2989,10 +2967,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: QiLinGate (Lose)
       objectReference: {fileID: 0}
-    - target: {fileID: 5496595061359668666, guid: 37b4348a768c2bd48a4a39340a731c05, type: 3}
-      propertyPath: objectData
-      value: 
-      objectReference: {fileID: 11400000, guid: 5472237c14332af41ac4a0c942eef84d, type: 2}
     - target: {fileID: 8934230848314484626, guid: 37b4348a768c2bd48a4a39340a731c05, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.1
@@ -3036,30 +3010,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 990129978114594865, guid: 37b4348a768c2bd48a4a39340a731c05, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7761580525822947790}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37b4348a768c2bd48a4a39340a731c05, type: 3}
---- !u!1 &7761580525822947789 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 990129978114594865, guid: 37b4348a768c2bd48a4a39340a731c05, type: 3}
-  m_PrefabInstance: {fileID: 7761580525822947788}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7761580525822947790
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7761580525822947789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a22b5bd9857d925c29aa74346723509e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEffect: {fileID: 0}
-  objectData: {fileID: 11400000, guid: 5472237c14332af41ac4a0c942eef84d, type: 2}
 --- !u!1001 &9119666492712119499
 PrefabInstance:
   m_ObjectHideFlags: 0

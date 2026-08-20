@@ -3,12 +3,11 @@ using UnityEngine;
 namespace Carp {
     public class Gate : Openable
     {
-        public EndScreen screenToTrigger;
         [SerializeField]
-        private string endingScene;
-
+        private EndScreen endScreen;
         [SerializeField]
         private float lockedOpacity = 0.5f;
+
         private SpriteRenderer sr;
 
         public override void Start() {
@@ -27,9 +26,10 @@ namespace Carp {
             base.Interact();
 
             if (!isLocked) {
+                Debug.Log($"Going to [{Stuff.endScreenDict[endScreen]}]");
                 EvtSystem.EventDispatcher.Raise<RequestOpenConfirmationScreen>(
                         new RequestOpenConfirmationScreen {
-                        endingScreenName = endingScene });
+                        endingScreenName = Stuff.endScreenDict[endScreen] });
             }
         }
 

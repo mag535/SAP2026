@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7767290005581788198}
   - component: {fileID: 2491312676753763686}
   - component: {fileID: 3317921586096104505}
-  - component: {fileID: 1985597609992011276}
   m_Layer: 5
   m_Name: ConfirmationScreen
   m_TagString: Untagged
@@ -79,18 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1985597609992011276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 944541766514155007}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0da18d1b95ed8ba34bd5a6d8f62c1442, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2713867767040453476
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,18 +524,22 @@ PrefabInstance:
     - target: {fileID: 361815198187503690, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1826981784556403890}
+      objectReference: {fileID: 0}
     - target: {fileID: 361815198187503690, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 361815198187503690, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToScene
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 361815198187503690, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Carp.SceneLoader, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 361815198187503690, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 361815198187503690, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -731,7 +722,7 @@ PrefabInstance:
     - target: {fileID: 361815198187503690, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1985597609992011276}
+      objectReference: {fileID: 97593744645600407}
     - target: {fileID: 361815198187503690, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -867,8 +858,28 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4589604550599089595, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6845924438038054557}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 212302281149065547, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 97593744645600407}
   m_SourcePrefab: {fileID: 100100000, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
+--- !u!1 &5002170165618525894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 212302281149065547, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}
+  m_PrefabInstance: {fileID: 5159287406244589453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &97593744645600407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5002170165618525894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da18d1b95ed8ba34bd5a6d8f62c1442, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8658440257590751798 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4589604550599089595, guid: 3bfdb5ea8caed6737874179dffbae977, type: 3}

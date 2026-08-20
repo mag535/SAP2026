@@ -83,6 +83,10 @@ namespace Carp {
             return Vector2.zero;
         }
 
+        public RoomName GetCurrentRoom() {
+            return _currentRoom;
+        }
+
         void OnDisable() {
             SceneManager.sceneLoaded -= TurnOffLoadingScreen;
         }

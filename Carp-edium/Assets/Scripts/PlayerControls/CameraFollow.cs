@@ -11,12 +11,40 @@ namespace Carp {
         [SerializeField]
         private bool isWithinBounds = true;
         private Camera playerCamera;
-        private List<Vector2> spawnBounds;
 
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        [SerializeField]
+        private bool isInitialized = false;
+        private List<Vector2> spawnBounds;
+        private List<Vector2> barBounds;
+        private List<Vector2> templeBounds;
+        private List<Vector2> palaceBounds;
+
+        void Awake() {
+            EvtSystem.EventDispatcher.AddListener<SignalCameraPositionUpdate>(HandleUpdatePositionSignal);
+            EvtSystem.EventDispatcher.AddListener<ResetCameraPositionToPlayers>(HandleResetPositionSignal);
+        }
+
+        void HandleUpdatePositionSignal(SignalCameraPositionUpdate _)
         {
+            if (!isInitialized && 
+                    RoomTransitionManager.Instance.GetCurrentRoom() == RoomName.SPAWN) {
+                Initialize();
+                return;
+            }
+
+            UpdatePosition();
+        }
+
+        void HandleResetPositionSignal(ResetCameraPositionToPlayers _) {
+            SetToPlayerPosition();
+        }
+
+        void Initialize() {
             spawnBounds = new List<Vector2>();
+            barBounds = new List<Vector2>();
+            templeBounds = new List<Vector2>();
+            palaceBounds = new List<Vector2>();
+
             foreach (Transform childTransform in gameObject.transform) {
                 if (childTransform.gameObject.name == "SPAWN") {
                     foreach (Transform vertTransform in childTransform) {
@@ -25,8 +53,34 @@ namespace Carp {
                                 vertTransform.position.y);
                         spawnBounds.Add(pos);
                     }
+                } else if (childTransform.gameObject.name == "BAR") {
+                    foreach (Transform vertTransform in childTransform) {
+                        Vector2 pos = new Vector2(
+                                vertTransform.position.x,
+                                vertTransform.position.y);
+                        barBounds.Add(pos);
+                    }
+                } else if (childTransform.gameObject.name == "TEMPLE") {
+                    foreach (Transform vertTransform in childTransform) {
+                        Vector2 pos = new Vector2(
+                                vertTransform.position.x,
+                                vertTransform.position.y);
+                        templeBounds.Add(pos);
+                    }
+                } else if (childTransform.gameObject.name == "PALACE") {
+                    foreach (Transform vertTransform in childTransform) {
+                        Vector2 pos = new Vector2(
+                                vertTransform.position.x,
+                                vertTransform.position.y);
+                        palaceBounds.Add(pos);
+                    }
                 }
             }
+            SetToPlayerPosition();
+            isInitialized = true;
+        }
+
+        void SetToPlayerPosition() {
             Vector3 newPos = new Vector3(
                     playerTransform.position.x,
                     playerTransform.position.y,
@@ -34,14 +88,22 @@ namespace Carp {
             gameObject.transform.position = newPos;
         }
 
-        void FixedUpdate()
-        {
+        void UpdatePosition() {
             switch(RoomTransitionManager.Instance.GetCurrentRoom()) {
             case RoomName.SPAWN:
                 isWithinBounds = CheckBounds(spawnBounds);
                 break;
+            case RoomName.BAR:
+                isWithinBounds = CheckBounds(barBounds);
+                break;
+            case RoomName.TEMPLE:
+                isWithinBounds = CheckBounds(templeBounds);
+                break;
+            case RoomName.PALACE:
+                isWithinBounds = CheckBounds(palaceBounds);
+                break;
             default:
-                Debug.Log("WIP");
+                Debug.Log("CameraFollower: not a valid room");
                 break;
             }
 
@@ -73,6 +135,11 @@ namespace Carp {
                 }
             }
             return collision;
+        }
+
+        void OnDestroy() {
+            EvtSystem.EventDispatcher.RemoveListener<SignalCameraPositionUpdate>(HandleUpdatePositionSignal);
+            EvtSystem.EventDispatcher.RemoveListener<ResetCameraPositionToPlayers>(HandleResetPositionSignal);
         }
     }
 }

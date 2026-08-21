@@ -50,6 +50,8 @@ namespace Carp {
                     TurnOnPlayerControls {});
             loadingScreen.SetActive(false);
             // TODO: play corresponding BGM of rooms
+            EvtSystem.EventDispatcher.Raise<ResetCameraPositionToPlayers>( new
+                    ResetCameraPositionToPlayers {});
         }
 
         public void DoRoomTransition(RoomName roomName) {

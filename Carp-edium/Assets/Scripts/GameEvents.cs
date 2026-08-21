@@ -102,10 +102,9 @@ public class RequestItemUse : EvtSystem.Event
     public Object item;
 }
 
-// PLAYER ANIMATION ------------------------------------------------------------
-public class ChangePlayerSprite : EvtSystem.Event {
-    public Vector2 direction;
-}
+public class SignalCameraPositionUpdate : EvtSystem.Event {}
+public class ResetCameraPositionToPlayers : EvtSystem.Event {}
+
 
 // INTERACTABLES -----------------------------------------------------------------------
 public class OpenChest : EvtSystem.Event

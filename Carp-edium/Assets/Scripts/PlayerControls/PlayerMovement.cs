@@ -50,6 +50,10 @@ namespace Carp {
                 }
 
                 isMoving = success;
+                if (isMoving) {
+                    EvtSystem.EventDispatcher.Raise<SignalCameraPositionUpdate>(
+                            new SignalCameraPositionUpdate {});
+                }
                 break;
             }
         }

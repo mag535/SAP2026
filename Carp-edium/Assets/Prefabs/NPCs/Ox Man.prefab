@@ -183,6 +183,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5cc79d9429fe0ab4ba2ddadd295703f3, type: 2}
     - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
+      propertyPath: conversationDefault
+      value: 
+      objectReference: {fileID: 11400000, guid: 7251a410ee6315449b2c4ec462a02361, type: 2}
+    - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: itemConvoPairList.Array.size
       value: 13
       objectReference: {fileID: 0}

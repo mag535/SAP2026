@@ -42,9 +42,10 @@ public class TriggerWinScreen : EvtSystem.Event {}
 public class TriggerLoseScreen : EvtSystem.Event {}
 
 public class RequestOpenConfirmationScreen : EvtSystem.Event {
-    public string endingScreenName;
+    public Carp.EndScreen endingScreenName;
 }
 public class RequestCloseConfirmationScreen : EvtSystem.Event {}
+public class ConfirmGateChoice : EvtSystem.Event {}
 
 // DESCRIPTION UI --------------------------------------------------------------
 public class RequestDisplayInspected : EvtSystem.Event

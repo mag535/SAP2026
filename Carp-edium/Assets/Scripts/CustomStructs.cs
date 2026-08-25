@@ -43,6 +43,7 @@ namespace Carp {
 
     [System.Serializable]
     public enum EndScreen {
+        NONE,
         DRAGON,
         QILIN,
         SNAKE

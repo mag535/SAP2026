@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: DogDefaultDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: e4dd063c-0f25-4f89-8546-42ebe2f82a6a
+    PortName: Next
+    TargetNodeGuid: 246d11f3-f0c2-43ea-b780-a6fb0e781274
+  - BaseNodeGuid: 246d11f3-f0c2-43ea-b780-a6fb0e781274
+    PortName: Next
+    TargetNodeGuid: 6898793c-6338-44b5-9f17-5b322d18eccb
+  DialogueNodeData:
+  - type: 0
+    Guid: 246d11f3-f0c2-43ea-b780-a6fb0e781274
+    speaker: Dog
+    DialogueText: '"Oh, welcome back! Do you have anything to show me?" '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 240, y: 204.8}
+  - type: 4
+    Guid: 6898793c-6338-44b5-9f17-5b322d18eccb
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 661.6, y: 239.20001}

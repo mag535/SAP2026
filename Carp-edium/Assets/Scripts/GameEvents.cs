@@ -41,6 +41,11 @@ public class RequestCreateNotification : EvtSystem.Event
 public class TriggerWinScreen : EvtSystem.Event {}
 public class TriggerLoseScreen : EvtSystem.Event {}
 
+public class RequestOpenConfirmationScreen : EvtSystem.Event {
+    public string endingScreenName;
+}
+public class RequestCloseConfirmationScreen : EvtSystem.Event {}
+
 // DESCRIPTION UI --------------------------------------------------------------
 public class RequestDisplayInspected : EvtSystem.Event
 {
@@ -97,10 +102,9 @@ public class RequestItemUse : EvtSystem.Event
     public Object item;
 }
 
-// PLAYER ANIMATION ------------------------------------------------------------
-public class ChangePlayerSprite : EvtSystem.Event {
-    public Vector2 direction;
-}
+public class SignalCameraPositionUpdate : EvtSystem.Event {}
+public class ResetCameraPositionToPlayers : EvtSystem.Event {}
+
 
 // INTERACTABLES -----------------------------------------------------------------------
 public class OpenChest : EvtSystem.Event

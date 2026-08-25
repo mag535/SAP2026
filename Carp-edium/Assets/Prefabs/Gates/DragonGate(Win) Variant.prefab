@@ -126,6 +126,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4483991975019223209, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
+      propertyPath: objectData
+      value: 
+      objectReference: {fileID: 11400000, guid: 71ac90c0f96656c41b0d26557d977b77, type: 2}
     - target: {fileID: 5793836740155761900, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.474
@@ -204,7 +208,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3751247312692651592, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
-    - {fileID: 4483991975019223209, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
     - {fileID: 7844600031246488693, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -246,8 +249,7 @@ MonoBehaviour:
   unlockingSoundEffect: {fileID: 0}
   key: {fileID: 0}
   isLocked: 1
-  screenToTrigger: 0
-  endingScene: 5_DragonEnding
+  endScreen: 0
   lockedOpacity: 0.5
 --- !u!114 &955064145888224892
 MonoBehaviour:

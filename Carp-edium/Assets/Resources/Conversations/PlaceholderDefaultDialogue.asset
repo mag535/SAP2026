@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90e6563b0ab9c8bf7b65073d36093afa, type: 3}
+  m_Name: PlaceholderDefaultDialogue
+  m_EditorClassIdentifier: 
+  NodeLinks:
+  - BaseNodeGuid: 6163c218-3dfb-4c08-9365-62f7720b07c9
+    PortName: Next
+    TargetNodeGuid: 4687519e-8354-44fc-a516-48506717b362
+  - BaseNodeGuid: 4687519e-8354-44fc-a516-48506717b362
+    PortName: Next
+    TargetNodeGuid: 509b828d-89d3-4776-93ee-73ccc2133242
+  DialogueNodeData:
+  - type: 0
+    Guid: 4687519e-8354-44fc-a516-48506717b362
+    speaker: PROGRAMMER
+    DialogueText: DEFAULT DIALOGUE GOES HERE
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 244, y: 198}
+  - type: 4
+    Guid: 509b828d-89d3-4776-93ee-73ccc2133242
+    speaker: 
+    DialogueText: END OF CONVERSATION
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 535, y: 229}

@@ -8,9 +8,6 @@ namespace Carp {
         public float speed = 5f;
         public float collisionOffset = 0.1f;
         public ContactFilter2D movementFilters;
-        public Sound footsteps;
-
-        public float rotationAngle = Mathf.PI / 6f; // 30 degrees
 
         private Vector2 inputVector;
         private Vector2 movementDirection;
@@ -18,6 +15,8 @@ namespace Carp {
         private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
         private bool isMoving = false;
+
+        private PlayerState playerState;
 
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestChangePlayerPosition>(
@@ -28,32 +27,55 @@ namespace Carp {
             inputVector = Vector2.zero;
             movementDirection = Vector2.zero;
             rb = GetComponent<Rigidbody2D>();
+            playerState = GetComponent<PlayerState>();
         }
 
         void FixedUpdate()
         {
-            bool success = MovePlayer(movementDirection);
+            switch (playerState.GetCurrentState()) {
+            case PlayerState.PlayerStates.DIALOGUE: 
+                break;
+            default:
+                GetInput();
+                bool success = MovePlayer(movementDirection);
 
-            if (!success) {
-                // try left/right
-                success = MovePlayer(new Vector2(movementDirection.x, 0));
-
-                // try up/down
                 if (!success) {
-                    success = MovePlayer(new Vector2(0, movementDirection.y));
-                }
-            }
+                    // try left/right
+                    success = MovePlayer(new Vector2(movementDirection.x, 0));
 
-            isMoving = success;
+                    // try up/down
+                    if (!success) {
+                        success = MovePlayer(new Vector2(0, movementDirection.y));
+                    }
+                }
+
+                isMoving = success;
+                if (isMoving) {
+                    EvtSystem.EventDispatcher.Raise<SignalCameraPositionUpdate>(
+                            new SignalCameraPositionUpdate {});
+                }
+                break;
+            }
         }
 
         public bool GetIsMoving() {
             return isMoving;
         }
 
+        public Vector2 GetInputVector() {return inputVector;}
+
+        void GetInput() {
+            inputVector.x = Input.GetAxisRaw("Horizontal");
+            inputVector.y = Input.GetAxisRaw("Vertical");
+            movementDirection = inputVector;
+            movementDirection.Normalize();
+        }
+
+        /*
         public void Move(InputAction.CallbackContext context) {
             if (context.started) {
                 inputVector = context.ReadValue<Vector2>();
+                Debug.Log($"Input Vector: {context}");
                 EvtSystem.EventDispatcher.Raise<ChangePlayerSprite>(new
                         ChangePlayerSprite { direction = inputVector });
             } else if (context.canceled) {
@@ -62,8 +84,9 @@ namespace Carp {
             // NSEW
             //movementDirection = inputVector;
             // isometric
-            movementDirection = RotateDirection(inputVector);
+            movementDirection = inputVector; //RotateDirection(inputVector);
         }
+        */
 
         private bool MovePlayer(Vector2 direction) {
             if (direction == Vector2.zero) {

@@ -9,6 +9,7 @@ public class ConversationManager : Singleton<ConversationManager>
     public GameObject dialogueBox;
     public TextMeshProUGUI textBox;
     public TextMeshProUGUI nameTag;
+    public GameObject continueObject;
 
     //private string conversationsFolder = "Conversations/";
     private DialogueContainer _currentConversation;
@@ -20,6 +21,10 @@ public class ConversationManager : Singleton<ConversationManager>
     }
 
     public void StartConversation(DialogueContainer start) {
+        if (start == null) {
+            Debug.Log("No dialogue provided");
+            return;
+        }
         _currentConversation = start;
         ParseConversationData();
         HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find(
@@ -28,9 +33,21 @@ public class ConversationManager : Singleton<ConversationManager>
         ShowDialogueWindow();
     }
 
+    private bool CheckForMoreDialogue() {
+        if (_currentConversation == null) { return false; }
+        NodeLinkData nextLinkData = _currentConversation.NodeLinks.Find(
+                x => x.BaseNodeGuid == _currentGuid);
+        DialogueNodeData nextNode = _currentConversation.DialogueNodeData.Find(
+                x => x.Guid == nextLinkData.TargetNodeGuid);
+        // If next node marks end of conversation, end conversation
+        if (nextNode.type == DialogueType.ENDOFCONVERSATION) { 
+            return false;
+        }
+        return true;
+    }
+
     public bool ContinueConversation() {
         // Advance to next dialogue node data
-        // FIXME: account for options (BRANCH type)
         NodeLinkData currentLinkData = _currentConversation.NodeLinks.Find(
                 x => x.BaseNodeGuid == _currentGuid);
         // If none found, end conversation
@@ -54,6 +71,7 @@ public class ConversationManager : Singleton<ConversationManager>
         HandleSpecialDialogue(nextNode);
         SetDialogue();
         ShowDialogueWindow();
+        AudioManager.Instance.PlayContinueSFX();
         return true;
     }
 
@@ -85,6 +103,11 @@ public class ConversationManager : Singleton<ConversationManager>
     }
 
     public void ShowDialogueWindow() {
+        if (CheckForMoreDialogue()) {
+            continueObject.SetActive(true);
+        } else {
+            continueObject.SetActive(false);
+        }
         dialogueBox.SetActive(true);
         displayWindow.SetActive(true);
     }
@@ -154,6 +177,7 @@ public class ConversationManager : Singleton<ConversationManager>
                 EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
                         RequestAddItem { item = node.trade });
             }
+            AudioManager.Instance.PlayDeduction();
             return;
         }
 

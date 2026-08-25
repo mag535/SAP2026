@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using System;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : Singleton<AudioManager>
 {
@@ -9,6 +10,14 @@ public class AudioManager : Singleton<AudioManager>
     private Sound startBGM;
     [SerializeField]
     private Sound uiClick;
+    [SerializeField]
+    private Sound deduction;
+    [SerializeField]
+    private Sound pageFlip;
+    [SerializeField]
+    private Sound continueDialogueSFX;
+    [SerializeField]
+    private Sound errorSFX;
 
     [SerializeField]
     private AudioMixer audioMixer;
@@ -16,14 +25,19 @@ public class AudioManager : Singleton<AudioManager>
     private AudioSource bgmSource;
     [SerializeField]
     private AudioSource sfxSource;
-    [SerializeField]
     private AudioSource uicSource;
+    private AudioSource dedSource;
+    private AudioSource pagSource;
+    private AudioSource conSource;
+    private AudioSource errSource;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Play(startBGM);
+        if (SceneManager.GetActiveScene().name == "MainMenu") {
+            Play(startBGM);
+        }
         //bgmSource = gameObject.AddComponent<AudioSource>();
         //sfxSource = gameObject.AddComponent<AudioSource>();
         uicSource = gameObject.AddComponent<AudioSource>();
@@ -31,6 +45,30 @@ public class AudioManager : Singleton<AudioManager>
         uicSource.volume = uiClick.volume;
         uicSource.pitch = uiClick.pitch;
         uicSource.loop = uiClick.loop;
+        dedSource = gameObject.AddComponent<AudioSource>();
+        dedSource.clip = deduction.clip;
+        dedSource.volume = deduction.volume;
+        dedSource.pitch = deduction.pitch;
+        dedSource.loop = uiClick.loop;
+        if (pageFlip != null) {
+            pagSource = gameObject.AddComponent<AudioSource>();
+            pagSource.clip = pageFlip.clip;
+            pagSource.volume = pageFlip.volume;
+            pagSource.pitch = pageFlip.pitch;
+            pagSource.loop = pageFlip.loop;
+        }
+        if (continueDialogueSFX != null) {
+            conSource = gameObject.AddComponent<AudioSource>();
+            conSource.clip = continueDialogueSFX.clip;
+            conSource.volume = continueDialogueSFX.volume;
+            conSource.pitch = continueDialogueSFX.pitch;
+            conSource.loop = continueDialogueSFX.loop;
+        }
+        errSource = gameObject.AddComponent<AudioSource>();
+        errSource.clip = errorSFX.clip;
+        errSource.volume = errorSFX.volume;
+        errSource.pitch = errorSFX.pitch;
+        errSource.loop = errorSFX.loop;
     }
 
     public void Play(Sound sound) {
@@ -73,6 +111,38 @@ public class AudioManager : Singleton<AudioManager>
         }
         uicSource.Play();
         Debug.Log($"UI Click played");
+    }
+    public void PlayDeduction() {
+        if (deduction == null) { return; }
+        if (dedSource.isPlaying) {
+            dedSource.Stop();
+        }
+        dedSource.Play();
+        Debug.Log($"Deduction SFX played");
+    }
+    public void PlayPageFlip() {
+        if (pageFlip == null) { return; }
+        if (pagSource.isPlaying) {
+            pagSource.Stop();
+        }
+        pagSource.Play();
+        Debug.Log($"Page Flip played");
+    }
+    public void PlayContinueSFX() {
+        if (continueDialogueSFX == null) { return; }
+        if (conSource.isPlaying) {
+            conSource.Stop();
+        }
+        conSource.Play();
+        Debug.Log($"Continue Dialogue SFX played");
+    }
+    public void PlayError() {
+        if (errorSFX == null) { return; }
+        if (errSource.isPlaying) {
+            errSource.Stop();
+        }
+        errSource.Play();
+        Debug.Log($"Error SFX played");
     }
 
     public void Stop(Sound sound) {

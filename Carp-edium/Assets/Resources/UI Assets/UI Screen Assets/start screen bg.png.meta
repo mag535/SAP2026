@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 180772aa6c5593c43bd85098d48237a0
+guid: 7fe31a81c113bce44aadb10d874bb850
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 450310664867185349
-    second: start screen bg_0
+      213: 4286434684428039330
+    second: carp-ediem poster_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: start screen bg_0
+      name: carp-ediem poster_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c28af1f923df3600800000000000000
-      internalID: 450310664867185349
+      spriteID: 2a43f3e82a97c7b30800000000000000
+      internalID: 4286434684428039330
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      start screen bg_0: 450310664867185349
+      carp-ediem poster_0: 4286434684428039330
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

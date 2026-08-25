@@ -79,12 +79,13 @@ public class ConversationManager : Singleton<ConversationManager>
         _currentConversation = null;
         _currentGuid = string.Empty;
         HideDialogueWindow();
+        EvtSystem.EventDispatcher.Raise<DialogueEnd>( new DialogueEnd {});
     }
 
     // End current converstaion and start new one
     public void InterruptConversation(DialogueContainer newConversation) {
         if (newConversation == null) { return; }
-        EndConversation();
+        HideDialogueWindow();
         _currentConversation = newConversation;
         ParseConversationData();
         HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find( x =>

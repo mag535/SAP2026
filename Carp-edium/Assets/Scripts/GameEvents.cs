@@ -106,6 +106,7 @@ public class RequestItemUse : EvtSystem.Event
 public class SignalCameraPositionUpdate : EvtSystem.Event {}
 public class ResetCameraPositionToPlayers : EvtSystem.Event {}
 
+public class DialogueEnd : EvtSystem.Event {}
 
 // INTERACTABLES -----------------------------------------------------------------------
 public class OpenChest : EvtSystem.Event

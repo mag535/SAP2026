@@ -11,6 +11,7 @@ namespace Carp {
 
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
+            EvtSystem.EventDispatcher.AddListener<DialogueEnd>(HandleDialogueEnd);
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -114,12 +115,19 @@ namespace Carp {
 
         public void UseItem(RequestItemUse evt) {
             if (engagedGO == null) { return; }
+
             bool success = engagedGO.GetComponent<Interactable>()
                 .HandleItemUse(evt.item);
             if (!success) { 
                 AudioManager.Instance.PlayError();
                 return; 
             }
+
+            if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.GAME &&
+                    engagedGO.GetComponent<ConversationStarter>() != null) {
+                playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
+            }
+
 
             if ((evt.item.name == "Coin" && engagedGO.name == "Ox Man") ||
                     (evt.item.name == "JadeToken" && engagedGO.name == "TokenSlot") ||
@@ -130,8 +138,13 @@ namespace Carp {
             }
         }
 
+        void HandleDialogueEnd(DialogueEnd _) {
+            playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+        }
+
         void OnDestroy() {
             EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
+            EvtSystem.EventDispatcher.RemoveListener<DialogueEnd>(HandleDialogueEnd);
         }
     }
 }

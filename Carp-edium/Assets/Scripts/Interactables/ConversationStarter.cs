@@ -8,7 +8,6 @@ namespace Carp {
         public DialogueContainer conversationDefault;
         public List<ItemConvoPair> itemConvoPairList = new List<ItemConvoPair>();
 
-        private bool goToDefaultDialogue = false;
         private DialogueContainer wrongItemConversation = null;
 
         void Start() {
@@ -23,9 +22,9 @@ namespace Carp {
             // sfx
             AudioManager.Instance.Play(soundEffect);
             // start dialogue, send dialogue id to dialogue manager
-            if (!goToDefaultDialogue) {
+            if (!GameManager.Instance.AmIAModifiedConversationStarter(gameObject.name)) {
                 ConversationManager.Instance.StartConversation(conversationStart);
-                goToDefaultDialogue = true;
+                GameManager.Instance.AddModifiedConversationStarter(gameObject.name);
             } else {
                 ConversationManager.Instance.StartConversation(conversationDefault);
             }

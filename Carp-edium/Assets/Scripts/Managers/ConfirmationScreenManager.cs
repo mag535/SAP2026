@@ -6,12 +6,14 @@ namespace Carp {
     {
         [SerializeField]
         private GameObject confirmationScreen;
+
         [SerializeField]
-        private Button yesButton;
+        private EndScreen currentGate = EndScreen.NONE;
 
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestOpenConfirmationScreen>(HandleOpen);
             EvtSystem.EventDispatcher.AddListener<RequestCloseConfirmationScreen>(HandleClose);
+            EvtSystem.EventDispatcher.AddListener<ConfirmGateChoice>(HandleGateChoice);
         }
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -20,20 +22,25 @@ namespace Carp {
         }
 
         void HandleOpen(RequestOpenConfirmationScreen evt) {
-            SceneLoader yesButtonSceneLoader = yesButton.gameObject.GetComponent<SceneLoader>();
-            yesButton.onClick.AddListener(delegate { 
-                    yesButtonSceneLoader.GoToScene(evt.endingScreenName); });
+            currentGate = evt.endingScreenName;
             confirmationScreen.SetActive(true);
         }
 
         void HandleClose(RequestCloseConfirmationScreen evt) {
+            currentGate = EndScreen.NONE;
             confirmationScreen.SetActive(false);
-            yesButton.onClick.AddListener(null);
+        }
+
+        void HandleGateChoice(ConfirmGateChoice evt) {
+            SceneLoader thisSL = GetComponent<SceneLoader>();
+            if (thisSL == null) { return; }
+            thisSL.GoToScene(Stuff.endScreenDict[currentGate]);
         }
 
         void OnDestroy() {
             EvtSystem.EventDispatcher.RemoveListener<RequestOpenConfirmationScreen>(HandleOpen);
             EvtSystem.EventDispatcher.RemoveListener<RequestCloseConfirmationScreen>(HandleClose);
+            EvtSystem.EventDispatcher.RemoveListener<ConfirmGateChoice>(HandleGateChoice);
         }
     }
 }

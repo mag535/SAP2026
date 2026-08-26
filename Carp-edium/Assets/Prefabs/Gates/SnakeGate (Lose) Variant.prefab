@@ -131,7 +131,7 @@ MonoBehaviour:
   unlockingSoundEffect: {fileID: 0}
   key: {fileID: 0}
   isLocked: 1
-  endScreen: 2
+  endScreen: 3
   lockedOpacity: 0.5
 --- !u!114 &4036748270380015445
 MonoBehaviour:

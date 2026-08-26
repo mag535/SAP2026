@@ -26,10 +26,14 @@ namespace Carp {
             base.Interact();
 
             if (!isLocked) {
+                if (endScreen == EndScreen.NONE) { 
+                    Debug.Log("No end screen set.");
+                    return;
+                }
                 Debug.Log($"Going to [{Stuff.endScreenDict[endScreen]}]");
                 EvtSystem.EventDispatcher.Raise<RequestOpenConfirmationScreen>(
                         new RequestOpenConfirmationScreen {
-                        endingScreenName = Stuff.endScreenDict[endScreen] });
+                        endingScreenName = endScreen });
             }
         }
 

@@ -10,6 +10,7 @@ namespace Carp {
             new List<string>();
         public Dictionary<string, List<Listing>> modifiedTraders =
             new Dictionary<string, List<Listing>>();
+        public List<string> modifiedConversationStarters = new List<string>();
 
         public Vector2 modifiedFox = Vector2.zero;
         [SerializeField]
@@ -60,6 +61,11 @@ namespace Carp {
             modifiedFox = newPostion;
         }
 
+        public void AddModifiedConversationStarter(string id) {
+            if (modifiedConversationStarters.Contains(id)) { return; }
+            modifiedConversationStarters.Add(id);
+        }
+
         public bool AmIAModifiedDoor(string id) {
             return modifiedDoors.ContainsKey(id);
         }
@@ -83,6 +89,10 @@ namespace Carp {
                 return false;
             }
             return true;
+        }
+
+        public bool AmIAModifiedConversationStarter(string id) {
+            return modifiedConversationStarters.Contains(id);
         }
 
         public bool GetModifiedDoorData(string id) {

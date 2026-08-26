@@ -131,7 +131,7 @@ namespace Carp {
 
             if ((evt.item.name == "Coin" && engagedGO.name == "Ox Man") ||
                     (evt.item.name == "JadeToken" && engagedGO.name == "TokenSlot") ||
-                    (evt.item.name == "Palace Key" && engagedGO.name == "PalaceDoor") ||
+                    (evt.item.name == "GildedKey" && engagedGO.name == "PalaceDoor") ||
                     (evt.item.name == "Buddha Statue" && engagedGO.name == "Dog Priest")) {
                 EvtSystem.EventDispatcher.Raise<RequestRemoveItem>( new
                         RequestRemoveItem { item = evt.item });

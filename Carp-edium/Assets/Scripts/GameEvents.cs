@@ -117,6 +117,11 @@ public class ResetCameraPositionToPlayers : EvtSystem.Event {}
 
 public class DialogueEnd : EvtSystem.Event {}
 
+public class SetActionMap : EvtSystem.Event
+{
+    public string actionMap;
+}
+
 // INTERACTABLES -----------------------------------------------------------------------
 public class OpenChest : EvtSystem.Event
 {

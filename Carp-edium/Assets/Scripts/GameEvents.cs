@@ -47,6 +47,15 @@ public class RequestOpenConfirmationScreen : EvtSystem.Event {
 public class RequestCloseConfirmationScreen : EvtSystem.Event {}
 public class ConfirmGateChoice : EvtSystem.Event {}
 
+// DIALOGUE UI -----------------------------------------------------------------
+public class SendDialogueText : EvtSystem.Event
+{
+    public string dialogueText;
+}
+
+public class DialogueFullyShown : EvtSystem.Event {}
+public class ShowFullDialogue : EvtSystem.Event {}
+
 // DESCRIPTION UI --------------------------------------------------------------
 public class RequestDisplayInspected : EvtSystem.Event
 {

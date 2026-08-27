@@ -2,194 +2,220 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using System.Collections;
 
-public class ConversationManager : Singleton<ConversationManager>
-{
-    public GameObject displayWindow;
-    public GameObject dialogueBox;
-    public TextMeshProUGUI textBox;
-    public TextMeshProUGUI nameTag;
-    public GameObject continueObject;
+namespace Carp {
+    public class ConversationManager : Singleton<ConversationManager>
+    {
+        public GameObject displayWindow;
+        public GameObject dialogueBox;
+        public TextMeshProUGUI textBox;
+        public TextMeshProUGUI nameTag;
+        public GameObject continueObject;
+        public float delayForTypeWriterEffect = 1;
 
-    //private string conversationsFolder = "Conversations/";
-    private DialogueContainer _currentConversation;
-    private string _currentGuid;
+        //private string conversationsFolder = "Conversations/";
+        private DialogueContainer _currentConversation;
+        private string _currentGuid;
 
-    void Start() {
-        dialogueBox.SetActive(false);
-        displayWindow.SetActive(false);
-    }
-
-    public void StartConversation(DialogueContainer start) {
-        if (start == null) {
-            Debug.Log("No dialogue provided");
-            return;
-        }
-        _currentConversation = start;
-        ParseConversationData();
-        HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find(
-                    x => x.Guid == _currentGuid));
-        SetDialogue();
-        ShowDialogueWindow();
-    }
-
-    private bool CheckForMoreDialogue() {
-        if (_currentConversation == null) { return false; }
-        NodeLinkData nextLinkData = _currentConversation.NodeLinks.Find(
-                x => x.BaseNodeGuid == _currentGuid);
-        DialogueNodeData nextNode = _currentConversation.DialogueNodeData.Find(
-                x => x.Guid == nextLinkData.TargetNodeGuid);
-        // If next node marks end of conversation, end conversation
-        if (nextNode.type == DialogueType.ENDOFCONVERSATION) { 
-            return false;
-        }
-        return true;
-    }
-
-    public bool ContinueConversation() {
-        // Advance to next dialogue node data
-        NodeLinkData currentLinkData = _currentConversation.NodeLinks.Find(
-                x => x.BaseNodeGuid == _currentGuid);
-        // If none found, end conversation
-        if (currentLinkData == null) { 
-            EndConversation();
-            return false;
-        }
-
-        DialogueNodeData nextNode = _currentConversation.DialogueNodeData.Find(
-                x => x.Guid == currentLinkData.TargetNodeGuid);
-        // If next node marks end of conversation, end conversation
-        if (nextNode.type == DialogueType.ENDOFCONVERSATION) { 
-            EndConversation(); 
-            return false;
-        }
-
-        // Otherwise, update what current GUID is:
-        _currentGuid = nextNode.Guid;
-
-        // Display dialogue
-        HandleSpecialDialogue(nextNode);
-        SetDialogue();
-        ShowDialogueWindow();
-        AudioManager.Instance.PlayContinueSFX();
-        return true;
-    }
-
-    public void EndConversation() {
-        _currentConversation = null;
-        _currentGuid = string.Empty;
-        HideDialogueWindow();
-        EvtSystem.EventDispatcher.Raise<DialogueEnd>( new DialogueEnd {});
-    }
-
-    // End current converstaion and start new one
-    public void InterruptConversation(DialogueContainer newConversation) {
-        if (newConversation == null) { return; }
-        HideDialogueWindow();
-        _currentConversation = newConversation;
-        ParseConversationData();
-        HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find( x =>
-                    x.Guid == _currentGuid));
-        SetDialogue();
-        ShowDialogueWindow();
-    }
-
-    public void SetDialogue() {
-        // Set speaker
-        nameTag.text = _currentConversation.DialogueNodeData.Find(x =>
-                x.Guid == _currentGuid).speaker;
-        // Display dialogue text
-        textBox.text = _currentConversation.DialogueNodeData.Find(x =>
-                x.Guid == _currentGuid).DialogueText;
-    }
-
-    public void ShowDialogueWindow() {
-        if (CheckForMoreDialogue()) {
-            continueObject.SetActive(true);
-        } else {
+        void Start() {
+            EvtSystem.EventDispatcher.AddListener<DialogueFullyShown>(HandleDialogueFullyShown);
             continueObject.SetActive(false);
+            dialogueBox.SetActive(false);
+            displayWindow.SetActive(false);
         }
-        dialogueBox.SetActive(true);
-        displayWindow.SetActive(true);
-    }
 
-    public void HideDialogueWindow() {
-        textBox.text = string.Empty;
-        dialogueBox.SetActive(false);
-        displayWindow.SetActive(false);
-    }
-
-    // Get some information on current dialogue node then parse
-    // current conversation to get next node
-    // HELP! How to I determine the first node in the graph??
-    // Work backwards from ENDOFCONVERSATION type?
-    private void ParseConversationData() {
-        if (_currentConversation == null) { return; }
-
-        // Find one END_OF_CONVERSATION nodes
-        DialogueNodeData _endOfConversation = null;
-        foreach (DialogueNodeData data in _currentConversation.DialogueNodeData) {
-            if (data.type != DialogueType.ENDOFCONVERSATION) { continue; }
-            _endOfConversation = data;
-        }
-        // If no ends found, return
-        if (_endOfConversation == null) { return; }
-
-        // Find first node in dialogue tree
-        _currentGuid = FindFirstNode(_endOfConversation.Guid);
-    }
-
-    string FindFirstNode(string endGuid) {
-        string firstNodeGuid = endGuid;
-
-        for (int i = 0; i < _currentConversation.NodeLinks.Count; i++) {
-            // if found newer node, update first node guid and reset loop
-            if (_currentConversation.NodeLinks[i].TargetNodeGuid ==
-                    firstNodeGuid) {
-                firstNodeGuid = _currentConversation.NodeLinks[i].BaseNodeGuid;
-                i = 0;
+        public void StartConversation(DialogueContainer start) {
+            if (start == null) {
+                Debug.Log("No dialogue provided");
+                return;
             }
-            // otherwise, continue checking
+            _currentConversation = start;
+            ParseConversationData();
+            HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find(
+                        x => x.Guid == _currentGuid));
+            ShowDialogueWindow();
+            SetDialogue();
         }
 
-        return firstNodeGuid;
-    }
-
-    void HandleSpecialDialogue(DialogueNodeData node) {
-        switch (node.type) {
-        case DialogueType.BRANCH:
-            Debug.Log("Not yet implemented.");
-            break;
-        case DialogueType.GIVEITEM:
-            HandleGiveItemDialogue(node);
-            break;
-        case DialogueType.SETFLAG:
-            HandleSetFlagDialogue(node);
-            break;
-        }
-    }
-
-    void HandleGiveItemDialogue(DialogueNodeData node) {
-        if (node.cost == null) {
-            if (node.trade.isNoteEntry) {
-                EvtSystem.EventDispatcher.Raise<RequestAddToNotebook>( new
-                        RequestAddToNotebook { objectData = node.trade });
-            } else {
-                EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
-                        RequestAddItem { item = node.trade });
+        private bool CheckForMoreDialogue() {
+            if (_currentConversation == null) { return false; }
+            NodeLinkData nextLinkData = _currentConversation.NodeLinks.Find(
+                    x => x.BaseNodeGuid == _currentGuid);
+            DialogueNodeData nextNode = _currentConversation.DialogueNodeData.Find(
+                    x => x.Guid == nextLinkData.TargetNodeGuid);
+            // If next node marks end of conversation, end conversation
+            if (nextNode.type == DialogueType.ENDOFCONVERSATION) { 
+                return false;
             }
-            AudioManager.Instance.PlayDeduction();
-            return;
+            return true;
         }
 
-        // TODO: what to do? How to handle cost item?
+        public bool ContinueConversation() {
+            if (!continueObject.activeSelf) {
+                EvtSystem.EventDispatcher.Raise<ShowFullDialogue>( new
+                        ShowFullDialogue {});
+                return true;
+            }
+
+            continueObject.SetActive(false);
+            // Advance to next dialogue node data
+            NodeLinkData currentLinkData = _currentConversation.NodeLinks.Find(
+                    x => x.BaseNodeGuid == _currentGuid);
+            // If none found, end conversation
+            if (currentLinkData == null) { 
+                EndConversation();
+                return false;
+            }
+
+            DialogueNodeData nextNode = _currentConversation.DialogueNodeData.Find(
+                    x => x.Guid == currentLinkData.TargetNodeGuid);
+            // If next node marks end of conversation, end conversation
+            if (nextNode.type == DialogueType.ENDOFCONVERSATION) { 
+                EndConversation(); 
+                return false;
+            }
+
+            // Otherwise, update what current GUID is:
+            _currentGuid = nextNode.Guid;
+
+            // Display dialogue
+            HandleSpecialDialogue(nextNode);
+            SetDialogue();
+            //ShowDialogueWindow();
+            AudioManager.Instance.PlayContinueSFX();
+            return true;
+        }
+
+        public void EndConversation() {
+            _currentConversation = null;
+            _currentGuid = string.Empty;
+            HideDialogueWindow();
+            EvtSystem.EventDispatcher.Raise<DialogueEnd>( new DialogueEnd {});
+        }
+
+        // End current converstaion and start new one
+        public void InterruptConversation(DialogueContainer newConversation) {
+            if (newConversation == null) { return; }
+            HideDialogueWindow();
+            _currentConversation = newConversation;
+            ParseConversationData();
+            HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find( x =>
+                        x.Guid == _currentGuid));
+            ShowDialogueWindow();
+            SetDialogue();
+        }
+
+        public void SetDialogue() {
+            // Set speaker
+            nameTag.text = _currentConversation.DialogueNodeData.Find(x =>
+                    x.Guid == _currentGuid).speaker;
+            // Display dialogue text
+            /*
+            textBox.text = _currentConversation.DialogueNodeData.Find(x =>
+                    x.Guid == _currentGuid).DialogueText;
+            */
+            StartCoroutine(Delay());
+        }
+
+        private IEnumerator Delay() {
+            yield return new WaitForSeconds(delayForTypeWriterEffect);
+            EvtSystem.EventDispatcher.Raise<SendDialogueText>( new SendDialogueText
+                    { dialogueText = _currentConversation.DialogueNodeData.Find(x =>
+                    x.Guid == _currentGuid).DialogueText });
+        }
+
+        private void HandleDialogueFullyShown(DialogueFullyShown _) {
+            continueObject.SetActive(true);
+        }
+
+        public void ShowDialogueWindow() {
+            dialogueBox.SetActive(true);
+            displayWindow.SetActive(true);
+        }
+
+        public void HideDialogueWindow() {
+            //textBox.text = string.Empty;
+            continueObject.SetActive(false);
+            dialogueBox.SetActive(false);
+            displayWindow.SetActive(false);
+        }
+
+        // Get some information on current dialogue node then parse
+        // current conversation to get next node
+        // HELP! How to I determine the first node in the graph??
+        // Work backwards from ENDOFCONVERSATION type?
+        private void ParseConversationData() {
+            if (_currentConversation == null) { return; }
+
+            // Find one END_OF_CONVERSATION nodes
+            DialogueNodeData _endOfConversation = null;
+            foreach (DialogueNodeData data in _currentConversation.DialogueNodeData) {
+                if (data.type != DialogueType.ENDOFCONVERSATION) { continue; }
+                _endOfConversation = data;
+            }
+            // If no ends found, return
+            if (_endOfConversation == null) { return; }
+
+            // Find first node in dialogue tree
+            _currentGuid = FindFirstNode(_endOfConversation.Guid);
+        }
+
+        string FindFirstNode(string endGuid) {
+            string firstNodeGuid = endGuid;
+
+            for (int i = 0; i < _currentConversation.NodeLinks.Count; i++) {
+                // if found newer node, update first node guid and reset loop
+                if (_currentConversation.NodeLinks[i].TargetNodeGuid ==
+                        firstNodeGuid) {
+                    firstNodeGuid = _currentConversation.NodeLinks[i].BaseNodeGuid;
+                    i = 0;
+                }
+                // otherwise, continue checking
+            }
+
+            return firstNodeGuid;
+        }
+
+        void HandleSpecialDialogue(DialogueNodeData node) {
+            switch (node.type) {
+            case DialogueType.BRANCH:
+                Debug.Log("Not yet implemented.");
+                break;
+            case DialogueType.GIVEITEM:
+                HandleGiveItemDialogue(node);
+                break;
+            case DialogueType.SETFLAG:
+                HandleSetFlagDialogue(node);
+                break;
+            }
+        }
+
+        void HandleGiveItemDialogue(DialogueNodeData node) {
+            if (node.cost == null) {
+                if (node.trade.isNoteEntry) {
+                    EvtSystem.EventDispatcher.Raise<RequestAddToNotebook>( new
+                            RequestAddToNotebook { objectData = node.trade });
+                } else {
+                    EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
+                            RequestAddItem { item = node.trade });
+                }
+                AudioManager.Instance.PlayDeduction();
+                return;
+            }
+
+            // TODO: what to do? How to handle cost item?
+        }
+
+        void HandleSetFlagDialogue(DialogueNodeData node) {
+            if (node.flag == string.Empty) { return; }
+
+            EvtSystem.EventDispatcher.Raise<PropagateFlag>( new
+                    PropagateFlag { flag = node.flag });
+        }
+
+        void OnDestroy() {
+            EvtSystem.EventDispatcher.RemoveListener<DialogueFullyShown>(HandleDialogueFullyShown);
+        }
     }
-
-    void HandleSetFlagDialogue(DialogueNodeData node) {
-        if (node.flag == string.Empty) { return; }
-
-        EvtSystem.EventDispatcher.Raise<PropagateFlag>( new
-                PropagateFlag { flag = node.flag });
-    }
-
 }

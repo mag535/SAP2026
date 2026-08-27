@@ -1405,10 +1405,10 @@ PrefabInstance:
     - target: {fileID: 7249607503163302344, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 8911186857897725719, guid: 5927d4b569fcd9443bc1f06aed638104, type: 2}
     - target: {fileID: 7249607503163302344, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7660632806775969293, guid: dd3a4425bf9678722a986ae7215f415b, type: 3}
       propertyPath: m_fontAsset
@@ -2837,6 +2837,10 @@ PrefabInstance:
       propertyPath: continueObject
       value: 
       objectReference: {fileID: 1635778375}
+    - target: {fileID: 7481966571704695557, guid: 3d2cc78beec4f6577937505ca558245c, type: 3}
+      propertyPath: delayForTypeWriterEffect
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

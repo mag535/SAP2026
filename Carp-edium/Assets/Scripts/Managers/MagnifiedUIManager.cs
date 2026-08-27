@@ -29,11 +29,11 @@ public class MagnifiedUIManager : MonoBehaviour
         imageDisplay.GetComponent<Image>().sprite = evt.objectData.spriteMagnified;
         imageDisplay.SetActive(true);
         descriptionBox.SetActive(true);
-        //displayWindow.SetActive(true);
+        displayWindow.SetActive(true);
     }
 
     void HideMagnifyWindow(RequestCloseDisplayInspected evt) {
-        //displayWindow.SetActive(false);
+        displayWindow.SetActive(false);
         descriptionBox.SetActive(false);
         imageDisplay.SetActive(false);
         descriptionText.text = "";

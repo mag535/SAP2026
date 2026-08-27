@@ -82,7 +82,6 @@ namespace Carp {
             // Display dialogue
             HandleSpecialDialogue(nextNode);
             SetDialogue();
-            //ShowDialogueWindow();
             AudioManager.Instance.PlayContinueSFX();
             return true;
         }
@@ -111,10 +110,6 @@ namespace Carp {
             nameTag.text = _currentConversation.DialogueNodeData.Find(x =>
                     x.Guid == _currentGuid).speaker;
             // Display dialogue text
-            /*
-            textBox.text = _currentConversation.DialogueNodeData.Find(x =>
-                    x.Guid == _currentGuid).DialogueText;
-            */
             StartCoroutine(Delay());
         }
 
@@ -135,7 +130,6 @@ namespace Carp {
         }
 
         public void HideDialogueWindow() {
-            //textBox.text = string.Empty;
             continueObject.SetActive(false);
             dialogueBox.SetActive(false);
             displayWindow.SetActive(false);

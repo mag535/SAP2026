@@ -5,21 +5,31 @@ using System.Collections.Generic;
 namespace Carp {
     public class PlayerInteract : MonoBehaviour
     {
-        private PlayerState playerStateManager;
+        [SerializeField]
         private bool interactionsAreEnabled = false;
+        [SerializeField]
         private GameObject engagedGO;
+
+        private PlayerState playerStateManager;
+        private PlayerInput playerInput;
 
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
             EvtSystem.EventDispatcher.AddListener<DialogueEnd>(HandleDialogueEnd);
+            EvtSystem.EventDispatcher.AddListener<SetActionMap>(HandleSetActionMap);
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             playerStateManager = GetComponent<PlayerState>();
+            playerInput = GetComponent<PlayerInput>();
             foreach(Transform childTransform in gameObject.transform) {
             }
+        }
+
+        void HandleSetActionMap(SetActionMap evt) {
+            playerInput.SwitchCurrentActionMap(evt.actionMap);
         }
 
         // Triggers when the player walks close enough to an interactable game
@@ -145,6 +155,7 @@ namespace Carp {
         void OnDestroy() {
             EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
             EvtSystem.EventDispatcher.RemoveListener<DialogueEnd>(HandleDialogueEnd);
+            EvtSystem.EventDispatcher.RemoveListener<SetActionMap>(HandleSetActionMap);
         }
     }
 }

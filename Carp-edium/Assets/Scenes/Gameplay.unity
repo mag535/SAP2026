@@ -1702,6 +1702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menu: {fileID: 973348762}
+  firstFocusedButton: {fileID: 462420416}
 --- !u!1001 &1432520487
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1712,11 +1713,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_ActionId
-      value: 118e8b20-a50a-4265-8b38-269126a8723e
+      value: 45170515-3605-4b8a-85fd-e6c1a9ce699b
       objectReference: {fileID: 0}
     - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_ActionEvents.Array.data[17].m_ActionId
@@ -1724,11 +1725,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_ActionEvents.Array.data[16].m_ActionName
-      value: 'Game/Point[/Mouse/position]'
+      value: 'Game/Inspect[/Mouse/rightButton,/Keyboard/space]'
       objectReference: {fileID: 0}
     - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: m_ActionEvents.Array.data[17].m_ActionName
       value: 'Game/Click[/Mouse/leftButton]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2073361435286918668, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
+      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3485561002063747036, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
       propertyPath: anim

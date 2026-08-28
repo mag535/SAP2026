@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace Carp {
     public class ConfirmationScreenManager : MonoBehaviour
     {
         [SerializeField]
         private GameObject confirmationScreen;
+        [SerializeField]
+        private GameObject firstFocusedButton;
 
         [SerializeField]
         private EndScreen currentGate = EndScreen.NONE;
@@ -24,11 +27,17 @@ namespace Carp {
         void HandleOpen(RequestOpenConfirmationScreen evt) {
             currentGate = evt.endingScreenName;
             confirmationScreen.SetActive(true);
+            EvtSystem.EventDispatcher.Raise<SetActionMap>( new SetActionMap {
+                    actionMap = "UI" });
+            EventSystem.current.SetSelectedGameObject(firstFocusedButton);
         }
 
         void HandleClose(RequestCloseConfirmationScreen evt) {
             currentGate = EndScreen.NONE;
+            EventSystem.current.SetSelectedGameObject(null);
             confirmationScreen.SetActive(false);
+            EvtSystem.EventDispatcher.Raise<SetActionMap>( new SetActionMap {
+                    actionMap = "Game" });
         }
 
         void HandleGateChoice(ConfirmGateChoice evt) {

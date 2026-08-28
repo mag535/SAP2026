@@ -47,6 +47,15 @@ public class RequestOpenConfirmationScreen : EvtSystem.Event {
 public class RequestCloseConfirmationScreen : EvtSystem.Event {}
 public class ConfirmGateChoice : EvtSystem.Event {}
 
+// DIALOGUE UI -----------------------------------------------------------------
+public class SendDialogueText : EvtSystem.Event
+{
+    public string dialogueText;
+}
+
+public class DialogueFullyShown : EvtSystem.Event {}
+public class ShowFullDialogue : EvtSystem.Event {}
+
 // DESCRIPTION UI --------------------------------------------------------------
 public class RequestDisplayInspected : EvtSystem.Event
 {
@@ -107,6 +116,11 @@ public class SignalCameraPositionUpdate : EvtSystem.Event {}
 public class ResetCameraPositionToPlayers : EvtSystem.Event {}
 
 public class DialogueEnd : EvtSystem.Event {}
+
+public class SetActionMap : EvtSystem.Event
+{
+    public string actionMap;
+}
 
 // INTERACTABLES -----------------------------------------------------------------------
 public class OpenChest : EvtSystem.Event

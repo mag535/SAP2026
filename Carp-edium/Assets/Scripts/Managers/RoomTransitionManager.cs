@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine.SceneManagement;
 
 
@@ -11,6 +12,12 @@ namespace Carp {
             public RoomName currentRoom;
             public RoomName nextRoom;
             public Vector2 entrancePosition;
+
+            public PlayerEntrancePosition(RoomName curr, RoomName next, Vector2 pos) {
+                currentRoom = curr;
+                nextRoom = next;
+                entrancePosition = pos;
+            }
         }
 
         public RoomName initialRoom;
@@ -18,9 +25,11 @@ namespace Carp {
             new List<PlayerEntrancePosition>();
 
         [SerializeField]
-        private GameObject loadingScreen;
+        private List<PlayerEntrancePosition> pep = 
+            new List<PlayerEntrancePosition>();
+
         [SerializeField]
-        private List<string> excludedScenes;
+        private GameObject loadingScreen;
 
         private RoomName _currentRoom;
 
@@ -31,9 +40,48 @@ namespace Carp {
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            ParsePlayerPositionData();
             loadingScreen.SetActive(false);
             _currentRoom = RoomName.NONE;
             DoRoomTransition(initialRoom);
+        }
+
+        private void ParsePlayerPositionData() {
+            foreach(Transform childTransform in gameObject.transform) {
+                string[] splitName = childTransform.gameObject.name.Split('-');
+                RoomName tmpCurr = RoomName.NONE;
+                RoomName tmpNext = RoomName.NONE;
+                Vector2 pos = Vector2.zero;
+
+                if (splitName[0] == "Spawn") {
+                    tmpCurr = RoomName.SPAWN;
+                } else if (splitName[0] == "Bar") {
+                    tmpCurr = RoomName.BAR;
+                } else if (splitName[0] == "Temple") {
+                    tmpCurr = RoomName.TEMPLE;
+                } else if (splitName[0] == "Palace") {
+                    tmpCurr = RoomName.PALACE;
+                } else if (splitName[0] == "None") {
+                    tmpCurr = RoomName.NONE;
+                }
+            
+                if (splitName[1] == "Spawn") {
+                    tmpNext = RoomName.SPAWN;
+                } else if (splitName[1] == "Bar") {
+                    tmpNext = RoomName.BAR;
+                } else if (splitName[1] == "Temple") {
+                    tmpNext = RoomName.TEMPLE;
+                } else if (splitName[1] == "Palace") {
+                    tmpNext = RoomName.PALACE;
+                } else if (splitName[1] == "None") {
+                    tmpNext = RoomName.NONE;
+                }
+                
+                pos = new Vector2(
+                        childTransform.position.x,
+                        childTransform.position.y);
+                pep.Add(new PlayerEntrancePosition(tmpCurr, tmpNext, pos));
+            }
         }
 
 
@@ -76,7 +124,7 @@ namespace Carp {
         }
 
         private Vector2 GetEntrancePosition(RoomName nextRoom) {
-            foreach (PlayerEntrancePosition data in playerEntrancePositions) {
+            foreach (PlayerEntrancePosition data in pep) {
                 if (_currentRoom == data.currentRoom && nextRoom == data.nextRoom) {
                     return data.entrancePosition;
                 }

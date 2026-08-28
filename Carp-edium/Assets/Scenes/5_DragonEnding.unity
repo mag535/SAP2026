@@ -226,7 +226,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: cae31d62d5193204b920b6deb71f8b8f, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.387
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1673013074}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1389296823
@@ -533,6 +533,11 @@ PrefabInstance:
 --- !u!224 &1673013073 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7767290005581788198, guid: 0e73285d295380d44a195bed4a9d26a9, type: 3}
+  m_PrefabInstance: {fileID: 1673013072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1673013074 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3664223344460626691, guid: 0e73285d295380d44a195bed4a9d26a9, type: 3}
   m_PrefabInstance: {fileID: 1673013072}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1963895751

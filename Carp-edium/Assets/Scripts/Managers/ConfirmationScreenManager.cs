@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace Carp {
     public class ConfirmationScreenManager : MonoBehaviour
@@ -7,11 +8,15 @@ namespace Carp {
         [SerializeField]
         private GameObject confirmationScreen;
         [SerializeField]
-        private Button yesButton;
+        private GameObject firstFocusedButton;
+
+        [SerializeField]
+        private EndScreen currentGate = EndScreen.NONE;
 
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestOpenConfirmationScreen>(HandleOpen);
             EvtSystem.EventDispatcher.AddListener<RequestCloseConfirmationScreen>(HandleClose);
+            EvtSystem.EventDispatcher.AddListener<ConfirmGateChoice>(HandleGateChoice);
         }
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
@@ -20,20 +25,31 @@ namespace Carp {
         }
 
         void HandleOpen(RequestOpenConfirmationScreen evt) {
-            SceneLoader yesButtonSceneLoader = yesButton.gameObject.GetComponent<SceneLoader>();
-            yesButton.onClick.AddListener(delegate { 
-                    yesButtonSceneLoader.GoToScene(evt.endingScreenName); });
+            currentGate = evt.endingScreenName;
             confirmationScreen.SetActive(true);
+            EvtSystem.EventDispatcher.Raise<SetActionMap>( new SetActionMap {
+                    actionMap = "UI" });
+            EventSystem.current.SetSelectedGameObject(firstFocusedButton);
         }
 
         void HandleClose(RequestCloseConfirmationScreen evt) {
+            currentGate = EndScreen.NONE;
+            EventSystem.current.SetSelectedGameObject(null);
             confirmationScreen.SetActive(false);
-            yesButton.onClick.AddListener(null);
+            EvtSystem.EventDispatcher.Raise<SetActionMap>( new SetActionMap {
+                    actionMap = "Game" });
+        }
+
+        void HandleGateChoice(ConfirmGateChoice evt) {
+            SceneLoader thisSL = GetComponent<SceneLoader>();
+            if (thisSL == null) { return; }
+            thisSL.GoToScene(Stuff.endScreenDict[currentGate]);
         }
 
         void OnDestroy() {
             EvtSystem.EventDispatcher.RemoveListener<RequestOpenConfirmationScreen>(HandleOpen);
             EvtSystem.EventDispatcher.RemoveListener<RequestCloseConfirmationScreen>(HandleClose);
+            EvtSystem.EventDispatcher.RemoveListener<ConfirmGateChoice>(HandleGateChoice);
         }
     }
 }

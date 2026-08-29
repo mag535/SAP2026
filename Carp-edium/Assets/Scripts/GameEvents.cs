@@ -42,9 +42,19 @@ public class TriggerWinScreen : EvtSystem.Event {}
 public class TriggerLoseScreen : EvtSystem.Event {}
 
 public class RequestOpenConfirmationScreen : EvtSystem.Event {
-    public string endingScreenName;
+    public Carp.EndScreen endingScreenName;
 }
 public class RequestCloseConfirmationScreen : EvtSystem.Event {}
+public class ConfirmGateChoice : EvtSystem.Event {}
+
+// DIALOGUE UI -----------------------------------------------------------------
+public class SendDialogueText : EvtSystem.Event
+{
+    public string dialogueText;
+}
+
+public class DialogueFullyShown : EvtSystem.Event {}
+public class ShowFullDialogue : EvtSystem.Event {}
 
 // DESCRIPTION UI --------------------------------------------------------------
 public class RequestDisplayInspected : EvtSystem.Event
@@ -82,6 +92,8 @@ public class RequestOpenNotebookPre : EvtSystem.Event {}
 public class RequestOpenNotebook : EvtSystem.Event 
 {
     public List<Object> notes;
+    public bool displayPrevButton;
+    public bool displayNextButton;
 }
 public class RequestCloseNotebook : EvtSystem.Event {}
 public class RequestAddToNotebook : EvtSystem.Event
@@ -94,6 +106,8 @@ public class RequestPreviousPage : EvtSystem.Event {}
 public class SendNextPage : EvtSystem.Event
 {
     public List<Object> notes;
+    public bool displayPrevButton;
+    public bool displayNextButton;
 }
 
 // PLAYER INTERACT -------------------------------------------------------------
@@ -105,6 +119,12 @@ public class RequestItemUse : EvtSystem.Event
 public class SignalCameraPositionUpdate : EvtSystem.Event {}
 public class ResetCameraPositionToPlayers : EvtSystem.Event {}
 
+public class DialogueEnd : EvtSystem.Event {}
+
+public class SetActionMap : EvtSystem.Event
+{
+    public string actionMap;
+}
 
 // INTERACTABLES -----------------------------------------------------------------------
 public class OpenChest : EvtSystem.Event

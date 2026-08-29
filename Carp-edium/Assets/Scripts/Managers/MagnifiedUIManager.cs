@@ -17,7 +17,7 @@ public class MagnifiedUIManager : MonoBehaviour
         
         imageDisplay.SetActive(false);
         descriptionBox.SetActive(false);
-        displayWindow.SetActive(false);
+        //displayWindow.SetActive(false);
     }
     
     void ShowMagnifyWindow(RequestDisplayInspected evt) {

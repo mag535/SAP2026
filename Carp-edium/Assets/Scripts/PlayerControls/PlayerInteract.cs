@@ -5,20 +5,31 @@ using System.Collections.Generic;
 namespace Carp {
     public class PlayerInteract : MonoBehaviour
     {
-        private PlayerState playerStateManager;
+        [SerializeField]
         private bool interactionsAreEnabled = false;
+        [SerializeField]
         private GameObject engagedGO;
+
+        private PlayerState playerStateManager;
+        private PlayerInput playerInput;
 
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
+            EvtSystem.EventDispatcher.AddListener<DialogueEnd>(HandleDialogueEnd);
+            EvtSystem.EventDispatcher.AddListener<SetActionMap>(HandleSetActionMap);
         }
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
             playerStateManager = GetComponent<PlayerState>();
+            playerInput = GetComponent<PlayerInput>();
             foreach(Transform childTransform in gameObject.transform) {
             }
+        }
+
+        void HandleSetActionMap(SetActionMap evt) {
+            playerInput.SwitchCurrentActionMap(evt.actionMap);
         }
 
         // Triggers when the player walks close enough to an interactable game
@@ -114,6 +125,7 @@ namespace Carp {
 
         public void UseItem(RequestItemUse evt) {
             if (engagedGO == null) { return; }
+
             bool success = engagedGO.GetComponent<Interactable>()
                 .HandleItemUse(evt.item);
             if (!success) { 
@@ -121,17 +133,29 @@ namespace Carp {
                 return; 
             }
 
+            if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.GAME &&
+                    engagedGO.GetComponent<ConversationStarter>() != null) {
+                playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
+            }
+
+
             if ((evt.item.name == "Coin" && engagedGO.name == "Ox Man") ||
                     (evt.item.name == "JadeToken" && engagedGO.name == "TokenSlot") ||
-                    (evt.item.name == "Palace Key" && engagedGO.name == "PalaceDoor") ||
+                    (evt.item.name == "GildedKey" && engagedGO.name == "PalaceDoor") ||
                     (evt.item.name == "Buddha Statue" && engagedGO.name == "Dog Priest")) {
                 EvtSystem.EventDispatcher.Raise<RequestRemoveItem>( new
                         RequestRemoveItem { item = evt.item });
             }
         }
 
+        void HandleDialogueEnd(DialogueEnd _) {
+            playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+        }
+
         void OnDestroy() {
             EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
+            EvtSystem.EventDispatcher.RemoveListener<DialogueEnd>(HandleDialogueEnd);
+            EvtSystem.EventDispatcher.RemoveListener<SetActionMap>(HandleSetActionMap);
         }
     }
 }

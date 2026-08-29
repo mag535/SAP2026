@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
   m_Name: DragonAndQiLinPainting
   m_EditorClassIdentifier: 
-  isNoteEntry: 0
+  isNoteEntry: 1
   objectID: DragonAndQiLinPainting
   description: 
   sprite: {fileID: 21300000, guid: f6905b8f032f29041b3a1fe6d70da971, type: 3}

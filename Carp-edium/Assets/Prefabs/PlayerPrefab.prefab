@@ -491,8 +491,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  footsteps: {fileID: 11400000, guid: 9dd8ac8cb7a06694993c83308eb6663a, type: 2}
-  rotationAngle: 0.5235988
 --- !u!114 &937473934537937284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +503,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a1a102af5f6a471eb1a349c22e2512e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactionsAreEnabled: 0
+  engagedGO: {fileID: 0}
 --- !u!114 &2281768357408128118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteEntries: []
-  maxNotesPerPage: 10
+  maxNotesPerPage: 6
   currentNotePosition: 0
 --- !u!114 &3923999628715952768
 MonoBehaviour:

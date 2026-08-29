@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98fc618c54b268a1086ff554f75b1e61, type: 3}
-  m_Name: Palace Key
+  m_Name: GildedKey
   m_EditorClassIdentifier: 
   isNoteEntry: 0
   objectID: Gilded Key

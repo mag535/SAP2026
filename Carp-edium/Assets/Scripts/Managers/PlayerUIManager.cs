@@ -17,6 +17,8 @@ namespace Carp {
         public GameObject notebookDisplay;
         public GameObject notebookParent;
         public GameObject noteEntryPrefab;
+        public GameObject notebookPrevButton;
+        public GameObject notebookNextButton;
         public Sound notebookOpenSoundEffect;
         public Sound notebookCloseSoundEffect;
 
@@ -110,6 +112,10 @@ namespace Carp {
                 EventSystem.current.SetSelectedGameObject(childTransform.gameObject);
                 break;
             }
+
+            // display buttons accordingly
+            notebookPrevButton.SetActive(evt.displayPrevButton);
+            notebookNextButton.SetActive(evt.displayNextButton);
         }
 
         void HandleCloseNotebookRequest(RequestCloseNotebook evt) {
@@ -133,6 +139,9 @@ namespace Carp {
             foreach (Object note in evt.notes) {
                 AddToNotebookDisplay(note);
             }
+            // display buttons accordingly
+            notebookPrevButton.SetActive(evt.displayPrevButton);
+            notebookNextButton.SetActive(evt.displayNextButton);
         }
 
         void AddToNotebookDisplay(Object note) {

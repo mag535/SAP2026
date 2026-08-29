@@ -92,6 +92,8 @@ public class RequestOpenNotebookPre : EvtSystem.Event {}
 public class RequestOpenNotebook : EvtSystem.Event 
 {
     public List<Object> notes;
+    public bool displayPrevButton;
+    public bool displayNextButton;
 }
 public class RequestCloseNotebook : EvtSystem.Event {}
 public class RequestAddToNotebook : EvtSystem.Event
@@ -104,6 +106,8 @@ public class RequestPreviousPage : EvtSystem.Event {}
 public class SendNextPage : EvtSystem.Event
 {
     public List<Object> notes;
+    public bool displayPrevButton;
+    public bool displayNextButton;
 }
 
 // PLAYER INTERACT -------------------------------------------------------------

@@ -82,6 +82,13 @@ namespace Carp {
         }
 
         void HandleShowFullDialogue(ShowFullDialogue _) {
+            // If eveything is already shown, let ConvoManager known
+            if (textBox.maxVisibleCharacters == textBox.textInfo.characterCount) {
+                EvtSystem.EventDispatcher.Raise<NoMoreToShow>( new 
+                        NoMoreToShow {});
+                return;
+            }
+            // Otherwise, show everything now
             StopCoroutine(typewriterCoroutine);
             textBox.maxVisibleCharacters = textBox.textInfo.characterCount;
             EvtSystem.EventDispatcher.Raise<DialogueFullyShown>( new 

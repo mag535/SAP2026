@@ -18,6 +18,8 @@ namespace Carp {
         private DialogueContainer _currentConversation;
         private string _currentGuid;
 
+        private bool conversationIsOver = false;
+
         void Start() {
             EvtSystem.EventDispatcher.AddListener<DialogueFullyShown>(HandleDialogueFullyShown);
             continueObject.SetActive(false);
@@ -52,10 +54,14 @@ namespace Carp {
         }
 
         public bool ContinueConversation() {
-            if (!continueObject.activeSelf) {
+            if (!continueObject.activeSelf && !conversationIsOver) {
                 EvtSystem.EventDispatcher.Raise<ShowFullDialogue>( new
                         ShowFullDialogue {});
                 return true;
+            }
+            if (conversationIsOver) {
+                EndConversation();
+                return false;
             }
 
             continueObject.SetActive(false);
@@ -121,6 +127,10 @@ namespace Carp {
         }
 
         private void HandleDialogueFullyShown(DialogueFullyShown _) {
+            if (!CheckForMoreDialogue()) {
+                conversationIsOver = true;
+                return;
+            }
             continueObject.SetActive(true);
         }
 

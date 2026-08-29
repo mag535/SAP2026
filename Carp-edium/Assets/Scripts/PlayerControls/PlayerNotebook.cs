@@ -42,12 +42,14 @@ namespace Carp {
             }
             EvtSystem.EventDispatcher.Raise<RequestOpenNotebook>(new
                     RequestOpenNotebook {
-                    notes = noteEntries.GetRange(currentNotePosition, noteCount) });
+                    notes = noteEntries.GetRange(currentNotePosition, noteCount),
+                    displayPrevButton = false,
+                    displayNextButton = (noteEntries.Count - currentNotePosition > maxNotesPerPage)
+                    });
         }
 
         void HandlePreviousPageRequest(RequestPreviousPage evt) {
             if (currentNotePosition - maxNotesPerPage < 0) {
-                // TODO: have some feedback for EOF
                 return;
             }
 
@@ -57,17 +59,21 @@ namespace Carp {
                 noteCount = noteEntries.Count - currentNotePosition;
             }
 
+            /*
             List<Object> notesForPage = new List<Object>();
             for (int i = currentNotePosition; i < currentNotePosition + noteCount; i++) {
                 notesForPage.Add(noteEntries[i]);
             }
+            */
             EvtSystem.EventDispatcher.Raise<SendNextPage>(new SendNextPage {
-                    notes = notesForPage });
+                    notes = noteEntries.GetRange(currentNotePosition, noteCount),
+                    displayPrevButton = (currentNotePosition > maxNotesPerPage-1),
+                    displayNextButton = true
+                    });
         }
 
         void HandleNextPageRequest(RequestNextPage evt) {
             if (currentNotePosition + maxNotesPerPage > noteEntries.Count) {
-                // TODO: have some feedback for EOF
                 return;
             }
 
@@ -77,12 +83,17 @@ namespace Carp {
                 noteCount = noteEntries.Count - currentNotePosition;
             }
 
+            /*
             List<Object> notesForPage = new List<Object>();
             for (int i = currentNotePosition; i < currentNotePosition + noteCount; i++) {
                 notesForPage.Add(noteEntries[i]);
             }
+            */
             EvtSystem.EventDispatcher.Raise<SendNextPage>(new SendNextPage {
-                    notes = notesForPage });
+                    notes = noteEntries.GetRange(currentNotePosition, noteCount),
+                    displayPrevButton = true,
+                    displayNextButton = (currentNotePosition + maxNotesPerPage < noteEntries.Count)
+                    });
         }
 
         void HandleCloseNotebookRequest(RequestCloseNotebook evt) {

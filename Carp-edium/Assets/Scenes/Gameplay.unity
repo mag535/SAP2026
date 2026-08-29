@@ -686,9 +686,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUIButtons (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7305910573984621299, guid: 0bc43aef211f4994db38fa5920107274, type: 3}
-    - {fileID: 5058255858315065523, guid: 0bc43aef211f4994db38fa5920107274, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

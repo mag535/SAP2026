@@ -62,6 +62,7 @@ namespace Carp {
             }
             if (conversationIsOver) {
                 EndConversation();
+                Debug.Log("Ended convo from continue convo function");
                 return false;
             }
 
@@ -104,6 +105,7 @@ namespace Carp {
 
         // End current converstaion and start new one
         public void InterruptConversation(DialogueContainer newConversation) {
+            conversationIsOver = false;
             if (newConversation == null) { return; }
             HideDialogueWindow();
             _currentConversation = newConversation;

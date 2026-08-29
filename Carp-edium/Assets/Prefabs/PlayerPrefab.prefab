@@ -531,7 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteEntries: []
-  maxNotesPerPage: 8
+  maxNotesPerPage: 6
   currentNotePosition: 0
 --- !u!114 &3923999628715952768
 MonoBehaviour:

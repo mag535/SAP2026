@@ -185,6 +185,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4468472538677718253, guid: 28bf26d1da171ebfbad5b2406c89eca8, type: 3}
   m_PrefabInstance: {fileID: 1432520487}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &412990579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3370713150623106371, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
+  m_PrefabInstance: {fileID: 9177239352216962901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &429516266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2139,6 +2144,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1897347858}
   m_CullTransparentMesh: 1
+--- !u!1 &1919494646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9203137547135327324, guid: 8ea1e8f9400a4c969a4d3e54f44a6784, type: 3}
+  m_PrefabInstance: {fileID: 9177239352216962901}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1954720921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2621,6 +2631,14 @@ PrefabInstance:
       propertyPath: inventoryDisplay
       value: 
       objectReference: {fileID: 554840432}
+    - target: {fileID: 579019758823308136, guid: 0512e7f4c5357124e88a5847e980e228, type: 3}
+      propertyPath: notebookNextButton
+      value: 
+      objectReference: {fileID: 1919494646}
+    - target: {fileID: 579019758823308136, guid: 0512e7f4c5357124e88a5847e980e228, type: 3}
+      propertyPath: notebookPrevButton
+      value: 
+      objectReference: {fileID: 412990579}
     - target: {fileID: 4377785565023110728, guid: 0512e7f4c5357124e88a5847e980e228, type: 3}
       propertyPath: m_Name
       value: PlayerUIManager

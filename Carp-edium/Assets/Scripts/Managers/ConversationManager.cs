@@ -18,6 +18,7 @@ namespace Carp {
         private DialogueContainer _currentConversation;
         private string _currentGuid;
 
+        [SerializeField]
         private bool conversationIsOver = false;
 
         void Start() {
@@ -88,6 +89,7 @@ namespace Carp {
             // Display dialogue
             HandleSpecialDialogue(nextNode);
             SetDialogue();
+            conversationIsOver = false;
             AudioManager.Instance.PlayContinueSFX();
             return true;
         }
@@ -97,6 +99,7 @@ namespace Carp {
             _currentGuid = string.Empty;
             HideDialogueWindow();
             EvtSystem.EventDispatcher.Raise<DialogueEnd>( new DialogueEnd {});
+            conversationIsOver = false;
         }
 
         // End current converstaion and start new one

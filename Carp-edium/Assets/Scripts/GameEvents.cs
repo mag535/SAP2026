@@ -55,6 +55,7 @@ public class SendDialogueText : EvtSystem.Event
 
 public class DialogueFullyShown : EvtSystem.Event {}
 public class ShowFullDialogue : EvtSystem.Event {}
+public class NoMoreToShow : EvtSystem.Event {}
 
 // DESCRIPTION UI --------------------------------------------------------------
 public class RequestDisplayInspected : EvtSystem.Event

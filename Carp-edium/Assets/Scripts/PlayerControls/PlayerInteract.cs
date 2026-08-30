@@ -58,7 +58,6 @@ namespace Carp {
                         new RequestCloseDisplayInspected {});
             }
             playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
-            //Debug.Log("State: " + playerStateManager.GetCurrentState());
             engagedGO = null;
         }
 
@@ -72,15 +71,11 @@ namespace Carp {
                     bool success = ConversationManager.Instance.ContinueConversation();
                     if (!success) {
                         playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
-                        //Debug.Log("State: " + playerStateManager.GetCurrentState());
-                        //engagedGO = null;
                     }
                 }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
                     EvtSystem.EventDispatcher.Raise<RequestCloseDisplayInspected>(
                             new RequestCloseDisplayInspected {});
                     playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
-                    //Debug.Log("State: " + playerStateManager.GetCurrentState());
-                    //engagedGO = null;
                 }
             }
         }
@@ -137,7 +132,6 @@ namespace Carp {
                     engagedGO.GetComponent<ConversationStarter>() != null) {
                 playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
             }
-
 
             if ((evt.item.name == "Coin" && engagedGO.name == "Ox Man") ||
                     (evt.item.name == "JadeToken" && engagedGO.name == "TokenSlot") ||

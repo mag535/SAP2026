@@ -135,10 +135,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryButton: {fileID: 8325721777510794131}
   inventoryDefaultIcon: {fileID: 21300000, guid: d3c07a3479ea26f49b2b1fdd05df133b, type: 3}
-  inventoryOpenIcon: {fileID: 21300000, guid: 155ef537f680d8f0d89a8e366b0a1a32, type: 3}
+  inventoryOpenIcon: {fileID: 21300000, guid: 3ac8d04a86d861a4f96214abb8fc24af, type: 3}
   notebookButton: {fileID: 5826428433998289363}
   notebookDefaultIcon: {fileID: 21300000, guid: e96e69741e15aeb48aac9e972491e791, type: 3}
-  notebookOpenIcon: {fileID: 21300000, guid: 155ef537f680d8f0d89a8e366b0a1a32, type: 3}
+  notebookOpenIcon: {fileID: 21300000, guid: 67801bb4f705a0243aa0c26843412709, type: 3}
 --- !u!114 &6208611297562809370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
   m_EffectDistance: {x: 3, y: 3}
-  m_UseGraphicAlpha: 1
+  m_UseGraphicAlpha: 0
 --- !u!1001 &5920436936871325848
 PrefabInstance:
   m_ObjectHideFlags: 0

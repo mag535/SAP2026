@@ -13,15 +13,9 @@ MonoBehaviour:
   m_Name: FoxIntroDialogue2
   m_EditorClassIdentifier: 
   NodeLinks:
-  - BaseNodeGuid: 0e8824df-cdd3-48c6-adbf-78a51fb84cc1
-    PortName: Next
-    TargetNodeGuid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
   - BaseNodeGuid: 614aff0a-ad10-474d-8602-d33ffaae2f99
     PortName: Next
     TargetNodeGuid: f72eaba8-902e-4670-9e17-3d830e534368
-  - BaseNodeGuid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
-    PortName: Next
-    TargetNodeGuid: 29909da4-86ce-4960-898d-2308afb0e612
   - BaseNodeGuid: 29909da4-86ce-4960-898d-2308afb0e612
     PortName: Next
     TargetNodeGuid: a5bfc3c6-9ec7-4098-b789-8ddd1a7847ef
@@ -34,6 +28,18 @@ MonoBehaviour:
   - BaseNodeGuid: f72eaba8-902e-4670-9e17-3d830e534368
     PortName: Next
     TargetNodeGuid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
+  - BaseNodeGuid: 0e8824df-cdd3-48c6-adbf-78a51fb84cc1
+    PortName: Next
+    TargetNodeGuid: 606247e9-5022-4bec-83f5-5a4804d8d15c
+  - BaseNodeGuid: 606247e9-5022-4bec-83f5-5a4804d8d15c
+    PortName: Next
+    TargetNodeGuid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
+  - BaseNodeGuid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
+    PortName: Next
+    TargetNodeGuid: 25c7a2be-210b-4b65-83df-eac23fcd351b
+  - BaseNodeGuid: 25c7a2be-210b-4b65-83df-eac23fcd351b
+    PortName: Next
+    TargetNodeGuid: 29909da4-86ce-4960-898d-2308afb0e612
   DialogueNodeData:
   - type: 4
     Guid: e1e5a16a-32ea-4e3a-b01b-56ac42cca930
@@ -52,18 +58,6 @@ MonoBehaviour:
     trade: {fileID: 0}
     flag: 
     Position: {x: 418.4, y: 257.6}
-  - type: 2
-    Guid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
-    speaker: Fox
-    DialogueText: "\u201COh, another little fish? What are you doing here? Looking
-      for a big, amazing Dragon Gate? So many have come before you~ Let\u2019s see
-      if you can figure it out.. Or end up like the other fishies who\u2019ve come
-      before you\u2026 <color=\"yellow\"> The gate is either red, green, or gold</color>,
-      I can tell you that much.\u201D "
-    cost: {fileID: 0}
-    trade: {fileID: 11400000, guid: b9c264cce1d8264418a39a7c53088682, type: 2}
-    flag: 
-    Position: {x: -111.2, y: -458.4}
   - type: 2
     Guid: 29909da4-86ce-4960-898d-2308afb0e612
     speaker: Fox
@@ -101,3 +95,31 @@ MonoBehaviour:
     trade: {fileID: 0}
     flag: 
     Position: {x: 799.2, y: 532.8}
+  - type: 0
+    Guid: 606247e9-5022-4bec-83f5-5a4804d8d15c
+    speaker: Fox
+    DialogueText: '"Hello, little carp. You were sent here to find the Dragon Gate,
+      right? That''s why everyone comes here." . '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 17.6, y: -777.60004}
+  - type: 2
+    Guid: 13eb1a8e-13ae-434c-84f8-82c11c5bb7c9
+    speaker: Fox
+    DialogueText: '"There are three gates around the map, <color="yellow">red, green,
+      and gold</color>. One of them is the Dragon Gate you seek." '
+    cost: {fileID: 0}
+    trade: {fileID: 11400000, guid: b9c264cce1d8264418a39a7c53088682, type: 2}
+    flag: 
+    Position: {x: -138.4, y: -527.2}
+  - type: 0
+    Guid: 25c7a2be-210b-4b65-83df-eac23fcd351b
+    speaker: Fox
+    DialogueText: '"Explore the area and talk to the residents here to get clues
+      about the Dragon Gate. They should help you determine which of the three is
+      the real Dragon Gate." '
+    cost: {fileID: 0}
+    trade: {fileID: 0}
+    flag: 
+    Position: {x: 730.4, y: -608.80005}

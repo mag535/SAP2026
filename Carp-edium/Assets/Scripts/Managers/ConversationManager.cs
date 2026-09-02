@@ -15,6 +15,7 @@ namespace Carp {
         public float delayForTypeWriterEffect = 1;
 
         //private string conversationsFolder = "Conversations/";
+        [SerializeField]
         private DialogueContainer _currentConversation;
         private string _currentGuid;
 
@@ -22,18 +23,23 @@ namespace Carp {
         private bool conversationIsOver = false;
 
         void Start() {
+            EvtSystem.EventDispatcher.AddListener<RequestStartConversation>(StartConversation);
+            EvtSystem.EventDispatcher.AddListener<RequestSkipTWEffectConversation>(SkipTWEffect);
+            EvtSystem.EventDispatcher.AddListener<RequestContinueConversation>(ContinueConversation);
+            EvtSystem.EventDispatcher.AddListener<RequestInterruptConversation>(InterruptConversation);
             EvtSystem.EventDispatcher.AddListener<DialogueFullyShown>(HandleDialogueFullyShown);
+            EvtSystem.EventDispatcher.AddListener<NoMoreToShow>(HandleNoMoreToShow);
             continueObject.SetActive(false);
             dialogueBox.SetActive(false);
             displayWindow.SetActive(false);
         }
 
-        public void StartConversation(DialogueContainer start) {
-            if (start == null) {
+        private void StartConversation(RequestStartConversation evt) {
+            if (evt.start == null) {
                 Debug.Log("No dialogue provided");
                 return;
             }
-            _currentConversation = start;
+            _currentConversation = evt.start;
             ParseConversationData();
             HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find(
                         x => x.Guid == _currentGuid));
@@ -54,26 +60,54 @@ namespace Carp {
             return true;
         }
 
-        public bool ContinueConversation() {
+        private void SkipTWEffect(RequestSkipTWEffectConversation _) {
+            EvtSystem.EventDispatcher.Raise<ShowFullDialogue>( new
+                    ShowFullDialogue {});
+        }
+
+        private void HandleNoMoreToShow(NoMoreToShow _) {
+            ContinueConversation(null);
+            Debug.Log("ConversationManager: no more to show");
+        }
+
+        private void HandleDialogueFullyShown(DialogueFullyShown _) {
+            if (!CheckForMoreDialogue()) {
+                conversationIsOver = true;
+                return;
+            }
+            continueObject.SetActive(true);
+            Debug.Log("ConversationManager: fully shown");
+        }
+
+        private void ContinueConversation(RequestContinueConversation _) {
+            /*
             if (!continueObject.activeSelf && !conversationIsOver) {
                 EvtSystem.EventDispatcher.Raise<ShowFullDialogue>( new
                         ShowFullDialogue {});
-                return true;
+                EvtSystem.EventDispatcher.Raise<ContinueResult>( new
+                        ContinueResult { result = true });
+                return;
             }
             if (conversationIsOver) {
                 EndConversation();
                 Debug.Log("Ended convo from continue convo function");
-                return false;
+                EvtSystem.EventDispatcher.Raise<ContinueResult>( new
+                        ContinueResult { result = false });
+                return;
             }
 
             continueObject.SetActive(false);
+            */
             // Advance to next dialogue node data
             NodeLinkData currentLinkData = _currentConversation.NodeLinks.Find(
                     x => x.BaseNodeGuid == _currentGuid);
             // If none found, end conversation
             if (currentLinkData == null) { 
                 EndConversation();
-                return false;
+                EvtSystem.EventDispatcher.Raise<ContinueResult>( new
+                        ContinueResult { result = false });
+                Debug.Log("ConversationManager: ended dialogue");
+                return;
             }
 
             DialogueNodeData nextNode = _currentConversation.DialogueNodeData.Find(
@@ -81,18 +115,23 @@ namespace Carp {
             // If next node marks end of conversation, end conversation
             if (nextNode.type == DialogueType.ENDOFCONVERSATION) { 
                 EndConversation(); 
-                return false;
+                EvtSystem.EventDispatcher.Raise<ContinueResult>( new
+                        ContinueResult { result = false });
+                Debug.Log("ConversationManager: ended dialogue");
+                return;
             }
 
             // Otherwise, update what current GUID is:
             _currentGuid = nextNode.Guid;
+            conversationIsOver = false;
 
             // Display dialogue
             HandleSpecialDialogue(nextNode);
             SetDialogue();
-            conversationIsOver = false;
             AudioManager.Instance.PlayContinueSFX();
-            return true;
+            EvtSystem.EventDispatcher.Raise<ContinueResult>( new
+                    ContinueResult { result = true });
+            Debug.Log("ConversationManager: continued...");
         }
 
         public void EndConversation() {
@@ -104,16 +143,20 @@ namespace Carp {
         }
 
         // End current converstaion and start new one
-        public void InterruptConversation(DialogueContainer newConversation) {
+        private void InterruptConversation(RequestInterruptConversation evt) {
+            if (evt.newConversation == null) { return; }
             conversationIsOver = false;
-            if (newConversation == null) { return; }
             HideDialogueWindow();
-            _currentConversation = newConversation;
+            EvtSystem.EventDispatcher.Raise<RequestStartConversation>( new
+                    RequestStartConversation { start = evt.newConversation });
+            /*
+            _currentConversation = evt.newConversation;
             ParseConversationData();
             HandleSpecialDialogue(_currentConversation.DialogueNodeData.Find( x =>
                         x.Guid == _currentGuid));
             ShowDialogueWindow();
             SetDialogue();
+            */
         }
 
         public void SetDialogue() {
@@ -121,22 +164,14 @@ namespace Carp {
             nameTag.text = _currentConversation.DialogueNodeData.Find(x =>
                     x.Guid == _currentGuid).speaker;
             // Display dialogue text
-            StartCoroutine(Delay());
+            StartCoroutine(Delay(delayForTypeWriterEffect));
         }
 
-        private IEnumerator Delay() {
-            yield return new WaitForSeconds(delayForTypeWriterEffect);
+        private IEnumerator Delay(float duration) {
+            yield return new WaitForSeconds(duration);
             EvtSystem.EventDispatcher.Raise<SendDialogueText>( new SendDialogueText
                     { dialogueText = _currentConversation.DialogueNodeData.Find(x =>
                     x.Guid == _currentGuid).DialogueText });
-        }
-
-        private void HandleDialogueFullyShown(DialogueFullyShown _) {
-            if (!CheckForMoreDialogue()) {
-                conversationIsOver = true;
-                return;
-            }
-            continueObject.SetActive(true);
         }
 
         public void ShowDialogueWindow() {
@@ -224,6 +259,10 @@ namespace Carp {
         }
 
         void OnDestroy() {
+            EvtSystem.EventDispatcher.RemoveListener<RequestStartConversation>(StartConversation);
+            EvtSystem.EventDispatcher.RemoveListener<RequestSkipTWEffectConversation>(SkipTWEffect);
+            EvtSystem.EventDispatcher.RemoveListener<RequestContinueConversation>(ContinueConversation);
+            EvtSystem.EventDispatcher.RemoveListener<RequestInterruptConversation>(InterruptConversation);
             EvtSystem.EventDispatcher.RemoveListener<DialogueFullyShown>(HandleDialogueFullyShown);
         }
     }

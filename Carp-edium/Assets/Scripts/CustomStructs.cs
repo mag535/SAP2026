@@ -3,6 +3,13 @@ using System.Collections.Generic;
 
 
 namespace Carp {
+    public enum PlayerStates {
+        GAME,
+        DIALOGUE,
+        DESCRIPTION,
+        ROOMTRANSITION,
+    }
+
     // Used in Trader
     [System.Serializable]
     public struct Listing {

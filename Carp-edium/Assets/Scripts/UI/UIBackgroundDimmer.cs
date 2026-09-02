@@ -1,35 +1,37 @@
 using UnityEngine;
 
-public class UIBackgroundDimmer : MonoBehaviour
-{
-    public GameObject background;
-
-    private int uiMenusOpen = 0;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+namespace Carp {
+    public class UIBackgroundDimmer : MonoBehaviour
     {
-        uiMenusOpen = 0;
-        background.SetActive(false);
-        EvtSystem.EventDispatcher.AddListener<TrackUIMenuOpen>(HandleUIMenuTracking);
-    }
+        public GameObject background;
 
-    void HandleUIMenuTracking(TrackUIMenuOpen evt) {
-        if (evt.isOpening) {
-            uiMenusOpen += 1;
-        } else {
-            uiMenusOpen -= 1;
-        }
+        private int uiMenusOpen = 0;
 
-        if (uiMenusOpen > 0) {
-            background.SetActive(true);
-        } else if (uiMenusOpen == 0) {
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
+            uiMenusOpen = 0;
             background.SetActive(false);
+            EvtSystem.EventDispatcher.AddListener<TrackUIMenuOpen>(HandleUIMenuTracking);
         }
-    }
+
+        void HandleUIMenuTracking(TrackUIMenuOpen evt) {
+            if (evt.isOpening) {
+                uiMenusOpen += 1;
+            } else {
+                uiMenusOpen -= 1;
+            }
+
+            if (uiMenusOpen > 0) {
+                background.SetActive(true);
+            } else if (uiMenusOpen == 0) {
+                background.SetActive(false);
+            }
+        }
 
 
-    void OnDestroy() {
-        EvtSystem.EventDispatcher.RemoveListener<TrackUIMenuOpen>(HandleUIMenuTracking);
+        void OnDestroy() {
+            EvtSystem.EventDispatcher.RemoveListener<TrackUIMenuOpen>(HandleUIMenuTracking);
+        }
     }
 }

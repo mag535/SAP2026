@@ -16,6 +16,9 @@ MonoBehaviour:
   - BaseNodeGuid: 18e78ea8-955d-4936-a375-6f6e3f1f8920
     PortName: Next
     TargetNodeGuid: 62065661-6088-45ab-adad-7a21ab14fd1d
+  - BaseNodeGuid: 32a78ea8-955d-4936-a375-6f6e3f1f8344
+    PortName: Next
+    TargetNodeGuid: 18e78ea8-955d-4936-a375-6f6e3f1f8920
   DialogueNodeData:
   - type: 2
     Guid: 18e78ea8-955d-4936-a375-6f6e3f1f8920

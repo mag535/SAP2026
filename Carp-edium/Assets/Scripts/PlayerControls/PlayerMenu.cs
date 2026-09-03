@@ -9,8 +9,6 @@ namespace Carp {
         private GameObject parentOfInventoryFocus;
         [SerializeField]
         private GameObject parentOfNotebookFocus;
-        [SerializeField]
-        private GameObject pauseFocus;
 
         private PlayerInput playerInput;
 
@@ -22,13 +20,7 @@ namespace Carp {
 
         public void TogglePauseMenu(InputAction.CallbackContext context) {
             if (context.canceled) {
-                if (PauseMenu.Instance.IsActive()) {
-                    PauseMenu.Instance.Resume();
-                } else {
-                    PauseMenu.Instance.Pause();
-                    // Set focused game object
-                    EventSystem.current.SetSelectedGameObject(pauseFocus.gameObject);
-                }
+                EvtSystem.EventDispatcher.Raise<TogglePauseMenu>( new TogglePauseMenu {});
             }
         }
 

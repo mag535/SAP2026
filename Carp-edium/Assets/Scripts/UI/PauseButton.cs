@@ -4,19 +4,11 @@ namespace Carp {
     public class PauseButton : MonoBehaviour
     {
         public void Pause() {
-            PauseMenu.Instance.Pause();
+            EvtSystem.EventDispatcher.Raise<TogglePauseMenu>( new TogglePauseMenu {});
         }
 
         public void Resume() {
-            PauseMenu.Instance.Resume();
-        }
-
-        public void TogglePause() {
-            if (PauseMenu.Instance.IsActive()) {
-                PauseMenu.Instance.Resume();
-            } else {
-                PauseMenu.Instance.Pause();
-            }
+            EvtSystem.EventDispatcher.Raise<TogglePauseMenu>( new TogglePauseMenu {});
         }
     }
 }

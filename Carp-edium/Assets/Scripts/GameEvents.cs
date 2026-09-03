@@ -47,6 +47,10 @@ namespace Carp {
     public class RequestCloseConfirmationScreen : EvtSystem.Event {}
     public class ConfirmGateChoice : EvtSystem.Event {}
 
+    public class RequestPauseGame : EvtSystem.Event {}
+    public class RequestResumeGame : EvtSystem.Event {}
+    public class TogglePauseMenu : EvtSystem.Event {}
+
     // DIALOGUE UI -----------------------------------------------------------------
     public class SendDialogueText : EvtSystem.Event
     {

@@ -165,7 +165,7 @@ PrefabInstance:
     - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: conversationStart
       value: 
-      objectReference: {fileID: 11400000, guid: e5d451c5a28517e4aaac1c3158ea3641, type: 2}
+      objectReference: {fileID: 11400000, guid: 36ed5e2b3dd91d8d09ff7c9269e269f5, type: 2}
     - target: {fileID: 3738225906594179987, guid: 96b91ca803d7d334b9f0dc4c152eaa5f, type: 3}
       propertyPath: conversationDefault
       value: 

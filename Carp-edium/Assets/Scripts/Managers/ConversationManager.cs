@@ -67,7 +67,6 @@ namespace Carp {
 
         private void HandleNoMoreToShow(NoMoreToShow _) {
             ContinueConversation(null);
-            Debug.Log("ConversationManager: no more to show");
         }
 
         private void HandleDialogueFullyShown(DialogueFullyShown _) {
@@ -76,28 +75,9 @@ namespace Carp {
                 return;
             }
             continueObject.SetActive(true);
-            Debug.Log("ConversationManager: fully shown");
         }
 
         private void ContinueConversation(RequestContinueConversation _) {
-            /*
-            if (!continueObject.activeSelf && !conversationIsOver) {
-                EvtSystem.EventDispatcher.Raise<ShowFullDialogue>( new
-                        ShowFullDialogue {});
-                EvtSystem.EventDispatcher.Raise<ContinueResult>( new
-                        ContinueResult { result = true });
-                return;
-            }
-            if (conversationIsOver) {
-                EndConversation();
-                Debug.Log("Ended convo from continue convo function");
-                EvtSystem.EventDispatcher.Raise<ContinueResult>( new
-                        ContinueResult { result = false });
-                return;
-            }
-
-            continueObject.SetActive(false);
-            */
             // Advance to next dialogue node data
             NodeLinkData currentLinkData = _currentConversation.NodeLinks.Find(
                     x => x.BaseNodeGuid == _currentGuid);
@@ -106,7 +86,6 @@ namespace Carp {
                 EndConversation();
                 EvtSystem.EventDispatcher.Raise<ContinueResult>( new
                         ContinueResult { result = false });
-                Debug.Log("ConversationManager: ended dialogue");
                 return;
             }
 
@@ -117,7 +96,6 @@ namespace Carp {
                 EndConversation(); 
                 EvtSystem.EventDispatcher.Raise<ContinueResult>( new
                         ContinueResult { result = false });
-                Debug.Log("ConversationManager: ended dialogue");
                 return;
             }
 
@@ -131,7 +109,6 @@ namespace Carp {
             AudioManager.Instance.PlayContinueSFX();
             EvtSystem.EventDispatcher.Raise<ContinueResult>( new
                     ContinueResult { result = true });
-            Debug.Log("ConversationManager: continued...");
         }
 
         public void EndConversation() {
@@ -163,15 +140,16 @@ namespace Carp {
             // Set speaker
             nameTag.text = _currentConversation.DialogueNodeData.Find(x =>
                     x.Guid == _currentGuid).speaker;
+            string dialogueText = _currentConversation.DialogueNodeData.Find(x =>
+                    x.Guid == _currentGuid).DialogueText;
             // Display dialogue text
-            StartCoroutine(Delay(delayForTypeWriterEffect));
+            StartCoroutine(Delay(delayForTypeWriterEffect, dialogueText));
         }
 
-        private IEnumerator Delay(float duration) {
+        private IEnumerator Delay(float duration, string dialogueText) {
             yield return new WaitForSeconds(duration);
             EvtSystem.EventDispatcher.Raise<SendDialogueText>( new SendDialogueText
-                    { dialogueText = _currentConversation.DialogueNodeData.Find(x =>
-                    x.Guid == _currentGuid).DialogueText });
+                    { dialogueText = dialogueText });
         }
 
         public void ShowDialogueWindow() {
@@ -197,6 +175,7 @@ namespace Carp {
             foreach (DialogueNodeData data in _currentConversation.DialogueNodeData) {
                 if (data.type != DialogueType.ENDOFCONVERSATION) { continue; }
                 _endOfConversation = data;
+                break;
             }
             // If no ends found, return
             if (_endOfConversation == null) { return; }
@@ -206,17 +185,28 @@ namespace Carp {
         }
 
         string FindFirstNode(string endGuid) {
+            bool restart = false;
             string firstNodeGuid = endGuid;
 
+            // This actually finds the GUID for the Start node
             for (int i = 0; i < _currentConversation.NodeLinks.Count; i++) {
+                if (restart) {
+                    restart = false;
+                    i = 0;
+                }
                 // if found newer node, update first node guid and reset loop
                 if (_currentConversation.NodeLinks[i].TargetNodeGuid ==
                         firstNodeGuid) {
                     firstNodeGuid = _currentConversation.NodeLinks[i].BaseNodeGuid;
-                    i = 0;
+                    restart = true;
+                    if (i == _currentConversation.NodeLinks.Count-1) { i=0; }
                 }
                 // otherwise, continue checking
             }
+
+            // Shift to actual first dialogue node
+            firstNodeGuid = _currentConversation.NodeLinks.Find( x =>
+                    x.BaseNodeGuid == firstNodeGuid ).TargetNodeGuid;
 
             return firstNodeGuid;
         }

@@ -33,7 +33,7 @@ namespace Carp {
         void FixedUpdate()
         {
             switch (playerState.GetCurrentState()) {
-            case PlayerState.PlayerStates.DIALOGUE: 
+            case PlayerStates.DIALOGUE: 
                 break;
             default:
                 GetInput();

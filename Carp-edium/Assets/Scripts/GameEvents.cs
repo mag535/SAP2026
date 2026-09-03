@@ -3,137 +3,156 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+namespace Carp {
+    // SCENE & ROOM LOADING --------------------------------------------------------
+    public class RequestLoadRoom : EvtSystem.Event
+    {
+        public string roomName;
+    }
+    public class RequestChangePlayerPosition : EvtSystem.Event
+    {
+        public Vector2 newPosition;
+    }
+    public class RequestChangePlayerState : EvtSystem.Event
+    {
+        public string newState;
+    }
 
-// SCENE & ROOM LOADING --------------------------------------------------------
-public class RequestLoadRoom : EvtSystem.Event
-{
-    public string roomName;
-}
-public class RequestChangePlayerPosition : EvtSystem.Event
-{
-    public Vector2 newPosition;
-}
-public class RequestChangePlayerState : EvtSystem.Event
-{
-    public string newState;
-}
+    public class TurnOffPlayerControls : EvtSystem.Event {}
+    public class TurnOnPlayerControls : EvtSystem.Event {}
 
-public class TurnOffPlayerControls : EvtSystem.Event {}
-public class TurnOnPlayerControls : EvtSystem.Event {}
+    // UIs -------------------------------------------------------------------------
+    public class TrackUIMenuOpen : EvtSystem.Event
+    {
+        // false means menu is closing
+        public bool isOpening;
+    }
 
-// UIs -------------------------------------------------------------------------
-public class TrackUIMenuOpen : EvtSystem.Event
-{
-    // false means menu is closing
-    public bool isOpening;
-}
+    public class RequestCollectedCheck : EvtSystem.Event
+    {
+        public Object objectData;
+    }
+    public class RequestCreateNotification : EvtSystem.Event
+    {
+        public bool isNoteEntry;
+        public string objectName;
+    }
 
-public class RequestCollectedCheck : EvtSystem.Event
-{
-    public Object objectData;
-}
-public class RequestCreateNotification : EvtSystem.Event
-{
-    public bool isNoteEntry;
-    public string objectName;
-}
+    public class TriggerWinScreen : EvtSystem.Event {}
+    public class TriggerLoseScreen : EvtSystem.Event {}
 
-public class TriggerWinScreen : EvtSystem.Event {}
-public class TriggerLoseScreen : EvtSystem.Event {}
+    public class RequestOpenConfirmationScreen : EvtSystem.Event {
+        public Carp.EndScreen endingScreenName;
+    }
+    public class RequestCloseConfirmationScreen : EvtSystem.Event {}
+    public class ConfirmGateChoice : EvtSystem.Event {}
 
-public class RequestOpenConfirmationScreen : EvtSystem.Event {
-    public Carp.EndScreen endingScreenName;
-}
-public class RequestCloseConfirmationScreen : EvtSystem.Event {}
-public class ConfirmGateChoice : EvtSystem.Event {}
+    // DIALOGUE UI -----------------------------------------------------------------
+    public class SendDialogueText : EvtSystem.Event
+    {
+        public string dialogueText;
+    }
 
-// DIALOGUE UI -----------------------------------------------------------------
-public class SendDialogueText : EvtSystem.Event
-{
-    public string dialogueText;
-}
+    public class DialogueFullyShown : EvtSystem.Event {}
+    public class ShowFullDialogue : EvtSystem.Event {}
+    public class NoMoreToShow : EvtSystem.Event {}
 
-public class DialogueFullyShown : EvtSystem.Event {}
-public class ShowFullDialogue : EvtSystem.Event {}
-public class NoMoreToShow : EvtSystem.Event {}
+    // DESCRIPTION UI --------------------------------------------------------------
+    public class RequestDisplayInspected : EvtSystem.Event
+    {
+        // true == use long description,
+        // false == use regular description
+        public bool useLong;
+        public Object objectData;
+    }
+    public class RequestCloseDisplayInspected : EvtSystem.Event
+    {
+    }
 
-// DESCRIPTION UI --------------------------------------------------------------
-public class RequestDisplayInspected : EvtSystem.Event
-{
-    // true == use long description,
-    // false == use regular description
-    public bool useLong;
-    public Object objectData;
-}
-public class RequestCloseDisplayInspected : EvtSystem.Event
-{
-}
+    // PLAYER INVENTORY & NOTEBOOK -------------------------------------------------
+    public class RequestOpenInventory : EvtSystem.Event {}
+    public class RequestCloseInventory : EvtSystem.Event {}
+    public class RequestAddItem : EvtSystem.Event
+    {
+        public Object item;
+    }
+    public class RequestRemoveItem : EvtSystem.Event
+    {
+        public Object item;
+    }
+    public class RequestAddToInventoryDisplay : EvtSystem.Event
+    {
+        public Object objectData;
+    }
+    public class RequestRemoveFromInventoryDisplay : EvtSystem.Event
+    {
+        public Object objectData;
+    }
 
-// PLAYER INVENTORY & NOTEBOOK -------------------------------------------------
-public class RequestOpenInventory : EvtSystem.Event {}
-public class RequestCloseInventory : EvtSystem.Event {}
-public class RequestAddItem : EvtSystem.Event
-{
-    public Object item;
-}
-public class RequestRemoveItem : EvtSystem.Event
-{
-    public Object item;
-}
-public class RequestAddToInventoryDisplay : EvtSystem.Event
-{
-    public Object objectData;
-}
-public class RequestRemoveFromInventoryDisplay : EvtSystem.Event
-{
-    public Object objectData;
-}
+    public class RequestOpenNotebookPre : EvtSystem.Event {}
+    public class RequestOpenNotebook : EvtSystem.Event 
+    {
+        public List<Object> notes;
+        public bool displayPrevButton;
+        public bool displayNextButton;
+    }
+    public class RequestCloseNotebook : EvtSystem.Event {}
+    public class RequestAddToNotebook : EvtSystem.Event
+    {
+        public Object objectData;
+    }
 
-public class RequestOpenNotebookPre : EvtSystem.Event {}
-public class RequestOpenNotebook : EvtSystem.Event 
-{
-    public List<Object> notes;
-    public bool displayPrevButton;
-    public bool displayNextButton;
-}
-public class RequestCloseNotebook : EvtSystem.Event {}
-public class RequestAddToNotebook : EvtSystem.Event
-{
-    public Object objectData;
-}
+    public class RequestNextPage : EvtSystem.Event {}
+    public class RequestPreviousPage : EvtSystem.Event {}
+    public class SendNextPage : EvtSystem.Event
+    {
+        public List<Object> notes;
+        public bool displayPrevButton;
+        public bool displayNextButton;
+    }
 
-public class RequestNextPage : EvtSystem.Event {}
-public class RequestPreviousPage : EvtSystem.Event {}
-public class SendNextPage : EvtSystem.Event
-{
-    public List<Object> notes;
-    public bool displayPrevButton;
-    public bool displayNextButton;
-}
+    // PLAYER INTERACT -------------------------------------------------------------
+    public class RequestItemUse : EvtSystem.Event
+    {
+        public Object item;
+    }
 
-// PLAYER INTERACT -------------------------------------------------------------
-public class RequestItemUse : EvtSystem.Event
-{
-    public Object item;
-}
+    public class SignalCameraPositionUpdate : EvtSystem.Event {}
+    public class ResetCameraPositionToPlayers : EvtSystem.Event {}
 
-public class SignalCameraPositionUpdate : EvtSystem.Event {}
-public class ResetCameraPositionToPlayers : EvtSystem.Event {}
+    public class RequestStartConversation : EvtSystem.Event 
+    {
+        public DialogueContainer start;
+    }
+    public class RequestContinueConversation : EvtSystem.Event {}
+    public class RequestSkipTWEffectConversation : EvtSystem.Event {}
+    public class ContinueResult : EvtSystem.Event
+    {
+        public bool result;
+    }
+    public class RequestInterruptConversation : EvtSystem.Event 
+    {
+        public DialogueContainer newConversation;
+    }
+    public class DialogueEnd : EvtSystem.Event {}
 
-public class DialogueEnd : EvtSystem.Event {}
+    public class RequestSetPlayerState : EvtSystem.Event
+    {
+        public PlayerStates state;
+    }
+    public class SetActionMap : EvtSystem.Event
+    {
+        public string actionMap;
+    }
 
-public class SetActionMap : EvtSystem.Event
-{
-    public string actionMap;
-}
+    // INTERACTABLES -----------------------------------------------------------------------
+    public class OpenChest : EvtSystem.Event
+    {
+        public string key;
+    }
 
-// INTERACTABLES -----------------------------------------------------------------------
-public class OpenChest : EvtSystem.Event
-{
-    public string key;
-}
-
-public class PropagateFlag : EvtSystem.Event
-{
-    public string flag;
+    public class PropagateFlag : EvtSystem.Event
+    {
+        public string flag;
+    }
 }

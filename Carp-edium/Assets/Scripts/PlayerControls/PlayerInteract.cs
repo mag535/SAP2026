@@ -16,6 +16,7 @@ namespace Carp {
         void Awake() {
             EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
             EvtSystem.EventDispatcher.AddListener<DialogueEnd>(HandleDialogueEnd);
+            EvtSystem.EventDispatcher.AddListener<ContinueResult>(HandleContinueResult);
             EvtSystem.EventDispatcher.AddListener<SetActionMap>(HandleSetActionMap);
         }
 
@@ -51,13 +52,15 @@ namespace Carp {
         }
 
         private void Cancel() {
-            if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DIALOGUE) {
+            if (playerStateManager.GetCurrentState() == PlayerStates.DIALOGUE) {
                 ConversationManager.Instance.EndConversation();
-            }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
+            }else if (playerStateManager.GetCurrentState() == PlayerStates.DESCRIPTION) {
                 EvtSystem.EventDispatcher.Raise<RequestCloseDisplayInspected>(
                         new RequestCloseDisplayInspected {});
             }
-            playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+            //playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+            EvtSystem.EventDispatcher.Raise<RequestSetPlayerState>( new
+                    RequestSetPlayerState { state = PlayerStates.GAME });
             engagedGO = null;
         }
 
@@ -65,18 +68,33 @@ namespace Carp {
             if (!interactionsAreEnabled) { return; }
 
             if (context.canceled) {
-                if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.GAME) {
+                if (playerStateManager.GetCurrentState() == PlayerStates.GAME) {
                     CallInteraction();
-                }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DIALOGUE) {
+                }else if (playerStateManager.GetCurrentState() == PlayerStates.DIALOGUE) {
+                    /*
                     bool success = ConversationManager.Instance.ContinueConversation();
                     if (!success) {
-                        playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+                        //playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+                        EvtSystem.EventDispatcher.Raise<RequestSetPlayerState>( new
+                                RequestSetPlayerState { state = PlayerStates.GAME });
                     }
-                }else if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.DESCRIPTION) {
+                    */
+                    EvtSystem.EventDispatcher.Raise<RequestSkipTWEffectConversation>(
+                            new RequestSkipTWEffectConversation {});
+                }else if (playerStateManager.GetCurrentState() == PlayerStates.DESCRIPTION) {
                     EvtSystem.EventDispatcher.Raise<RequestCloseDisplayInspected>(
                             new RequestCloseDisplayInspected {});
-                    playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+                    //playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+                    EvtSystem.EventDispatcher.Raise<RequestSetPlayerState>( new
+                            RequestSetPlayerState { state = PlayerStates.GAME });
                 }
+            }
+        }
+
+        private void HandleContinueResult(ContinueResult evt) {
+            if (!evt.result) {
+                EvtSystem.EventDispatcher.Raise<RequestSetPlayerState>( new
+                        RequestSetPlayerState { state = PlayerStates.GAME });
             }
         }
 
@@ -94,20 +112,28 @@ namespace Carp {
             
             // Conversation Starters go to DIALOGUE state
             if (tempGO.GetComponent<ConversationStarter>() != null) {
-                playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
+                //playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
+                EvtSystem.EventDispatcher.Raise<RequestSetPlayerState>( new
+                        RequestSetPlayerState { state = PlayerStates.DIALOGUE });
             // Doors go to ROOMTRANSITION state if unlocked, DESCRIPTION otherwise
             } else if (tempGO.GetComponent<Door>() != null) {
                 Door targetDoor = tempGO.GetComponent<Door>();
                 if (targetDoor.isLocked) {
-                    playerStateManager.ChangeCurrentState(PlayerState
-                            .PlayerStates.DESCRIPTION);
+                    //playerStateManager.ChangeCurrentState(PlayerState
+                    //        .PlayerStates.DESCRIPTION);
+                    EvtSystem.EventDispatcher.Raise<RequestSetPlayerState>( new
+                            RequestSetPlayerState { state = PlayerStates.DESCRIPTION });
                 } else {
-                    playerStateManager.ChangeCurrentState(PlayerState
-                            .PlayerStates.ROOMTRANSITION);
+                    //playerStateManager.ChangeCurrentState(PlayerState
+                    //        .PlayerStates.ROOMTRANSITION);
+                    EvtSystem.EventDispatcher.Raise<RequestSetPlayerState>( new
+                            RequestSetPlayerState { state = PlayerStates.ROOMTRANSITION });
                 }
             // Inspectables, Openables, Trader go to DESCRIPTION state
             } else if (tempGO.GetComponent<Inspectable>() != null) {
-                playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DESCRIPTION);
+                //playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DESCRIPTION);
+                EvtSystem.EventDispatcher.Raise<RequestSetPlayerState>( new
+                        RequestSetPlayerState { state = PlayerStates.DESCRIPTION });
             }
             // All others stay in GAME state
 
@@ -128,9 +154,11 @@ namespace Carp {
                 return; 
             }
 
-            if (playerStateManager.GetCurrentState() == PlayerState.PlayerStates.GAME &&
+            if (playerStateManager.GetCurrentState() == PlayerStates.GAME &&
                     engagedGO.GetComponent<ConversationStarter>() != null) {
-                playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
+                //playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.DIALOGUE);
+                EvtSystem.EventDispatcher.Raise<RequestSetPlayerState>( new
+                        RequestSetPlayerState { state = PlayerStates.DIALOGUE });
             }
 
             if ((evt.item.name == "Coin" && engagedGO.name == "Ox Man") ||
@@ -143,12 +171,15 @@ namespace Carp {
         }
 
         void HandleDialogueEnd(DialogueEnd _) {
-            playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+            //playerStateManager.ChangeCurrentState(PlayerState.PlayerStates.GAME);
+            EvtSystem.EventDispatcher.Raise<RequestSetPlayerState>( new
+                    RequestSetPlayerState { state = PlayerStates.GAME });
         }
 
         void OnDestroy() {
-            EvtSystem.EventDispatcher.AddListener<RequestItemUse>(UseItem);
+            EvtSystem.EventDispatcher.RemoveListener<RequestItemUse>(UseItem);
             EvtSystem.EventDispatcher.RemoveListener<DialogueEnd>(HandleDialogueEnd);
+            EvtSystem.EventDispatcher.RemoveListener<ContinueResult>(HandleContinueResult);
             EvtSystem.EventDispatcher.RemoveListener<SetActionMap>(HandleSetActionMap);
         }
     }

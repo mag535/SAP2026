@@ -4,13 +4,6 @@ using UnityEngine.InputSystem;
 namespace Carp {
     public class PlayerState : MonoBehaviour
     {
-        public enum PlayerStates {
-            GAME,
-            DIALOGUE,
-            DESCRIPTION,
-            ROOMTRANSITION,
-        }
-
         public PlayerStates initialPlayerState;
         public PlayerStates playerState = PlayerStates.GAME;
 
@@ -19,8 +12,8 @@ namespace Carp {
         void Awake() {
             playerState = initialPlayerState;
             playerInput = GetComponent<PlayerInput>();
-            EvtSystem.EventDispatcher.AddListener<RequestChangePlayerState>(
-                    HandleChangePlayerState);
+            EvtSystem.EventDispatcher.AddListener<RequestSetPlayerState>(
+                    SetPlayerState);
             EvtSystem.EventDispatcher.AddListener<TurnOffPlayerControls>(
                     TurnControlsOff);
             EvtSystem.EventDispatcher.AddListener<TurnOnPlayerControls>(
@@ -30,10 +23,8 @@ namespace Carp {
         void Start() {
         }
 
-        void HandleChangePlayerState(RequestChangePlayerState evt) {
-            if (evt.newState == "GAME") {
-                playerState = PlayerStates.GAME;
-            }
+        void SetPlayerState(RequestSetPlayerState evt) {
+            playerState = evt.state;
         }
 
         public PlayerStates GetCurrentState() {
@@ -52,8 +43,8 @@ namespace Carp {
         }
 
         void OnDestroy() {
-            EvtSystem.EventDispatcher.RemoveListener<RequestChangePlayerState>(
-                    HandleChangePlayerState);
+            EvtSystem.EventDispatcher.RemoveListener<RequestSetPlayerState>(
+                    SetPlayerState);
             EvtSystem.EventDispatcher.RemoveListener<TurnOffPlayerControls>(
                     TurnControlsOff);
             EvtSystem.EventDispatcher.RemoveListener<TurnOnPlayerControls>(

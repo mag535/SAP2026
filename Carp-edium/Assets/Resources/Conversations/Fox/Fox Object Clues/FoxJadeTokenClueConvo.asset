@@ -23,8 +23,8 @@ MonoBehaviour:
   - type: 0
     Guid: e6efc9ff-0aa0-45a9-b518-b8f9818bdd2e
     speaker: Fox
-    DialogueText: '"Huh. you said you found this outside the temple? Not sure what
-      it''d be used for. Did you <color="yellow">try looking inside the temple</color>
+    DialogueText: '"Huh. you said you found this inside the temple? Not sure what
+      it''d be used for. Did you <color="yellow">try looking outside the temple</color>
       for a place to put this?"'
     cost: {fileID: 0}
     trade: {fileID: 0}

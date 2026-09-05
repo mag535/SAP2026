@@ -1,39 +1,49 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 
 namespace Carp {
     public class PauseMenu : Singleton<PauseMenu>
     {
-        [SerializeField]
-        private GameObject menu;
-        [SerializeField]
-        private GameObject firstFocusedButton;
-
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
-        {
-            menu.SetActive(false);
+        void Awake() {
+            EvtSystem.EventDispatcher.AddListener<RequestPauseGame>(HandleRequestPauseGame);
+            EvtSystem.EventDispatcher.AddListener<RequestResumeGame>(HandleRequestResumeGame);
         }
 
-        public void Pause() {
-            menu.SetActive(true);
+        private void HandleRequestPauseGame(RequestPauseGame _) {
+            Pause();
+        }
+
+        private void HandleRequestResumeGame(RequestResumeGame _) {
+            Resume();
+        }
+
+        private void Pause() {
             Time.timeScale = 0;
-            EventSystem.current.SetSelectedGameObject(firstFocusedButton);
             EvtSystem.EventDispatcher.Raise<SetActionMap>( new SetActionMap {
                     actionMap = "UI" });
         }
         
-        public void Resume() {
-            menu.SetActive(false);
+        private void Resume() {
             Time.timeScale = 1f;
-            EventSystem.current.SetSelectedGameObject(null);
             EvtSystem.EventDispatcher.Raise<SetActionMap>( new SetActionMap {
                     actionMap = "Game" });
         }
 
-        public bool IsActive() {
-            return menu.activeSelf;
+        public void ReturnToMainFromPause() {
+            EvtSystem.EventDispatcher.Raise<TogglePauseMenu>( new TogglePauseMenu {});
+            SceneLoader thisSL = GetComponent<SceneLoader>();
+            thisSL.ReturnToMain();
+        }
+
+        public void QuitFromPause() {
+            EvtSystem.EventDispatcher.Raise<TogglePauseMenu>( new TogglePauseMenu {});
+            SceneLoader thisSL = GetComponent<SceneLoader>();
+            thisSL.ExitGame();
+        }
+
+        void OnDestroy() {
+            EvtSystem.EventDispatcher.RemoveListener<RequestPauseGame>(HandleRequestPauseGame);
+            EvtSystem.EventDispatcher.RemoveListener<RequestResumeGame>(HandleRequestResumeGame);
         }
     }
 }

@@ -23,10 +23,12 @@ namespace Carp {
             AudioManager.Instance.Play(soundEffect);
             // start dialogue, send dialogue id to dialogue manager
             if (!GameManager.Instance.AmIAModifiedConversationStarter(gameObject.name)) {
-                ConversationManager.Instance.StartConversation(conversationStart);
+                EvtSystem.EventDispatcher.Raise<RequestStartConversation>( new
+                        RequestStartConversation { start = conversationStart });
                 GameManager.Instance.AddModifiedConversationStarter(gameObject.name);
             } else {
-                ConversationManager.Instance.StartConversation(conversationDefault);
+                EvtSystem.EventDispatcher.Raise<RequestStartConversation>( new
+                        RequestStartConversation { start = conversationDefault });
             }
 
         }
@@ -47,8 +49,9 @@ namespace Carp {
                 correspondingConversation = wrongItemConversation;
             }
 
-            ConversationManager.Instance.InterruptConversation(
-                    correspondingConversation);
+            EvtSystem.EventDispatcher.Raise<RequestInterruptConversation>( new
+                    RequestInterruptConversation {
+                    newConversation = correspondingConversation });
 
             return !wrongItemFlag;
         }

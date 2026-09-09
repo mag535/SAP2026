@@ -403,6 +403,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 61140cf0-6ddf-4b3b-98b5-afa39a7a6733
     m_ActionName: 'UI/SwitchToNotebook[/Keyboard/e]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3923999628715952768}
+        m_TargetAssemblyTypeName: Carp.PlayerMenu, Assembly-CSharp
+        m_MethodName: TogglePauseMenu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8d778909-25a8-4eec-b0af-10c8b3dcc702
+    m_ActionName: 'UI/Unpause[/Keyboard/escape,/Keyboard/p]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Game
@@ -547,7 +563,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentOfInventoryFocus: {fileID: 0}
   parentOfNotebookFocus: {fileID: 0}
-  pauseFocus: {fileID: 0}
 --- !u!114 &311335737523688615
 MonoBehaviour:
   m_ObjectHideFlags: 0

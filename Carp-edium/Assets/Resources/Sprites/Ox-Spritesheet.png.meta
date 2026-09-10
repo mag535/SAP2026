@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 5c6bc178b4a5b754282d6f446c595c47
+guid: 36725d9faebacfa4991e862d1a7540a1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5685558206034752541
-    second: Red-Dragon-Tortious_0
+      213: -5302314018170325144
+    second: Ox-Spritesheet_0
+  - first:
+      213: 5368026900733419426
+    second: Ox-Spritesheet_1
+  - first:
+      213: 1693208098924951768
+    second: Ox-Spritesheet_2
+  - first:
+      213: 685483176971317847
+    second: Ox-Spritesheet_3
+  - first:
+      213: 3527475382747315788
+    second: Ox-Spritesheet_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +58,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 600
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red-Dragon-Tortious_0
+      name: Ox-Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3000
-        height: 1878
+        x: 6
+        y: 134
+        width: 791
+        height: 1233
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d143284a01927ee40800000000000000
-      internalID: 5685558206034752541
+      spriteID: 867326b4e756a66b0800000000000000
+      internalID: -5302314018170325144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ox-Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 134
+        width: 791
+        height: 1228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2afd4f276001f7a40800000000000000
+      internalID: 5368026900733419426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ox-Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 134
+        width: 791
+        height: 1220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d87c338bcb7f7710800000000000000
+      internalID: 1693208098924951768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ox-Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 134
+        width: 791
+        height: 1227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 752b1ee4153538900800000000000000
+      internalID: 685483176971317847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ox-Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 3206
+        y: 134
+        width: 791
+        height: 1230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4eb696db2c14f030800000000000000
+      internalID: 3527475382747315788
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red-Dragon-Tortious_0: 5685558206034752541
+      Ox-Spritesheet_0: -5302314018170325144
+      Ox-Spritesheet_1: 5368026900733419426
+      Ox-Spritesheet_2: 1693208098924951768
+      Ox-Spritesheet_3: 685483176971317847
+      Ox-Spritesheet_4: 3527475382747315788
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

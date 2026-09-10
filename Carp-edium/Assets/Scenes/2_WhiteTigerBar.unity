@@ -1265,6 +1265,33 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: -34.45, y: -13.5}
   m_Radius: 5.833748
+--- !u!1 &824711269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6278197513455031899, guid: 1194558edc2e38c4d8ab4339cf93390f, type: 3}
+  m_PrefabInstance: {fileID: 1704115062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &824711270
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824711269}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1278eb006c1860a4da6cd0760f05e737, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &853226328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,7 +2309,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6278197513455031899, guid: 1194558edc2e38c4d8ab4339cf93390f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 824711270}
   m_SourcePrefab: {fileID: 100100000, guid: 1194558edc2e38c4d8ab4339cf93390f, type: 3}
 --- !u!1 &1946199941
 GameObject:

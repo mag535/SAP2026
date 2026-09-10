@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5c6bc178b4a5b754282d6f446c595c47
+guid: 088f19a5e0896f145871564700bd39d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5685558206034752541
-    second: Red-Dragon-Tortious_0
+      213: -2467384594851845279
+    second: Tiger-Snake-Pers_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 600
+  spritePixelsToUnits: 50
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red-Dragon-Tortious_0
+      name: Tiger-Snake-Pers_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3000
-        height: 1878
+        width: 261
+        height: 242
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d143284a01927ee40800000000000000
-      internalID: 5685558206034752541
+      spriteID: 16ba593a8c612cdd0800000000000000
+      internalID: -2467384594851845279
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red-Dragon-Tortious_0: 5685558206034752541
+      Tiger-Snake-Pers_0: -2467384594851845279
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

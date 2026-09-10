@@ -588,8 +588,38 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6278197513455031899, guid: 7bfbb513325281645ad4d92a4779bc40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 892979997}
   m_SourcePrefab: {fileID: 100100000, guid: 7bfbb513325281645ad4d92a4779bc40, type: 3}
+--- !u!1 &892979996 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6278197513455031899, guid: 7bfbb513325281645ad4d92a4779bc40, type: 3}
+  m_PrefabInstance: {fileID: 892979995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &892979997
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892979996}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77f819841af10e84da00b7d82b6ee0de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1198827412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -601,7 +631,7 @@ PrefabInstance:
     - target: {fileID: 630533623590559575, guid: daf79418704189143855e6044f5481aa, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1b3fa05e98ed4444abe6b78a5df56ea4, type: 3}
+      objectReference: {fileID: 21300000, guid: 5c6bc178b4a5b754282d6f446c595c47, type: 3}
     - target: {fileID: 630533623590559575, guid: daf79418704189143855e6044f5481aa, type: 3}
       propertyPath: m_SortingLayer
       value: 3
@@ -836,6 +866,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 630533623590559575, guid: e7dde4353fcb03646a2beb7a2d705281, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 088f19a5e0896f145871564700bd39d7, type: 3}
     - target: {fileID: 634350141973477069, guid: e7dde4353fcb03646a2beb7a2d705281, type: 3}
       propertyPath: m_Size.x
       value: 5.605953
@@ -1479,6 +1513,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 630533623590559575, guid: 0bfcef8c0630a1e458c50662a5744fbd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ff7e6bf57ece98c49b908397e4e1019e, type: 3}
     - target: {fileID: 634350141973477069, guid: 0bfcef8c0630a1e458c50662a5744fbd, type: 3}
       propertyPath: m_Size.x
       value: 5.601815

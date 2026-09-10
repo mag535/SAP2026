@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 5c6bc178b4a5b754282d6f446c595c47
+guid: a898e252317ebb14ca2b1e4ede4f7b8c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5685558206034752541
-    second: Red-Dragon-Tortious_0
+      213: 383085234337263027
+    second: Dog-Spritesheet_0
+  - first:
+      213: -7749926441568019141
+    second: Dog-Spritesheet_1
+  - first:
+      213: 9093258567685078577
+    second: Dog-Spritesheet_2
+  - first:
+      213: -4452711328057737141
+    second: Dog-Spritesheet_3
+  - first:
+      213: 2515797843670363028
+    second: Dog-Spritesheet_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +58,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 600
+  spritePixelsToUnits: 400
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red-Dragon-Tortious_0
+      name: Dog-Spritesheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3000
-        height: 1878
+        x: 12
+        y: 74
+        width: 728
+        height: 1361
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d143284a01927ee40800000000000000
-      internalID: 5685558206034752541
+      spriteID: 3bdae5fadfdf05500800000000000000
+      internalID: 383085234337263027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog-Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 74
+        width: 716
+        height: 1361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3d5ee656fab27490800000000000000
+      internalID: -7749926441568019141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog-Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 1524
+        y: 74
+        width: 698
+        height: 1359
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e75a93d7eb13e70800000000000000
+      internalID: 9093258567685078577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog-Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 74
+        width: 716
+        height: 1364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40c2cb73aac432c0800000000000000
+      internalID: -4452711328057737141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dog-Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 3022
+        y: 74
+        width: 704
+        height: 1361
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b6aae3fc8e9e220800000000000000
+      internalID: 2515797843670363028
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 0446fee27324f334592d74817b47b3fd
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red-Dragon-Tortious_0: 5685558206034752541
+      Dog-Spritesheet_0: 383085234337263027
+      Dog-Spritesheet_1: -7749926441568019141
+      Dog-Spritesheet_2: 9093258567685078577
+      Dog-Spritesheet_3: -4452711328057737141
+      Dog-Spritesheet_4: 2515797843670363028
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

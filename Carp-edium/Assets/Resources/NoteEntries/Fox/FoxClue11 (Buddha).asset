@@ -16,6 +16,6 @@ MonoBehaviour:
   objectID: Fox Clue 11 (Buddha)
   description: 
   sprite: {fileID: 0}
-  longDescription: Buddha can be givne to someone
+  longDescription: Buddha can be given to someone
   spriteMagnified: {fileID: 0}
   spriteIcon: {fileID: -8676108945931752408, guid: 0c3a6d68f73315f478a322bc1e460096, type: 3}

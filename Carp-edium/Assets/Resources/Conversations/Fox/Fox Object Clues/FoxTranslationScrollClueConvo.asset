@@ -24,8 +24,8 @@ MonoBehaviour:
     Guid: e0b3e7e3-a8e1-4ddf-a2f4-2d8a1b616ae9
     speaker: Fox
     DialogueText: '"You found that old scroll? It''s been ages since anyone found
-      saw that thing. <color="yellow">Would you really trust the translations on
-      a scroll that old, though?</color>" '
+      that thing. <color="yellow">Would you really trust the translations on a scroll
+      that old, though?</color>" '
     cost: {fileID: 0}
     trade: {fileID: 11400000, guid: 121b6270b9d088a4d821675cddb5c697, type: 2}
     flag: 

@@ -20,7 +20,6 @@ namespace Carp {
         private string _currentGuid;
 
         [SerializeField]
-        private bool conversationIsOver = false;
 
         void Start() {
             EvtSystem.EventDispatcher.AddListener<RequestStartConversation>(StartConversation);
@@ -61,17 +60,20 @@ namespace Carp {
         }
 
         private void SkipTWEffect(RequestSkipTWEffectConversation _) {
+            Debug.Log("ConversationManager: skipping typewriter effect...");
             EvtSystem.EventDispatcher.Raise<ShowFullDialogue>( new
                     ShowFullDialogue {});
         }
 
         private void HandleNoMoreToShow(NoMoreToShow _) {
+            Debug.Log("ConversationManager: no more to show");
             ContinueConversation(null);
         }
 
         private void HandleDialogueFullyShown(DialogueFullyShown _) {
+            Debug.Log("ConversationManager: dialogue fully shown");
             if (!CheckForMoreDialogue()) {
-                conversationIsOver = true;
+                continueObject.SetActive(false);
                 return;
             }
             continueObject.SetActive(true);
@@ -101,7 +103,6 @@ namespace Carp {
 
             // Otherwise, update what current GUID is:
             _currentGuid = nextNode.Guid;
-            conversationIsOver = false;
 
             // Display dialogue
             HandleSpecialDialogue(nextNode);
@@ -116,13 +117,11 @@ namespace Carp {
             _currentGuid = string.Empty;
             HideDialogueWindow();
             EvtSystem.EventDispatcher.Raise<DialogueEnd>( new DialogueEnd {});
-            conversationIsOver = false;
         }
 
         // End current converstaion and start new one
         private void InterruptConversation(RequestInterruptConversation evt) {
             if (evt.newConversation == null) { return; }
-            conversationIsOver = false;
             HideDialogueWindow();
             EvtSystem.EventDispatcher.Raise<RequestStartConversation>( new
                     RequestStartConversation { start = evt.newConversation });

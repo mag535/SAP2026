@@ -53,13 +53,17 @@ namespace Carp {
             textBox.maxVisibleCharacters = 0;
             _currentVisibleCharacterIndex = 0;
 
+            textBox.ForceMeshUpdate();
+
             typewriterCoroutine = StartCoroutine(Typewriter());
         }
 
         private IEnumerator Typewriter() {
             TMP_TextInfo textInfo = textBox.textInfo;
+            Debug.Log($"(BEFORE LOOP) Ind: {_currentVisibleCharacterIndex}, max: {textInfo.characterCount}");
 
-            while(_currentVisibleCharacterIndex < textInfo.characterCount + 1) {
+            while(_currentVisibleCharacterIndex < textInfo.characterCount) {
+                Debug.Log($"Ind: {_currentVisibleCharacterIndex}, max: {textInfo.characterCount}");
                 char character = textInfo.characterInfo[_currentVisibleCharacterIndex].character;
 
                 textBox.maxVisibleCharacters++;

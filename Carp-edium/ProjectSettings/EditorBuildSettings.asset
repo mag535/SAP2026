@@ -36,5 +36,6 @@ EditorBuildSettings:
     path: Assets/Scenes/7_SnakeEnding.unity
     guid: 27ee92be8e7c55c9685645f175e2f0b6
   m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 50b4f629b71338fe88305ac2bb0aa2dc, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

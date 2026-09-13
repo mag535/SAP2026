@@ -297,6 +297,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0e548189-19ec-4181-bd7c-d1b2b853a7c5",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "OpenNotebook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8fe1772b-07dd-4c8c-b288-1d3ed0f04a29",
                     "path": "<Keyboard>/s",
                     "interactions": "",
@@ -313,6 +324,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
+                    "action": "OpenInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "724d6d2e-0bbc-47db-9773-2110b5a2281d",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "OpenInventory",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -523,6 +545,17 @@
                 },
                 {
                     "name": "",
+                    "id": "d8897313-c6d0-4dfe-9fed-c8a0246dee2f",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "CloseInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "6c40dbf3-6df1-43ad-97cc-f451304e31eb",
                     "path": "<Keyboard>/d",
                     "interactions": "",
@@ -539,6 +572,17 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Controller",
+                    "action": "CloseNotebook",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d5040992-3f95-4080-9baa-a2cc2b65ecc5",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
                     "action": "CloseNotebook",
                     "isComposite": false,
                     "isPartOfComposite": false

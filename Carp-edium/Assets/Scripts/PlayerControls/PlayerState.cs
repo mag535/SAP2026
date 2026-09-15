@@ -18,6 +18,8 @@ namespace Carp {
                     TurnControlsOff);
             EvtSystem.EventDispatcher.AddListener<TurnOnPlayerControls>(
                     TurnControlsOn);
+            EvtSystem.EventDispatcher.AddListener<RequestSwitchActionMap>(
+                    SwitchActionMap);
         }
 
         void Start() {
@@ -42,6 +44,10 @@ namespace Carp {
             playerInput.SwitchCurrentActionMap("Game");
         }
 
+        void SwitchActionMap(RequestSwitchActionMap evt) {
+            playerInput.SwitchCurrentActionMap(evt.actionMap);
+        }
+
         void OnDestroy() {
             EvtSystem.EventDispatcher.RemoveListener<RequestSetPlayerState>(
                     SetPlayerState);
@@ -49,6 +55,8 @@ namespace Carp {
                     TurnControlsOff);
             EvtSystem.EventDispatcher.RemoveListener<TurnOnPlayerControls>(
                     TurnControlsOn);
+            EvtSystem.EventDispatcher.RemoveListener<RequestSwitchActionMap>(
+                    SwitchActionMap);
         }
     }
 }

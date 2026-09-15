@@ -13,6 +13,8 @@ namespace Carp {
                     RequestCloseNotebook {});
             EvtSystem.EventDispatcher.Raise<RequestCloseInventory>( new 
                     RequestCloseInventory {});
+            EvtSystem.EventDispatcher.Raise<RequestSwitchActionMap>( new 
+                    RequestSwitchActionMap { actionMap = "Game" });
         }
     }
 }

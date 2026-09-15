@@ -120,6 +120,10 @@ namespace Carp {
     {
         public Object item;
     }
+    public class RequestSwitchActionMap : EvtSystem.Event
+    {
+        public string actionMap;
+    }
 
     public class SignalCameraPositionUpdate : EvtSystem.Event {}
     public class ResetCameraPositionToPlayers : EvtSystem.Event {}

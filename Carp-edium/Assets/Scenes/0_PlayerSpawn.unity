@@ -1043,7 +1043,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -722030911
   m_SortingLayer: 4
-  m_SortingOrder: 2
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 5369c35de42d549b0beed73b723cba31, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1415,7 +1415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8948594874251413769, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8948594874251413769, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_SortingLayerID
@@ -1793,7 +1793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8948594874251413769, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8948594874251413769, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_SortingLayerID
@@ -2742,7 +2742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8948594874251413769, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8948594874251413769, guid: 1101ba05ce9a5ec4bbf7b8128702e48a, type: 3}
       propertyPath: m_SortingLayerID
@@ -3111,6 +3111,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1215303940}
     m_Modifications:
+    - target: {fileID: 1894966734901101285, guid: 99315876d1c22454e9fe1cb0bea104e7, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3892335233168715520, guid: 99315876d1c22454e9fe1cb0bea104e7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.474
@@ -3171,6 +3175,10 @@ PrefabInstance:
     - target: {fileID: 990129978114594865, guid: 37b4348a768c2bd48a4a39340a731c05, type: 3}
       propertyPath: m_Name
       value: QiLinGate (Lose)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6319922398022552183, guid: 37b4348a768c2bd48a4a39340a731c05, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8934230848314484626, guid: 37b4348a768c2bd48a4a39340a731c05, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3268,6 +3276,10 @@ PrefabInstance:
     - target: {fileID: 5056724806327096812, guid: 2935404c8f34b4a45811e37882e9821c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666538451478263817, guid: 2935404c8f34b4a45811e37882e9821c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

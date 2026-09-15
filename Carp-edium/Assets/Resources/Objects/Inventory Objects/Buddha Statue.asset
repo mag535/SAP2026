@@ -15,7 +15,7 @@ MonoBehaviour:
   isNoteEntry: 0
   objectID: Buddha Statue
   description: 
-  sprite: {fileID: 21300000, guid: 1a3dba0e0b2451d40a10002e496b7504, type: 3}
+  sprite: {fileID: 21300000, guid: 97e4dfe56cce3499f85be2d5cf7b1db6, type: 3}
   longDescription: 'A statue of Buddha. '
   spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 21300000, guid: 1a3dba0e0b2451d40a10002e496b7504, type: 3}
+  spriteIcon: {fileID: 21300000, guid: 97e4dfe56cce3499f85be2d5cf7b1db6, type: 3}

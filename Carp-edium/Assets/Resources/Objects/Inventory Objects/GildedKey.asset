@@ -15,7 +15,7 @@ MonoBehaviour:
   isNoteEntry: 0
   objectID: Gilded Key
   description: 
-  sprite: {fileID: 21300000, guid: 532784e206a739844b64aedaad70cd0b, type: 3}
+  sprite: {fileID: -3026322672829602739, guid: 576e58537cdb54683bf3d5b252a29064, type: 3}
   longDescription: 'A gilded key. '
   spriteMagnified: {fileID: 0}
-  spriteIcon: {fileID: 21300000, guid: 532784e206a739844b64aedaad70cd0b, type: 3}
+  spriteIcon: {fileID: -3026322672829602739, guid: 576e58537cdb54683bf3d5b252a29064, type: 3}

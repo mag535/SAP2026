@@ -83,7 +83,6 @@ public class AudioManager : Singleton<AudioManager>
                 if (src.clip == sound.clip) {
                     src.Stop();
                     src.Play();
-                    Debug.Log($"old sound [{sound.name}] replayed");
                     return;
                 }
             }
@@ -93,7 +92,6 @@ public class AudioManager : Singleton<AudioManager>
             newSource.pitch = sound.pitch;
             newSource.loop = sound.loop;
             newSource.Play();
-            Debug.Log($"new sound [{sound.name}] created");
         } else {
             bgmSource.Stop();
             bgmSource.clip = sound.clip;
@@ -110,7 +108,6 @@ public class AudioManager : Singleton<AudioManager>
             uicSource.Stop();
         }
         uicSource.Play();
-        Debug.Log($"UI Click played");
     }
     public void PlayDeduction() {
         if (deduction == null) { return; }
@@ -118,7 +115,6 @@ public class AudioManager : Singleton<AudioManager>
             dedSource.Stop();
         }
         dedSource.Play();
-        Debug.Log($"Deduction SFX played");
     }
     public void PlayPageFlip() {
         if (pageFlip == null) { return; }
@@ -126,7 +122,6 @@ public class AudioManager : Singleton<AudioManager>
             pagSource.Stop();
         }
         pagSource.Play();
-        Debug.Log($"Page Flip played");
     }
     public void PlayContinueSFX() {
         if (continueDialogueSFX == null) { return; }
@@ -134,7 +129,6 @@ public class AudioManager : Singleton<AudioManager>
             conSource.Stop();
         }
         conSource.Play();
-        Debug.Log($"Continue Dialogue SFX played");
     }
     public void PlayError() {
         if (errorSFX == null) { return; }
@@ -142,7 +136,6 @@ public class AudioManager : Singleton<AudioManager>
             errSource.Stop();
         }
         errSource.Play();
-        Debug.Log($"Error SFX played");
     }
 
     public void Stop(Sound sound) {

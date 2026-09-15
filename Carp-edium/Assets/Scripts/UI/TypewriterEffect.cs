@@ -60,10 +60,8 @@ namespace Carp {
 
         private IEnumerator Typewriter() {
             TMP_TextInfo textInfo = textBox.textInfo;
-            Debug.Log($"(BEFORE LOOP) Ind: {_currentVisibleCharacterIndex}, max: {textInfo.characterCount}");
 
             while(_currentVisibleCharacterIndex < textInfo.characterCount) {
-                Debug.Log($"Ind: {_currentVisibleCharacterIndex}, max: {textInfo.characterCount}");
                 char character = textInfo.characterInfo[_currentVisibleCharacterIndex].character;
 
                 textBox.maxVisibleCharacters++;

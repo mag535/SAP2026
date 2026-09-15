@@ -38,7 +38,6 @@ namespace Carp {
         }
 
         public override bool HandleItemUse(Object item) {
-            Debug.Log("Gate: HandleItemUse() not yet implemented.");
             return false;
         }
 

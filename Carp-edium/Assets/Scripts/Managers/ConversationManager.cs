@@ -60,18 +60,18 @@ namespace Carp {
         }
 
         private void SkipTWEffect(RequestSkipTWEffectConversation _) {
-            Debug.Log("ConversationManager: skipping typewriter effect...");
+            //Debug.Log("ConversationManager: skipping typewriter effect...");
             EvtSystem.EventDispatcher.Raise<ShowFullDialogue>( new
                     ShowFullDialogue {});
         }
 
         private void HandleNoMoreToShow(NoMoreToShow _) {
-            Debug.Log("ConversationManager: no more to show");
+            //Debug.Log("ConversationManager: no more to show");
             ContinueConversation(null);
         }
 
         private void HandleDialogueFullyShown(DialogueFullyShown _) {
-            Debug.Log("ConversationManager: dialogue fully shown");
+            //Debug.Log("ConversationManager: dialogue fully shown");
             if (!CheckForMoreDialogue()) {
                 continueObject.SetActive(false);
                 return;

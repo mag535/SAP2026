@@ -10,7 +10,8 @@ namespace Carp {
         }
 
         void PlayPageFlip() {
-            AudioManager.Instance.PlayPageFlip();
+            EvtSystem.EventDispatcher.Raise<PlayPredeterminedSound>( new
+                    PlayPredeterminedSound { preSound = PredeterminedSounds.PAGEFLIP });
         }
     }
 }

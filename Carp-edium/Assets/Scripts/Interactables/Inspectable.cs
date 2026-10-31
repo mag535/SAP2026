@@ -29,7 +29,8 @@ namespace Carp {
         public override bool HandleItemUse(Object item) { return false; }
 
         public void BasicInspection() {
-            AudioManager.Instance.Play(soundEffect);
+            EvtSystem.EventDispatcher.Raise<PlaySound>( new
+                    PlaySound { sound = soundEffect });
 
             // Send signal to have description and sprite displayed. This is 
             // magnifying

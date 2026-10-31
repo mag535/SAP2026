@@ -25,9 +25,11 @@ namespace Carp {
 
         public override void Interact() {
             if (isLocked) {
-                AudioManager.Instance.Play(soundEffect);
+                EvtSystem.EventDispatcher.Raise<PlaySound>( new
+                        PlaySound { sound = soundEffect });
             } else {
-                AudioManager.Instance.Play(unlockingSoundEffect);
+                EvtSystem.EventDispatcher.Raise<PlaySound>( new
+                        PlaySound { sound = unlockingSoundEffect });
             }
         }
 

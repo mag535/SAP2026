@@ -11,7 +11,8 @@ namespace Carp {
             if (isLocked) { 
                 base.Interact(); 
             } else { 
-                AudioManager.Instance.Play(unlockingSoundEffect);
+                EvtSystem.EventDispatcher.Raise<PlaySound>( new
+                        PlaySound { sound = unlockingSoundEffect });
                 GoToNextRoom();
             }
         }

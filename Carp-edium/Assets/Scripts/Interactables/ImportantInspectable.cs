@@ -16,7 +16,8 @@ namespace Carp {
                 EvtSystem.EventDispatcher.Raise<RequestAddToNotebook>(
                         new RequestAddToNotebook { objectData = objectData });
                 hasBeenInspected = true;
-                AudioManager.Instance.PlayDeduction();
+                EvtSystem.EventDispatcher.Raise<PlayPredeterminedSound>( new
+                        PlayPredeterminedSound { preSound = PredeterminedSounds.DEDUCTION });
             }
 
         }

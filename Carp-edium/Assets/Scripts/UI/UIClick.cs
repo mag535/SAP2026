@@ -10,7 +10,8 @@ namespace Carp {
         }
 
         void PlayClick() {
-            AudioManager.Instance.PlayUIClick();
+            EvtSystem.EventDispatcher.Raise<PlayPredeterminedSound>( new
+                    PlayPredeterminedSound { preSound = PredeterminedSounds.UICLICK });
         }
     }
 }

@@ -150,7 +150,8 @@ namespace Carp {
             bool success = engagedGO.GetComponent<Interactable>()
                 .HandleItemUse(evt.item);
             if (!success) { 
-                AudioManager.Instance.PlayError();
+                EvtSystem.EventDispatcher.Raise<PlayPredeterminedSound>( new
+                        PlayPredeterminedSound { preSound = PredeterminedSounds.ERROR });
                 return; 
             }
 

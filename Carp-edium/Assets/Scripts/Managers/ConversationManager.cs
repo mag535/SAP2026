@@ -107,7 +107,8 @@ namespace Carp {
             // Display dialogue
             HandleSpecialDialogue(nextNode);
             SetDialogue();
-            AudioManager.Instance.PlayContinueSFX();
+            EvtSystem.EventDispatcher.Raise<PlayPredeterminedSound>( new
+                    PlayPredeterminedSound { preSound = PredeterminedSounds.CONTINUESFX });
             EvtSystem.EventDispatcher.Raise<ContinueResult>( new
                     ContinueResult { result = true });
         }
@@ -233,7 +234,8 @@ namespace Carp {
                     EvtSystem.EventDispatcher.Raise<RequestAddItem>( new
                             RequestAddItem { item = node.trade });
                 }
-                AudioManager.Instance.PlayDeduction();
+                EvtSystem.EventDispatcher.Raise<PlayPredeterminedSound>( new
+                        PlayPredeterminedSound { preSound = PredeterminedSounds.DEDUCTION });
                 return;
             }
 
@@ -253,6 +255,7 @@ namespace Carp {
             EvtSystem.EventDispatcher.RemoveListener<RequestContinueConversation>(ContinueConversation);
             EvtSystem.EventDispatcher.RemoveListener<RequestInterruptConversation>(InterruptConversation);
             EvtSystem.EventDispatcher.RemoveListener<DialogueFullyShown>(HandleDialogueFullyShown);
+            EvtSystem.EventDispatcher.RemoveListener<NoMoreToShow>(HandleNoMoreToShow);
         }
     }
 }

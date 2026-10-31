@@ -20,7 +20,8 @@ namespace Carp {
 
         public override void Interact() {
             // sfx
-            AudioManager.Instance.Play(soundEffect);
+            EvtSystem.EventDispatcher.Raise<PlaySound>( new
+                    PlaySound { sound = soundEffect });
             // start dialogue, send dialogue id to dialogue manager
             if (!GameManager.Instance.AmIAModifiedConversationStarter(gameObject.name)) {
                 EvtSystem.EventDispatcher.Raise<RequestStartConversation>( new

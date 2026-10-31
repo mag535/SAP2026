@@ -4,7 +4,17 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Carp {
-    // SCENE & ROOM LOADING --------------------------------------------------------
+    // AUDIO MANAGEMENT --------------------------------------------------------
+    public class PlaySound : EvtSystem.Event
+    {
+        public Sound sound;
+    }
+    public class PlayPredeterminedSound : EvtSystem.Event
+    {
+        public PredeterminedSounds preSound;
+    }
+    
+    // SCENE & ROOM LOADING ----------------------------------------------------
     public class RequestLoadRoom : EvtSystem.Event
     {
         public string roomName;
@@ -21,7 +31,7 @@ namespace Carp {
     public class TurnOffPlayerControls : EvtSystem.Event {}
     public class TurnOnPlayerControls : EvtSystem.Event {}
 
-    // UIs -------------------------------------------------------------------------
+    // UIs ---------------------------------------------------------------------
     public class TrackUIMenuOpen : EvtSystem.Event
     {
         // false means menu is closing
@@ -51,7 +61,7 @@ namespace Carp {
     public class RequestResumeGame : EvtSystem.Event {}
     public class TogglePauseMenu : EvtSystem.Event {}
 
-    // DIALOGUE UI -----------------------------------------------------------------
+    // DIALOGUE UI -------------------------------------------------------------
     public class SendDialogueText : EvtSystem.Event
     {
         public string dialogueText;
@@ -61,7 +71,7 @@ namespace Carp {
     public class ShowFullDialogue : EvtSystem.Event {}
     public class NoMoreToShow : EvtSystem.Event {}
 
-    // DESCRIPTION UI --------------------------------------------------------------
+    // DESCRIPTION UI ----------------------------------------------------------
     public class RequestDisplayInspected : EvtSystem.Event
     {
         // true == use long description,
@@ -73,7 +83,7 @@ namespace Carp {
     {
     }
 
-    // PLAYER INVENTORY & NOTEBOOK -------------------------------------------------
+    // PLAYER INVENTORY & NOTEBOOK ---------------------------------------------
     public class RequestOpenInventory : EvtSystem.Event {}
     public class RequestCloseInventory : EvtSystem.Event {}
     public class RequestAddItem : EvtSystem.Event
@@ -115,7 +125,7 @@ namespace Carp {
         public bool displayNextButton;
     }
 
-    // PLAYER INTERACT -------------------------------------------------------------
+    // PLAYER INTERACT ---------------------------------------------------------
     public class RequestItemUse : EvtSystem.Event
     {
         public Object item;
@@ -153,7 +163,7 @@ namespace Carp {
         public string actionMap;
     }
 
-    // INTERACTABLES -----------------------------------------------------------------------
+    // INTERACTABLES -----------------------------------------------------------
     public class OpenChest : EvtSystem.Event
     {
         public string key;

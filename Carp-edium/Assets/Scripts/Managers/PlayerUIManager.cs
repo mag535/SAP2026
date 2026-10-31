@@ -46,7 +46,8 @@ namespace Carp {
             EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
                     isOpening = true });
             inventoryDisplay.SetActive(true);
-            AudioManager.Instance.Play(inventoryOpenSoundEffect);
+            EvtSystem.EventDispatcher.Raise<PlaySound>( new
+                    PlaySound { sound = inventoryOpenSoundEffect });
             inventoryState = true;
 
             // Set focused game object
@@ -59,7 +60,8 @@ namespace Carp {
             EvtSystem.EventDispatcher.Raise<TrackUIMenuOpen>(new TrackUIMenuOpen {
                     isOpening = false });
             inventoryDisplay.SetActive(false);
-            AudioManager.Instance.Play(inventoryCloseSoundEffect);
+            EvtSystem.EventDispatcher.Raise<PlaySound>( new
+                    PlaySound { sound = inventoryCloseSoundEffect });
             inventoryState = false;
         }
         void AddToInventoryDisplay(RequestAddToInventoryDisplay evt) {
@@ -104,7 +106,8 @@ namespace Carp {
                 AddToNotebookDisplay(note);
             }
             notebookDisplay.SetActive(true);
-            AudioManager.Instance.Play(notebookOpenSoundEffect);
+            EvtSystem.EventDispatcher.Raise<PlaySound>( new
+                    PlaySound { sound = notebookOpenSoundEffect });
             notebookState = true;
 
             // Set focused game object
@@ -126,7 +129,8 @@ namespace Carp {
             foreach (Transform childTransform in notebookParent.transform) {
                 Destroy(childTransform.gameObject);
             }
-            AudioManager.Instance.Play(notebookCloseSoundEffect);
+            EvtSystem.EventDispatcher.Raise<PlaySound>( new
+                    PlaySound { sound = notebookCloseSoundEffect });
             notebookState = false;
         }
 

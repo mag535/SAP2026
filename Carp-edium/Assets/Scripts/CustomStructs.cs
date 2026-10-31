@@ -3,6 +3,14 @@ using System.Collections.Generic;
 
 
 namespace Carp {
+    public enum PredeterminedSounds {
+        UICLICK,
+        DEDUCTION,
+        PAGEFLIP,
+        CONTINUESFX,
+        ERROR,
+    }
+
     public enum PlayerStates {
         GAME,
         DIALOGUE,
